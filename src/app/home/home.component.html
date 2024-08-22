@@ -94,10 +94,20 @@
       L’approche développée par AFYIA combine l’intelligence artificielle, la biologie moléculaire et un process industriel exigeant, pour aboutir à des produits très simples d’utilisation avec un haut degré de fiabilité. 
     </p>
   </div>
-  <div class="flex w-2/3 mx-auto gap-3 h-[300px]">
-    <app-card-link class="grow"></app-card-link>
-    <app-card-link class="grow"></app-card-link>
-    <app-card-link class="grow"></app-card-link>
+  <div class="flex w-2/3 mx-auto gap-10 h-[300px]">
+    <app-card-link
+      class="grow"
+      title="AI"
+    ></app-card-link>
+    <app-card-link
+      class="grow"
+      title="Biologie"
+      subTitle="moléculaire"
+    ></app-card-link>
+    <app-card-link
+      class="grow"
+      title="Processus"
+    ></app-card-link>
   </div>
 </div>
 
@@ -121,12 +131,12 @@
   </div>
 </div>
 
-<div class="container mx-auto my-60">
-  <div class="bg-white relative shadow-md p-10 rounded-xl">
+<div class="container mx-auto mt-60 mb-20">
+  <div class="bg-white relative shadow-colored p-10 rounded-xl">
     <div class="title-gradient text-center w-full absolute top-0 left-[50%] -translate-x-1/2 -translate-y-1/2 text-6xl font-extrabold">
-      Nos partenaires
+      Ils nous font confiance
     </div>
-    <div class="flex flex-wrap justify-center gap-10 items-center py-10 px-5 shadow-colored">
+    <div class="flex flex-wrap justify-center gap-20 items-center py-10 px-5">
       <img src="assets/img/partnership/partner_axlr.png" alt="Partner ">
       <img src="assets/img/partnership/partner_meltree.png" alt="Partner ">
       <img src="assets/img/partnership/partner_igf.png" alt="Partner ">
@@ -139,12 +149,14 @@
   </div>
 </div>
 
-<div class="container bg-teal-400 mx-auto rounded-xl py-10 px-20 text-white">
+<div class="container bg-primary mx-auto rounded-xl py-16 px-20 text-white">
   <div class="flex justify-between items-center">
-    <div class="text-3xl font-extrabold">
+    <div>
       <span class="text-5xl font-extrabold">Call to action </span> <br>
-      <span class="text-xl font-extralight">Lorem ipsum</span>
+      <span class="text-2xl font-extralight">Lorem ipsum</span>
     </div>
     <div>Nous contacter</div>
   </div>
 </div>
+
+<app-footer></app-footer>

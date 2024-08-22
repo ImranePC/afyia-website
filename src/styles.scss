@@ -27,6 +27,10 @@ body {
   background-color: $background-color;
 }
 
+.bg-primary {
+  background-color: $primary-light;
+}
+
 a {
   color: $dark;
   text-decoration: none;

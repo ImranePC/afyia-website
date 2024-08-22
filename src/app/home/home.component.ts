@@ -3,11 +3,12 @@ import { HeaderComponent } from '../header/header.component';
 import ScrollReveal from 'scrollreveal';
 import { ParallaxDirective } from '../directives/parallax.directive';
 import { CardLinkComponent } from './card-link/card-link.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, ParallaxDirective, CardLinkComponent],
+  imports: [HeaderComponent, ParallaxDirective, CardLinkComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
