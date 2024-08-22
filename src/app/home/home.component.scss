@@ -1,0 +1,17 @@
+@import '../../variables';
+
+.card-transition {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: 0.3s;
+}
+
+.title-gradient {
+  background: linear-gradient(to right, #00fbff 20%, $primary-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shadow-colored {
+
+}

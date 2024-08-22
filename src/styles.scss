@@ -1,1 +1,121 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&display=swap');
+@import 'animations';
+@import 'variables';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background-color;
+  font-family: 'Archivo', sans-serif;
+  transition: 1s;
+}
+
+::selection {
+  color: white;
+  background: $primary;
+  -webkit-text-fill-color: white;
+}
+
+.bg-theme {
+  background-color: $background-color;
+}
+
+a {
+  color: $dark;
+  text-decoration: none;
+  transition: $transition-1;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 90vh;
+
+  img {
+    height: 100%;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, $background-color 5%, rgba($background-color, 0%) 25%);
+  }
+}
+
+.text-primary { color: $primary; }
+
+p {
+  font-size: 20px;
+  text-align: justify;
+}
+
+.image {
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+
+  img {
+    transition: $transition-2;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@layer components {
+  .title {
+    @apply text-6xl font-extrabold text-center;
+    position: relative;
+    display: inline-block;
+    margin: auto;
+
+    .strong {
+      color: $primary;
+    }
+
+    &::before {
+      @apply bg-cyan-100 rounded-xl;
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: -10%;
+      width: 120%;
+      height: 75%;
+      z-index: -1;
+    }
+  }
+
+  .btn {
+    @apply px-6 py-2 rounded-full shadow-sm;
+
+    transition: $transition-1;
+    cursor: pointer;
+
+    &-white {
+      @apply bg-white text-black;
+    }
+
+    &:hover {
+      scale: 0.95;
+      opacity: 0.66;
+    }
+  }
+}

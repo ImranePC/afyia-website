@@ -1,0 +1,14 @@
+.background-image {
+  background-image: url('../../../assets/img/illness_1.jpg');
+  background-size: 100%;
+  background-position: center;
+  transition: 0.28s;
+
+  &:hover {
+    background-size: 105%;
+
+    .btn {
+      opacity: 0.66;
+    }
+  }
+}
