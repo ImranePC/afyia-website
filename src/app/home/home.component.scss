@@ -2,8 +2,17 @@
 
 .card-transition {
   opacity: 0;
-  transform: translateY(2rem);
+  transform: translateY(2rem); // rotate(-10deg) scale(1.05);
   transition: 0.3s;
+}
+
+.card-bg-image {
+  height: 450px;
+  width: 300px;
+  background-image: url('../../assets/img/img_molecule.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .title-gradient {
@@ -14,4 +23,15 @@
 
 .shadow-colored {
   box-shadow: 0 3px 40px 18px rgba($primary-light, 0.1);
+}
+
+.hover-hightlight {
+  transition: $transition-3;
+  border-radius: $radius;
+
+  &:hover {
+    z-index: 1;
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0 50px 0 lighten($primary, 50);
+  }
 }

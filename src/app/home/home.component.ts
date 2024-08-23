@@ -28,28 +28,43 @@ export class HomeComponent implements OnInit {
     const step1 = document.getElementById('step_1');
     const step2 = document.getElementById('step_2');
 
+    const cardA = document.getElementById('a_card') as HTMLElement;
+    const cardB = document.getElementById('b_card') as HTMLElement;
+    const cardC = document.getElementById('c_card') as HTMLElement;
+
+    const showCard = (element: HTMLElement) => {
+      element.style.opacity = '1';
+    }
+
+    const hideCard = (element: HTMLElement) => {
+      element.style.opacity = '0';
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           if (entry.target.id === 'step_1') {
-            document.getElementById('b_card')!.style.opacity = '1';
-            document.getElementById('b_card')!.classList.remove('translate-y-1');
-            document.getElementById('b_card')!.style.transform = 'translateY(0)';
+            showCard(cardA);
           }
 
           if (entry.target.id === 'step_2') {
-            document.getElementById('c_card')!.style.opacity = '1';
-            document.getElementById('c_card')!.style.transform = 'translateY(0)';
+            showCard(cardB);
+          }
+
+          if (entry.target.id === 'step_3') {
+            showCard(cardC);
           }
         } else {
           if (entry.target.id === 'step_1') {
-            document.getElementById('b_card')!.style.opacity = '0';
-            document.getElementById('b_card')!.style.transform = 'translateY(2rem)';
+            hideCard(cardA);
           }
 
           if (entry.target.id === 'step_2') {
-            document.getElementById('c_card')!.style.opacity = '0';
-            document.getElementById('c_card')!.style.transform = 'translateY(2rem)';
+            hideCard(cardB);
+          }
+
+          if (entry.target.id === 'step_3') {
+            hideCard(cardC);
           }
         }
       });

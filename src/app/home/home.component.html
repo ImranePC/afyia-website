@@ -2,13 +2,10 @@
   <img src="assets/img/hands_background.png" alt="" srcset="">
 </div>
 <div class="container h-screen flex flex-col justify-center m-auto">
-  <div class="text-5xl font-extralight">
+  <div class="text-5xl font-extralight reveal">
     Make infectious disease diagnostic <br>
     accessible <span class="font-extrabold">to all</span>.
   </div>
-  <!-- <div>
-    <button class="btn mt-3">View more</button>
-  </div> -->
 </div>
 <div class="container mx-auto bg-cyan-100 rounded-xl mt-20 max-h-64">
   <h1 class="text-7xl font-extrabold ms-8 -translate-y-[2.5rem] -mb-[1rem]">Notre <span class="text-primary">mission</span></h1>
@@ -30,12 +27,13 @@
     </div>
 
     <div class="h-[3000px] relative">
-      <div class="sticky top-[50%] h-screen" id="sticky-wrapper">
+      <div class="sticky top-[50%] h-[50vh]" id="sticky-wrapper">
         <div class="flex flex-col justify-center" id="sticky-element">
-          <div id="a_card" class="grid grid-cols-3 gap-5 absolute bg-theme transition ease-out">
-            <div class="">
-              <img width="100%" src="assets/img/img_molecule.png" alt="">
-            </div>
+          <div id="a_card" class="grid grid-cols-3 gap-10 absolute bg-theme card-transition">
+            <div
+              class="card-bg-image rounded-xl overflow-hidden"
+              style="background-image: url('assets/img/img_ai.jpg')"
+            ></div>
             <div class="col-span-2 text-left flex flex-col justify-center gap-3">
               <div>
                 <h1 class="text-5xl font-black">IA</h1>
@@ -48,41 +46,44 @@
             </div>
           </div>
 
-          <div id="b_card" class="grid grid-cols-3 gap-5 absolute bg-theme card-transition">
-            <div class="">
-              <img width="100%" src="assets/img/img_molecule.png" alt="">
-            </div>
+          <div id="b_card" class="grid grid-cols-3 gap-10 absolute bg-theme card-transition">
+            <div
+              class="card-bg-image rounded-xl overflow-hidden"
+              style="background-image: url('assets/img/img_molecule.jpg')"
+            ></div>
             <div class="col-span-2 text-left flex flex-col justify-center gap-3">
               <div>
                 <h1 class="text-5xl font-black">Biologie moléculaire</h1>
               </div>
               <div>
                 <p>
-                  L’IA est utilisée pour analyser et interpréter de façon autonome les résultats de diagnostic, à partir de bases de données d’apprentissage créées spécifiquement pour chaque nouveau test.
+                  Lorem ipsum dolor sit amet consectetur. Blandit quisque ultricies faucibus justo integer facilisis morbi nec.
                 </p>
               </div>
             </div>
           </div>
 
-          <div id="c_card" class="grid grid-cols-3 gap-5 absolute bg-theme card-transition">
-            <div class="">
-              <img width="100%" src="assets/img/img_molecule.png" alt="">
-            </div>
+          <div id="c_card" class="grid grid-cols-3 gap-10 absolute bg-theme card-transition">
+            <div
+              class="card-bg-image rounded-xl overflow-hidden"
+              style="background-image: url('assets/img/img_process.jpg')"
+            ></div>
             <div class="col-span-2 text-left flex flex-col justify-center gap-3">
               <div>
                 <h1 class="text-5xl font-black">Processus</h1>
               </div>
               <div>
                 <p>
-                  L’IA est utilisée pour analyser et interpréter de façon autonome les résultats de diagnostic, à partir de bases de données d’apprentissage créées spécifiquement pour chaque nouveau test.
+                  Lorem ipsum dolor sit amet consectetur. Blandit quisque ultricies faucibus justo integer facilisis morbi nec.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="step_1" class="absolute top-[1000px]"></div>
-      <div id="step_2" class="absolute top-[2000px]"></div>
+      <div id="step_1" class="absolute top-[0px]"></div>
+      <div id="step_2" class="absolute top-[1000px]"></div>
+      <div id="step_3" class="absolute top-[2000px]"></div>
     </div>
   </div>
 </div>
@@ -94,19 +95,22 @@
       L’approche développée par AFYIA combine l’intelligence artificielle, la biologie moléculaire et un process industriel exigeant, pour aboutir à des produits très simples d’utilisation avec un haut degré de fiabilité. 
     </p>
   </div>
-  <div class="flex w-2/3 mx-auto gap-10 h-[300px]">
+  <div class="flex w-2/3 mx-auto gap-10 h-[400px]">
     <app-card-link
-      class="grow"
+      class="grow hover-hightlight"
       title="AI"
+      imagePath="img_ai.jpg"
     ></app-card-link>
     <app-card-link
-      class="grow"
+      class="grow hover-hightlight"
       title="Biologie"
       subTitle="moléculaire"
+      imagePath="img_molecule.jpg"
     ></app-card-link>
     <app-card-link
-      class="grow"
+      class="grow hover-hightlight"
       title="Processus"
+      imagePath="img_process.jpg"
     ></app-card-link>
   </div>
 </div>
