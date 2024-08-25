@@ -22,14 +22,14 @@
 </div>
 <div class="container mx-auto mt-96 text-center">
   <div class="w-[80%] mx-auto">
-    <div class="title mx-auto mb-[22rem]">
+    <div class="title mx-auto mb-[18rem]">
       Notre <span class="strong">approche</span>
     </div>
 
-    <div class="h-[3000px] relative">
+    <div class="h-[4000px] relative">
       <div class="sticky top-[50%] h-[50vh]" id="sticky-wrapper">
         <div class="flex flex-col justify-center" id="sticky-element">
-          <div id="a_card" class="grid grid-cols-3 gap-10 absolute bg-theme card-transition">
+          <div id="a_card" class="grid grid-cols-3 gap-10 absolute card-transition">
             <div
               class="card-bg-image rounded-xl overflow-hidden"
               style="background-image: url('assets/img/img_ai.jpg')"
@@ -46,7 +46,7 @@
             </div>
           </div>
 
-          <div id="b_card" class="grid grid-cols-3 gap-10 absolute bg-theme card-transition">
+          <div id="b_card" class="grid grid-cols-3 gap-10 absolute card-transition">
             <div
               class="card-bg-image rounded-xl overflow-hidden"
               style="background-image: url('assets/img/img_molecule.jpg')"
@@ -63,7 +63,7 @@
             </div>
           </div>
 
-          <div id="c_card" class="grid grid-cols-3 gap-10 absolute bg-theme card-transition">
+          <div id="c_card" class="grid grid-cols-3 gap-10 absolute card-transition">
             <div
               class="card-bg-image rounded-xl overflow-hidden"
               style="background-image: url('assets/img/img_process.jpg')"
@@ -79,45 +79,47 @@
               </div>
             </div>
           </div>
+
+          <div id="approach_section" class="w-full absolute inactive hide transition-all duration-500">
+            <div class="text-white w-2/3 mx-auto">
+              <h4 id="approach_title" class="text-6xl font-extrabold text-center">Notre approche</h4>
+              <p class="mx-auto font-light my-14">
+                L’approche développée par AFYIA combine l’intelligence artificielle, la biologie moléculaire et un process industriel exigeant, pour aboutir à des produits très simples d’utilisation avec un haut degré de fiabilité. 
+              </p>
+            </div>
+            <div class="flex w-2/3 mx-auto gap-10 h-[350px]">
+              <app-card-link
+                class="grow hover-hightlight"
+                title="AI"
+                imagePath="img_ai.jpg"
+              ></app-card-link>
+              <app-card-link
+                class="grow hover-hightlight"
+                title="Biologie"
+                subTitle="moléculaire"
+                imagePath="img_molecule.jpg"
+              ></app-card-link>
+              <app-card-link
+                class="grow hover-hightlight"
+                title="Processus"
+                imagePath="img_process.jpg"
+              ></app-card-link>
+            </div>
+          </div>
         </div>
       </div>
+
       <div id="step_1" class="absolute top-[0px]"></div>
       <div id="step_2" class="absolute top-[1000px]"></div>
       <div id="step_3" class="absolute top-[2000px]"></div>
+      <div id="step_4" class="absolute top-[3000px]"></div>
     </div>
-  </div>
-</div>
-
-<div class="bg-blue-950 text-white p-32">
-  <div>
-    <h4 class="text-6xl font-extrabold text-center reveal">Notre approche</h4>
-    <p class="w-2/3 mx-auto font-light my-14">
-      L’approche développée par AFYIA combine l’intelligence artificielle, la biologie moléculaire et un process industriel exigeant, pour aboutir à des produits très simples d’utilisation avec un haut degré de fiabilité. 
-    </p>
-  </div>
-  <div class="flex w-2/3 mx-auto gap-10 h-[400px]">
-    <app-card-link
-      class="grow hover-hightlight"
-      title="AI"
-      imagePath="img_ai.jpg"
-    ></app-card-link>
-    <app-card-link
-      class="grow hover-hightlight"
-      title="Biologie"
-      subTitle="moléculaire"
-      imagePath="img_molecule.jpg"
-    ></app-card-link>
-    <app-card-link
-      class="grow hover-hightlight"
-      title="Processus"
-      imagePath="img_process.jpg"
-    ></app-card-link>
   </div>
 </div>
 
 <div class="container mx-auto mb-32">
   <div class="text-center mt-32 mb-20">
-    <div class="title">
+    <div id="product_title" class="title">
       Nos <span class="strong">produits</span>
     </div>
   </div>
@@ -137,7 +139,7 @@
 
 <div class="container mx-auto mt-60 mb-20">
   <div class="bg-white relative shadow-colored p-10 rounded-xl">
-    <div class="title-gradient text-center w-full absolute top-0 left-[50%] -translate-x-1/2 -translate-y-1/2 text-6xl font-extrabold">
+    <div class="reveal title-gradient text-center w-full absolute top-0 left-[50%] -translate-x-1/2 -translate-y-1/2 text-6xl font-extrabold">
       Ils nous font confiance
     </div>
     <div class="flex flex-wrap justify-center gap-20 items-center py-10 px-5">
@@ -153,13 +155,13 @@
   </div>
 </div>
 
-<div class="container bg-primary mx-auto rounded-xl py-16 px-20 text-white">
+<div class="container bg-primary mx-auto rounded-xl py-16 px-20 text-white reveal">
   <div class="flex justify-between items-center">
     <div>
       <span class="text-5xl font-extrabold">Call to action </span> <br>
       <span class="text-2xl font-extralight">Lorem ipsum</span>
     </div>
-    <div>Nous contacter</div>
+    <div class="btn btn-lg bg-cyan-700" routerLink="/contact" role="button">Nous contacter</div>
   </div>
 </div>
 

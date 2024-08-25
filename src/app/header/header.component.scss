@@ -27,8 +27,17 @@
     }
   }
 
-  div:last-child {
+  ul {
+    list-style-type: none;
     display: flex;
     gap: 30px;
+
+    li {
+      cursor: pointer;
+    }
+  }
+
+  .active {
+    color: $primary;
   }
 }

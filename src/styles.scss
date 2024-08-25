@@ -12,9 +12,27 @@
 }
 
 body {
-  background-color: $background-color;
+  background: $background-color;
   font-family: 'Archivo', sans-serif;
-  transition: 1s;
+
+  &::before {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: linear-gradient(-40deg, #13173F 55%, #14329C);
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  &.bg-dark-gradient {
+    &::before {
+      opacity: 1;
+    }
+  }
 }
 
 ::selection {
@@ -29,6 +47,10 @@ body {
 
 .bg-primary {
   background-color: $primary-light;
+}
+
+.bg-primary-dark {
+  background-color: $primary-dark;
 }
 
 a {
@@ -62,7 +84,9 @@ a {
   }
 }
 
-.text-primary { color: $primary; }
+.text-primary {
+  color: $primary;
+}
 
 p {
   font-size: 20px;
@@ -120,6 +144,10 @@ p {
     &:hover {
       scale: 0.95;
       opacity: 0.66;
+    }
+
+    &-lg {
+      @apply rounded-lg font-extrabold text-xl bg-gray-700/50;
     }
   }
 }

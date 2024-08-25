@@ -4,67 +4,86 @@ import ScrollReveal from 'scrollreveal';
 import { ParallaxDirective } from '../directives/parallax.directive';
 import { CardLinkComponent } from './card-link/card-link.component';
 import { FooterComponent } from '../footer/footer.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, ParallaxDirective, CardLinkComponent, FooterComponent],
+  imports: [HeaderComponent, ParallaxDirective, CardLinkComponent, FooterComponent, RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+  currentStep: any = null;
+
+  previousStep: any = null;
+
   ngOnInit(): void {
     const config = {
       duration: 750,
       distance: '30px',
-      easing: 'ease-out',
       origin: 'top',
     }
 
     ScrollReveal().reveal('.reveal', config);
 
-    const stickyWrapper = document.getElementById('sticky-wrapper');
-    const stickyElement = document.getElementById('sticky-element');
     const step1 = document.getElementById('step_1');
     const step2 = document.getElementById('step_2');
+    const step3 = document.getElementById('step_3');
+    const step4 = document.getElementById('step_4');
+    const approachTitle = document.getElementById('approach_title');
+    const approachSection = document.getElementById('approach_section');
 
-    const cardA = document.getElementById('a_card') as HTMLElement;
-    const cardB = document.getElementById('b_card') as HTMLElement;
-    const cardC = document.getElementById('c_card') as HTMLElement;
-
-    const showCard = (element: HTMLElement) => {
-      element.style.opacity = '1';
-    }
-
-    const hideCard = (element: HTMLElement) => {
-      element.style.opacity = '0';
-    }
+    const cardA = document.getElementById('a_card');
+    const cardB = document.getElementById('b_card');
+    const cardC = document.getElementById('c_card');
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           if (entry.target.id === 'step_1') {
-            showCard(cardA);
+            this.hideCard(cardB);
+            this.showCard(cardA);
+
+            this.updateStep('step_1');
           }
 
           if (entry.target.id === 'step_2') {
-            showCard(cardB);
+            this.hideCard(cardA);
+            this.hideCard(cardC);
+            this.showCard(cardB);
+
+            this.updateStep('step_2');
           }
 
           if (entry.target.id === 'step_3') {
-            showCard(cardC);
+            this.hideCard(cardB);
+            this.showCard(cardC);
+
+            approachSection.classList.add('hide');
+            document.body.classList.remove('bg-dark-gradient');
+
+            this.updateStep('step_3');
+          }
+
+          if (entry.target.id === 'step_4') {
+            this.hideCard(cardC);
+            this.updateStep('step_4');
+
+            approachSection.classList.remove('hide');
+            approachSection.classList.remove('inactive');
+
+            document.body.classList.add('bg-dark-gradient');
+          }
+
+          if (entry.target.id === 'approach_title' && this.currentStep === 'step_4') {
+            document.body.classList.add('bg-dark-gradient');
+            approachSection.classList.remove('inactive');
           }
         } else {
-          if (entry.target.id === 'step_1') {
-            hideCard(cardA);
-          }
-
-          if (entry.target.id === 'step_2') {
-            hideCard(cardB);
-          }
-
-          if (entry.target.id === 'step_3') {
-            hideCard(cardC);
+          if (entry.target.id === 'approach_title') {
+            document.body.classList.remove('bg-dark-gradient');
+            approachSection.classList.add('inactive');
           }
         }
       });
@@ -73,28 +92,23 @@ export class HomeComponent implements OnInit {
       threshold: 0,
     });
 
-    observer.observe(step1 as HTMLElement);
-    observer.observe(step2 as HTMLElement);
+    observer.observe(step1);
+    observer.observe(step2);
+    observer.observe(step3);
+    observer.observe(step4);
+    observer.observe(approachTitle);
+  }
 
-    // const elements = [
-    //   document.getElementById('step_1'),
-    //   document.getElementById('step_2'),
-    //   document.getElementById('step_3'),
-    //   document.getElementById('step_4'),
-    // ]
+  showCard(element: HTMLElement) {
+    element.style.opacity = '1';
+  }
 
-    // document.addEventListener('scroll', function() {
-    //   // Get the element with id '1'
-    //   var targetElement = document.getElementById('step_1');
+  hideCard(element: HTMLElement) {
+    element.style.opacity = '0';
+  }
 
-    //   // Get the position of the element relative to the viewport
-    //   var elementPosition = targetElement!.getBoundingClientRect();
-
-    //   // Check if the element is within the viewport (or at least at the top)
-    //   if (elementPosition.top <= 0 && elementPosition.bottom >= 0) {
-    //       // Change background to dark
-    //       document.body.style.backgroundColor = 'black';
-    //   }
-    // });
+  updateStep(step: string): void {
+    this.previousStep = this.currentStep;
+    this.currentStep = step;
   }
 }

@@ -32,6 +32,20 @@
   &:hover {
     z-index: 1;
     transform: translateY(-0.5rem);
-    box-shadow: 0 0 50px 0 lighten($primary, 50);
+    box-shadow: 0 0 45px 0 lighten($primary, 55);
   }
+}
+
+.inactive {
+  opacity: 0.35!important;
+  pointer-events: none;
+  scale: 0.95;
+  user-select: none;
+}
+
+.hide {
+  opacity: 0!important;
+  pointer-events: none;
+  scale: 0.95;
+  user-select: none;
 }

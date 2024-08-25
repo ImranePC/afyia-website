@@ -1,0 +1,68 @@
+<div class="container mx-auto mt-60">
+  <div class="w-2/3 mx-auto">
+    <h1 class="text-center text-8xl font-extrabold reveal">Nous contacter</h1>
+    <p class="mt-8 text-center text-2xl">A la recherche d'une opportunité ou pour collaborer ensemble, nous sommes joignable par divers canaux.</p>
+  </div>
+
+  <div class="mt-40 bg-cyan-100 relative rounded-xl py-16 px-14 reveal">
+    <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">Collaborez avec nous</h2>
+    <div class="flex justify-between gap-5">
+      <p class="block self-center">Besoin d'un partenaire solide ? Lorem ipsum etc</p>
+      <a class="btn btn-lg text-white hover:text-white bg-cyan-700 text-lg self-center" mailto="contact@afyia-diagnostics.com">
+        contact&#64;afyia-diagnostics.com
+        <fa-icon class="ms-1" [icon]="faEnvelope"></fa-icon>
+      </a>
+    </div>
+  </div>
+
+  <div class="mt-20 bg-violet-100 relative rounded-xl py-16 px-14 reveal">
+    <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">Rejoignez nous</h2>
+    <div class="flex justify-between gap-5">
+      <p class="block self-center">Envie de rejoindre une équipe innovante et de donner un nouvel élan à votre carrière ? C’est ici.</p>
+      <a class="btn btn-lg text-white hover:text-white bg-violet-800 self-center">
+        Linkedin
+        <fa-icon class="ms-1" [icon]="faComment"></fa-icon>
+      </a>
+    </div>
+  </div>
+
+  <div class="mt-20 bg-yellow-100 relative rounded-xl py-16 px-14 reveal">
+    <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">Venez à notre rencontre</h2>
+    <div class="flex justify-between gap-5">
+      <p class="block self-center">
+        <b>AFYIA Diagnostics</b> <br>
+        310 rue Louis Pasteur, 34790 Grabels
+      </p>
+       <a class="btn btn-lg text-white hover:text-white bg-yellow-800 self-center" href="https://maps.app.goo.gl/ZTmQ78UBhsC4JvDP9" target="_blank">
+        Voir sur Maps
+        <fa-icon class="ms-1" [icon]="faLocationDot"></fa-icon>
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="container mx-auto mt-32 w-1/2">
+  <h1 class="block title mb-20 reveal">
+    <span>Laissez nous un mot </span>
+    <img class="inline" width="60px" src="assets/img/emoji_wave_hand.png" alt="Wave hand">
+  </h1>
+  <div class="flex flex-col gap-5">
+    <div class="input-group">
+      <label for="input_name">Nom</label>
+      <input id="input_name" type="text" maxlength="50">
+    </div>
+    <div class="input-group">
+      <label for="input_email">Email</label>
+      <input id="input_email" type="text" maxlength="50">
+    </div>
+    <div class="input-group">
+      <label for="input_message">Message</label>
+      <textarea id="intput_message" rows="5"></textarea>
+    </div>
+  </div>
+  <button class="btn btn-lg bg-cyan-700 text-white mt-5">
+    <fa-icon class="me-1" [icon]="faPaperPlane"></fa-icon>
+    Envoyer
+  </button>
+</div>
+<app-footer></app-footer>
