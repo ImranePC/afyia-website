@@ -9,14 +9,20 @@ import { Component, Input } from '@angular/core';
 })
 export class CardLinkComponent {
   @Input()
-  title = 'Title'
+  title = 'Title';
 
   @Input()
-  subTitle = ''
+  subTitle = '';
+
+  @Input()
+  description = '';
 
   @Input()
   link = '';
 
   @Input()
   imagePath = '';
+
+  @Input()
+  ce = false;
 }

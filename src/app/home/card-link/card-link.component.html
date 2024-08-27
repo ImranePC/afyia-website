@@ -1,5 +1,6 @@
+@if (description.length <= 0) {
 <div
-  class="bg-blue-300 h-full p-5 rounded-2xl text-center flex flex-col-reverse relative background-image"
+  class="h-full p-5 rounded-2xl text-center flex flex-col-reverse relative background-image"
   style="background-image: url('../../../assets/img/{{ imagePath }}')"
   role="button"
 >
@@ -8,3 +9,20 @@
   </div>
   <div class="btn btn-white w-fit mx-auto z-10">View more</div>
 </div>
+} @else {
+<div
+  class="h-full p-5 rounded-2xl text-left flex flex-col justify-between relative background-image"
+  style="background-image: url('../../../assets/img/{{ imagePath }}')"
+  role="button"
+>
+  <div class="z-10 text-white text-shadow">
+    <span class="font-extrabold text-4xl">{{ title }}</span> <br>
+    <span class="block mb-2 text-2xl"> {{ subTitle }}</span>
+    <span>{{ description }}</span>
+  </div>
+  <div class="flex justify-between">
+    <img src="assets/img/ce.svg" height="100px">
+    <div class="btn btn-white z-10">View more</div>
+  </div>
+</div>
+}

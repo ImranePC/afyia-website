@@ -4,7 +4,7 @@
 <div class="container h-screen flex flex-col justify-center m-auto">
   <div class="text-5xl font-extralight reveal">
     Make infectious disease diagnostic <br>
-    accessible <span class="font-extrabold">to all</span>.
+    accessible <span class="font-extrabold text-primary">to all</span>
   </div>
 </div>
 <div class="container mx-auto bg-cyan-100 rounded-xl mt-20 max-h-64">
@@ -16,7 +16,7 @@
       </p>
     </div>
     <div class="image reveal">
-      <img src="assets/img/placeholder.jpg" alt="image">
+      <img src="assets/img/img_swab.jpg" alt="image">
     </div>
   </div>
 </div>
@@ -125,14 +125,23 @@
   </div>
   <div class="grid grid-cols-2 gap-10 h-[250px] w-[80%] mx-auto reveal">
     <app-card-link
-      title="DI MonkeyPox Virus"
-      subTitle="Duplex PCR"
+      title="Monkeypox Virus"
+      subTitle="Detection kit by real-time PCR - RUO"
       imagePath="illness_1.jpg"
+      description="(Monkeypox virus clad I and II) Validated by CNR Orthopovirus"
     ></app-card-link>
     <app-card-link
-      title="DI SARS COV-2"
-      subTitle="MOC/I Multiplex PCR"
+      title="Monkeypox Virus"
+      subTitle="for pathogens causing febrile rash - RUO"
+      imagePath="illness_1.jpg"
+      description="(Monkeypox virus, virus Herpes simplex of type 1 and 2 and Varicella-Zona). Validated in studies with Montpellier University Hospital and the National Institute for Biological Research (Democratic Republic of Congo)"
+    ></app-card-link>
+    <app-card-link
+      title="SARS CoV-2"
+      subTitle="Kit de criblage des mutations d'intérêt"
       imagePath="illness_2.jpg"
+      description="(SARS CoV-2 (gène N), Del69-70, K417N, L452R, E484K, N501Y, P681R/H)"
+      [ce]="true"
     ></app-card-link>
   </div>
 </div>
@@ -140,7 +149,7 @@
 <div class="container mx-auto mt-60 mb-20">
   <div class="bg-white relative shadow-colored p-10 rounded-xl">
     <div class="reveal title-gradient text-center w-full absolute top-0 left-[50%] -translate-x-1/2 -translate-y-1/2 text-6xl font-extrabold">
-      Ils nous font confiance
+      Nos partenaires
     </div>
     <div class="flex flex-wrap justify-center gap-20 items-center py-10 px-5">
       <img src="assets/img/partnership/partner_axlr.png" alt="Partner ">
@@ -158,10 +167,10 @@
 <div class="container bg-primary mx-auto rounded-xl py-16 px-20 text-white reveal">
   <div class="flex justify-between items-center">
     <div>
-      <span class="text-5xl font-extrabold">Call to action </span> <br>
-      <span class="text-2xl font-extralight">Lorem ipsum</span>
+      <span class="block mb-2 text-5xl font-extrabold">Vous partagez notre vision ?</span>
+      <span class="block text-2xl font-extralight">Pour collaborer ou nous rejoindre</span>
     </div>
-    <div class="btn btn-lg bg-cyan-700" routerLink="/contact" role="button">Nous contacter</div>
+    <div class="btn btn-lg bg-primary-dark" routerLink="/contact" role="button">Nous contacter</div>
   </div>
 </div>
 
