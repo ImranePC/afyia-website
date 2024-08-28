@@ -11,7 +11,7 @@
 </div>
 } @else {
 <div
-  class="h-full p-5 rounded-2xl text-left flex flex-col justify-between relative background-image"
+  class="min-h-[250px] h-full p-5 rounded-2xl text-left flex flex-col justify-between relative background-image"
   style="background-image: url('../../../assets/img/{{ imagePath }}')"
   role="button"
 >
@@ -20,9 +20,15 @@
     <span class="block mb-2 text-2xl"> {{ subTitle }}</span>
     <span>{{ description }}</span>
   </div>
-  <div class="flex justify-between">
-    <img src="assets/img/ce.svg" height="100px">
-    <div class="btn btn-white z-10">View more</div>
+  <div class="flex justify-between items-center mt-5">
+    <div class="z-10">
+    @if (ce) {
+      <img src="assets/img/ce.svg" width="30px" alt="CE Logo SVG">
+    }
+    </div>
+    <div class="btn btn-white z-10">
+      View more @if (link) { <fa-icon class="ms-1" [icon]="faUpRightFromSquare" size="sm"></fa-icon> }
+    </div>
   </div>
 </div>
 }

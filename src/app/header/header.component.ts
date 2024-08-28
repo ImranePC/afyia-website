@@ -20,10 +20,12 @@ export class HeaderComponent {
     if (this.previousScrollValue > window.scrollY){
       this.navBar.nativeElement.style.top = "0"
       this.navBar.nativeElement.style.opacity = "1"
+      this.navBar.nativeElement.style.pointerEvents = 'all';
     } else {
       this.navBar.nativeElement.style.animationPlayState = ""
       this.navBar.nativeElement.style.top = "-20px"
       this.navBar.nativeElement.style.opacity = "0"
+      this.navBar.nativeElement.style.pointerEvents = 'none';
     }
 
     this.previousScrollValue = window.scrollY;

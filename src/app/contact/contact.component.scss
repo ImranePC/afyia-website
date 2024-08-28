@@ -9,7 +9,7 @@
   }
 
   input[type=text], textarea {
-    @apply p-3 rounded-xl;
+    @apply p-3 rounded-xl border;
     transition: $transition-1;
     outline: 2px solid transparent;
 
