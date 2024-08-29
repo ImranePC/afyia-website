@@ -14,6 +14,7 @@
 body {
   background: $background-color;
   font-family: 'Archivo', sans-serif;
+  color: $dark-text;
 
   &::before {
     z-index: -1;
@@ -67,6 +68,29 @@ a {
   }
 }
 
+strong {
+  color: $primary;
+}
+
+.primary-list {
+  li {
+    position: relative;
+    margin-left: 1em;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: -20px;
+      transform: translateY(-50%);
+      border-radius: 100%;
+      height: 8px;
+      width: 8px;
+      background-color: $primary;
+    }
+  }
+}
+
 .bg-image {
   position: absolute;
   top: 0;
@@ -101,6 +125,7 @@ p {
   border-radius: 16px;
   overflow: hidden;
   width: 100%;
+  box-shadow: 0 4px 30px 4px rgba(black, 0.25);
 
   img {
     transition: $transition-2;
@@ -124,11 +149,13 @@ p {
     }
 
     &::before {
+      @apply bg-cyan-100 rounded-xl;
       $overflow: 50px;
       position: absolute;
       content: '';
       top: 50%;
-      width: 100%;
+      width: calc(100% + $overflow);
+      transform: translateX(calc($overflow / 2) * -1);
       height: 75%;
       z-index: -1;
     }

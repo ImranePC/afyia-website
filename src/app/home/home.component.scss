@@ -32,7 +32,7 @@
   &:hover {
     z-index: 1;
     transform: translateY(-0.5rem);
-    box-shadow: 0 0 45px 0 lighten($primary, 55);
+    box-shadow: 0 8px 30px 0 rgba(102, 0, 41, 0.75);
   }
 }
 
