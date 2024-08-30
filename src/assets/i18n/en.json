@@ -52,14 +52,14 @@
   },
   "sections": {
     "approach": {
-      "ai": "AI",
-      "biology": "Molecular biology",
-      "biology_subtitle": "molecular",
-      "biology_title": "Biology",
-      "health": "Human health",
+      "ai_title": "Artificial",
+      "ai_subtitle": "intelligence",
+      "biology_subtitle": "biology",
+      "biology_title": "Molecular",
       "health_subtitle": "health",
-      "health_title": "Health",
-      "process": "Process",
+      "health_title": "Human",
+      "process_subtitle": "process",
+      "process_title": "Industrial",
       "text": "AFYIA's approach combines <b>artificial intelligence</b>, <b>molecular biology</b> and a rigorous <b>industrial process</b>, resulting in easy-to-use products with a high degree of reliability.",
       "title": "Our <strong>approach</strong>"
     },
@@ -77,7 +77,7 @@
         "element_4": "Adaptation to needs and constraints"
       },
       "text": "Overcome the main barriers to access to diagnosis.",
-      "title": "Make <strong>reliable</strong> and <strong>sensitive</strong> diagnostic tools accessible to <strong>all</strong>"
+      "title": "Our mission is to make <strong>reliable</strong> and <strong>sensitive</strong> diagnostic tools accessible to <strong>all</strong>"
     },
     "partners": {
       "title": "Our partners"
@@ -99,6 +99,11 @@
           "subtitle": "Viral RNA detection kit",
           "text": "(SARS CoV-2 (Gene N), Del69-70, K417N, L452R, E484K, N501Y, P681R/H)",
           "title": "SARS CoV-2"
+        },
+        "hepa": {
+          "title": "Hepatitis B virus",
+          "subtitle": "Viral load quantification",
+          "text": "Coming soon"
         }
       },
       "title": "Our <strong>products</strong>",

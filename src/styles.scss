@@ -11,6 +11,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2em;
+}
+
 body {
   background: $background-color;
   font-family: 'Archivo', sans-serif;

@@ -5,14 +5,14 @@
 <div class="container mb-20 h-screen flex flex-col justify-center m-auto">
   <div class="text-5xl font-extralight reveal">
     <span [innerHtml]="'welcome' | translate"></span><br>
-    <button class="mt-5 text-lg bg-white btn">{{ 'sections.product.button' | translate }}</button>
+    <a href="#product" class="mt-5 text-lg bg-white btn">{{ 'sections.product.button' | translate }}</a>
   </div>
 </div>
 
 <div class="container mx-auto bg-white shadow-sm rounded-xl ps-10 pb-10 pe-0">
   <div class="grid grid-cols-2 gap-5">
     <div>
-      <h1 class="text-6xl font-bold -translate-y-10" [innerHTML]="'sections.mission.title' | translate"></h1>
+      <h1 class="text-6xl font-bold -translate-y-8" [innerHTML]="'sections.mission.title' | translate"></h1>
       <p class="text-2xl">{{ 'sections.mission.text' | translate }}</p>
       <ul class="text-2xl mt-5 font-bold leading-10 primary-list">
         <li>{{ 'sections.mission.list.element_1' | translate }}</li>
@@ -29,7 +29,7 @@
   </div>
 </div>
 
-<div class="container mt-32 mx-auto text-xl flex justify-center items-center gap-5">
+<div class="container mt-20 mx-auto text-xl flex justify-center items-center gap-5">
   <img width="100px" src="assets/img/un_health_green.png" alt="United nations sustainable development goal 3">
   {{ 'sections.mission.goal_3' | translate }}
 </div>
@@ -42,11 +42,12 @@
         class="text-center text-pink-950 font-extrabold text-8xl -translate-y-20 transition duration-500 strong-alt"
         [innerHTML]="'sections.approach.title' | translate"
       ></h1>
-      <p class="w-5/6 text-center mx-auto mt-10 mb-20" [innerHTML]="'sections.approach.text' | translate"></p>
+      <p class="w-5/6 text-center text-2xl mx-auto mt-10 mb-20" [innerHTML]="'sections.approach.text' | translate"></p>
       <div class="flex w-5/6 mx-auto gap-10 h-[350px]">
         <app-card-link
           class="grow hover-hightlight"
-          [title]="'sections.approach.ai' | translate"
+          [title]="'sections.approach.ai_title' | translate"
+          [subTitle]="'sections.approach.ai_subtitle' | translate"
           imagePath="img_ai.jpg"
         ></app-card-link>
         <app-card-link
@@ -57,7 +58,8 @@
         ></app-card-link>
         <app-card-link
           class="grow hover-hightlight"
-          [title]="'sections.approach.process' | translate"
+          [title]="'sections.approach.process_title' | translate"
+          [subTitle]="'sections.approach.process_subtitle' | translate"
           imagePath="img_process.jpg"
         ></app-card-link>
         <app-card-link
@@ -72,119 +74,9 @@
   </div>
 </div>
 
-<!-- <div class="container mx-auto bg-cyan-100 rounded-xl mt-20 max-h-64">
-  <h1 class="text-7xl font-extrabold ms-8 -translate-y-[2.5rem] -mb-[1rem]">Notre <span class="text-primary">mission</span></h1>
-  <div class="grid grid-cols-2 gap-10 px-8">
-    <div>
-      <p>
-        Alors que le diagnostic est la première arme de lutte contre les maladies infectieuses, l'immense majorité des populations vivant dans les pays à revenus faibles et intermédiaires n’y a toujours pas accès.
-      </p>
-    </div>
-    <div class="image reveal">
-      <img src="assets/img/img_swab.jpg" alt="image">
-    </div>
-  </div>
-</div> -->
-<!-- <div class="container mx-auto mt-96 text-center">
-  <div class="w-[80%] mx-auto">
-    <div class="title mx-auto mb-[18rem]">
-      Notre <span class="strong">approche</span>
-    </div>
-
-    <div class="h-[4000px] relative">
-      <div class="sticky top-[50%] h-[50vh]" id="sticky-wrapper">
-        <div class="flex flex-col justify-center" id="sticky-element">
-          <div id="a_card" class="grid grid-cols-3 gap-10 absolute card-transition">
-            <div
-              class="card-bg-image rounded-xl overflow-hidden"
-              style="background-image: url('assets/img/img_ai.jpg')"
-            ></div>
-            <div class="col-span-2 text-left flex flex-col justify-center gap-3">
-              <div>
-                <h1 class="text-5xl font-black">IA</h1>
-              </div>
-              <div>
-                <p>
-                  L’IA est utilisée pour analyser et interpréter de façon autonome les résultats de diagnostic, à partir de bases de données d’apprentissage créées spécifiquement pour chaque nouveau test.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="b_card" class="grid grid-cols-3 gap-10 absolute card-transition">
-            <div
-              class="card-bg-image rounded-xl overflow-hidden"
-              style="background-image: url('assets/img/img_molecule.jpg')"
-            ></div>
-            <div class="col-span-2 text-left flex flex-col justify-center gap-3">
-              <div>
-                <h1 class="text-5xl font-black">Biologie moléculaire</h1>
-              </div>
-              <div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Blandit quisque ultricies faucibus justo integer facilisis morbi nec.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="c_card" class="grid grid-cols-3 gap-10 absolute card-transition">
-            <div
-              class="card-bg-image rounded-xl overflow-hidden"
-              style="background-image: url('assets/img/img_process.jpg')"
-            ></div>
-            <div class="col-span-2 text-left flex flex-col justify-center gap-3">
-              <div>
-                <h1 class="text-5xl font-black">Processus</h1>
-              </div>
-              <div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Blandit quisque ultricies faucibus justo integer facilisis morbi nec.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div id="approach_section" class="w-full absolute inactive hide transition-all duration-500">
-            <div class="text-white w-2/3 mx-auto">
-              <h4 id="approach_title" class="text-6xl font-extrabold text-center">Notre approche</h4>
-              <p class="mx-auto font-light my-14">
-                L’approche développée par AFYIA combine l’intelligence artificielle, la biologie moléculaire et un process industriel exigeant, pour aboutir à des produits très simples d’utilisation avec un haut degré de fiabilité. 
-              </p>
-            </div>
-            <div class="flex w-2/3 mx-auto gap-10 h-[350px]">
-              <app-card-link
-                class="grow hover-hightlight"
-                title="AI"
-                imagePath="img_ai.jpg"
-              ></app-card-link>
-              <app-card-link
-                class="grow hover-hightlight"
-                title="Biologie"
-                subTitle="moléculaire"
-                imagePath="img_molecule.jpg"
-              ></app-card-link>
-              <app-card-link
-                class="grow hover-hightlight"
-                title="Processus"
-                imagePath="img_process.jpg"
-              ></app-card-link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="step_1" class="absolute top-[0px]"></div>
-      <div id="step_2" class="absolute top-[1000px]"></div>
-      <div id="step_3" class="absolute top-[2000px]"></div>
-      <div id="step_4" class="absolute top-[3000px]"></div>
-    </div>
-  </div>
-</div> -->
-
 <div class="container mx-auto mb-32">
   <div class="text-center mt-32 mb-20">
-    <div id="product_title" class="title" [innerHTML]="'sections.product.title' | translate">
+    <div id="product" class="title" [innerHTML]="'sections.product.title' | translate">
     </div>
   </div>
   <div class="grid rows-2 grid-cols-2 justify-center flex-wrap gap-10 mx-auto reveal w-[80%]">
@@ -195,6 +87,7 @@
         imagePath="illness_1.jpg"
         [description]="'sections.product.items.mpox_1.text' | translate"
         [link]="true"
+        [ruo]="true"
       ></app-card-link>
     </a>
     <a href="assets/pdf/DIRASH.pdf" target="_blank">
@@ -204,38 +97,44 @@
         imagePath="illness_1.jpg"
         [description]="'sections.product.items.mpox_2.text' | translate"
         [link]="true"
+        [ruo]="true"
       ></app-card-link>
     </a>
-    <div class="col-span-2 flex justify-center">
-      <a href="https://www.innovative-diagnostics.com/produit/di-sars-cov-2-rest-duplex/" target="_blank">
-        <app-card-link
-          title="SARS CoV-2"
-          [subTitle]="'sections.product.items.sars_cov.subtitle' | translate"
-          imagePath="illness_2.jpg"
-          [description]="'sections.product.items.sars_cov.text' | translate"
-          [ce]="true"
-          [link]="true"
-        ></app-card-link>
-      </a>
+    <a href="https://www.innovative-diagnostics.com/produit/di-sars-cov-2-rest-duplex/" target="_blank">
+      <app-card-link
+        title="SARS CoV-2"
+        [subTitle]="'sections.product.items.sars_cov.subtitle' | translate"
+        imagePath="illness_2.jpg"
+        [description]="'sections.product.items.sars_cov.text' | translate"
+        [ce]="true"
+        [link]="true"
+      ></app-card-link>
+    </a>
+    <div>
+      <app-card-link
+        [title]="'sections.product.items.hepa.title' | translate"
+        [subTitle]="'sections.product.items.hepa.subtitle' | translate"
+        imagePath="illness_3.jpg"
+        [description]="'sections.product.items.hepa.text' | translate"
+        [disabled]="true"
+      ></app-card-link>
     </div>
   </div>
 </div>
 
-<div class="container mx-auto mb-20">
-  <div class="bg-white relative shadow-colored p-10 rounded-xl">
-    <div class="reveal title-gradient text-center w-full absolute top-0 left-[50%] -translate-x-1/2 -translate-y-1/2 text-6xl font-black">
-      {{ 'sections.partners.title' | translate }}
-    </div>
-    <div class="flex flex-wrap justify-center gap-20 items-center py-10 px-5">
-      <img src="assets/img/partnership/partner_axlr.png" alt="Partner ">
-      <img src="assets/img/partnership/partner_meltree.png" alt="Partner ">
-      <img src="assets/img/partnership/partner_igf.png" alt="Partner ">
-      <img src="assets/img/partnership/partner_occitanie.png" alt="Partner ">
-      <img src="assets/img/partnership/partner_id.png" alt="Partner ">
-      <img src="assets/img/partnership/partner_inserm.png" alt="Partner ">
-      <img src="assets/img/partnership/partner_isem.png" alt="Partner ">
-      <img src="assets/img/partnership/partner_ird.png" alt="Partner ">
-    </div>
+<div class="container shadow-colored bg-white rounded-xl mx-auto px-10 pb-10  mb-20">
+  <div class="title-gradient -translate-y-8 text-center w-full top-0 left-[50%] text-6xl font-extrabold">
+    {{ 'sections.partners.title' | translate }}
+  </div>
+  <div class="flex flex-wrap justify-center gap-20 items-center py-10 px-5">
+    <img src="assets/img/partnership/partner_axlr.png" alt="Partner ">
+    <img src="assets/img/partnership/partner_meltree.png" alt="Partner ">
+    <img src="assets/img/partnership/partner_igf.png" alt="Partner ">
+    <img src="assets/img/partnership/partner_occitanie.png" alt="Partner ">
+    <img src="assets/img/partnership/partner_id.png" alt="Partner ">
+    <img src="assets/img/partnership/partner_inserm.png" alt="Partner ">
+    <img src="assets/img/partnership/partner_isem.png" alt="Partner ">
+    <img src="assets/img/partnership/partner_ird.png" alt="Partner ">
   </div>
 </div>
 
@@ -243,7 +142,7 @@
   <div class="flex justify-between items-center">
     <div>
       <span class="block mb-2 text-5xl font-extrabold">{{ 'sections.cta.speech' | translate }}</span>
-      <span class="block text-2xl font-extralight">{{ 'sections.cta.text' | translate }}</span>
+      <span class="block text-2xl font-extralight">{{ 'sections.cta.text' | translate }} - <b>contact&#64;afyia-diagnostics.com</b></span>
     </div>
     <div class="btn btn-lg bg-primary-dark" routerLink="/contact" role="button">{{ 'sections.cta.button' | translate }}</div>
   </div>

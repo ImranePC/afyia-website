@@ -11,7 +11,7 @@
         "title": "Laissez nous un mot"
       },
       "linkedin": {
-        "text": "Envie de rejoindre une équipe innovante et de donner un coup de pouce à votre carrière ? \nNous aimerions avoir de vos nouvelles.",
+        "text": "Envie de rejoindre une équipe innovante et de donner un nouvel élan à votre carrière ? C'est ici.",
         "title": "Rejoignez nous"
       },
       "mail": {
@@ -52,14 +52,14 @@
   },
   "sections": {
     "approach": {
-      "ai": "IA",
-      "biology": "Biology moléculaire",
+      "ai_title": "Intelligence",
+      "ai_subtitle": "artificielle",
       "biology_subtitle": "moléculaire",
       "biology_title": "Biologie",
-      "health": "Santé humaine",
       "health_subtitle": "humaine",
       "health_title": "Santé",
-      "process": "Processus",
+      "process_subtitle": "industriel",
+      "process_title": "Processus",
       "text": "L'approche développé par AFYIA combine l'<b>intelligence artificielle</b>, la <b>biologie moléculaire</b> et un <b>processus industriel</b> exigeant, pour aboutir à des produits très simples d'utilisation avec un haut degré de fiabilité.",
       "title": "Notre <strong>approche</strong>"
     },
@@ -69,7 +69,7 @@
       "text": "Pour collaborer ou nous rejoindre"
     },
     "mission": {
-      "goal_3": "S'inscrit dans l'object 3 de développement durable de l'agenda 2030 des Nations Unies.",
+      "goal_3": "S'inscrit dans l'objectif 3 de développement durable de l'agenda 2030 des Nations Unies.",
       "list": {
         "element_1": "Prix",
         "element_2": "Transport",
@@ -77,7 +77,7 @@
         "element_4": "Adaptation aux besoins et aux contraintes"
       },
       "text": "Lever les principaux obstacles de l'accès au diagnostic.",
-      "title": "Rendre <strong>accessible</strong> au plus grand nombre des outils de diagnostic <strong>fiable</strong> et <strong>sensibles</strong>"
+      "title": "Notre mission est de rendre <strong>accessible</strong> au plus grand nombre des outils de diagnostic <strong>fiable</strong> et <strong>sensibles</strong>"
     },
     "partners": {
       "title": "Nos partenaires"
@@ -99,11 +99,16 @@
           "subtitle": "Kit de criblage des mutations d'intérêt",
           "text": "(SARS CoV-2 (Gène N), Del69-70, K417N, L452R, E484K, N501Y, P681R/H)",
           "title": "SARS CoV-2"
+        },
+        "hepa": {
+          "title": "Virus de l'hépatite B",
+          "subtitle": "Kit de quantification de la charge virale",
+          "text": "Prochainement"
         }
       },
       "title": "Nos <strong>produits</strong>",
       "view_more": "Voir plus"
     }
   },
-  "welcome": "Rendre le diagnostic des maladies <br> infectieuses accessible <strong>à tous</strong>"
+  "welcome": "Pour que le diagnostic des maladies <br> infectieuses soit accessible <strong>à tous</strong>"
 }

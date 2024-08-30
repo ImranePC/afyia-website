@@ -8,7 +8,7 @@
     <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">{{ 'contact.sections.mail.title' | translate }}</h2>
     <div class="flex justify-between gap-5">
       <p class="block self-center">{{ 'contact.sections.mail.text' | translate }}</p>
-      <a class="btn btn-lg text-white hover:text-white bg-cyan-700 text-lg self-center" href="mailto:contact@afyia-diagnostics.com">
+      <a class="btn btn-lg text-white hover:text-white bg-cyan-700 text-lg self-center whitespace-nowrap" href="mailto:contact@afyia-diagnostics.com">
         contact&#64;afyia-diagnostics.com
         <fa-icon class="ms-1" [icon]="faEnvelope"></fa-icon>
       </a>
@@ -19,7 +19,7 @@
     <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">{{ 'contact.sections.linkedin.title' | translate }}</h2>
     <div class="flex justify-between gap-5">
       <p class="block self-center">{{ 'contact.sections.linkedin.text' | translate }}</p>
-      <a class="btn btn-lg text-white hover:text-white bg-violet-800 self-center" href="https://linkedin.com/company/afyia-diagnostics" target="_blank">
+      <a class="btn btn-lg text-white hover:text-white bg-violet-800 self-center whitespace-nowrap" href="https://linkedin.com/company/afyia-diagnostics" target="_blank">
         Linkedin
         <fa-icon class="ms-1" [icon]="faComment"></fa-icon>
       </a>
@@ -33,15 +33,15 @@
         <b>AFYIA Diagnostics</b> <br>
         310 rue Louis Pasteur, 34790 Grabels
       </p>
-       <a class="btn btn-lg text-white hover:text-white bg-pink-800 self-center" href="https://maps.app.goo.gl/ZTmQ78UBhsC4JvDP9" target="_blank">
+       <a class="btn btn-lg text-white hover:text-white bg-pink-800 self-center whitespace-nowrap" href="https://maps.app.goo.gl/ZTmQ78UBhsC4JvDP9" target="_blank">
         {{ 'contact.sections.maps.button' | translate }}
         <fa-icon class="ms-1" [icon]="faLocationDot"></fa-icon>
       </a>
     </div>
   </div>
-
 </div>
-<div class="container mx-auto mt-32 w-1/2">
+
+<!-- <div class="container mx-auto mt-32 w-1/2">
   <div class="text-center">
     <h1 class="title text-center mb-20 reveal">
       <span>{{ 'contact.sections.form.title' | translate }} </span>
@@ -66,5 +66,5 @@
     <fa-icon class="me-1" [icon]="faPaperPlane"></fa-icon>
     {{ 'contact.sections.form.inputs.button' | translate }}
   </button>
-</div>
+</div> -->
 <app-footer></app-footer>

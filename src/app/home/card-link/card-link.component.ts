@@ -29,5 +29,11 @@ export class CardLinkComponent {
   @Input()
   ce = false;
 
+  @Input()
+  ruo = false;
+
+  @Input()
+  disabled = false;
+
   faUpRightFromSquare = faUpRightFromSquare;
 }

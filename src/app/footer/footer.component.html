@@ -1,20 +1,21 @@
-<div class="bg-secondary-dark mt-20 px-10 py-16 text-white flex font-light justify-center gap-32">
+<div class="bg-sky-950 mt-20 px-10 py-16 text-white flex font-light justify-center gap-32">
   <div class="font-extrabold self-center">
     <img src="assets/img/afyia_logo_white.png" width="100px" alt="Logo AFYIA footer">
   </div>
   <div class="text-white">
-    <div class="font-bold text-lg">Nous contacter</div>
+    <div class="font-bold text-lg">{{ 'footer.contact.title' | translate }}</div>
     <a routerLink="/contact">Linkedin</a>
-    <a routerLink="/contact">Laisser un mot</a>
+    <a routerLink="/contact">{{ 'footer.contact.message' | translate }}</a>
+    <a href="mailto:contact@afyia-diagnostics.com">contact&#64;afyia-diagnostics.com</a>
   </div>
   <div class="opacity-50">
-    <div class="font-bold text-lg">Legal</div>
-    <div>Mentions légales</div>
-    <div>Politique des cookies</div>
-    <div>Données personnelles</div>
+    <div class="font-bold text-lg">{{ 'footer.legal.title' | translate }}</div>
+    <div>{{ 'footer.legal.notice' | translate }}</div>
+    <div>{{ 'footer.legal.cookies' | translate }}</div>
+    <div>{{ 'footer.legal.confidential' | translate }}</div>
   </div>
   <div class="opacity-50">
-    <div class="font-bold text-lg">L'entreprise</div>
-    <div>A propos</div>
+    <div class="font-bold text-lg">{{ 'footer.legal.title' | translate }}</div>
+    <div>{{ 'footer.legal.notice' | translate }}</div>
   </div>
 </div>

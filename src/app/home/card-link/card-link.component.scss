@@ -26,6 +26,14 @@
     background-size: cover;
     transition: 0.28s;
   }
+
+  &.disabled {
+    pointer-events: none;
+
+    &::after {
+      filter: grayscale(100%) brightness(0.66);
+    }
+  }
 }
 
 .text-shadow {
