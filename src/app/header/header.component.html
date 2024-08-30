@@ -1,5 +1,5 @@
 <div #navBar class="header container animation-slide-in">
-  <div routerLink="/" role="button">
+  <div routerLink="/" role="button" class="hover:opacity-75">
     <img src="assets/img/afyia_logo.png" alt="Logo afyia">
   </div>
   <div>
@@ -11,6 +11,42 @@
         <li><a routerLink="/news" routerLinkActive="active">Actualités</a></li>
         <li><a routerLink="/about" routerLinkActive="active">A propos</a></li>
         <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+        <li class="border-s ps-6" (clickOutside)="closeDropdown(langDropDown)">
+          <button class="inline-flex items-center" (click)="toggleDropDown(langDropDown)">
+            <span class="inline w-[14px]">{{ currentLang | uppercase }}</span>
+            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+            </svg>
+          </button>
+          <div
+            #langDropDown
+            class="z-10 absolute bg-white rounded-xl shadow -translate-x-1/2 animation-pop"
+            style="display: none"
+          >
+            <ul class="text-sm flex flex-col text-left m-2 gap-2">
+              <li>
+                <button
+                  class="inline-block py-1 pe-4 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
+                  [class.bg-gray-100]="isLangSelected('fr')"
+                  (click)="selectLang('fr'); closeDropdown(langDropDown)"
+                >
+                  <img class="inline-block ms-4" width="20px" src="assets/img/emoji_fl_fr.png" alt="French flag emoji">
+                  <span class="ms-2 me-4">Français</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  class="inline-block py-1 pe-4 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
+                  [class.bg-gray-100]="isLangSelected('en')"
+                  (click)="selectLang('en'); closeDropdown(langDropDown)"
+                >
+                  <img class="inline-block ms-4" width="20px" src="assets/img/emoji_fl_en.png" alt="French flag emoji">
+                  <span class="ms-2 me-4">English</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </nav>
   </div>

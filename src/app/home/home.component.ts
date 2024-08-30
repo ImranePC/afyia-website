@@ -5,11 +5,21 @@ import { ParallaxDirective } from '../directives/parallax.directive';
 import { CardLinkComponent } from './card-link/card-link.component';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, ParallaxDirective, CardLinkComponent, FooterComponent, RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [
+    HeaderComponent,
+    ParallaxDirective,
+    CardLinkComponent,
+    FooterComponent,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    TranslateModule,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -17,6 +27,10 @@ export class HomeComponent implements OnInit {
   currentStep: any = null;
 
   previousStep: any = null;
+
+  constructor(translate: TranslateService) {
+    translate.use('fr');
+  }
 
   ngOnInit(): void {
     const config = {
@@ -129,12 +143,11 @@ export class HomeComponent implements OnInit {
     // });
 
     observer.observe(mark1);
-    observer.observe(mark2);
 
-    observer.observe(step1);
-    observer.observe(step2);
-    observer.observe(step3);
-    observer.observe(step4);
+    // observer.observe(step1);
+    // observer.observe(step2);
+    // observer.observe(step3);
+    // observer.observe(step4);
     observer.observe(approachTitle);
   }
 

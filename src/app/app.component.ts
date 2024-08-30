@@ -1,11 +1,18 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    HttpClientModule,
+    TranslateModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

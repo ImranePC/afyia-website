@@ -27,13 +27,22 @@
     }
   }
 
-  ul {
+  nav > ul {
     list-style-type: none;
     display: flex;
-    gap: 30px;
+    gap: 24px;
+    transition: $transition-1;
 
-    li {
+    li > a {
       cursor: pointer;
+    }
+
+    button {
+      transition: $transition-1;
+
+      &:hover {
+        color: $primary;
+      }
     }
   }
 

@@ -4,6 +4,12 @@
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+.animation-pop {
+  animation-name: pop;
+  animation-duration: 0.33s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
 @keyframes slidein {
   0% {
     transform: translateY(-20%) translateX(-50%);
@@ -11,5 +17,16 @@
 
   100% {
     transform: translateY(0%) translateX(-50%);
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    scale: 0.9;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
   }
 }
