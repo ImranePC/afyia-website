@@ -5,12 +5,12 @@
   <div>
     <nav>
       <ul>
-        <li><a routerLink="/">Accueil</a></li>
-        <li><a routerLink="/technology" routerLinkActive="active">Technologie</a></li>
-        <li><a routerLink="/products" routerLinkActive="active">Produits</a></li>
-        <li><a routerLink="/news" routerLinkActive="active">Actualités</a></li>
-        <li><a routerLink="/about" routerLinkActive="active">A propos</a></li>
-        <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+        <li><a routerLink="/">{{ 'header.home' | translate }}</a></li>
+        <li><a routerLink="/technology" routerLinkActive="active">{{ 'header.technology' | translate }}</a></li>
+        <li><a routerLink="/products" routerLinkActive="active">{{ 'header.product' | translate }}</a></li>
+        <li><a routerLink="/news" routerLinkActive="active">{{ 'header.news' | translate }}</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">{{ 'header.about' | translate }}</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">{{ 'header.contact' | translate }}</a></li>
         <li class="border-s ps-6" (clickOutside)="closeDropdown(langDropDown)">
           <button class="inline-flex items-center" (click)="toggleDropDown(langDropDown)">
             <span class="inline w-[14px]">{{ currentLang | uppercase }}</span>

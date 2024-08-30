@@ -1,13 +1,13 @@
 <div class="container mx-auto mt-60">
   <div class="w-2/3 mx-auto">
-    <h1 class="text-center text-8xl font-extrabold reveal">Nous contacter</h1>
-    <p class="mt-8 text-center text-2xl">A la recherche d'une opportunité ou pour collaborer ensemble, nous sommes joignable par divers canaux.</p>
+    <h1 class="text-center text-8xl font-extrabold reveal">{{ 'contact.title' | translate }}</h1>
+    <p class="mt-8 text-center text-2xl">{{ 'contact.subtitle' | translate }}</p>
   </div>
 
   <div class="mt-40 bg-cyan-100 relative rounded-xl py-16 px-14 reveal">
-    <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">Collaborez avec nous</h2>
+    <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">{{ 'contact.sections.mail.title' | translate }}</h2>
     <div class="flex justify-between gap-5">
-      <p class="block self-center">Besoin d'un partenaire solide ? Lorem ipsum etc</p>
+      <p class="block self-center">{{ 'contact.sections.mail.text' | translate }}</p>
       <a class="btn btn-lg text-white hover:text-white bg-cyan-700 text-lg self-center" href="mailto:contact@afyia-diagnostics.com">
         contact&#64;afyia-diagnostics.com
         <fa-icon class="ms-1" [icon]="faEnvelope"></fa-icon>
@@ -16,10 +16,10 @@
   </div>
 
   <div class="mt-20 bg-violet-100 relative rounded-xl py-16 px-14 reveal">
-    <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">Rejoignez nous</h2>
+    <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">{{ 'contact.sections.linkedin.title' | translate }}</h2>
     <div class="flex justify-between gap-5">
-      <p class="block self-center">Envie de rejoindre une équipe innovante et de donner un nouvel élan à votre carrière ? C’est ici.</p>
-      <a class="btn btn-lg text-white hover:text-white bg-violet-800 self-center" href="https://fr.linkedin.com/company/afyia-diagnostics" target="_blank">
+      <p class="block self-center">{{ 'contact.sections.linkedin.text' | translate }}</p>
+      <a class="btn btn-lg text-white hover:text-white bg-violet-800 self-center" href="https://linkedin.com/company/afyia-diagnostics" target="_blank">
         Linkedin
         <fa-icon class="ms-1" [icon]="faComment"></fa-icon>
       </a>
@@ -27,14 +27,14 @@
   </div>
 
   <div class="mt-20 bg-pink-100 relative rounded-xl py-16 px-14 reveal">
-    <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">Venez à notre rencontre</h2>
+    <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">{{ 'contact.sections.maps.title' | translate }}</h2>
     <div class="flex justify-between gap-5">
       <p class="block self-center">
         <b>AFYIA Diagnostics</b> <br>
         310 rue Louis Pasteur, 34790 Grabels
       </p>
        <a class="btn btn-lg text-white hover:text-white bg-pink-800 self-center" href="https://maps.app.goo.gl/ZTmQ78UBhsC4JvDP9" target="_blank">
-        Voir sur Maps
+        {{ 'contact.sections.maps.button' | translate }}
         <fa-icon class="ms-1" [icon]="faLocationDot"></fa-icon>
       </a>
     </div>
@@ -44,27 +44,27 @@
 <div class="container mx-auto mt-32 w-1/2">
   <div class="text-center">
     <h1 class="title text-center mb-20 reveal">
-      <span>Laissez nous un mot </span>
+      <span>{{ 'contact.sections.form.title' | translate }} </span>
       <img class="inline" width="60px" src="assets/img/emoji_wave_hand.png" alt="Wave hand">
     </h1>
   </div>
   <div class="flex flex-col gap-5">
     <div class="input-group">
-      <label for="input_name">Nom</label>
+      <label for="input_name">{{ 'contact.sections.form.inputs.name' | translate }}</label>
       <input id="input_name" type="text" maxlength="50">
     </div>
     <div class="input-group">
-      <label for="input_email">Email</label>
+      <label for="input_email">{{ 'contact.sections.form.inputs.email' | translate }}</label>
       <input id="input_email" type="text" maxlength="50">
     </div>
     <div class="input-group">
-      <label for="input_message">Message</label>
+      <label for="input_message">{{ 'contact.sections.form.inputs.message' | translate }}</label>
       <textarea id="intput_message" rows="5"></textarea>
     </div>
   </div>
   <button class="btn btn-lg bg-cyan-700 text-white mt-5">
     <fa-icon class="me-1" [icon]="faPaperPlane"></fa-icon>
-    Envoyer
+    {{ 'contact.sections.form.inputs.button' | translate }}
   </button>
 </div>
 <app-footer></app-footer>

@@ -73,6 +73,12 @@ strong {
   font-weight: 900!important;
 }
 
+.strong-alt {
+  strong {
+    @apply text-pink-800;
+  }
+}
+
 .primary-list {
   li {
     position: relative;

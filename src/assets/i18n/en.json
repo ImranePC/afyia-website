@@ -1,3 +1,109 @@
 {
+  "contact": {
+    "sections": {
+      "form": {
+        "inputs": {
+          "button": "Send",
+          "email": "Email",
+          "message": "Message",
+          "name": "Name"
+        },
+        "title": "Leave us a message"
+      },
+      "linkedin": {
+        "text": "Want to join an innovative team and give your career a boost? We'd love to hear from you.",
+        "title": "Join us"
+      },
+      "mail": {
+        "text": "Need a strong partner ?",
+        "title": "Collaborate with us"
+      },
+      "maps": {
+        "button": "Check on Maps",
+        "title": "Come meet us"
+      }
+    },
+    "subtitle": "Looking for an opportunity or to work together, we can be reach through a variety of outlets.",
+    "title": "Contact us"
+  },
+  "footer": {
+    "company": {
+      "about": "About",
+      "title": "The company"
+    },
+    "contact": {
+      "message": "Leave us a message",
+      "title": "Contact us"
+    },
+    "legal": {
+      "confidential": "Confidentiality",
+      "cookies": "Cookies policy",
+      "notice": "Legal notice",
+      "title": "Legal"
+    }
+  },
+  "header": {
+    "about": "About",
+    "contact": "Contact",
+    "home": "Home",
+    "news": "News",
+    "product": "Products",
+    "technology": "Technology"
+  },
+  "sections": {
+    "approach": {
+      "ai": "AI",
+      "biology": "Molecular biology",
+      "biology_subtitle": "molecular",
+      "biology_title": "Biology",
+      "health": "Human health",
+      "health_subtitle": "health",
+      "health_title": "Health",
+      "process": "Process",
+      "text": "AFYIA's approach combines <b>artificial intelligence</b>, <b>molecular biology</b> and a rigorous <b>industrial process</b>, resulting in easy-to-use products with a high degree of reliability.",
+      "title": "Our <strong>approach</strong>"
+    },
+    "cta": {
+      "button": "Contact us",
+      "speech": "Do you share our vision ?",
+      "text": "To collaborate or join us"
+    },
+    "mission": {
+      "goal_3": "Aligns with the United Nations Sustainable Development Goal 3 of the 2030 Agenda.",
+      "list": {
+        "element_1": "Price",
+        "element_2": "Shipping",
+        "element_3": "Ease of use",
+        "element_4": "Adaptation to needs and constraints"
+      },
+      "text": "Overcome the main barriers to access to diagnosis.",
+      "title": "Make <strong>reliable</strong> and <strong>sensitive</strong> diagnostic tools accessible to <strong>all</strong>"
+    },
+    "partners": {
+      "title": "Our partners"
+    },
+    "product": {
+      "button": "Our products",
+      "items": {
+        "mpox_1": {
+          "subtitle": "Detection kit by real-time PCR",
+          "text": "(Monkeypox virus clad I and II) Validated by CNR Orthopovirus",
+          "title": "Monkeypox Virus"
+        },
+        "mpox_2": {
+          "subtitle": "PCR-HRM differential diagnosis kit",
+          "text": "(Monkeypox virus, virus Herpes simplex of type 1 and 2 and Varicella-Zona)",
+          "title": "Monkeypox Virus"
+        },
+        "sars_cov": {
+          "subtitle": "Viral RNA detection kit",
+          "text": "(SARS CoV-2 (Gene N), Del69-70, K417N, L452R, E484K, N501Y, P681R/H)",
+          "title": "SARS CoV-2"
+        }
+      },
+      "title": "Our <strong>products</strong>",
+      "view_more": "View more"
+    }
+  },
   "welcome": "Make infectious disease diagnostic <br> accessible <strong>to all</strong>"
 }

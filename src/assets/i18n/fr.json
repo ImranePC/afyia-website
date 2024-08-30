@@ -1,3 +1,109 @@
 {
-  "welcome": "Rendre le diagnostic chepa <br> quoi accessible <strong>à tous</strong>"
+  "contact": {
+    "sections": {
+      "form": {
+        "inputs": {
+          "button": "Envoyer",
+          "email": "E-mail",
+          "message": "Message",
+          "name": "Nom"
+        },
+        "title": "Laissez nous un mot"
+      },
+      "linkedin": {
+        "text": "Envie de rejoindre une équipe innovante et de donner un coup de pouce à votre carrière ? \nNous aimerions avoir de vos nouvelles.",
+        "title": "Rejoignez nous"
+      },
+      "mail": {
+        "text": "Besoin d'un partenaire solide ?",
+        "title": "Collaborez avec nous"
+      },
+      "maps": {
+        "button": "Voir sur Maps",
+        "title": "Venez à notre rencontre"
+      }
+    },
+    "subtitle": "A la recherche d'une opportunité ou pour collaborer ensemble, nous sommes joignable par divers canaux.",
+    "title": "Nous contacter"
+  },
+  "footer": {
+    "company": {
+      "about": "A propos",
+      "title": "L'entreprise"
+    },
+    "contact": {
+      "message": "Laisser un mot",
+      "title": "Nous contacter"
+    },
+    "legal": {
+      "confidential": "Confidentialité",
+      "cookies": "Politique des cookies",
+      "notice": "Mentions légales",
+      "title": "Legal"
+    }
+  },
+  "header": {
+    "about": "A propos",
+    "contact": "Contact",
+    "home": "Accueil",
+    "news": "Actualités",
+    "product": "Produits",
+    "technology": "Technologie"
+  },
+  "sections": {
+    "approach": {
+      "ai": "IA",
+      "biology": "Biology moléculaire",
+      "biology_subtitle": "moléculaire",
+      "biology_title": "Biologie",
+      "health": "Santé humaine",
+      "health_subtitle": "humaine",
+      "health_title": "Santé",
+      "process": "Processus",
+      "text": "L'approche développé par AFYIA combine l'<b>intelligence artificielle</b>, la <b>biologie moléculaire</b> et un <b>processus industriel</b> exigeant, pour aboutir à des produits très simples d'utilisation avec un haut degré de fiabilité.",
+      "title": "Notre <strong>approche</strong>"
+    },
+    "cta": {
+      "button": "Nous contacter",
+      "speech": "Vous partagez notre vision ?",
+      "text": "Pour collaborer ou nous rejoindre"
+    },
+    "mission": {
+      "goal_3": "S'inscrit dans l'object 3 de développement durable de l'agenda 2030 des Nations Unies.",
+      "list": {
+        "element_1": "Prix",
+        "element_2": "Transport",
+        "element_3": "Facilité d'utilisation",
+        "element_4": "Adaptation aux besoins et aux contraintes"
+      },
+      "text": "Lever les principaux obstacles de l'accès au diagnostic.",
+      "title": "Rendre <strong>accessible</strong> au plus grand nombre des outils de diagnostic <strong>fiable</strong> et <strong>sensibles</strong>"
+    },
+    "partners": {
+      "title": "Nos partenaires"
+    },
+    "product": {
+      "button": "Nos produits",
+      "items": {
+        "mpox_1": {
+          "subtitle": "Kit de détection par PCR en temps réel",
+          "text": "(Monkeypox virus clad I et II) Validé par le CNR Orthopovirus",
+          "title": "Monkeypox Virus"
+        },
+        "mpox_2": {
+          "subtitle": "Kit de diagnostic différentiel par PCR-HRM",
+          "text": "(Monkeypox virus, virus Herpes simplex de type 1 et 2, et Varicella-Zona)",
+          "title": "Monkeypox Virus"
+        },
+        "sars_cov": {
+          "subtitle": "Kit de criblage des mutations d'intérêt",
+          "text": "(SARS CoV-2 (Gène N), Del69-70, K417N, L452R, E484K, N501Y, P681R/H)",
+          "title": "SARS CoV-2"
+        }
+      },
+      "title": "Nos <strong>produits</strong>",
+      "view_more": "Voir plus"
+    }
+  },
+  "welcome": "Rendre le diagnostic des maladies <br> infectieuses accessible <strong>à tous</strong>"
 }

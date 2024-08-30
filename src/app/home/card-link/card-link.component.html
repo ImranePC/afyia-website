@@ -7,7 +7,9 @@
   <div class="z-10 w-[80%] text-white absolute top-[40%] left-[50%] -translate-x-1/2 text-center text-shadow">
     <span class="font-extrabold text-4xl">{{ title }}</span> <span class="font-bold text-3xl"> {{ subTitle }}</span>
   </div>
-  <div class="btn btn-white w-fit mx-auto z-10">View more</div>
+  <div class="btn btn-white w-fit mx-auto z-10">
+    {{ 'sections.product.view_more' | translate }}
+  </div>
 </div>
 } @else {
 <div
@@ -27,7 +29,7 @@
     }
     </div>
     <div class="btn btn-white z-10">
-      View more @if (link) { <fa-icon class="ms-1" [icon]="faUpRightFromSquare" size="sm"></fa-icon> }
+      {{ 'sections.product.view_more' | translate }} @if (link) { <fa-icon class="ms-1" [icon]="faUpRightFromSquare" size="sm"></fa-icon> }
     </div>
   </div>
 </div>

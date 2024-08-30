@@ -3,13 +3,13 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ClickOutsideDirective } from '../directives/click-outside.directive';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FontAwesomeModule, ClickOutsideDirective],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FontAwesomeModule, ClickOutsideDirective, TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

@@ -5,20 +5,20 @@
 <div class="container mb-20 h-screen flex flex-col justify-center m-auto">
   <div class="text-5xl font-extralight reveal">
     <span [innerHtml]="'welcome' | translate"></span><br>
-    <button class="mt-5 text-lg bg-white btn">Our products</button>
+    <button class="mt-5 text-lg bg-white btn">{{ 'sections.product.button' | translate }}</button>
   </div>
 </div>
 
 <div class="container mx-auto bg-white shadow-sm rounded-xl ps-10 pb-10 pe-0">
   <div class="grid grid-cols-2 gap-5">
     <div>
-      <h1 class="text-6xl font-bold -translate-y-10">Make <strong>reliable</strong> and <strong>sensitive</strong> diagnostic tools accessible to <strong>all</strong></h1>
-      <p class="text-2xl">Overcome the main barriers to access to diagnostis</p>
+      <h1 class="text-6xl font-bold -translate-y-10" [innerHTML]="'sections.mission.title' | translate"></h1>
+      <p class="text-2xl">{{ 'sections.mission.text' | translate }}</p>
       <ul class="text-2xl mt-5 font-bold leading-10 primary-list">
-        <li>Price</li>
-        <li>Shipping</li>
-        <li>Ease of use</li>
-        <li>Adaptation to needs and constraints</li>
+        <li>{{ 'sections.mission.list.element_1' | translate }}</li>
+        <li>{{ 'sections.mission.list.element_2' | translate }}</li>
+        <li>{{ 'sections.mission.list.element_3' | translate }}</li>
+        <li>{{ 'sections.mission.list.element_4' | translate }}</li>
       </ul>
     </div>
     <div class="relative">
@@ -31,37 +31,39 @@
 
 <div class="container mt-32 mx-auto text-xl flex justify-center items-center gap-5">
   <img width="100px" src="assets/img/un_health_green.png" alt="United nations sustainable development goal 3">
-  Aligns with the United Nations Sustainable Development Goal 3 of the 2030 Agenda
+  {{ 'sections.mission.goal_3' | translate }}
 </div>
 
 <div class="mt-52 relative">
   <div class="w-10/12 mx-auto sticky top-40">
     <div id="section_approach" class="px-10 pb-20 bg-purple-100 rounded-xl scale-90 transition duration-700">
-      <h1 id="approach_title" class="text-center text-pink-950 font-extrabold text-8xl -translate-y-20 transition duration-500">Notre <strong class="text-pink-800">approche</strong></h1>
-      <p class="w-5/6 text-center mx-auto mt-10 mb-20">
-        L’approche développée par Afyia combine <b>l’intelligence artificielle</b>, la <b>biologie moléculaire</b> et un <b>process industriel</b> exigeant, pour aboutir à des produits très simples d’utilisation avec un haut degré de fiabilité.
-      </p>
+      <h1
+        id="approach_title"
+        class="text-center text-pink-950 font-extrabold text-8xl -translate-y-20 transition duration-500 strong-alt"
+        [innerHTML]="'sections.approach.title' | translate"
+      ></h1>
+      <p class="w-5/6 text-center mx-auto mt-10 mb-20" [innerHTML]="'sections.approach.text' | translate"></p>
       <div class="flex w-5/6 mx-auto gap-10 h-[350px]">
         <app-card-link
           class="grow hover-hightlight"
-          title="IA"
+          [title]="'sections.approach.ai' | translate"
           imagePath="img_ai.jpg"
         ></app-card-link>
         <app-card-link
           class="grow hover-hightlight"
-          title="Biologie"
-          subTitle="moléculaire"
+          [title]="'sections.approach.biology_title' | translate"
+          [subTitle]="'sections.approach.biology_subtitle' | translate"
           imagePath="img_molecule.jpg"
         ></app-card-link>
         <app-card-link
           class="grow hover-hightlight"
-          title="Processus"
+          [title]="'sections.approach.process' | translate"
           imagePath="img_process.jpg"
         ></app-card-link>
         <app-card-link
           class="grow hover-hightlight"
-          title="Santé"
-          subTitle="humaine"
+          [title]="'sections.approach.health_title' | translate"
+          [subTitle]="'sections.approach.health_subtitle' | translate"
           imagePath="team/img_ben.jpg"
         ></app-card-link>
       </div>
@@ -182,26 +184,25 @@
 
 <div class="container mx-auto mb-32">
   <div class="text-center mt-32 mb-20">
-    <div id="product_title" class="title">
-      Nos <strong>produits</strong>
+    <div id="product_title" class="title" [innerHTML]="'sections.product.title' | translate">
     </div>
   </div>
   <div class="grid rows-2 grid-cols-2 justify-center flex-wrap gap-10 mx-auto reveal w-[80%]">
     <a href="assets/pdf/DIMPOX.pdf" target="_blank">
       <app-card-link
         title="Monkeypox Virus"
-        subTitle="Detection kit by real-time PCR"
+        [subTitle]="'sections.product.items.mpox_1.subtitle' | translate"
         imagePath="illness_1.jpg"
-        description="(Monkeypox virus clad I and II) Validated by CNR Orthopovirus"
+        [description]="'sections.product.items.mpox_1.text' | translate"
         [link]="true"
       ></app-card-link>
     </a>
     <a href="assets/pdf/DIRASH.pdf" target="_blank">
       <app-card-link
         title="Monkeypox Virus"
-        subTitle="PCR-HRM differential diagnosis kit"
+        [subTitle]="'sections.product.items.mpox_2.subtitle' | translate"
         imagePath="illness_1.jpg"
-        description="(Monkeypox virus, virus Herpes simplex of type 1 and 2 and Varicella-Zona)"
+        [description]="'sections.product.items.mpox_2.text' | translate"
         [link]="true"
       ></app-card-link>
     </a>
@@ -209,9 +210,9 @@
       <a href="https://www.innovative-diagnostics.com/produit/di-sars-cov-2-rest-duplex/" target="_blank">
         <app-card-link
           title="SARS CoV-2"
-          subTitle="Viral RNA detection kit"
+          [subTitle]="'sections.product.items.sars_cov.subtitle' | translate"
           imagePath="illness_2.jpg"
-          description="(SARS CoV-2 (Gene N), Del69-70, K417N, L452R, E484K, N501Y, P681R/H)"
+          [description]="'sections.product.items.sars_cov.text' | translate"
           [ce]="true"
           [link]="true"
         ></app-card-link>
@@ -223,7 +224,7 @@
 <div class="container mx-auto mb-20">
   <div class="bg-white relative shadow-colored p-10 rounded-xl">
     <div class="reveal title-gradient text-center w-full absolute top-0 left-[50%] -translate-x-1/2 -translate-y-1/2 text-6xl font-black">
-      Nos partenaires
+      {{ 'sections.partners.title' | translate }}
     </div>
     <div class="flex flex-wrap justify-center gap-20 items-center py-10 px-5">
       <img src="assets/img/partnership/partner_axlr.png" alt="Partner ">
@@ -241,10 +242,10 @@
 <div class="container bg-primary mx-auto rounded-xl py-16 px-20 text-white reveal">
   <div class="flex justify-between items-center">
     <div>
-      <span class="block mb-2 text-5xl font-extrabold">Vous partagez notre vision ?</span>
-      <span class="block text-2xl font-extralight">Pour collaborer ou nous rejoindre</span>
+      <span class="block mb-2 text-5xl font-extrabold">{{ 'sections.cta.speech' | translate }}</span>
+      <span class="block text-2xl font-extralight">{{ 'sections.cta.text' | translate }}</span>
     </div>
-    <div class="btn btn-lg bg-primary-dark" routerLink="/contact" role="button">Nous contacter</div>
+    <div class="btn btn-lg bg-primary-dark" routerLink="/contact" role="button">{{ 'sections.cta.button' | translate }}</div>
   </div>
 </div>
 
