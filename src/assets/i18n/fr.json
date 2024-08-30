@@ -11,11 +11,11 @@
         "title": "Laissez nous un mot"
       },
       "linkedin": {
-        "text": "Envie de rejoindre une équipe innovante et de donner un nouvel élan à votre carrière ? C'est ici.",
+        "text": "Suivez notre actualité",
         "title": "Rejoignez nous"
       },
       "mail": {
-        "text": "Besoin d'un partenaire solide ?",
+        "text": "Besoin d'informations ?",
         "title": "Collaborez avec nous"
       },
       "maps": {
@@ -23,7 +23,7 @@
         "title": "Venez à notre rencontre"
       }
     },
-    "subtitle": "A la recherche d'une opportunité ou pour collaborer ensemble, nous sommes joignable par divers canaux.",
+    "subtitle": "À la recherche d'une opportunité ou pour collaborer ensemble, nous sommes joignables par divers canaux.",
     "title": "Nous contacter"
   },
   "footer": {
@@ -76,7 +76,7 @@
         "element_3": "Facilité d'utilisation",
         "element_4": "Adaptation aux besoins et aux contraintes"
       },
-      "text": "Lever les principaux obstacles de l'accès au diagnostic.",
+      "text": "Lever les principaux obstacles de l'accès au diagnostic",
       "title": "Notre mission est de rendre <strong>accessible</strong> au plus grand nombre des outils de diagnostic <strong>fiable</strong> et <strong>sensibles</strong>"
     },
     "partners": {
@@ -103,7 +103,7 @@
         "hepa": {
           "title": "Virus de l'hépatite B",
           "subtitle": "Kit de quantification de la charge virale",
-          "text": "Prochainement"
+          "text": "À venir"
         }
       },
       "title": "Nos <strong>produits</strong>",
