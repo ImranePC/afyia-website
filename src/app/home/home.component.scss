@@ -32,20 +32,24 @@
   &:hover {
     z-index: 1;
     transform: translateY(-0.5rem);
-    box-shadow: 0 8px 30px 0 rgba(102, 0, 41, 0.75);
+    box-shadow: 0 8px 32px 0 rgba(138, 5, 58, 0.6);
   }
 }
 
-.inactive {
-  opacity: 0.35!important;
-  pointer-events: none;
-  scale: 0.95;
-  user-select: none;
-}
+.partner-grid {
+  img {
+    transition: $transition-2;
+    filter: grayscale(1);
+    width: 120px;
+    margin: auto;
 
-.hide {
-  opacity: 0!important;
-  pointer-events: none;
-  scale: 0.95;
-  user-select: none;
+    &:hover {
+      filter: grayscale(0);
+    }
+
+    &.size-square {
+      width: 80px;
+      height: 80px;
+    }
+  }
 }

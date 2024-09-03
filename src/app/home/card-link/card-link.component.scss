@@ -25,6 +25,7 @@
     background: inherit;
     background-size: cover;
     transition: 0.28s;
+    filter: brightness(0.75);
   }
 
   &.disabled {
@@ -37,5 +38,5 @@
 }
 
 .text-shadow {
-  text-shadow: 0 2px 12px rgb(black, 0.8);
+  text-shadow: 0 2px 20px rgb(black, 0.8);
 }

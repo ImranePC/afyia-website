@@ -27,8 +27,8 @@
               <li>
                 <button
                   class="inline-block py-1 pe-4 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
-                  [class.bg-gray-100]="isLangSelected('fr')"
-                  (click)="selectLang('fr'); closeDropdown(langDropDown)"
+                  [ngClass]="{'bg-gray-100 pointer-events-none' : isLanguageSelected('fr')}"
+                  (click)="selectLanguage('fr'); closeDropdown(langDropDown)"
                 >
                   <img class="inline-block ms-4" width="20px" src="assets/img/emoji_fl_fr.png" alt="French flag emoji">
                   <span class="ms-2 me-4">Français</span>
@@ -37,8 +37,8 @@
               <li>
                 <button
                   class="inline-block py-1 pe-4 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
-                  [class.bg-gray-100]="isLangSelected('en')"
-                  (click)="selectLang('en'); closeDropdown(langDropDown)"
+                  [ngClass]="{'bg-gray-100 pointer-events-none' : isLanguageSelected('en')}"
+                  (click)="selectLanguage('en'); closeDropdown(langDropDown)"
                 >
                   <img class="inline-block ms-4" width="20px" src="assets/img/emoji_fl_en.png" alt="French flag emoji">
                   <span class="ms-2 me-4">English</span>

@@ -5,7 +5,7 @@
 <div class="container mb-20 h-screen flex flex-col justify-center m-auto">
   <div class="text-5xl font-extralight reveal">
     <span [innerHtml]="'welcome' | translate"></span><br>
-    <a href="#product" class="mt-5 text-lg bg-white btn">{{ 'sections.product.button' | translate }}</a>
+    <button class="btn mt-5 text-lg bg-white" (click)="scrollTo('product')">{{ 'sections.product.button' | translate }}</button>
   </div>
 </div>
 
@@ -13,7 +13,7 @@
   <div class="grid grid-cols-2 gap-5">
     <div>
       <h1 class="text-6xl font-light -translate-y-8" [innerHTML]="'sections.mission.title' | translate"></h1>
-      <p class="text-2xl">{{ 'sections.mission.text' | translate }}</p>
+      <p class="text-3xl">{{ 'sections.mission.text' | translate }}</p>
       <ul class="text-2xl mt-5 font-bold leading-10 primary-list">
         <li>{{ 'sections.mission.list.element_1' | translate }}</li>
         <li>{{ 'sections.mission.list.element_2' | translate }}</li>
@@ -39,7 +39,7 @@
     <div id="section_approach" class="px-10 pb-20 bg-purple-100 rounded-xl scale-90 transition duration-700">
       <h1
         id="approach_title"
-        class="text-center text-pink-950 font-extrabold text-8xl -translate-y-20 transition duration-500 strong-alt"
+        class="text-center text-pink-950 font-extrabold text-8xl -translate-y-12 transition duration-500 strong-alt hidden lg:block"
         [innerHTML]="'sections.approach.title' | translate"
       ></h1>
       <p class="w-5/6 text-center text-2xl mx-auto mt-10 mb-20" [innerHTML]="'sections.approach.text' | translate"></p>
@@ -66,7 +66,7 @@
           class="grow hover-hightlight"
           [title]="'sections.approach.health_title' | translate"
           [subTitle]="'sections.approach.health_subtitle' | translate"
-          imagePath="team/img_ben.jpg"
+          imagePath="img_swab.jpg"
         ></app-card-link>
       </div>
     </div>
@@ -84,7 +84,7 @@
       <app-card-link
         title="Monkeypox Virus"
         [subTitle]="'sections.product.items.mpox_1.subtitle' | translate"
-        imagePath="illness_1.jpg"
+        imagePath="viruses/illness_1.jpg"
         [description]="'sections.product.items.mpox_1.text' | translate"
         [link]="true"
         [ruo]="true"
@@ -92,19 +92,19 @@
     </a>
     <a href="assets/pdf/DIRASH.pdf" target="_blank">
       <app-card-link
-        title="Monkeypox Virus"
+        [title]="'sections.product.items.mpox_2.title' | translate"
         [subTitle]="'sections.product.items.mpox_2.subtitle' | translate"
-        imagePath="illness_1.jpg"
+        imagePath="viruses/illness_4.jpg"
         [description]="'sections.product.items.mpox_2.text' | translate"
         [link]="true"
         [ruo]="true"
       ></app-card-link>
     </a>
-    <a href="https://www.innovative-diagnostics.com/produit/di-sars-cov-2-rest-duplex/" target="_blank">
+    <a href="https://www.innovative-diagnostics.com/produit/di-sars-cov-2-moc-i-multiplex/" target="_blank">
       <app-card-link
         title="SARS CoV-2"
         [subTitle]="'sections.product.items.sars_cov.subtitle' | translate"
-        imagePath="illness_2.jpg"
+        imagePath="viruses/illness_2.jpg"
         [description]="'sections.product.items.sars_cov.text' | translate"
         [ce]="true"
         [link]="true"
@@ -114,7 +114,7 @@
       <app-card-link
         [title]="'sections.product.items.hepa.title' | translate"
         [subTitle]="'sections.product.items.hepa.subtitle' | translate"
-        imagePath="illness_3.jpg"
+        imagePath="viruses/illness_hepatitis.jpg"
         [description]="'sections.product.items.hepa.text' | translate"
         [disabled]="true"
       ></app-card-link>
@@ -126,15 +126,19 @@
   <div class="title-gradient -translate-y-8 text-center w-full top-0 left-[50%] text-6xl font-extrabold">
     {{ 'sections.partners.title' | translate }}
   </div>
-  <div class="flex flex-wrap justify-center gap-20 items-center py-10 px-5">
-    <img src="assets/img/partnership/partner_axlr.png" alt="Partner ">
-    <img src="assets/img/partnership/partner_meltree.png" alt="Partner ">
-    <img src="assets/img/partnership/partner_igf.png" alt="Partner ">
-    <img src="assets/img/partnership/partner_occitanie.png" alt="Partner ">
-    <img src="assets/img/partnership/partner_id.png" alt="Partner ">
-    <img src="assets/img/partnership/partner_inserm.png" alt="Partner ">
-    <img src="assets/img/partnership/partner_isem.png" alt="Partner ">
+  <div class="grid grid-cols-4 grid-rows-3 partner-grid items-center gap-10">
+    <img src="assets/img/partnership/partner_axlr.png" alt="Partner Axlr">
+    <img class="size-square" src="assets/img/partnership/partner_occitanie.jpg" alt="Partner Occitanie Montpellier">
+    <img class="size-square" src="assets/img/partnership/partner_id.jpg" alt="Partner Innovative Diagnostics">
+    <img src="assets/img/partnership/partner_inserm.jpg" alt="Partner Inserm">
+    <img src="assets/img/partnership/partner_isem.jpg" alt="Partner Isem">
     <img src="assets/img/partnership/partner_ird.png" alt="Partner ">
+    <img class="size-square" src="assets/img/partnership/partner_um.jpg" alt="Partner Université de Montpellier">
+    <img src="assets/img/partnership/partner_pccei.jpg" alt="Partner Pathogenesis and control of chronic and emerging infections">
+    <img src="assets/img/partnership/partner_eurobiomed.jpg" alt="Partner Eurobiomed">
+    <img src="assets/img/partnership/partner_chu.jpg" alt="Partner Centre Hospitalier Universitaire">
+    <img src="assets/img/partnership/partner_prism.jpg" alt="Partner Prism">
+    <img src="assets/img/partnership/partner_bpi.jpg" alt="Partner BPI">
   </div>
 </div>
 
@@ -148,4 +152,4 @@
   </div>
 </div>
 
-<app-footer></app-footer>
+<app-footer class="hidden lg:block"></app-footer>

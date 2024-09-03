@@ -2,14 +2,13 @@
 <div
   class="h-full p-5 rounded-2xl text-center flex flex-col-reverse relative background-image"
   style="background-image: url('../../../assets/img/{{ imagePath }}')"
-  role="button"
 >
   <div class="z-10 w-[80%] text-white absolute top-[40%] left-[50%] -translate-x-1/2 text-center text-shadow">
-    <span class="font-extrabold text-4xl">{{ title }}</span> <span class="font-bold text-3xl"> {{ subTitle }}</span>
+    <span class="font-extrabold text-4xl">{{ title }}</span> <br><span class="font-bold text-3xl"> {{ subTitle }}</span>
   </div>
-  <div class="btn btn-white w-fit mx-auto z-10">
+  <!-- <div class="btn btn-white w-fit mx-auto z-10">
     {{ 'sections.product.view_more' | translate }}
-  </div>
+  </div> -->
 </div>
 } @else {
 <div

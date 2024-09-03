@@ -12,7 +12,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 2em;
 }
 
@@ -179,13 +178,13 @@ p {
       @apply bg-white text-black;
     }
 
+    &-lg {
+      @apply rounded-lg font-extrabold text-xl bg-gray-700/50;
+    }
+
     &:hover {
       scale: 0.95;
       opacity: 0.66;
-    }
-
-    &-lg {
-      @apply rounded-lg font-extrabold text-xl bg-gray-700/50;
     }
   }
 }

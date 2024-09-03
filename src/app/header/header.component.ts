@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ClickOutsideDirective } from '../directives/click-outside.directive';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-header',
@@ -24,7 +25,7 @@ export class HeaderComponent {
 
   faCaretDown = faCaretDown;
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private cookie: CookieService) {
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -43,12 +44,13 @@ export class HeaderComponent {
     this.previousScrollValue = window.scrollY;
   }
 
-  isLangSelected(lang: string): boolean {
-    return lang === this.translate.currentLang;
+  isLanguageSelected(language: string): boolean {
+    return language === this.translate.currentLang;
   }
 
-  selectLang(lang: string): void {
-    this.translate.use(lang);
+  selectLanguage(language: string): void {
+    this.translate.use(language);
+    this.cookie.set('language', language);
   }
 
   toggleDropDown(dropdown: HTMLElement): void {

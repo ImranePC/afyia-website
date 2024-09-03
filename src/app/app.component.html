@@ -1,4 +1,21 @@
-<app-header></app-header>
-<div #scrollContent>
+<app-header class="hidden lg:block"></app-header>
+<div class="z-50 fixed backdrop-blur-lg lg:hidden block top-0 left-0 w-full h-full bg-white bg-opacity-50">
+  <div class="container mx-auto w-screen fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+    <span class="block mb-3 text-6xl">👷‍♀️📱</span>
+    <span class="text-2xl font-extrabold mb-5">
+      Le site est en construction et n'est pas encore adapté au mobile,
+    </span>
+    <span class="text-xl">
+      revenez bientôt !
+    </span> <br> <br>
+    <span class="text-2xl font-extrabold mb-5">
+      The site is under construction and is not ready for mobile devices,
+    </span>
+    <span class="text-xl">
+      come back soon !
+    </span>
+  </div>
+</div>
+<div>
   <router-outlet></router-outlet>
 </div>

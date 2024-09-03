@@ -15,8 +15,23 @@
     </div>
   </div>
 
+  <div class="mt-20 bg-sky-100 relative rounded-xl py-16 px-14 reveal">
+    <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">
+      {{ 'contact.sections.order.title' | translate }}
+    </h2>
+    <div class="flex justify-between gap-5">
+      <p class="block self-center">{{ 'contact.sections.order.text' | translate }}</p>
+      <a class="btn btn-lg text-white hover:text-white bg-sky-700 text-lg self-center whitespace-nowrap" href="mailto:order@afyia-diagnostics.com">
+        order&#64;afyia-diagnostics.com
+        <fa-icon class="ms-1" [icon]="faEnvelope"></fa-icon>
+      </a>
+    </div>
+  </div>
+
   <div class="mt-20 bg-violet-100 relative rounded-xl py-16 px-14 reveal">
-    <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">{{ 'contact.sections.linkedin.title' | translate }}</h2>
+    <h2 class="absolute text-5xl font-extrabold top-0 -translate-y-1/2">
+      {{ 'contact.sections.linkedin.title' | translate }}
+    </h2>
     <div class="flex justify-between gap-5">
       <p class="block self-center">{{ 'contact.sections.linkedin.text' | translate }}</p>
       <a class="btn btn-lg text-white hover:text-white bg-violet-800 self-center whitespace-nowrap" href="https://linkedin.com/company/afyia-diagnostics" target="_blank">
@@ -31,7 +46,8 @@
     <div class="flex justify-between gap-5">
       <p class="block self-center">
         <b>AFYIA Diagnostics</b> <br>
-        310 rue Louis Pasteur, 34790 Grabels
+        310 rue Louis Pasteur, 34790 Grabels, France <br>
+        +33 (0)4 67 40 71 67
       </p>
        <a class="btn btn-lg text-white hover:text-white bg-pink-800 self-center whitespace-nowrap" href="https://maps.app.goo.gl/ZTmQ78UBhsC4JvDP9" target="_blank">
         {{ 'contact.sections.maps.button' | translate }}

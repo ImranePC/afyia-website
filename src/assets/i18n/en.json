@@ -21,9 +21,13 @@
       "maps": {
         "button": "Check on Maps",
         "title": "Come meet us"
+      },
+      "order": {
+        "title": "Ordering",
+        "text": "To place an order, please contact us"
       }
     },
-    "subtitle": "Looking for an opportunity or to work together, we can be reach through a variety of outlets.",
+    "subtitle": "Looking for an opportunity or to work together, feel free to reach us through our contact options.",
     "title": "Contact us"
   },
   "footer": {
@@ -60,12 +64,12 @@
       "health_title": "Human",
       "process_subtitle": "process",
       "process_title": "Industrial",
-      "text": "AFYIA's approach combines <b>artificial intelligence</b>, <b>molecular biology</b> and a rigorous <b>industrial process</b>, resulting in easy-to-use products with a high degree of reliability.",
+      "text": "AFYIA's approach combines <b>artificial intelligence</b>, <b>molecular biology</b> and a rigorous <b>industrial process</b>, resulting in easy-to-use products for <b>human health</b> with a high degree of reliability.",
       "title": "Our <strong>approach</strong>"
     },
     "cta": {
       "button": "Contact us",
-      "speech": "Do you share our vision ?",
+      "speech": "You share our vision ?",
       "text": "To collaborate or join us"
     },
     "mission": {
@@ -77,7 +81,7 @@
         "element_4": "Adaptation to needs and constraints"
       },
       "text": "Overcome the main barriers to access to diagnosis",
-      "title": "Our mission is to make <strong>reliable</strong> and <strong>sensitive</strong> diagnostic tools accessible to <strong>all</strong>"
+      "title": "Our mission: making <strong>reliable</strong> and <strong>sensitive</strong> diagnostic tools accessible to <strong>all</strong>"
     },
     "partners": {
       "title": "Our partners"
@@ -87,22 +91,22 @@
       "items": {
         "mpox_1": {
           "subtitle": "Detection kit by real-time PCR",
-          "text": "(Monkeypox virus clad I and II) Validated by CNR Orthopovirus",
+          "text": "(Monkeypox virus clades I and II) Validated by CNR Orthopovirus",
           "title": "Monkeypox Virus"
         },
         "mpox_2": {
-          "subtitle": "PCR-HRM differential diagnosis kit",
-          "text": "(Monkeypox virus, virus Herpes simplex of type 1 and 2 and Varicella-Zona)",
-          "title": "Monkeypox Virus"
+          "subtitle": "Differential diagnosis kit by HRM-PCR",
+          "text": "(Monkeypox virus, Herpes simplex virus type 1/2 and Varicella-Zona virus)",
+          "title": "Febrile rash illness"
         },
         "sars_cov": {
-          "subtitle": "Viral RNA detection kit",
+          "subtitle": "Mutations of interest screening kit by HRM-PCR",
           "text": "(SARS CoV-2 (Gene N), Del69-70, K417N, L452R, E484K, N501Y, P681R/H)",
           "title": "SARS CoV-2"
         },
         "hepa": {
           "title": "Hepatitis B virus",
-          "subtitle": "Viral load quantification",
+          "subtitle": "Viral load quantification by real-time PCR",
           "text": "Coming soon"
         }
       },
@@ -110,5 +114,5 @@
       "view_more": "View more"
     }
   },
-  "welcome": "Make infectious disease diagnostic <br> accessible <strong>to all</strong>"
+  "welcome": "Make infectious diseases diagnostic <br> accessible <strong>to all</strong>"
 }

@@ -5,7 +5,7 @@ import { ParallaxDirective } from '../directives/parallax.directive';
 import { CardLinkComponent } from './card-link/card-link.component';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -27,10 +27,6 @@ export class HomeComponent implements OnInit {
   currentStep: any = null;
 
   previousStep: any = null;
-
-  constructor(translate: TranslateService) {
-    translate.use('fr');
-  }
 
   ngOnInit(): void {
     const config = {
@@ -54,8 +50,7 @@ export class HomeComponent implements OnInit {
             approachSection.style.filter = 'grayscale(0%)';
 
             approachTitle.style.opacity = '1';
-            approachTitle.classList.remove('-translate-y-20');
-            approachTitle.classList.add('-translate-y-10');
+            approachTitle.style.transform = 'scale(1) translateY(-3rem)';
           }
         } else {
           if (entry.target.id === 'mark_1') {
@@ -63,9 +58,8 @@ export class HomeComponent implements OnInit {
             approachSection.style.opacity = '0.5';
             approachSection.style.filter = 'grayscale(50%)';
 
-            approachTitle.style.opacity = '0';
-            approachTitle.classList.remove('-translate-y-10');
-            approachTitle.classList.add('-translate-y-20');
+            approachTitle.style.opacity = '0.3';
+            approachTitle.style.transform = 'scale(0.92) translateY(-3rem)';
           }
         }
       });
@@ -89,5 +83,11 @@ export class HomeComponent implements OnInit {
   updateStep(step: string): void {
     this.previousStep = this.currentStep;
     this.currentStep = step;
+  }
+
+  scrollTo(id: string): void {
+    document.documentElement.style.scrollBehavior = 'smooth';
+    document.getElementById(id).scrollIntoView();
+    document.documentElement.style.scrollBehavior = 'auto';
   }
 }
