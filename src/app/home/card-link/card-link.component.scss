@@ -25,7 +25,12 @@
     background: inherit;
     background-size: cover;
     transition: 0.28s;
-    filter: brightness(0.75);
+  }
+
+  &.background-image-darken {
+    &::after {
+      filter: brightness(0.75);
+    }
   }
 
   &.disabled {

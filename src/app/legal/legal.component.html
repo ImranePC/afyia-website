@@ -1,1 +1,19 @@
-<p>legal works!</p>
+<div class="container mx-auto mt-60">
+  <div class="w-2/3 mx-auto">
+    <h1 class="text-center text-8xl mb-20 font-extrabold reveal">{{ 'legal.title' | translate }}</h1>
+    <div class="bg-white p-10 rounded-xl">
+      <h2 class="text-4xl font-extrabold">{{ 'legal.property.title' | translate }}</h2> <br>
+      <p class="mb-20" [innerHTML]="'legal.property.text' | translate"></p>
+
+      <h2 class="text-4xl font-extrabold">{{ 'legal.intellectual_property.title' | translate }}</h2> <br>
+      <p class="mb-20" [innerHTML]="'legal.intellectual_property.text' | translate"></p>
+
+      <h2 class="text-4xl font-extrabold">{{ 'legal.host.title' | translate }}</h2> <br>
+      <p class="mb-20" [innerHTML]="'legal.host.text' | translate"></p>
+
+      <h2 class="text-4xl font-extrabold">{{ 'legal.data.title' | translate }}</h2> <br>
+      <p [innerHTML]="'legal.data.text' | translate"></p>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

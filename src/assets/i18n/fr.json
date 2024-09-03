@@ -4,7 +4,7 @@
       "form": {
         "inputs": {
           "button": "Envoyer",
-          "email": "E-mail",
+          "email": "Email",
           "message": "Message",
           "name": "Nom"
         },
@@ -114,5 +114,24 @@
       "view_more": "Voir plus"
     }
   },
-  "welcome": "Pour que le diagnostic des maladies <br> infectieuses soit accessible <strong>à tous</strong>"
+  "welcome": "Pour que le diagnostic des maladies <br> infectieuses soit accessible <strong>à tous</strong>",
+  "legal": {
+    "title": "Mentions légales",
+    "property": {
+      "title": "Propriété",
+      "text": "AFYIA DIagnostics, SAS au capital de 6000 euros <br> Siège social : 310 Rue Louis Pasteur <br> SIRET : 982 039 323 00018 <br> N°TVA intracommunautaire : FR31 982 039 323 <br> <br>Tél: +33 (0) 67 40 71 67 <br>Email : contact&#64;afyia-diagnostics.com <br>"
+    },
+    "intellectual_property": {
+      "title": "Propriété intellectuelle",
+      "text": "AFYIA Diagnostics détient et se réserve tout droits de propriété intellectuelle et de reproduction du présent site et les éléments qu'il contient. <br> Toute reproduction partielle ou totale du présent site est strictement interdite. <br><br> Les images, logos et tous autres contenus présents sur ce site sont la propriété de AFYIA Diagnostic ou sont utilisés sous autorisation préalable."
+    },
+    "host": {
+      "title": "Hébergement",
+      "text": "Ce site est hébergé par : OVEA SARL, 59 rue Nelson Mandela, 34070 Montpellier, France <br> Téléphone : +33 (0)4 67 67 00 00 <br><br> Email : contact&#64;ovea.com"
+    },
+    "data": {
+      "title": "Protections des données",
+      "text": "Vos données ne seront pas communiquées à titre gratuit ou avec contrepartie à un tiers. <br> Vous disposez d'un droit pour permettant de demander l'accès à vos données personnelles, leurs modifications ou leurs suppressions. Pour faire valoir votre droit veuillez nous contacter via l'adresse contact&#64;afyia-diagnostics.com."
+    }
+  }
 }

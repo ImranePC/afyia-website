@@ -114,5 +114,24 @@
       "view_more": "View more"
     }
   },
-  "welcome": "Make infectious diseases diagnostic <br> accessible <strong>to all</strong>"
+  "welcome": "Make infectious diseases diagnostic <br> accessible <strong>to all</strong>",
+  "legal": {
+    "title": "Legal mentions",
+    "property": {
+      "title": "Property",
+      "text": "AFYIA Diagnostics, SAS with capital of 6000 euros <br> Head office : 310 Rue Louis Pasteur <br> SIRET : 982 039 323 00018 <br> VAT number : FR31 982 039 323 <br> <br>Telephone: +33 (0) 67 40 71 67 <br>Email : contact&#64;afyia-diagnostics.com <br>"
+    },
+    "intellectual_property": {
+      "title": "Intellectual property",
+      "text": "AFYIA Diagnostics holds and reserves all intellectual property and reproduction rights of this site and the elements it contains. <br> Any partial or total reproduction of this site is strictly prohibited. <br><br> The images, logos and all other content on this site are the property of AFYIA Diagnostic or are used with prior authorization."
+    },
+    "host": {
+      "title": "Hosting",
+      "text": "This site is hosted by: OVEA SARL, 59 rue Nelson Mandela, 34070 Montpellier, France <br> Telephone: +33 (0)4 67 67 00 00 <br><br> Email: contact&#64;ovea.com"
+    },
+    "data": {
+      "title": "Data protection",
+      "text": "Your data will not be communicated free of charge or with compensation to a third party. <br> You have a right to request access to your personal data, their modifications or their deletions. To assert your right please contact us via the address contact&#64;afyia-diagnostics.com."
+    }
+  }
 }
