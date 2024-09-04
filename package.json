@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-static": "npx scully build --project afyia-website",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:afyia-website": "node dist/afyia-website/server/server.mjs"
@@ -26,6 +27,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "@scullyio/init": "^2.1.21",
+    "@scullyio/scully-plugin-puppeteer": "^2.1.41",
     "express": "^4.18.2",
     "ngx-cookie-service": "^17.1.0",
     "rxjs": "~7.8.0",
