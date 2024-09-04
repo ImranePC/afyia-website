@@ -36,8 +36,6 @@ export class AppComponent implements AfterViewInit {
       this.cookie.set('language', DEFAULT_LANGUAGE);
     }
 
-    console.log(this.cookie.get('langlanguage'));
-
     this.translate.use(this.cookie.get('language'));
   }
 }
