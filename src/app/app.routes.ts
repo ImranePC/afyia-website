@@ -6,6 +6,6 @@ import { LegalComponent } from './legal/legal.component';
 export const routes: Routes = [
   { path: 'legal-mentions', component: LegalComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'home', component: HomeComponent },
-  { path: '**', component: HomeComponent },
+  { path: '', component: HomeComponent },
+  { path: '**', redirectTo: '' },
 ];
