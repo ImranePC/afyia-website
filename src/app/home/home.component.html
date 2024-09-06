@@ -1,18 +1,18 @@
-<div class="bg-image">
-  <img src="assets/img/hands_background.png" alt="" srcset="">
+<div class="bg-image opacity-30 lg:opacity-100">
+  <img src="assets/img/hands_background.png" alt="Main jointe image de fond du site">
 </div>
 
 <div class="container mb-20 h-screen flex flex-col justify-center m-auto">
-  <div class="text-5xl font-extralight reveal">
-    <span [innerHtml]="'welcome' | translate"></span><br>
+  <div class="text-5xl font-extralight reveal text-center lg:text-start">
+    <span class="shadow-background" [innerHtml]="'welcome' | translate"></span><br>
     <button class="btn mt-5 text-lg bg-white" (click)="scrollTo('product')">{{ 'sections.product.button' | translate }}</button>
   </div>
 </div>
 
-<div class="container mx-auto bg-white shadow-sm rounded-xl ps-10 pb-10 pe-0">
-  <div class="grid grid-cols-2 gap-5">
+<div class="container mx-auto bg-white shadow-sm rounded-xl p-3 pt-0 lg:pe-0">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
     <div>
-      <h1 class="text-6xl font-light -translate-y-8" [innerHTML]="'sections.mission.title' | translate"></h1>
+      <h1 class="text-6xl font-regular -translate-y-8" [innerHTML]="'sections.mission.title' | translate"></h1>
       <p class="text-3xl">{{ 'sections.mission.text' | translate }}</p>
       <ul class="text-2xl mt-5 font-bold leading-10 primary-list">
         <li>{{ 'sections.mission.list.element_1' | translate }}</li>
@@ -22,8 +22,11 @@
       </ul>
     </div>
     <div class="relative">
-      <div class="absolute image -translate-y-10 reveal">
-        <img class="w-full" src="assets/img/team/img_ben.jpg" alt="Afyia Benjamin SAULDE">
+      <div class="
+        image reveal mt-10
+        lg:absolute lg:-translate-y-10 lg:mt-0
+      ">
+        <img class="w-full shadow-0" src="assets/img/team/img_ben.jpg" alt="Afyia Benjamin SAULDE">
       </div>
     </div>
   </div>
@@ -36,14 +39,29 @@
 
 <div class="mt-52 relative">
   <div class="w-10/12 mx-auto sticky top-40">
-    <div id="section_approach" class="px-10 pb-20 bg-purple-100 rounded-xl scale-90 transition duration-700">
+    <div id="section_approach" class="px-10 pb-10 md:pb-20 bg-purple-100 rounded-xl scale-90 transition duration-700">
       <h1
         id="approach_title"
-        class="text-center text-pink-950 font-extrabold text-8xl -translate-y-12 transition duration-500 strong-alt hidden lg:block"
+        class="
+          text-center text-pink-950 font-extrabold text-6xl scale-95 -translate-y-1/2 transition duration-500 strong-alt
+          lg:text-8xl
+        "
         [innerHTML]="'sections.approach.title' | translate"
       ></h1>
-      <p class="w-5/6 text-center text-2xl mx-auto mt-10 mb-20" [innerHTML]="'sections.approach.text' | translate"></p>
-      <div class="flex w-5/6 mx-auto gap-10 h-[350px]">
+      <p class="
+          w-full text-center text-2xl mx-auto mt-0 mb-10
+          md:w-5/6 md:mt-10 md:mb-20
+        "
+        [innerHTML]="'sections.approach.text' | translate"
+      >
+      </p>
+      <div class="
+        mx-auto gap-10
+        flex flex-col
+        md:grid md:grid-cols-2 md:grid-rows-2
+        lg:w-5/6
+        2xl:flex 2xl:flex-row
+      ">
         <app-card-link
           class="grow hover-hightlight"
           [title]="'sections.approach.ai_title' | translate"
@@ -70,7 +88,7 @@
         ></app-card-link>
       </div>
     </div>
-    <div id="mark_1" class="absolute top-2/3"></div>
+    <div id="mark_1" class="absolute top-1/3 lg:top-2/3"></div>
   </div>
 </div>
 
@@ -79,7 +97,10 @@
     <div id="product" class="title" [innerHTML]="'sections.product.title' | translate">
     </div>
   </div>
-  <div class="grid rows-2 grid-cols-2 justify-center flex-wrap gap-10 mx-auto reveal w-[80%]">
+  <div class="
+    flex flex-col justify-center flex-wrap gap-10 mx-auto reveal w-full
+    lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:w-[80%]
+  ">
     <a href="assets/pdf/DIMPOX.pdf" target="_blank">
       <app-card-link
         title="Monkeypox Virus"
@@ -126,7 +147,10 @@
   <div class="title-gradient -translate-y-8 text-center w-full top-0 left-[50%] text-6xl font-extrabold">
     {{ 'sections.partners.title' | translate }}
   </div>
-  <div class="grid grid-cols-4 grid-rows-3 partner-grid items-center gap-10">
+  <div class="
+    grid grid-cols-3 grid-rows-4 partner-grid items-center gap-10
+    lg:grid-cols-4 lg:grid-rows-3
+  ">
     <img src="assets/img/partnership/partner_axlr.png" alt="Partner Axlr">
     <img class="size-square" src="assets/img/partnership/partner_occitanie.jpg" alt="Partner Occitanie Montpellier">
     <img class="size-square" src="assets/img/partnership/partner_id.jpg" alt="Partner Innovative Diagnostics">
@@ -142,8 +166,11 @@
   </div>
 </div>
 
-<div class="container bg-primary mx-auto rounded-xl py-16 px-20 text-white reveal">
-  <div class="flex justify-between items-center">
+<div class="container bg-primary mx-auto rounded-xl p-10 lg:py-16 lg:px-20  text-white reveal">
+  <div class="
+    flex flex-col text-center justify-between items-center gap-5
+    lg:flex-row lg:text-start lg:gap-0
+  ">
     <div>
       <span class="block mb-2 text-5xl font-extrabold">{{ 'sections.cta.speech' | translate }}</span>
       <span class="block text-2xl font-extralight">{{ 'sections.cta.text' | translate }} - <b>contact&#64;afyia-diagnostics.com</b></span>

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ClickOutsideDirective } from '../directives/click-outside.directive';
 import { CookieService } from 'ngx-cookie-service';
@@ -24,6 +24,8 @@ export class HeaderComponent {
   previousScrollValue = 0;
 
   faCaretDown = faCaretDown;
+
+  faBars = faBars;
 
   constructor(private translate: TranslateService, private cookie: CookieService) {
   }

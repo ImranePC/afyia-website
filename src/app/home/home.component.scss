@@ -1,5 +1,9 @@
 @import '../../variables';
 
+.shadow-background {
+  text-shadow: 0 0 30px $background-color, 0 0 30px $background-color, 0 0 30px $background-color, 0 0 30px $background-color;
+}
+
 .card-transition {
   opacity: 0;
   transform: translateY(2rem); // rotate(-10deg) scale(1.05);

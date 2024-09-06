@@ -50,7 +50,8 @@ export class HomeComponent implements OnInit {
             approachSection.style.filter = 'grayscale(0%)';
 
             approachTitle.style.opacity = '1';
-            approachTitle.style.transform = 'scale(1) translateY(-3rem)';
+            approachTitle.classList.remove('scale-95');
+            approachTitle.classList.add('scale-100');
           }
         } else {
           if (entry.target.id === 'mark_1') {
@@ -59,7 +60,8 @@ export class HomeComponent implements OnInit {
             approachSection.style.filter = 'grayscale(50%)';
 
             approachTitle.style.opacity = '0.3';
-            approachTitle.style.transform = 'scale(0.92) translateY(-3rem)';
+            approachTitle.classList.remove('scale-100');
+            approachTitle.classList.add('scale-95');
           }
         }
       });

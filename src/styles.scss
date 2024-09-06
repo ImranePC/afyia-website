@@ -188,3 +188,9 @@ p {
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .container {
+    // border: 2px solid red;
+  }
+}

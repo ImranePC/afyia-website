@@ -3,7 +3,7 @@
     <img src="assets/img/afyia_logo.png" alt="Logo afyia">
   </div>
   <div>
-    <nav>
+    <nav class="hidden lg:block">
       <ul>
         <li><a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">{{ 'header.home' | translate }}</a></li>
         <!-- <li><a routerLink="/technology" routerLinkActive="active">{{ 'header.technology' | translate }}</a></li>
@@ -49,5 +49,18 @@
         </li>
       </ul>
     </nav>
+    <button class="lg:hidden px-3">
+      <fa-icon class="ms-1" [icon]="faBars" size="lg"></fa-icon>
+    </button>
+  </div>
+  <div class="submenu w-1/2 absolute top-0 mt-3 right-0 shadow-sm">
+    <div class="flex flex-col text-xl text-end px-10 py-5 gap-3">
+      <div>
+
+      </div>
+      <div>Technology</div>
+      <div>Link 2</div>
+      <div>Link 3</div>
+    </div>
   </div>
 </div>
