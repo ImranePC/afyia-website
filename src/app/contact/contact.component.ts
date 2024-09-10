@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faComment } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faComment, faLocationDot, faPaperPlane, faBox } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import ScrollReveal from 'scrollreveal';
 import { TranslateModule } from '@ngx-translate/core';
@@ -23,6 +20,8 @@ export class ContactComponent implements OnInit {
   faEnvelope = faEnvelope;
 
   faComment = faComment;
+
+  faBoxOpen = faBox;
 
   ngOnInit(): void {
     const config = {

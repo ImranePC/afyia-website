@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBars, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCaretDown, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ClickOutsideDirective } from '../directives/click-outside.directive';
 import { CookieService } from 'ngx-cookie-service';
@@ -26,6 +26,8 @@ export class HeaderComponent {
   faCaretDown = faCaretDown;
 
   faBars = faBars;
+
+  faTimes = faTimes;
 
   constructor(private translate: TranslateService, private cookie: CookieService) {
   }
@@ -63,11 +65,13 @@ export class HeaderComponent {
     }
   }
 
-  closeDropdown(dropdown: HTMLElement): void {
+  closeDropdown(dropdown: HTMLElement, event: any): void {
+    event.stopPropagation();
     dropdown.style.display = 'none';
   }
 
-  openDropdown(dropdown: HTMLElement): void {
+  openDropdown(dropdown: HTMLElement, event: any): void {
+    event.stopPropagation();
     dropdown.style.display = 'block';
   }
 

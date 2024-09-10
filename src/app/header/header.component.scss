@@ -1,6 +1,7 @@
 @import "../../styles.scss";
 
 .header {
+  $border-radius: 36px;
   z-index: 10;
   position: fixed;
   top: 0;
@@ -12,7 +13,7 @@
   justify-content: space-between;
   background: linear-gradient(to right, rgba(white, 0.75), rgba(white, 0.9));
   backdrop-filter: blur(5px);
-  border-radius: 36px;
+  border-radius: $border-radius;
   box-sizing: border-box;
   padding: 0.75em 3em;
   align-items: center;
@@ -51,8 +52,12 @@
   }
 
   .submenu {
-    border-radius: 36px;
-    background: linear-gradient(to right, rgba(white, 0.75), rgba(white, 0.9));
+    background: linear-gradient(to bottom, white, white, rgba(white, 0.66));
+    border-radius: $border-radius;
+
+    &-header {
+      border-radius: $border-radius $border-radius 0 0;
+    }
   }
 }
 

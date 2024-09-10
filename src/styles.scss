@@ -108,6 +108,13 @@ strong {
   right: 0;
   height: 90vh;
 
+  &-responsive {
+    opacity: 0.3;
+    width: 100%;
+    background-image: url('assets/img/hands_background.png');
+    background-size: cover;
+  }
+
   img {
     height: 100%;
   }
@@ -136,7 +143,7 @@ p {
   border-radius: 16px;
   overflow: hidden;
   width: 100%;
-  box-shadow: 0 4px 30px 4px rgba(black, 0.25);
+  box-shadow: 0 4px 30px 4px rgba(black, 0.2);
 
   img {
     transition: $transition-2;
@@ -154,6 +161,7 @@ p {
     position: relative;
     display: inline-block;
     margin: auto;
+    text-wrap: nowrap;
 
     &::before {
       @apply bg-cyan-100 rounded-xl;
@@ -190,7 +198,11 @@ p {
 }
 
 @media (max-width: 1024px) {
-  .container {
-    // border: 2px solid red;
+  .title {
+    @apply text-5xl;
+  }
+
+  .image {
+    box-shadow: 0 0 0 0;
   }
 }
