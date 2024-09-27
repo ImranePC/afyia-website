@@ -112,6 +112,10 @@
       },
       "title": "Our <strong>products</strong>",
       "view_more": "View more"
+    },
+    "about": {
+      "title": "About <strong>us</strong>",
+      "view_more": "Learn more"
     }
   },
   "welcome": "Make infectious disease diagnosis <br> accessible <strong>to all</strong>",

@@ -146,8 +146,12 @@ p {
   box-shadow: 0 4px 30px 4px rgba(black, 0.2);
 
   img {
+    display: block;
+    height: 100%;
     transition: $transition-2;
     transform: scale(1);
+    object-fit: cover;
+    object-position: center;
 
     &:hover {
       transform: scale(1.05);
@@ -156,15 +160,15 @@ p {
 }
 
 .banner {
-  @apply font-extrabold text-7xl text-center shadow-xl;
+  @apply font-extrabold text-8xl text-center shadow-xl;
   position: relative;
   text-align: center;
-  min-height: 500px;
+  min-height: 600px;
   background-image: url('assets/img/buildings_background.jpg');
   background-size: cover;
 
   h1 {
-    line-height: 500px;
+    line-height: 600px;
     text-align: center;
     color: white;
     text-shadow: 0 4px 8px rgba(black, 0.33);

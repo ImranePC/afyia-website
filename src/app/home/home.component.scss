@@ -57,3 +57,15 @@
     }
   }
 }
+
+.container-image {
+  background: url('../../assets/img/buildings_background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all $transition-2;
+
+  // &:hover {
+  //   background-size: 105%;
+  // }
+}
