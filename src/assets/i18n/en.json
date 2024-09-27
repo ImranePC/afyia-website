@@ -101,8 +101,8 @@
         },
         "sars_cov": {
           "subtitle": "Mutations of interest screening kit by HRM-PCR",
-          "text": "(SARS CoV-2 (Gene N), Del69-70, K417N, L452R, E484K, N501Y, P681R/H)",
-          "title": "SARS CoV-2"
+          "text": "(SARS-CoV-2 (Gene N), Del69-70, K417N, L452R, E484K, N501Y, P681R/H)",
+          "title": "SARS-CoV-2"
         },
         "hepa": {
           "title": "Hepatitis B virus",

@@ -141,9 +141,8 @@ p {
 }
 
 .image {
-  border-radius: 16px;
+  @apply rounded-xl;
   overflow: hidden;
-  width: 100%;
   box-shadow: 0 4px 30px 4px rgba(black, 0.2);
 
   img {
@@ -153,6 +152,22 @@ p {
     &:hover {
       transform: scale(1.05);
     }
+  }
+}
+
+.banner {
+  @apply font-extrabold text-7xl text-center shadow-xl;
+  position: relative;
+  text-align: center;
+  min-height: 500px;
+  background-image: url('assets/img/buildings_background.jpg');
+  background-size: cover;
+
+  h1 {
+    line-height: 500px;
+    text-align: center;
+    color: white;
+    text-shadow: 0 4px 8px rgba(black, 0.33);
   }
 }
 

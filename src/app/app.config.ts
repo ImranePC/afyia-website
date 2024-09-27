@@ -20,7 +20,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(
       routes,
-      withInMemoryScrolling(scrollConfig),
+      // withInMemoryScrolling(scrollConfig),
     ),
     provideClientHydration(),
     importProvidersFrom(HttpClientModule),
