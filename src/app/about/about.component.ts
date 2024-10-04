@@ -1,16 +1,15 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import ScrollReveal from 'scrollreveal';
 import { ParallaxDirective } from '../directives/parallax.directive';
-import { FooterComponent } from '../footer/footer.component';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
+import { AppService } from '../services/app.service';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [ParallaxDirective, FooterComponent, FontAwesomeModule, TranslateModule],
+  imports: [ParallaxDirective, FontAwesomeModule, TranslateModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
@@ -23,14 +22,10 @@ export class AboutComponent implements OnInit {
 
   faQuoteRight = faQuoteRight;
 
-  ngOnInit(): void {
-    const config = {
-      duration: 750,
-      distance: '30px',
-      origin: 'top',
-    }
+  constructor(private appService: AppService) { }
 
-    ScrollReveal().reveal('.reveal', config);
+  ngOnInit(): void {
+    this.appService.initScrollReveal();
 
     this.timelineElements = [
       document.getElementById('timeline_element_1'),

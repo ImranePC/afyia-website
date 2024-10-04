@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
-import ScrollReveal from 'scrollreveal';
 import { ParallaxDirective } from '../directives/parallax.directive';
 import { CardLinkComponent } from './card-link/card-link.component';
-import { FooterComponent } from '../footer/footer.component';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { AppService } from '../services/app.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +13,6 @@ import { TranslateModule } from '@ngx-translate/core';
     HeaderComponent,
     ParallaxDirective,
     CardLinkComponent,
-    FooterComponent,
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
@@ -28,14 +26,10 @@ export class HomeComponent implements OnInit {
 
   previousStep: any = null;
 
-  ngOnInit(): void {
-    const config = {
-      duration: 750,
-      distance: '30px',
-      origin: 'top',
-    }
+  constructor(private appService: AppService) { }
 
-    ScrollReveal().reveal('.reveal', config);
+  ngOnInit(): void {
+    this.appService.initScrollReveal();
 
     const mark1 = document.getElementById('mark_1');
     const approachTitle = document.getElementById('approach_title');

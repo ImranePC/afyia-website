@@ -1,0 +1,24 @@
+<div class="flex gap-5 rounded-xl">
+  <div
+    class="image-card-container relative h-[150px] w-[240px] bg-slate-100 rounded-xl overflow-hidden hover:text-blue"
+    role="button"
+    (click)="goToProduct()"
+  >
+    @if (product.image) {
+    <img
+      class="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      [src]="'assets/img/' + product.image"
+      alt="Photo produit {{ product.title }}"
+    >
+    } @else {
+      <fa-icon class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary opacity-25" [icon]="faBoxOpen" size="2x"></fa-icon>
+    }
+  </div>
+  <div>
+    <div class="text-link" (click)="goToProduct()">
+      <h2 id="colored" class="text-2xl font-bold">{{ product.title }}</h2>
+      <h3 class="text-xl mb-2">{{ product.subtitle }}</h3>
+    </div>
+    <p class="text-sm">{{ product.description }}</p>
+  </div>
+</div>

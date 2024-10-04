@@ -1,0 +1,37 @@
+[
+  {
+    "id": "monkeypox",
+    "title": "Monkeypox Virus",
+    "subtitle": "Detection kit by real-time PCR",
+    "description": "(Monkeypox virus clades I et II) Validated by CNR Orthopovirus",
+    "image": "viruses/illness_1.jpg",
+    "pathogens": ["monkeypox", "pathogen_1"],
+    "technology": ["tech_1", "tech_2"],
+    "card": "pdf/DIMPOX.pdf",
+    "content": [
+      { "title": "All clades detected", "text": "Qualitative detection of Monkeypox virus (clades Ia, Ib and II)." },
+      { "title": "Diverse samples", "text": "From mucocutaneous and oropharyngeal swabs." },
+      { "title": "Clinically validated", "text": "By the National Reference Center-LE Orthopovirus (France)" },
+      { "title": "Adaptable and easy to use", "text": "Quick and easy to use, transportable at room temperature, edaptable to various thermocyclers." },
+      { "title": "qPCR Duplex", "text": "MPOX virus specific DNA (F3L, B7R and G2R) and an endogenous internal control targeting a human housekeeping gene, both targets detected in a single well." }
+    ]
+  },
+  {
+    "id": "febrile-rash",
+    "title": "Febrile rash illness",
+    "subtitle": "Differential diagnosis kit by HRM-PCR",
+    "description": "(Monkeypox virus, Herpes simplex virus type 1/2 and Varicella-Zona virus)",
+    "image": "kits/idvet_kit.jpg",
+    "pathogens": ["monkeypox", "pathogen_2"],
+    "technology": ["tech_1"],
+    "card": "pdf/DIRASH.pdf"
+  },
+  {
+    "id": "sars-cov-2",
+    "title": "SARS-CoV-2",
+    "subtitle": "Mutations of interest screening kit by HRM-PCR",
+    "description": "(SARS-CoV-2 (Gene N), Del69-70, K417N, L452R, E484K, N501Y, P681R/H)",
+    "pathogens": ["pathogen_3"],
+    "technology": ["tech_3"]
+  }
+]

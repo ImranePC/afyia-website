@@ -137,5 +137,29 @@
       "title": "Data protection",
       "text": "Your data will not be communicated free of charge or with compensation to a third party. <br> You have a right to request access to your personal data, their modifications or their deletions. To assert your right please contact us via the address contact&#64;afyia-diagnostics.com."
     }
+  },
+  "products": {
+    "all_product": "All products",
+    "filters": {
+      "pathogens": "Pathogen",
+      "select": "Select",
+      "technology": "Technology",
+      "reset": "Reset filters"
+    },
+    "back": "Back",
+    "command_message": "To make an order please contact us.",
+    "view_product_card": "View product card",
+    "contact_us": "Contact us"
+  },
+  "about_illness": {
+    "monkeypox": {
+      "title": "About Monkeypox",
+      "content": "Monkeypox is a rare viral disease similar to smallpox. Initial symptoms, resembling common illnesses, evolve into a distinctive rash. <br><br> Diagnosis is challenging, underscoring the importance of timely and accurate identification for effective management. With limited treatment options available."
+    },
+    "febrilerash": {
+      "title": "About Febrile rash",
+      "content": "Febrile rash text content"
+    },
+    "associated_products": "Linked products"
   }
 }

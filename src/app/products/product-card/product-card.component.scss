@@ -1,0 +1,20 @@
+@import '../../../assets/scss/variables.scss';
+
+.text-link {
+  cursor: pointer;
+
+  h2, h3 {
+    transition: $transition-1;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+
+.image-card-container:hover + div h2,
+.image-card-container:hover + div h3 {
+  color: $primary;
+}
+

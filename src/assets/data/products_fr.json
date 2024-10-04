@@ -1,0 +1,45 @@
+[
+  {
+    "id": "monkeypox",
+    "title": "Monkeypox Virus",
+    "subtitle": "Kit de détection par PCR temps réel",
+    "description": "(Monkeypox virus clades I et II) Validé par le CNR Orthopovirus",
+    "image": "viruses/illness_1.jpg",
+    "pathogens": ["monkeypox", "pathogen_1"],
+    "technology": ["tech_1", "tech_2"],
+    "card": "pdf/DIMPOX.pdf",
+    "content": [
+      { "title": "All clades detected", "text": "Qualitative detection of Monkeypox virus (clades Ia, Ib and II)." },
+      { "title": "Diverse samples", "text": "From mucocutaneous and oropharyngeal swabs." },
+      { "title": "Clinically validated", "text": "By the National Reference Center-LE Orthopovirus (France)" },
+      { "title": "Adaptable and easy to use", "text": "Quick and easy to use, transportable at room temperature, edaptable to various thermocyclers." },
+      { "title": "qPCR Duplex", "text": "MPOX virus specific DNA (F3L, B7R and G2R) and an endogenous internal control targeting a human housekeeping gene, both targets detected in a single well." }
+    ]
+  },
+  {
+    "id": "febrile-rash",
+    "title": "Éruptions cutanées fébriles",
+    "subtitle": "Kit de diagnostic différentiel par PCR-HRM",
+    "description": "(Monkeypox virus, virus Herpes simplex de type 1/2, et virus Varicelle-Zona)",
+    "image": "kits/idvet_kit.jpg",
+    "pathogens": ["monkeypox", "pathogen_2"],
+    "technology": ["tech_1"],
+    "card": "pdf/DIRASH.pdf",
+    "content": [
+      { "title": "Syndromic diagnosis", "text": "Identification of the main viruses responsibles for febrile rash eruptions." },
+      { "title": "Diverse samples", "text": "From cutaneous-mucous and oropharyngeal samples." },
+      { "title": "Multiplex qPCR HRM", "text": "MPOX virus, VZV, HSV-1, HSV-2, and an endogenous internal control are detected in a single well." },
+      { "title": "Adaptable and easy to use", "text": "Easy to use and fast (1 hour post-extraction), transportable at room temperature (freeze fried), adaptable to different thermocyclers (MIC, CFX96, QS5)." },
+      { "title": "Automated interpretation", "text": "The obtained results are then analyzed by an artificial intelligence-based software: DISoft." },
+      { "title": "Clinically validated", "text": "Clinical validation of the DIRASH kit in collaboration with the Montpellier University Hospital (CHU) and the National Institude of Biomedical Research (INRB)." }
+    ]
+  },
+  {
+    "id": "sars-cov-2",
+    "title": "SARS-CoV-2",
+    "subtitle": "Kit de criblage des mutations d'intérêt par PCR-HRM",
+    "description": "viruses/illness_4.jpg",
+    "pathogens": ["pathogen_3"],
+    "technology": ["tech_3"]
+  }
+]

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&display=swap');
-@import 'variables';
+@import 'assets/scss/variables';
 @import 'assets/scss/animations';
 
 @tailwind base;
@@ -41,28 +41,6 @@ body {
   }
 }
 
-::selection {
-  color: white;
-  background: $primary;
-  -webkit-text-fill-color: white;
-}
-
-.bg-theme {
-  background-color: $background-color;
-}
-
-.bg-primary {
-  background-color: $primary-light;
-}
-
-.bg-primary-dark {
-  background-color: $primary-dark;
-}
-
-.bg-secondary-dark {
-  background-color: $secondary-dark;
-}
-
 a {
   color: $dark;
   text-decoration: none;
@@ -71,6 +49,26 @@ a {
   &:hover {
     color: $primary;
   }
+}
+
+p {
+  font-size: 20px;
+  text-align: justify;
+}
+
+::selection {
+  color: white;
+  background: $primary;
+  -webkit-text-fill-color: white;
+}
+
+label {
+  display: block;
+}
+
+select {
+  @apply p-2 rounded-lg bg-cyan-50;
+  color: $dark-text;
 }
 
 strong {
@@ -131,18 +129,11 @@ strong {
   }
 }
 
-.text-primary {
-  color: $primary;
-}
-
-p {
-  font-size: 20px;
-  text-align: justify;
-}
-
-.image {
+.image-container {
   @apply rounded-xl;
   overflow: hidden;
+  height: 100%;
+  width: 100%;
   box-shadow: 0 4px 30px 4px rgba(black, 0.2);
 
   img {
@@ -175,9 +166,13 @@ p {
   }
 }
 
+.reveal {
+  visibility: hidden;
+}
+
 @layer components {
   .title {
-    @apply text-6xl font-extrabold text-center;
+    @apply text-6xl font-extrabold;
     position: relative;
     display: inline-block;
     margin: auto;
@@ -194,6 +189,21 @@ p {
       height: 75%;
       z-index: -1;
     }
+
+    &-start {
+      @apply text-5xl;
+      margin: 0;
+
+      &::before {
+        @apply bg-cyan-100 rounded-xl;
+        position: absolute;
+        content: '';
+        top: 50%;
+        width: 150px;
+        height: 75%;
+        transform: translateX(0);
+      }
+    }
   }
 
   .btn {
@@ -207,7 +217,12 @@ p {
     }
 
     &-lg {
-      @apply rounded-lg font-extrabold text-xl bg-gray-700/50;
+      @apply rounded-full font-extrabold text-lg bg-primary;
+    }
+
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.5;
     }
 
     &:hover {

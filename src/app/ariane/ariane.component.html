@@ -1,0 +1,15 @@
+<div class="flex gap-2">
+  <div class="hover:opacity-50 transition" role="button" routerLink="/">
+    {{ 'header.home' | translate }}
+  </div>
+  @for (item of path; track item; let last = $last) {
+  <span>·</span>
+  <div
+    class="hover:opacity-50 transition"
+    role="button"
+    [ngClass]="{'font-bold pointer-events-none': last }"
+    [routerLink]="item.link"
+    [innerHTML]="item.name | translate"
+  ></div>
+  }
+</div>

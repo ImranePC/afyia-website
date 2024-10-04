@@ -3,9 +3,17 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { LegalComponent } from './legal/legal.component';
 import { AboutComponent } from './about/about.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './products/product/product.component';
+import { AboutMonkeypoxComponent } from './about-illness/about-monkeypox/about-monkeypox.component';
+import { AboutFebrileRashComponent } from './about-illness/about-febrile-rash/about-febrile-rash.component';
 
 export const routes: Routes = [
   { path: 'about', component: AboutComponent },
+  { path: 'about-febrile-rash', component: AboutFebrileRashComponent },
+  { path: 'about-monkeypox', component: AboutMonkeypoxComponent },
+  { path: 'product/:id', component: ProductComponent },
+  { path: 'products', component: ProductsComponent },
   { path: 'legal-mentions', component: LegalComponent },
   { path: 'contact', component: ContactComponent },
   { path: '', component: HomeComponent },

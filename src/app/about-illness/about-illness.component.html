@@ -1,0 +1,21 @@
+<div class="container py-10 mt-28">
+  <div class="mb-10">
+    <app-ariane [path]="navigationPath"></app-ariane>
+  </div>
+  <button class="btn btn-white mb-5" routerLink="/products">{{ 'products.back' | translate }}</button>
+  <div class="bg-white rounded-xl mt-10 px-10 pb-10 shadow-sm">
+    <div class="relative overflow-hidden rounded-xl -translate-y-10 text-white p-5 reveal">
+      <ng-content select="[header]"></ng-content>
+      <ng-content select="[image]"></ng-content>
+    </div>
+    <ng-content select="[content]"></ng-content>
+    <div class="title title-start z-10 text-3xl mb-10">
+      {{ 'about_illness.associated_products' | translate }}
+    </div>
+    <div class="flex flex-col gap-5 reveal">
+      @for (product of products; track product) {
+      <app-product-card [product]="product" [previousPath]="path"></app-product-card>
+      }
+    </div>
+  </div>
+</div>

@@ -27,12 +27,9 @@
         <li>{{ 'sections.mission.list.element_4' | translate }}</li>
       </ul>
     </div>
-    <div class="relative">
-      <div class="
-        image reveal mt-10
-        lg:absolute lg:-translate-y-10 lg:mt-0
-      ">
-        <img class="w-full" src="assets/img/team/img_ben.jpg" alt="Afyia Benjamin SAULDE">
+    <div class="relative lg:-mt-10 lg:translate-x-10">
+      <div class="image-container reveal">
+        <img src="assets/img/team/img_ben.jpg" alt="Afyia Benjamin SAULDE">
       </div>
     </div>
   </div>
@@ -110,23 +107,21 @@
     flex flex-col justify-center flex-wrap gap-10 mx-auto reveal w-full
     lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:w-[80%]
   ">
-    <a href="assets/pdf/DIMPOX.pdf" target="_blank">
+    <a routerLink="/product/monkeypox">
       <app-card-link
         title="Monkeypox Virus"
         [subTitle]="'sections.product.items.mpox_1.subtitle' | translate"
         imagePath="viruses/illness_1.jpg"
         [description]="'sections.product.items.mpox_1.text' | translate"
-        [link]="true"
         [ruo]="true"
       ></app-card-link>
     </a>
-    <a href="assets/pdf/DIRASH.pdf" target="_blank">
+    <a routerLink="/product/febrile-rash">
       <app-card-link
         [title]="'sections.product.items.mpox_2.title' | translate"
         [subTitle]="'sections.product.items.mpox_2.subtitle' | translate"
         imagePath="viruses/illness_4.jpg"
         [description]="'sections.product.items.mpox_2.text' | translate"
-        [link]="true"
         [ruo]="true"
       ></app-card-link>
     </a>
@@ -209,5 +204,3 @@
     <div class="btn btn-lg bg-primary-dark" routerLink="/contact" role="button">{{ 'sections.cta.button' | translate }}</div>
   </div>
 </div>
-
-<app-footer></app-footer>

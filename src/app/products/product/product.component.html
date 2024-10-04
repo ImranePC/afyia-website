@@ -1,0 +1,50 @@
+<div class="container py-10 mt-28">
+  <app-ariane [path]="navigationPath"></app-ariane>
+</div>
+<div class="container mb-10">
+  <button class="btn btn-white mb-5" (click)="goBack()">{{ 'products.back' | translate }}</button>
+  <div class="bg-white rounded-xl shadow-sm p-10">
+    @if (product) {
+    <div class="grid grid-cols-8 gap-5 mb-10">
+      <div class="col-span-5 text-4xl"><b>{{ product.title }}</b> <br> {{ product.subtitle }}</div>
+      <div class="relative h-[250px] col-span-3 bg-slate-100 rounded-xl overflow-hidden reveal">
+        @if (product.image) {
+        <img
+          class="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          src="assets/img/{{ product.image }}"
+          alt="Photo de produit {{ product.title }}"
+        >
+        } @else {
+          <fa-icon class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary opacity-25" [icon]="faBoxOpen" size="4x"></fa-icon>
+        }
+      </div>
+    </div>
+    <div class="mb-10 grid grid-cols-2 gap-5 reveal">
+      @for (element of product.content; track element) {
+      <div class="relative flex flex-col justify-center bg-cyan-100 p-5 rounded-xl overflow-hidden">
+        <div class="font-extrabold text-xl mb-1">{{ element.title }}</div>
+        <div>{{ element.text }}</div>
+        <fa-icon class="absolute top-1/2 -translate-y-1/2 rotate-6 left-0 text-cyan-600 opacity-10 ms-12 pointer-events-none" [icon]="faFlag" size="7x"></fa-icon>
+      </div>
+      }
+    </div>
+    <div class="mb-10">
+      <p>Lorem ipsum</p>
+      <p class="text-primary">{{ 'products.command_message' | translate }}</p>
+    </div>
+    <div class="flex gap-5">
+      <button class="btn btn-lg bg-primary text-white" routerLink="/contact">
+        {{ 'products.contact_us' | translate }}
+      </button>
+      @if (product.card) {
+      <a class="btn btn-lg bg-primary text-white hover:text-white" href="assets/{{ product.card }}" target="_blank">
+        {{ 'products.view_product_card' | translate }}
+        <fa-icon class="ms-1" [icon]="faUpRightFromSquare" size="sm"></fa-icon>
+      </a>
+      }
+    </div>
+    } @else {
+    <div class="h-[500px]"></div>
+    }
+  </div>
+</div>

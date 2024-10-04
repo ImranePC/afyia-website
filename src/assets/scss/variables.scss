@@ -1,0 +1,34 @@
+$primary: #009FAC;
+$primary-dark: #127e87;
+$primary-light: #1AC0CD;
+$secondary-dark: #2b1b36;
+$dark: black;
+$dark-text: #272D3E;
+$transition-1: 0.15s;
+$transition-2: 0.28s;
+$transition-3: 0.5s;
+$radius: 16px;
+$background-color: #F2FCFF;
+
+
+/* Background classes */
+.bg-primary {
+  background-color: $primary-light;
+}
+
+.bg-primary-dark {
+  background-color: $primary-dark;
+}
+
+.bg-secondary-dark {
+  background-color: $secondary-dark;
+}
+
+.bg-theme {
+  background-color: $background-color;
+}
+
+/* Text classes */
+.text-primary {
+  color: $primary;
+}

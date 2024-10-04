@@ -138,5 +138,29 @@
       "title": "Protections des données",
       "text": "Vos données ne seront pas communiquées à titre gratuit ou avec contrepartie à un tiers. <br> Vous disposez d'un droit vous permettant de demander l'accès à vos données personnelles, leurs modifications ou leurs suppressions. Pour faire valoir votre droit veuillez nous contacter via l'adresse contact&#64;afyia-diagnostics.com."
     }
+  },
+  "products": {
+    "all_product": "Tous nos produits",
+    "filters": {
+      "pathogens": "Pathogène",
+      "select": "Choisir",
+      "technology": "Technologie",
+      "reset": "Réinitialiser les filtres"
+    },
+    "back": "Retour",
+    "command_message": "Pour passer commande, merci de nous contacter.",
+    "view_product_card": "Voir la fiche produit",
+    "contact_us": "Nous contacter"
+  },
+  "about_illness": {
+    "monkeypox": {
+      "title": "A propos de Monkeypox",
+      "content": "La variole du singe est une maladie virale rare semblable à la variole. Les premiers symptômes, qui ressemblent à des maladies courantes, évoluent vers une éruption cutanée caractéristique. <br><br> Le diagnostic est difficile, ce qui souligne l'importance d'une identification rapide et précise pour une prise en charge efficace. Les options thérapeutiques disponibles sont limitées."
+    },
+    "febrilerash": {
+      "title": "A propos de Febrile rash",
+      "content": "Contenu sur Febrile rash"
+    },
+    "associated_products": "Produits associés"
   }
 }

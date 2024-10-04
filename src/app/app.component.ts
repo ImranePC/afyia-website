@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { FooterComponent } from './footer/footer.component';
 
 const DEFAULT_LANGUAGE = 'fr';
 
@@ -15,6 +16,7 @@ const DEFAULT_LANGUAGE = 'fr';
     HeaderComponent,
     HttpClientModule,
     TranslateModule,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
