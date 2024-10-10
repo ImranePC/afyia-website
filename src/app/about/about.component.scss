@@ -4,7 +4,7 @@
   position: relative;
   clip-path: border-box;
 
-  div {
+  div, img {
     transition: $transition-3;
   }
 
@@ -38,16 +38,15 @@
   .description {
     @apply text-xl;
     padding-left: 3rem;
-
-    img {
-      @apply rounded-xl mt-5;
-      width: 50%;
-    }
   }
 
   .inactive {
     .date, .description {
       color: desaturate(lighten($secondary-dark, 20), 20%);
+    }
+
+    img {
+      opacity: 0.3;
     }
 
     .date::after {
@@ -96,4 +95,8 @@
     width: 100%;
     background: linear-gradient(to top, $secondary-dark 30%, transparent);
   }
+}
+
+.whiten {
+  filter: brightness(100);
 }

@@ -13,6 +13,7 @@ export class AppService {
       duration: 750,
       distance: '30px',
       origin: 'top',
+      interval: 100,
     }
 
     ScrollReveal().reveal('.reveal', config);

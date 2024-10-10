@@ -7,7 +7,7 @@
     "image": "viruses/illness_1.jpg",
     "pathogens": ["monkeypox", "pathogen_1"],
     "technology": ["tech_1", "tech_2"],
-    "card": "pdf/DIMPOX.pdf",
+    "card": "pdf/DIMPOX_EN.pdf",
     "content": [
       { "title": "All clades detected", "text": "Qualitative detection of Monkeypox virus (clades Ia, Ib and II)." },
       { "title": "Diverse samples", "text": "From mucocutaneous and oropharyngeal swabs." },
@@ -24,7 +24,7 @@
     "image": "kits/idvet_kit.jpg",
     "pathogens": ["monkeypox", "pathogen_2"],
     "technology": ["tech_1"],
-    "card": "pdf/DIRASH.pdf",
+    "card": "pdf/DIRASH_EN.pdf",
     "content": [
       { "title": "Syndromic diagnosis", "text": "Identification of the main viruses responsibles for febrile rash eruptions." },
       { "title": "Diverse samples", "text": "From cutaneous-mucous and oropharyngeal samples." },

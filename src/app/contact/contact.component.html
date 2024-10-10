@@ -1,6 +1,6 @@
 <div class="container mx-auto mt-60">
-  <div class="w-full lg:w-2/3 mx-auto">
-    <h1 class="text-center text-6xl lg:text-8xl font-extrabold load-hidden reveal">{{ 'contact.title' | translate }}</h1>
+  <div class="w-full lg:w-2/3 mx-auto reveal">
+    <h1 class="text-center text-6xl lg:text-8xl font-extrabold">{{ 'contact.title' | translate }}</h1>
     <p class="mt-8 text-justify md:text-center text-2xl">{{ 'contact.subtitle' | translate }}</p>
   </div>
 
@@ -77,29 +77,71 @@
   </div>
 </div>
 
-<!-- <div class="container mx-auto mt-32 w-1/2">
-  <div class="text-center">
-    <h1 class="title text-center mb-20 reveal">
-      <span>{{ 'contact.sections.form.title' | translate }} </span>
-      <img class="inline" width="60px" src="assets/img/emoji_wave_hand.png" alt="Wave hand">
-    </h1>
+<div class="text-center reveal mt-40">
+  <h1 class="title">
+    <span>{{ 'contact.sections.form.title' | translate }} </span>
+    <img class="inline" width="60px" src="assets/img/emoji_wave_hand.png" alt="Wave hand">
+  </h1>
+</div>
+<div class="container mx-auto mt-20 w-1/2">
+  <div class="bg-white rounded-xl p-10 shadow-sm">
+    <h3 class="text-2xl font-bold mb-3">
+      {{ 'contact.sections.form.subject.title' | translate }}
+    </h3>
+    <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+      <div class="flex gap-3 mb-10">
+        <div
+          class="btn py-2 px-5 border border-gray-300 text-gray-400 rounded-full shadow-none"
+          [ngClass]="{ 'border-sky-700 text-sky-700': selectedSubject === 'command' }"
+          (click)="setSelectedSubject('command')"
+        >
+          <fa-icon class="me-1" [icon]="faBoxOpen"></fa-icon>
+          {{ 'contact.sections.form.subject.command' | translate }}
+        </div>
+        <div
+          class="btn py-2 px-3 border border-gray-300 text-gray-400 rounded-full shadow-none"
+          [ngClass]="{ 'border-violet-500 text-violet-500': selectedSubject === 'question' }"
+          (click)="setSelectedSubject('question')"
+        >
+          <fa-icon class="me-1" [icon]="faCircleQuestion"></fa-icon>
+          {{ 'contact.sections.form.subject.question' | translate }}
+        </div>
+        <div
+          class="btn py-2 px-3 border border-gray-300 text-gray-400 rounded-full shadow-none"
+          [ngClass]="{ 'border-green-600 text-green-600': selectedSubject === 'other' }"
+          (click)="setSelectedSubject('other')"
+        >
+          <fa-icon class="me-1" [icon]="faComment"></fa-icon>
+          {{ 'contact.sections.form.subject.other' | translate }}
+        </div>
+      </div>
+      <div
+        class="flex flex-col gap-5 transition-all"
+        [ngClass]="{ 'pointer-events-none opacity-50': selectedSubject === undefined}"
+      >
+        <div class="grid grid-cols-2 gap-5">
+          <div class="input-group">
+            <label for="lastname">{{ 'contact.sections.form.inputs.name' | translate }}</label>
+            <input id="lastname" formControlName="lastname" type="text" maxlength="50">
+          </div>
+          <div class="input-group">
+            <label for="firstname">{{ 'contact.sections.form.inputs.firstname' | translate }}</label>
+            <input id="firstname" formControlName="firstname" type="text" maxlength="50">
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="email">{{ 'contact.sections.form.inputs.email' | translate }}</label>
+          <input id="email" formControlName="email" type="text" maxlength="50">
+        </div>
+        <div class="input-group">
+          <label for="message">{{ 'contact.sections.form.inputs.message' | translate }}</label>
+          <textarea id="message" formControlName="message" rows="5"></textarea>
+        </div>
+        <button class="self-start btn btn-lg bg-cyan-700 text-white">
+          <fa-icon class="me-1" [icon]="faPaperPlane"></fa-icon>
+          {{ 'contact.sections.form.inputs.button' | translate }}
+        </button>
+      </div>
+    </form>
   </div>
-  <div class="flex flex-col gap-5">
-    <div class="input-group">
-      <label for="input_name">{{ 'contact.sections.form.inputs.name' | translate }}</label>
-      <input id="input_name" type="text" maxlength="50">
-    </div>
-    <div class="input-group">
-      <label for="input_email">{{ 'contact.sections.form.inputs.email' | translate }}</label>
-      <input id="input_email" type="text" maxlength="50">
-    </div>
-    <div class="input-group">
-      <label for="input_message">{{ 'contact.sections.form.inputs.message' | translate }}</label>
-      <textarea id="intput_message" rows="5"></textarea>
-    </div>
-  </div>
-  <button class="btn btn-lg bg-cyan-700 text-white mt-5">
-    <fa-icon class="me-1" [icon]="faPaperPlane"></fa-icon>
-    {{ 'contact.sections.form.inputs.button' | translate }}
-  </button>
-</div> -->
+</div>

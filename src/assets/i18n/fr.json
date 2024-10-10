@@ -6,9 +6,16 @@
           "button": "Envoyer",
           "email": "Email",
           "message": "Message",
-          "name": "Nom"
+          "name": "Nom",
+          "firstname": "Prénom"
         },
-        "title": "Laissez nous un mot"
+        "title": "Laissez nous un mot",
+        "subject": {
+          "command": "Passer commande",
+          "question": "J'ai une question",
+          "other": "Autre",
+          "title": "Quel est l'objet de votre demande ?"
+        }
       },
       "linkedin": {
         "text": "Suivez notre actualité",

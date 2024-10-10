@@ -6,9 +6,16 @@
           "button": "Send",
           "email": "Email",
           "message": "Message",
-          "name": "Name"
+          "name": "Lastname",
+          "firstname": "Firstname"
         },
-        "title": "Leave us a message"
+        "title": "Leave us a message",
+        "subject": {
+          "command": "Ordering",
+          "question": "Question",
+          "other": "Other",
+          "title": "What is the purpose of your request?"
+        }
       },
       "linkedin": {
         "text": "Follow our news",

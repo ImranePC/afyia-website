@@ -5,16 +5,16 @@
   flex-direction: column;
 
   label {
-    @apply mb-1;
+    @apply mb-1 font-bold;
   }
 
   input[type=text], textarea {
-    @apply p-3 rounded-xl;
+    @apply p-3 rounded-lg bg-slate-50;
     transition: $transition-1;
-    outline: 2px solid transparent;
+    outline: 1px solid transparent;
 
     &:focus {
-      outline: 2px solid rgba($primary, 0.5);
+      outline: 1px solid theme('colors.cyan.500');
     }
   }
 }
