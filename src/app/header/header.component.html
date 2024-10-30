@@ -64,6 +64,12 @@
             <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.home' | translate }}</a>
           </div>
           <div class="p-2">
+            <a routerLink="/products" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.product' | translate }}</a>
+          </div>
+          <div class="p-2">
+            <a routerLink="/about" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.about' | translate }}</a>
+          </div>
+          <div class="p-2">
             <a routerLink="/contact" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.contact' | translate }}</a>
           </div>
           <div class="border-b my-2"></div>

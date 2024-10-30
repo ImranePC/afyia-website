@@ -2,7 +2,7 @@
 
 .header {
   $border-radius: 36px;
-  z-index: 10;
+  z-index: 99;
   position: fixed;
   top: 0;
   margin: 2em auto auto auto;
@@ -64,6 +64,7 @@
 @media (max-width: 1024px) {
   .header {
     margin-top: 1em;
+    width: calc(100% - 2em);
     padding: 0.75em 1.5em;
   }
 }

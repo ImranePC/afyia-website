@@ -5,8 +5,8 @@
     "subtitle": "Detection kit by real-time PCR",
     "description": "(Monkeypox virus clades I et II) Validated by CNR Orthopovirus",
     "image": "viruses/illness_1.jpg",
-    "pathogens": ["Monkeypox virus"],
-    "technology": ["Real-time PCR"],
+    "pathogens": ["mpox"],
+    "technology": ["rt-pcr"],
     "card": "pdf/DIMPOX_EN.pdf",
     "content": [
       { "title": "All clades detected", "text": "Qualitative detection of Monkeypox virus (clades Ia, Ib and II)." },
@@ -22,24 +22,32 @@
     "subtitle": "Differential diagnosis kit by HRM-PCR",
     "description": "(Monkeypox virus, Herpes simplex virus type 1/2 and Varicella-Zona virus)",
     "image": "kits/idvet_kit.jpg",
-    "pathogens": ["Monkeypox virus", "Varicella-Zona", "Herpes simplex virus type 1/2"],
-    "technology": ["HRM-PCR"],
-    "card": "pdf/DIRASH_EN.pdf"
+    "pathogens": ["mpox", "varicella", "herpes"],
+    "technology": ["hrm-pcr"],
+    "card": "pdf/DIRASH_EN.pdf",
+    "content": [
+      { "title": "Syndromic diagnosis", "text": "Identification of the main viruses responsibles for febrile rash eruptions." },
+      { "title": "Diverse samples", "text": "From cutaneous-mucous and oropharyngeal samples." },
+      { "title": "Multiplex qPCR HRM", "text": "MPOX virus, VZV, HSV-1, HSV-2, and an endogenous internal control are detected in a single well." },
+      { "title": "Adaptable and easy to use", "text": "Easy to use and fast (1 hour post-extraction), transportable at room temperature (freeze fried), adaptable to different thermocyclers (MIC, CFX96, QS5)." },
+      { "title": "Automated interpretation", "text": "The obtained results are then analyzed by an artificial intelligence-based software: DISoft." },
+      { "title": "Clinically validated", "text": "Clinical validation of the DIRASH kit in collaboration with the Montpellier University Hospital (CHU) and the National Institude of Biomedical Research (INRB)." }
+    ]
   },
   {
     "id": "sars-cov-2",
     "title": "SARS-CoV-2",
     "subtitle": "Mutations of interest screening kit by HRM-PCR",
     "description": "(SARS-CoV-2 (Gene N), Del69-70, K417N, L452R, E484K, N501Y, P681R/H)",
-    "pathogens": ["Sars-Cov-2"],
-    "technology": ["HRM-PCR"]
+    "pathogens": ["sars-cov"],
+    "technology": ["hrm-pcr"]
   },
   {
     "id": "hepatitis",
     "title": "Hepatitis B virus",
     "subtitle": "Viral load quantification by real-time PCR",
-    "description": "(SARS-CoV-2 (Gene N), Del69-70, K417N, L452R, E484K, N501Y, P681R/H)",
-    "pathogens": ["Hepatitis B virus"],
-    "technology": ["Quantitative real-time PCR"]
+    "description": "Hepatitis description",
+    "pathogens": ["hepatitis"],
+    "technology": ["qrt-pcr"]
   }
 ]

@@ -5,7 +5,7 @@ import { ParallaxDirective } from '../../directives/parallax.directive';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ArianeComponent, Path } from '../../ariane/ariane.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBoxOpen, faUpRightFromSquare, faFlag } from '@fortawesome/free-solid-svg-icons';
+import { faBoxOpen, faUpRightFromSquare, faDna } from '@fortawesome/free-solid-svg-icons';
 import { AppService } from '../../services/app.service';
 
 export interface Product {
@@ -44,7 +44,7 @@ export class ProductComponent implements OnInit {
 
   faBoxOpen = faBoxOpen;
 
-  faFlag = faFlag;
+  faDna = faDna;
 
   constructor(
     private productService: ProductService,
@@ -60,7 +60,7 @@ export class ProductComponent implements OnInit {
     this.loadProduct();
 
     this.previousPath = history.state?.previousPath;
-
+    console.log(this.previousPath);
     this.translate.onLangChange.subscribe(() => {
       this.loadProduct();
     })

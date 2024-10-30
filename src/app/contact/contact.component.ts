@@ -6,12 +6,13 @@ import {
   faPaperPlane,
   faBox,
   faCircleQuestion,
+  faUserTie,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppService } from '../services/app.service';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -32,9 +33,11 @@ export class ContactComponent implements OnInit {
 
   faBoxOpen = faBox;
 
+  faUserTie = faUserTie;
+
   faCircleQuestion = faCircleQuestion;
 
-  selectedSubject: 'command' | 'question' | 'other' | undefined = undefined;
+  selectedSubject: 'command' | 'question' | 'hire' | 'other' | undefined = undefined;
 
   messageForm: FormGroup;
 
@@ -65,5 +68,9 @@ export class ContactComponent implements OnInit {
         });
       });
     }
+  }
+
+  isFieldInvalid(field: string): boolean {
+    return this.messageForm.get(field)?.invalid && this.messageForm.get(field)?.touched
   }
 }

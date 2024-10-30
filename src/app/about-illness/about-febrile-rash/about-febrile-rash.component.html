@@ -1,6 +1,6 @@
-<app-about-illness illnessId="pathogen_2" [path]="path">
+<app-about-illness [pathogens]="['mpox']" [path]="path">
   <div header>
-    <h1 class="text-6xl font-extrabold mb-10">Febrile rash</h1>
+    <h1 class="text-6xl font-extrabold mb-10">{{ 'products.about.febrilerash' | translate }}</h1>
     <p><span class="text-5xl font-bold">91 328</span> cas confirmés <br> dans <span class="text-5xl font-bold">116 pays</span></p>
   </div>
   <img image class="-z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full brightness-75 blur-sm scale-125" src="assets/img/viruses/illness_4.jpg" alt="Photo Febrile rash">

@@ -5,11 +5,12 @@ import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppService } from '../services/app.service';
+import { ArianeComponent } from '../ariane/ariane.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [ParallaxDirective, FontAwesomeModule, TranslateModule],
+  imports: [ParallaxDirective, FontAwesomeModule, TranslateModule, ArianeComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

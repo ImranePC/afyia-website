@@ -25,6 +25,14 @@ export class ProductService {
     )
   }
 
+  getProductsByPathogens(pathogens: string[]): Observable<any> {
+    return this.getProducts().pipe(
+      map((products: any[]) => {
+        return products.filter((product) => pathogens.some((value) => product.pathogens.includes(value)))
+      })
+    )
+  }
+
   findProduct(productId: string): Observable<any> {
     return this.getProducts().pipe(
       map((products: any[]) => {

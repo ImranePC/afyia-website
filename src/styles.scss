@@ -54,6 +54,14 @@ a {
 p {
   font-size: 20px;
   text-align: justify;
+
+  &.p-light {
+    font-weight: 300;
+
+    b {
+      font-weight: 500;
+    }
+  }
 }
 
 ::selection {
@@ -78,7 +86,8 @@ strong {
 
 .strong-alt {
   strong {
-    @apply text-pink-800;
+    @apply text-fuchsia-700;
+    filter: grayscale(0.2);
   }
 }
 
@@ -134,7 +143,7 @@ strong {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  box-shadow: 0 4px 30px 4px rgba(black, 0.2);
+  // box-shadow: 0 4px 30px 4px rgba(black, 0.2);
 
   img {
     display: block;
@@ -154,12 +163,12 @@ strong {
   @apply font-extrabold text-8xl text-center shadow-xl;
   position: relative;
   text-align: center;
-  min-height: 600px;
+  min-height: 550px;
   background-image: url('assets/img/buildings_background.jpg');
   background-size: cover;
 
   h1 {
-    line-height: 600px;
+    line-height: 550px;
     text-align: center;
     color: white;
     text-shadow: 0 4px 8px rgba(black, 0.33);
@@ -208,7 +217,7 @@ strong {
 
   .btn {
     @apply px-6 py-2 rounded-full shadow-sm;
-
+    text-align: center;
     transition: $transition-1;
     cursor: pointer;
 
@@ -217,7 +226,7 @@ strong {
     }
 
     &-lg {
-      @apply rounded-full font-extrabold text-lg bg-primary;
+      @apply rounded-full font-extrabold text-lg bg-primary text-white;
     }
 
     &.disabled {

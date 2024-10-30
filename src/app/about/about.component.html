@@ -1,4 +1,4 @@
-<div class="banner" appParallax [ratio]="-0.3">
+<div class="banner banner-blur" appParallax [ratio]="-0.3">
   <h1 class="reveal">{{ 'header.about' | translate }}</h1>
 </div>
 <div class="container">
@@ -28,15 +28,19 @@
   </div>
 </div>
 
-<div class="container mt-20">
-  <div class="mx-auto w-9/12 image overflow-hidden reveal">
-    <img class="w-full rounded-xl" src="assets/img/team/img_team.jpg" alt="Photo de l'équipe AFYIA au complet">
+<div class="container mt-40">
+  <div class="mx-auto w-9/12 px-10 pb-10 bg-white rounded-xl shadow-sm">
+    <div class="image-container reveal -translate-y-10">
+      <img src="assets/img/team/img_team.jpg" alt="Photo de l'équipe AFYIA au complet">
+    </div>
+    <h2 class="text-6xl text-center font-extrabold mb-5" [innerHTML]="'about.team.title' | translate"></h2>
+    <p class="text-center" [innerHTML]="'about.team.text' | translate"></p>
   </div>
 </div>
 
-<div class="bg-secondary-dark px-10 pt-10 lg:px-20 lg:pt-20 mt-40">
-  <div class="text-7xl text-white font-extrabold text-center reveal"><b class="text-cyan-300">AFYIA</b> se développe</div>
-  <p class="p-10 text-center text-white">
+<div class="bg-secondary-dark px-10 pt-10 lg:px-20 lg:pt-32 mt-40">
+  <div class="text-7xl text-white font-extrabold text-center reveal"><b class="text-cyan-300"> {{ '' | translate }} AFYIA</b> se développe</div>
+  <p class="p-10 mb-10 text-center text-white">
     <b>AFYIA</b> Lorem ipsum dorime est un projet débute il y a une dizaine d'année lorem ipsum
   </p>
   <div class="timeline flex flex-col gap-20 relative pt-20 text-white">

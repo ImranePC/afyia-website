@@ -5,8 +5,8 @@
     "subtitle": "Kit de détection par PCR temps réel",
     "description": "(Monkeypox virus clades I et II) Validé par le CNR Orthopovirus",
     "image": "viruses/illness_1.jpg",
-    "pathogens": ["monkeypox", "pathogen_1"],
-    "technology": ["tech_1", "tech_2"],
+    "pathogens": ["mpox"],
+    "technology": ["rt-pcr"],
     "card": "pdf/DIMPOX_EN.pdf",
     "content": [
       { "title": "All clades detected", "text": "Qualitative detection of Monkeypox virus (clades Ia, Ib and II)." },
@@ -22,8 +22,8 @@
     "subtitle": "Kit de diagnostic différentiel par PCR-HRM",
     "description": "(Monkeypox virus, virus Herpes simplex de type 1/2, et virus Varicelle-Zona)",
     "image": "kits/idvet_kit.jpg",
-    "pathogens": ["monkeypox", "pathogen_2"],
-    "technology": ["tech_1"],
+    "pathogens": ["mpox", "varicella", "herpes"],
+    "technology": ["hrm-pcr"],
     "card": "pdf/DIRASH_EN.pdf",
     "content": [
       { "title": "Syndromic diagnosis", "text": "Identification of the main viruses responsibles for febrile rash eruptions." },
@@ -38,8 +38,16 @@
     "id": "sars-cov-2",
     "title": "SARS-CoV-2",
     "subtitle": "Kit de criblage des mutations d'intérêt par PCR-HRM",
-    "description": "viruses/illness_4.jpg",
-    "pathogens": ["pathogen_3"],
-    "technology": ["tech_3"]
+    "description": "(SARS-CoV-2 (Gène N), Del69-70, K417N, L452R, E484K, N501Y, P681R/H)",
+    "pathogens": ["sars-cov"],
+    "technology": ["hrm-pcr"]
+  },
+  {
+    "id": "hepatitis",
+    "title": "Virus de l'hépatite B",
+    "subtitle": "Kit de quantification de la charge virale par PCR en temps réel",
+    "description": "Hepatite description",
+    "pathogens": ["hepatitis"],
+    "technology": ["qrt-pcr"]
   }
 ]

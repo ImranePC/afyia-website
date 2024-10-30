@@ -89,7 +89,7 @@
       {{ 'contact.sections.form.subject.title' | translate }}
     </h3>
     <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
-      <div class="flex gap-3 mb-10">
+      <div class="flex gap-3 mb-10 text-center">
         <div
           class="btn py-2 px-5 border border-gray-300 text-gray-400 rounded-full shadow-none"
           [ngClass]="{ 'border-sky-700 text-sky-700': selectedSubject === 'command' }"
@@ -108,7 +108,15 @@
         </div>
         <div
           class="btn py-2 px-3 border border-gray-300 text-gray-400 rounded-full shadow-none"
-          [ngClass]="{ 'border-green-600 text-green-600': selectedSubject === 'other' }"
+          [ngClass]="{ 'border-pink-600 text-pink-600': selectedSubject === 'hire' }"
+          (click)="setSelectedSubject('hire')"
+        >
+          <fa-icon class="me-1" [icon]="faComment"></fa-icon>
+          {{ 'contact.sections.form.subject.hire' | translate }}
+        </div>
+        <div
+          class="btn py-2 px-3 border border-gray-300 text-gray-400 rounded-full shadow-none"
+          [ngClass]="{ 'border-emerald-600 text-emerald-600': selectedSubject === 'other' }"
           (click)="setSelectedSubject('other')"
         >
           <fa-icon class="me-1" [icon]="faComment"></fa-icon>
@@ -120,24 +128,24 @@
         [ngClass]="{ 'pointer-events-none opacity-50': selectedSubject === undefined}"
       >
         <div class="grid grid-cols-2 gap-5">
-          <div class="input-group">
+          <div class="input-group" [class.is-invalid]="isFieldInvalid('lastname')">
             <label for="lastname">{{ 'contact.sections.form.inputs.name' | translate }}</label>
             <input id="lastname" formControlName="lastname" type="text" maxlength="50">
           </div>
-          <div class="input-group">
+          <div class="input-group" [class.is-invalid]="isFieldInvalid('firstname')">
             <label for="firstname">{{ 'contact.sections.form.inputs.firstname' | translate }}</label>
             <input id="firstname" formControlName="firstname" type="text" maxlength="50">
           </div>
         </div>
-        <div class="input-group">
+        <div class="input-group" [class.is-invalid]="isFieldInvalid('email')">
           <label for="email">{{ 'contact.sections.form.inputs.email' | translate }}</label>
           <input id="email" formControlName="email" type="text" maxlength="50">
         </div>
-        <div class="input-group">
+        <div class="input-group" [class.is-invalid]="isFieldInvalid('message')">
           <label for="message">{{ 'contact.sections.form.inputs.message' | translate }}</label>
           <textarea id="message" formControlName="message" rows="5"></textarea>
         </div>
-        <button class="self-start btn btn-lg bg-cyan-700 text-white">
+        <button class="self-start btn btn-lg bg-cyan-700 text-white" [class.disabled]="!messageForm.valid">
           <fa-icon class="me-1" [icon]="faPaperPlane"></fa-icon>
           {{ 'contact.sections.form.inputs.button' | translate }}
         </button>

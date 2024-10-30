@@ -11,5 +11,5 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './about-febrile-rash.component.scss'
 })
 export class AboutFebrileRashComponent {
-  path: Path = { name: 'about_illness.febrilerash.title', link: '/about-febrile-rash' };
+  path: Path = { name: 'products.about.febrilerash', link: '/febrile-rash' };
 }

@@ -16,7 +16,7 @@ import { AppService } from '../services/app.service';
 })
 export class AboutIllnessComponent implements OnInit {
   @Input()
-  illnessId: string;
+  pathogens: string[];
 
   @Input()
   path: Path = { name: 'Undefined', link: '/'};
@@ -45,7 +45,7 @@ export class AboutIllnessComponent implements OnInit {
   }
 
   loadAssociatedProducts(): void {
-    this.productService.getAssociatedProducts(this.illnessId).subscribe((data) => {
+    this.productService.getProductsByPathogens(this.pathogens).subscribe((data) => {
       this.products = data;
     })
   }

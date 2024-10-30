@@ -35,63 +35,63 @@
   </div>
 </div>
 
-<div class="container mt-20 mx-auto text-xl flex justify-center items-center gap-5">
+<div class="container mx-auto mt-10 text-xl flex justify-center items-center gap-5">
   <img width="100px" src="assets/img/un_health_green.png" alt="United nations sustainable development goal 3">
   {{ 'sections.mission.goal_3' | translate }}
 </div>
 
-<div class="mt-32 lg:mt-40 relative">
+<div class="relative mt-60">
   <div class="w-full lg:w-10/12 mx-auto">
     <div id="section_approach" class="
-      p-5 bg-purple-100 rounded-xl scale-90 transition duration-700
-      lg:pb-20 lg:px-10 lg:pt-0
+      p-5 bg-violet-100 rounded-xl scale-90 transition duration-700
+      lg:p-10 lg:pt-0
     ">
       <h1
         id="approach_title"
         class="
-          text-center text-pink-950 font-extrabold text-6xl scale-95 mb-5 transition duration-500 strong-alt
+          text-center text-fuchsia-950 font-extrabold text-6xl scale-95 transition duration-500 strong-alt
           lg:mb-0 lg:-translate-y-1/2 lg:text-8xl
         "
         [innerHTML]="'sections.approach.title' | translate"
       ></h1>
-      <p class="
-          w-full text-justify text-2xl mx-auto mt-0 mb-10
-          lg:w-5/6 lg:mt-10 lg:mb-20 lg:text-center
-        "
-        [innerHTML]="'sections.approach.text' | translate"
-      >
-      </p>
-      <div class="
-        mx-auto gap-10
-        flex flex-col
-        md:grid md:grid-cols-2 md:grid-rows-2
-        lg:w-5/6
-        2xl:flex 2xl:flex-row
-      ">
-        <app-card-link
-          class="grow hover-hightlight"
-          [title]="'sections.approach.ai_title' | translate"
-          [subTitle]="'sections.approach.ai_subtitle' | translate"
-          imagePath="team/img_sarah_faustine.jpg"
-        ></app-card-link>
-        <app-card-link
-          class="grow hover-hightlight"
-          [title]="'sections.approach.biology_title' | translate"
-          [subTitle]="'sections.approach.biology_subtitle' | translate"
-          imagePath="team/img_margot.jpg"
-        ></app-card-link>
-        <app-card-link
-          class="grow hover-hightlight"
-          [title]="'sections.approach.process_title' | translate"
-          [subTitle]="'sections.approach.process_subtitle' | translate"
-          imagePath="img_process_2.jpg"
-        ></app-card-link>
-        <app-card-link
-          class="grow hover-hightlight"
-          [title]="'sections.approach.health_title' | translate"
-          [subTitle]="'sections.approach.health_subtitle' | translate"
-          imagePath="img_swab.jpg"
-        ></app-card-link>
+      <div class="xl:px-20 xl:pb-10">
+        <p class="
+            w-full text-justify p-light text-2xl my-10
+            lg:mb-20
+          "
+          [innerHTML]="'sections.approach.text' | translate"
+        >
+        </p>
+        <div class="
+          mx-auto gap-5 flex flex-col
+          md:gap-10 md:grid md:grid-cols-2 md:grid-rows-2
+          xl:flex xl:flex-row
+        ">
+          <app-card-link
+            class="grow hover-hightlight"
+            [title]="'sections.approach.ai_title' | translate"
+            [subTitle]="'sections.approach.ai_subtitle' | translate"
+            imagePath="team/img_sarah_faustine.jpg"
+          ></app-card-link>
+          <app-card-link
+            class="grow hover-hightlight"
+            [title]="'sections.approach.biology_title' | translate"
+            [subTitle]="'sections.approach.biology_subtitle' | translate"
+            imagePath="team/img_margot.jpg"
+          ></app-card-link>
+          <app-card-link
+            class="grow hover-hightlight"
+            [title]="'sections.approach.process_title' | translate"
+            [subTitle]="'sections.approach.process_subtitle' | translate"
+            imagePath="img_process_2.jpg"
+          ></app-card-link>
+          <app-card-link
+            class="grow hover-hightlight"
+            [title]="'sections.approach.health_title' | translate"
+            [subTitle]="'sections.approach.health_subtitle' | translate"
+            imagePath="img_swab.jpg"
+          ></app-card-link>
+        </div>
       </div>
     </div>
     <div id="mark_1" class="absolute h-full -translate-y-full md:h-0 md:-translate-y-0 md:top-2/3"></div>
@@ -105,7 +105,8 @@
   </div>
   <div class="
     flex flex-col justify-center flex-wrap gap-10 mx-auto reveal w-full
-    lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:w-[80%]
+    lg:grid lg:grid-cols-2 lg:grid-rows-2
+    xl:px-20
   ">
     <a routerLink="/product/monkeypox">
       <app-card-link
@@ -147,21 +148,41 @@
   </div>
 </div>
 
-<div class="container mx-auto mt-40">
-  <div class="text-center mt-32 mb-10 lg:mb-20 reveal">
-    <div class="title" [innerHTML]="'sections.about.title' | translate">
-    </div>
-  </div>
-  <div class="container-image w-full lg:w-2/3 h-[400px] mx-auto rounded-xl border overflow-hidden text-white p-10 flex flex-col justify-between reveal">
-    <div class="text-2xl">
-      <p>
+<div class="reveal">
+  <div class="container mt-60">
+    <div class="
+      bg-white rounded-xl shadow-sm px-5 pt-5 w-full mx-auto pb-[400px]
+      lg:px-10 lg:pt-0
+      xl:w-8/12
+    ">
+      <h1 class="
+          text-5xl font-extrabold text-center
+          lg:text-7xl lg:-translate-y-1/2
+        "
+        [innerHTML]="'sections.about.title' | translate">
+      </h1>
+      <p class="text-2xl p-light pt-5 lg:pt-0">
         <b>AFYIA Diagnostics</b> dolor sit amet consectetur. Imperdiet aliquet sit et etiam felis mi viverra. Orci tortor malesuada eget bibendum bibendum bibendum diam lorem.
       </p>
-    </div>
-    <div class="text-center mt-10">
-      <button class="btn btn-white" routerLink="/about">
-        {{ 'sections.about.view_more' | translate }}
-      </button>
+      <div class="flex justify-center my-10">
+        <button class="btn btn-lg bg-primary-dark" routerLink="/about">{{ 'sections.about.view_more' | translate }}</button>
+      </div>
+      <div class="scroll-container absolute left-0">
+        <div
+          #scroller
+          class="scroller h-[500px]"
+          (mousedown)="startDrag($event)"
+          (mouseup)="endDrag($event)"
+          (mouseleave)="endDrag($event)"
+          (mousemove)="onDrag($event)"
+          (scroll)="updateScrollerImages()"
+        >
+        <div class="min-w-[2200px]"></div>
+        @for (imagePath of images; track imagePath; let index = $index) {
+          <img [src]="imagePath" [alt]="'carousel_img_' + index">
+        }
+        <div class="min-w-[300px]"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -175,7 +196,7 @@
   </div>
   <div class="
     grid grid-cols-3 grid-rows-4 partner-grid items-center gap-10
-    lg:grid-cols-4 lg:grid-rows-3
+    lg:grid-cols-6 lg:grid-rows-2
   ">
     <img src="assets/img/partnership/partner_axlr.png" alt="Partner Axlr">
     <img class="size-square" src="assets/img/partnership/partner_occitanie.jpg" alt="Partner Occitanie Montpellier">
@@ -192,7 +213,7 @@
   </div>
 </div>
 
-<div class="container bg-primary mx-auto rounded-xl p-10 lg:py-16 lg:px-20  text-white reveal">
+<div class="container bg-primary mx-auto rounded-xl p-10 lg:py-16 lg:px-20 text-white reveal">
   <div class="
     flex flex-col text-center justify-between items-center gap-5
     lg:flex-row lg:text-start lg:gap-0

@@ -14,7 +14,15 @@
     outline: 1px solid transparent;
 
     &:focus {
-      outline: 1px solid theme('colors.cyan.500');
+      outline: 1px solid theme('colors.cyan.200');
+      box-shadow: 0 0 1px 4px theme('colors.cyan.100');
+    }
+  }
+
+  &.is-invalid {
+    input[type=text], textarea {
+      outline: 1px solid theme('colors.red.300');
+      box-shadow: 0 0 1px 4px theme('colors.red.200');
     }
   }
 }

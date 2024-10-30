@@ -10,8 +10,19 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { RouterModule } from '@angular/router';
 import { AppService } from '../services/app.service';
 
-export const PATHOGENS = ['monkeypox', 'pathogen_1', 'pathogen_2', 'pathogen_3'];
-export const TECHNOLOGIES = ['tech_1', 'tech_2', 'tech_3'];
+export const PATHOGENS = [
+  { label: 'Monkeypox virus', value: 'mpox' },
+  { label: 'SARS-CoV-2', value: 'sars-cov' },
+  { label: 'Varicella-Zona', value: 'varicella' },
+  { label: 'Herpes simplex virus type 1/2', value: 'herpes' },
+  { label: 'Hepatitis B virus', value: 'hepatitis' },
+];
+
+export const TECHNOLOGIES = [
+  { label: 'Real-time PCR', value: 'rt-pcr' },
+  { label: 'HRM-PCR', value: 'hrm-pcr' },
+  { label: 'Quantitative real-time PCR', value: 'qrt-pcr' },
+]
 
 @Component({
   selector: 'app-product',
@@ -78,6 +89,9 @@ export class ProductsComponent implements OnInit {
       return this.products;
     }
 
-    return this.products.filter((product: any) => product.technology.includes(this.selectedFilter.technology) || product.pathogens.includes(this.selectedFilter.pathogen));
+    return this.products.filter((product: any) =>
+      (this.selectedFilter.technology ? product.technology.includes(this.selectedFilter.technology) : true)
+      && (this.selectedFilter.pathogen ? product.pathogens.includes(this.selectedFilter.pathogen) : true)
+    );
   }
 }

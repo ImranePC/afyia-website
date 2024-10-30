@@ -11,10 +11,11 @@
         },
         "title": "Leave us a message",
         "subject": {
-          "command": "Ordering",
-          "question": "Question",
+          "command": "Order",
+          "question": "Ask for information",
           "other": "Other",
-          "title": "What is the purpose of your request?"
+          "title": "What is the purpose of your request?",
+          "hire": "Hiring"
         }
       },
       "linkedin": {
@@ -156,7 +157,13 @@
     "back": "Back",
     "command_message": "To make an order please contact us.",
     "view_product_card": "View product card",
-    "contact_us": "Contact us"
+    "contact_us": "Contact us",
+    "about": {
+      "bloodborne": "Bloodborne",
+      "febrilerash": "Febrile rash",
+      "respiratory": "Respiratory"
+    },
+    "no_result": "No result found"
   },
   "about_illness": {
     "monkeypox": {
@@ -168,5 +175,11 @@
       "content": "Febrile rash text content"
     },
     "associated_products": "Linked products"
+  },
+  "about": {
+    "team": {
+      "title": "Here is the <span class=\"text-primary\">AFYIA's</span> staff",
+      "text": "Lorem ipsum"
+    }
   }
 }

@@ -1,23 +1,35 @@
 <div class="banner" appParallax [ratio]="-0.3" style="background-image: url('../../assets/img/banner/banner_products.png')">
   <h1 class="reveal">{{ 'header.product' | translate }}</h1>
 </div>
-<div class="container py-10">
-  <app-ariane></app-ariane>
-</div>
+
 <div class="container">
-  <div class="text-start">
-    <div class="title title-start mb-10">{{ 'header.product' | translate }}</div>
-  </div>
-
-  <div class="illness-grid grid grid-cols-3 gap-10 mb-40 reveal">
-    <div role="button" routerLink="/about-monkeypox" style="background-image: url('assets/img/viruses/illness_1.jpg')">
-      <span>Monkeypox</span>
+  <div class="relative z-1 bg-white -mt-20 p-5 md:p-10 rounded-xl shadow-sm mb-20">
+    <div class="absolute -top-14 left-0 text-white">
+      <app-ariane></app-ariane>
     </div>
-    <div role="button" routerLink="/about-febrile-rash" style="background-image: url('assets/img/viruses/illness_4.jpg')">
-      <span>{{ 'sections.product.items.mpox_2.title' | translate }}</span>
+    <div class="text-start">
+      <div class="title title-start z-10 mb-10">{{ 'header.product' | translate }}</div>
+    </div>
+
+    <div class="
+      illness-grid grid grid-cols-1 gap-10 reveal
+      md:grid-cols-2
+      xl:grid-cols-3
+    ">
+      <div role="button" routerLink="/febrile-rash" style="background-image: url('assets/img/viruses/illness_4.jpg')">
+        <span class="w-full">{{ 'products.about.febrilerash' | translate }}</span>
+      </div>
+      <div role="button" routerLink="/respiratory" style="background-image: url('assets/img/viruses/illness_1.jpg')">
+        <span class="w-full">{{ 'products.about.respiratory' | translate }}</span>
+      </div>
+      <div role="button" routerLink="/bloodborne" style="background-image: url('assets/img/viruses/illness_2.jpg')">
+        <span class="w-full">{{ 'products.about.bloodborne' | translate }}</span>
+      </div>
     </div>
   </div>
+</div>
 
+<div class="container">
   <div id="all_products" class="text-start">
     <div class="title title-start mb-10">{{ 'products.all_product' | translate }}</div>
   </div>
@@ -32,7 +44,7 @@
           >
             <option value="null" disabled selected>{{ 'products.filters.select' | translate }}</option>
             @for (pathogen of pathogenList; track pathogen) {
-            <option [value]="pathogen">{{ pathogen }}</option>
+            <option [value]="pathogen.value">{{ pathogen.label }}</option>
             }
           </select>
         </div>
@@ -45,7 +57,7 @@
           >
             <option value="null" disabled selected>{{ 'products.filters.select' | translate }}</option>
             @for (technology of technologyList; track technology) {
-            <option [value]="technology">{{ technology }}</option>
+            <option [value]="technology.value">{{ technology.label }}</option>
             }
           </select>
         </div>
@@ -58,8 +70,12 @@
         </button>
     </div>
     <div class="flex flex-col gap-5">
-      @for (item of filteredProducts; track item) {
-      <app-product-card [product]="item"></app-product-card>
+      @if (filteredProducts.length > 0) {
+        @for (item of filteredProducts; track item) {
+        <app-product-card [product]="item"></app-product-card>
+        }
+      } @else {
+        <div class="rounded-xl bg-slate-50 p-8 text-center">{{ 'products.no_result' | translate }}</div>
       }
     </div>
   </div>

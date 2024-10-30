@@ -11,10 +11,11 @@
         },
         "title": "Laissez nous un mot",
         "subject": {
-          "command": "Passer commande",
-          "question": "J'ai une question",
+          "command": "Commande",
+          "question": "Demande d'information",
           "other": "Autre",
-          "title": "Quel est l'objet de votre demande ?"
+          "title": "Quel est l'objet de votre demande ?",
+          "hire": "Recrutement"
         }
       },
       "linkedin": {
@@ -157,7 +158,13 @@
     "back": "Retour",
     "command_message": "Pour passer commande, merci de nous contacter.",
     "view_product_card": "Voir la fiche produit",
-    "contact_us": "Nous contacter"
+    "contact_us": "Nous contacter",
+    "about": {
+      "bloodborne": "Transmissible par le sang",
+      "febrilerash": "Éruptions cutanées",
+      "respiratory": "Respiratoire"
+    },
+    "no_result": "Aucun résultat"
   },
   "about_illness": {
     "monkeypox": {
@@ -169,5 +176,11 @@
       "content": "Contenu sur Febrile rash"
     },
     "associated_products": "Produits associés"
+  },
+  "about": {
+    "team": {
+      "title": "L'équipe <span class=\"text-primary\">AFYIA</span>",
+      "text": "Lorem ipsum"
+    }
   }
 }
