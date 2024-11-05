@@ -35,42 +35,78 @@
   </div>
   <div class="bg-white shadow-sm rounded-xl p-10">
     <div class="flex gap-5 mb-10">
-        <div>
-          <label for="select_pathogene">{{ 'products.filters.pathogens' | translate }}</label>
-          <select
-            id="select_pathogene"
-            name="select_pathogene"
-            [(ngModel)]="selectedFilter.pathogen"
+      <div class="w-[250px] text-nowrap">
+        {{ 'products.filters.pathogens' | translate }}
+        <div class="bg-cyan-50 rounded-lg">
+          <div class="flex justify-between px-3 py-1" role="button" (click)="openDropdown(pathogenDropdown, $event)">
+            <div>
+              {{ selectedFilter.pathogen?.label ?? 'products.filters.select' | translate }}
+            </div>
+            <fa-icon [icon]="faCaretDown" size="sm"></fa-icon>
+          </div>
+          <div
+            #pathogenDropdown
+            class="z-10 absolute bg-white rounded-xl shadow animation-pop"
+            style="display: none"
+            (clickOutside)="closeDropdown(pathogenDropdown, $event)"
           >
-            <option value="null" disabled selected>{{ 'products.filters.select' | translate }}</option>
-            @for (pathogen of pathogenList; track pathogen) {
-            <option [value]="pathogen.value">{{ pathogen.label }}</option>
-            }
-          </select>
+            <ul class="text-sm flex flex-col text-left m-2 gap-2">
+              @for (pathogen of pathogenList; track pathogen) {
+              <li>
+                <button
+                  class="inline-block text-start w-full py-1 px-2 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
+                  [ngClass]="{'bg-gray-100 pointer-events-none' : selectedFilter.pathogen?.value === pathogen.value}"
+                  (click)="selectPathogen(pathogen); closeDropdown(pathogenDropdown, $event)"
+                >
+                  <span>{{ pathogen.label }}</span>
+                </button>
+              </li>
+              }
+            </ul>
+          </div>
         </div>
-        <div>
-          <label for="select_technology">{{ 'products.filters.technology' | translate }}</label>
-          <select
-            id="select_technology"
-            name="select_technology"
-            [(ngModel)]="selectedFilter.technology"
+      </div>
+      <div class="w-[250px] text-nowrap">
+        {{ 'products.filters.technology' | translate }}
+        <div class="bg-cyan-50 rounded-lg">
+          <div class="flex justify-between px-3 py-1" role="button" (click)="openDropdown(technologyDropdown, $event)">
+            <div>
+              {{ selectedFilter.technology?.label ?? 'products.filters.select' | translate }}
+            </div>
+            <fa-icon [icon]="faCaretDown" size="sm"></fa-icon>
+          </div>
+          <div
+            #technologyDropdown
+            class="z-10 absolute bg-white rounded-xl shadow animation-pop"
+            style="display: none"
+            (clickOutside)="closeDropdown(technologyDropdown, $event)"
           >
-            <option value="null" disabled selected>{{ 'products.filters.select' | translate }}</option>
-            @for (technology of technologyList; track technology) {
-            <option [value]="technology.value">{{ technology.label }}</option>
-            }
-          </select>
+            <ul class="text-sm flex flex-col text-left m-2 gap-2">
+              @for (technology of technologyList; track technology) {
+              <li>
+                <button
+                  class="inline-block text-start w-full py-1 px-2 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
+                  [ngClass]="{'bg-gray-100 pointer-events-none' : selectedFilter.technology?.value === technology.value}"
+                  (click)="selectTechnology(technology); closeDropdown(technologyDropdown, $event)"
+                >
+                  <span>{{ technology.label }}</span>
+                </button>
+              </li>
+              }
+            </ul>
+          </div>
         </div>
-        <button
-          class="btn bg-primary text-white self-end px-4 py-1"
-          [class.disabled]="!hasFilter"
-          (click)="resetFilter()"
-        >
-          {{ 'products.filters.reset' | translate }}
-        </button>
+      </div>
+      <button
+        class="btn bg-primary text-white self-end px-4 py-1"
+        [class.disabled]="!hasFilter"
+        (click)="resetFilter()"
+      >
+        {{ 'products.filters.reset' | translate }}
+      </button>
     </div>
     <div class="flex flex-col gap-5">
-      @if (filteredProducts.length > 0) {
+      @if (filteredProducts?.length > 0) {
         @for (item of filteredProducts; track item) {
         <app-product-card [product]="item"></app-product-card>
         }
