@@ -12,8 +12,6 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   sendMessage(data: any): Observable<any> {
-    console.log(data);
-
     return this.http.post(`${API_URL}/send-message`, data);
   }
 }

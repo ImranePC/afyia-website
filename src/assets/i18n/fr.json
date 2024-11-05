@@ -36,7 +36,14 @@
       }
     },
     "subtitle": "À la recherche d'une opportunité ou d'une collaboration, contactez nous par les moyens suivants.",
-    "title": "Nous contacter"
+    "title": "Nous contacter",
+    "modal": {
+      "valid": "Votre demande a bien été envoyée, vous serez recontacté dans les meilleurs délais.",
+      "title": "Demande envoyée",
+      "close": "Fermer",
+      "error": "Une erreur est survenue. Merci de réessayer ultérieurement.",
+      "title_error": "Erreur"
+    }
   },
   "footer": {
     "company": {

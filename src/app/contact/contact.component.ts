@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {
   faEnvelope,
   faComment,
@@ -7,6 +7,7 @@ import {
   faBox,
   faCircleQuestion,
   faUserTie,
+  faTruckFast,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
@@ -14,15 +15,22 @@ import { AppService } from '../services/app.service';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FontAwesomeModule, TranslateModule, CommonModule, ReactiveFormsModule],
+  imports: [FontAwesomeModule, TranslateModule, CommonModule, ReactiveFormsModule, ModalComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements OnInit {
+  @ViewChild('validModal')
+  validModal: ModalComponent;
+
+  @ViewChild('errorModal')
+  errorModal: ModalComponent;
+
   faPaperPlane = faPaperPlane;
 
   faLocationDot = faLocationDot;
@@ -31,7 +39,7 @@ export class ContactComponent implements OnInit {
 
   faComment = faComment;
 
-  faBoxOpen = faBox;
+  faTruckFast = faTruckFast;
 
   faUserTie = faUserTie;
 
@@ -62,10 +70,16 @@ export class ContactComponent implements OnInit {
 
   onSubmit() {
     if (this.messageForm.valid) {
-      this.api.sendMessage(this.messageForm.value).subscribe((data) => {
-        this.messageForm.reset({
-          subject: this.selectedSubject,
-        });
+      this.api.sendMessage(this.messageForm.value).subscribe({
+        next: () => {
+          this.messageForm.reset({
+            subject: this.selectedSubject,
+          });
+
+          this.validModal.open();
+        }, error: () => {
+          this.errorModal.open();
+        }
       });
     }
   }

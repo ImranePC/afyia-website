@@ -36,7 +36,14 @@
       }
     },
     "subtitle": "Looking for an opportunity or to work together, feel free to reach us through our contact options.",
-    "title": "Contact us"
+    "title": "Contact us",
+    "modal": {
+      "valid": "Your request has been sent, we will contact you soon.",
+      "title": "Request sent",
+      "close": "Close",
+      "error": "An error has occurred. Please try again later.",
+      "title_error": "Error"
+    }
   },
   "footer": {
     "company": {

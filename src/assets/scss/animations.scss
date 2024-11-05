@@ -1,5 +1,5 @@
 .animation-slide-in {
-  animation-name: slidein;
+  animation-name: slide-in;
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -10,7 +10,19 @@
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-@keyframes slidein {
+.animation-appear {
+  animation-name: appear;
+  animation-duration: 0.33s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.animation-slide {
+  animation-name: slide;
+  animation-duration: 0.33s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes slide-in {
   0% {
     transform: translateY(-20%) translateX(-50%);
   }
@@ -28,5 +40,23 @@
   100% {
     opacity: 1;
     scale: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }

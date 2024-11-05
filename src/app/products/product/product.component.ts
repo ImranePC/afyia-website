@@ -60,7 +60,6 @@ export class ProductComponent implements OnInit {
     this.loadProduct();
 
     this.previousPath = history.state?.previousPath;
-    console.log(this.previousPath);
     this.translate.onLangChange.subscribe(() => {
       this.loadProduct();
     })

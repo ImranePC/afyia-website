@@ -35,7 +35,7 @@
         <fa-icon class="ms-1" [icon]="faEnvelope"></fa-icon>
       </a>
     </div>
-    <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-sky-700 opacity-5 ms-12" [icon]="faBoxOpen" size="10x"></fa-icon>
+    <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-sky-700 opacity-5 ms-12" [icon]="faTruckFast" size="10x"></fa-icon>
   </div>
 
   <div class="mt-20 bg-violet-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
@@ -80,22 +80,22 @@
 <div class="text-center reveal mt-40">
   <h1 class="title">
     <span>{{ 'contact.sections.form.title' | translate }} </span>
-    <img class="inline" width="60px" src="assets/img/emoji_wave_hand.png" alt="Wave hand">
+    <img class="inline align-baseline" width="60px" src="assets/img/emoji_wave_hand.png" alt="Wave hand">
   </h1>
 </div>
-<div class="container mx-auto mt-20 w-1/2">
-  <div class="bg-white rounded-xl p-10 shadow-sm">
+<div class="container mx-auto mt-20">
+  <div class="bg-white w-full xl:w-2/3 mx-auto rounded-xl p-10 shadow-sm">
     <h3 class="text-2xl font-bold mb-3">
       {{ 'contact.sections.form.subject.title' | translate }}
     </h3>
     <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
-      <div class="flex gap-3 mb-10 text-center">
+      <div class="flex gap-3 text-center flex-wrap">
         <div
           class="btn py-2 px-5 border border-gray-300 text-gray-400 rounded-full shadow-none"
           [ngClass]="{ 'border-sky-700 text-sky-700': selectedSubject === 'command' }"
           (click)="setSelectedSubject('command')"
         >
-          <fa-icon class="me-1" [icon]="faBoxOpen"></fa-icon>
+          <fa-icon class="me-1" [icon]="faTruckFast"></fa-icon>
           {{ 'contact.sections.form.subject.command' | translate }}
         </div>
         <div
@@ -116,7 +116,7 @@
         </div>
         <div
           class="btn py-2 px-3 border border-gray-300 text-gray-400 rounded-full shadow-none"
-          [ngClass]="{ 'border-emerald-600 text-emerald-600': selectedSubject === 'other' }"
+          [ngClass]="{ 'border-green-600 text-green-600': selectedSubject === 'other' }"
           (click)="setSelectedSubject('other')"
         >
           <fa-icon class="me-1" [icon]="faComment"></fa-icon>
@@ -124,7 +124,8 @@
         </div>
       </div>
       <div
-        class="flex flex-col gap-5 transition-all"
+        class="flex flex-col gap-5 mt-10 transition-all animation-slide"
+        *ngIf="selectedSubject !== undefined"
         [ngClass]="{ 'pointer-events-none opacity-50': selectedSubject === undefined}"
       >
         <div class="grid grid-cols-2 gap-5">
@@ -153,3 +154,19 @@
     </form>
   </div>
 </div>
+<app-modal #validModal>
+  <div title>
+    {{ 'contact.modal.title' | translate }} <img class="inline align-baseline" width="24px" src="assets/img/emoji_hands_up.png" alt="Wave hand">
+  </div>
+  <div body>
+    {{ 'contact.modal.valid' | translate }}
+  </div>
+</app-modal>
+<app-modal #errorModal>
+  <div title>
+    {{ 'contact.modal.title_error' | translate }} 🚧
+  </div>
+  <div body>
+    {{ 'contact.modal.error' | translate }}
+  </div>
+</app-modal>
