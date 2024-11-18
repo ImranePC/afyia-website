@@ -46,14 +46,14 @@
       p-5 bg-violet-100 rounded-xl scale-90 transition duration-700
       lg:p-10 lg:pt-0
     ">
-      <h1
+      <h2
         id="approach_title"
         class="
           text-center text-fuchsia-950 font-extrabold text-6xl scale-95 transition duration-500 strong-alt
           lg:mb-0 lg:-translate-y-1/2 lg:text-8xl
         "
         [innerHTML]="'sections.approach.title' | translate"
-      ></h1>
+      ></h2>
       <div class="xl:px-20 xl:pb-10">
         <p class="
             w-full text-justify p-light text-2xl my-10
@@ -100,8 +100,7 @@
 
 <div class="container mx-auto mt-40">
   <div class="text-center mb-10 lg:mb-20">
-    <div id="product" class="title" [innerHTML]="'sections.product.title' | translate">
-    </div>
+    <h2 id="product" class="title" [innerHTML]="'sections.product.title' | translate"></h2>
   </div>
   <div class="
     flex flex-col justify-center flex-wrap gap-10 mx-auto reveal w-full
@@ -155,12 +154,12 @@
       lg:px-10 lg:pt-0
       xl:w-8/12
     ">
-      <h1 class="
+      <h2 class="
           text-5xl font-extrabold text-center
           lg:text-7xl lg:-translate-y-1/2
         "
         [innerHTML]="'sections.about.title' | translate">
-      </h1>
+      </h2>
       <p class="text-2xl p-light pt-5 lg:pt-0">
         <b>AFYIA Diagnostics</b> dolor sit amet consectetur. Imperdiet aliquet sit et etiam felis mi viverra. Orci tortor malesuada eget bibendum bibendum bibendum diam lorem.
       </p>
@@ -179,7 +178,7 @@
         >
         <div class="min-w-[2200px]"></div>
         @for (imagePath of images; track imagePath; let index = $index) {
-          <img [src]="imagePath" [alt]="'carousel_img_' + index">
+          <img [src]="imagePath" [alt]="'carousel_img_' + index" title="Image carousel">
         }
         <div class="min-w-[300px]"></div>
       </div>
@@ -188,12 +187,12 @@
 </div>
 
 <div class="container shadow-colored bg-white rounded-xl mx-auto px-10 pb-10 mb-20 mt-40">
-  <div class="
+  <h2 class="
     title-gradient text-center w-full text-5xl font-extrabold py-8
     lg:-translate-y-8 lg:top-0 lg:left-[50%] lg:text-6xl lg:py-0
   ">
     {{ 'sections.partners.title' | translate }}
-  </div>
+  </h2>
   <div class="
     grid grid-cols-3 grid-rows-4 partner-grid items-center gap-10
     lg:grid-cols-6 lg:grid-rows-2

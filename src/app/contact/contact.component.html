@@ -78,10 +78,10 @@
 </div>
 
 <div class="text-center reveal mt-40">
-  <h1 class="title">
+  <h2 class="title">
     <span>{{ 'contact.sections.form.title' | translate }} </span>
     <img class="inline align-baseline" width="60px" src="assets/img/emoji_wave_hand.png" alt="Wave hand">
-  </h1>
+  </h2>
 </div>
 <div class="container mx-auto mt-20">
   <div class="bg-white w-full xl:w-2/3 mx-auto rounded-xl p-10 shadow-sm">
@@ -90,38 +90,38 @@
     </h3>
     <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
       <div class="flex gap-3 text-center flex-wrap">
-        <div
+        <h4
           class="btn py-2 px-5 border border-gray-300 text-gray-400 rounded-full shadow-none"
           [ngClass]="{ 'border-sky-700 text-sky-700': selectedSubject === 'command' }"
           (click)="setSelectedSubject('command')"
         >
           <fa-icon class="me-1" [icon]="faTruckFast"></fa-icon>
           {{ 'contact.sections.form.subject.command' | translate }}
-        </div>
-        <div
+        </h4>
+        <h4
           class="btn py-2 px-3 border border-gray-300 text-gray-400 rounded-full shadow-none"
           [ngClass]="{ 'border-violet-500 text-violet-500': selectedSubject === 'question' }"
           (click)="setSelectedSubject('question')"
         >
           <fa-icon class="me-1" [icon]="faCircleQuestion"></fa-icon>
           {{ 'contact.sections.form.subject.question' | translate }}
-        </div>
-        <div
+        </h4>
+        <h4
           class="btn py-2 px-3 border border-gray-300 text-gray-400 rounded-full shadow-none"
           [ngClass]="{ 'border-pink-600 text-pink-600': selectedSubject === 'hire' }"
           (click)="setSelectedSubject('hire')"
         >
           <fa-icon class="me-1" [icon]="faComment"></fa-icon>
           {{ 'contact.sections.form.subject.hire' | translate }}
-        </div>
-        <div
+        </h4>
+        <h4
           class="btn py-2 px-3 border border-gray-300 text-gray-400 rounded-full shadow-none"
           [ngClass]="{ 'border-green-600 text-green-600': selectedSubject === 'other' }"
           (click)="setSelectedSubject('other')"
         >
           <fa-icon class="me-1" [icon]="faComment"></fa-icon>
           {{ 'contact.sections.form.subject.other' | translate }}
-        </div>
+        </h4>
       </div>
       <div
         class="flex flex-col gap-5 mt-10 transition-all animation-slide"

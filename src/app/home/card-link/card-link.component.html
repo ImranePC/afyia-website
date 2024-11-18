@@ -3,9 +3,9 @@
   class="min-h-[350px] h-full p-5 rounded-2xl text-center flex flex-col-reverse relative background-image"
   style="background-image: url('../../../assets/img/{{ imagePath }}')"
 >
-  <div class="z-10 w-[80%] text-white absolute top-[40%] left-[50%] -translate-x-1/2 text-center text-shadow">
+  <h3 class="z-10 w-[80%] text-white absolute top-[40%] left-[50%] -translate-x-1/2 text-center text-shadow">
     <span class="font-extrabold text-4xl">{{ title }}</span> <br><span class="font-bold text-3xl"> {{ subTitle }}</span>
-  </div>
+  </h3>
   <!-- <div class="btn btn-white w-fit mx-auto z-10">
     {{ 'sections.product.view_more' | translate }}
   </div> -->
@@ -16,13 +16,13 @@
   [class.disabled]="disabled"
   style="background-image: url('../../../assets/img/{{ imagePath }}')"
 >
-  <div class="z-10 text-white text-shadow">
+  <h3 class="z-10 text-white text-shadow">
     <span class="font-extrabold text-4xl">{{ title }}</span> <br>
     <span class="block mb-2 text-2xl"> {{ subTitle }}</span>
     @if (!disabled) {
       <span>{{ description }}</span>
     }
-  </div>
+  </h3>
   <div class="flex justify-between items-center mt-5">
     <div class="z-10">
     @if (ce) {
