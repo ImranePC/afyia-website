@@ -2,34 +2,37 @@
   <h1 class="reveal">{{ 'header.about' | translate }}</h1>
 </div>
 <div class="container">
-  <div class="relative z-1 -mt-20 mx-auto w-9/12 bg-white shadow-sm rounded-xl p-10">
-    <div class="grid grid-cols-2">
+  <div class="relative z-1 -mt-20 mx-auto lg:w-9/12 bg-white shadow-sm rounded-xl p-5 lg:p-10">
+    <div class="
+      flex flex-col gap-5 text-center
+      lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:text-start
+    ">
       <div>
         <h2 class="text-6xl font-extrabold mb-5">Qui sommes nous ?</h2>
-        <p>
+        <p class="py-5 lg:p-0">
           At Afyia, we recognize that infectious diseases pose a major challenge to public health globally. <br>
           Our journey is rooted in responding to this challenge, contributing to a world where advanced diagnostics are not only reliable but also accessible to all.
         </p>
       </div>
-      <div>
-        <div class="translate-x-20 image-container reveal">
+      <div class="reveal">
+        <div class="lg:translate-x-20 image-container">
           <img src="assets/img/img_onehealth_tagged.jpg" alt="Photo illustration One Health">
         </div>
       </div>
     </div>
   </div>
 
-  <div class="mx-auto w-9/12 bg-cyan-100 rounded-xl mt-10 p-10 relative">
+  <div class="mx-auto lg:w-9/12 bg-cyan-100 rounded-xl mt-10 p-10 relative">
     <p class="text-center">
       Our goal is to shape a healthier future, where the principles of One Health and cutting-edge technology converge to make a meaningful impact on global well-being.
     </p>
-    <fa-icon class="absolute top-0 -left-5 text-primary opacity-50" [icon]="faQuoteLeft" size="4x"></fa-icon>
-    <fa-icon class="absolute bottom-0 -right-5 text-primary opacity-50" [icon]="faQuoteRight" size="4x"></fa-icon>
+    <fa-icon class="absolute top-0 -left-3 text-primary opacity-50" [icon]="faQuoteLeft" size="4x"></fa-icon>
+    <fa-icon class="absolute bottom-0 -right-3 text-primary opacity-50" [icon]="faQuoteRight" size="4x"></fa-icon>
   </div>
 </div>
 
-<div class="container mt-40">
-  <div class="mx-auto w-9/12 px-10 pb-10 bg-white rounded-xl shadow-sm">
+<div class="container mt-20 lg:mt-40">
+  <div class="mx-auto lg:w-9/12 px-5 lg:px-10 pb-5 lg:pb-10 bg-white rounded-xl shadow-sm">
     <div class="image-container reveal -translate-y-10">
       <img src="assets/img/team/img_team.jpg" alt="Photo de l'équipe AFYIA au complet">
     </div>
@@ -38,8 +41,8 @@
   </div>
 </div>
 
-<div class="bg-secondary-dark px-10 pt-10 lg:px-20 lg:pt-32 mt-40">
-  <h2 class="text-7xl text-white font-extrabold text-center reveal">
+<div class="bg-secondary-dark px-10 pt-10 lg:px-20 lg:pt-32 mt-28 lg:mt-40">
+  <h2 class="text-4xl lg:text-7xl text-white font-extrabold text-center reveal">
     <b class="text-cyan-300"> {{ '' | translate }} AFYIA</b> se développe
   </h2>
   <p class="p-10 mb-10 text-center text-white">
@@ -100,55 +103,46 @@
   <div class="text-center mb-20">
     <h2 class="title reveal">Les fondateurs</h2>
   </div>
-  <div class="flex flex-wrap justify-center gap-20">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
     <div>
-      <div class="h-40 w-40 bg-slate-100 rounded-3xl overflow-hidden">
-        <img src="assets/img/team/pp_joany.jpg" alt="Photo de Joany Guy pour Afyia Diagnostics">
+      <div class="h-40 w-40 bg-slate-100 rounded-3xl mx-auto overflow-hidden">
+        <img src="assets/img/team/pp_mpourquier.png" alt="Photo de Pourquier Philippe pour Afyia Diagnostics">
       </div>
       <div class="mt-5 text-center">
-        <h3 class="text-xl font-extrabold">Joany Guy</h3> <br>
-        <span>Directeur monde</span>
+        <h3 class="font-extrabold">Philippe Pourquier</h3>
+        <span>PDG</span>
       </div>
     </div>
     <div>
-      <div class="h-40 w-40 bg-slate-100 rounded-3xl overflow-hidden">
-        <img src="assets/img/team/pp_joany.jpg" alt="Photo de Joany Guy pour Afyia Diagnostics">
+      <div class="h-40 w-40 bg-slate-100 rounded-3xl mx-auto overflow-hidden">
+        <img class="mx-auto" src="assets/img/team/pp_joany.png" alt="Photo de Joany Guy pour Afyia Diagnostics">
       </div>
       <div class="mt-5 text-center">
-        <h3 class="text-xl font-extrabold">Joany Guy</h3> <br>
-        <span>Directeur monde</span>
+        <h3 class="font-extrabold">Joany Guy</h3>
+        <span>Directrice générale</span>
       </div>
     </div>
     <div>
-      <div class="h-40 w-40 bg-slate-100 rounded-3xl overflow-hidden">
-        <img src="assets/img/team/pp_joany.jpg" alt="Photo de Joany Guy pour Afyia Diagnostics">
+      <div class="h-40 w-40 bg-slate-100 rounded-3xl mx-auto overflow-hidden">
+        <img src="assets/img/team/pp_christelle.png" alt="Photo de Joany Guy pour Afyia Diagnostics">
       </div>
       <div class="mt-5 text-center">
-        <h3 class="text-xl font-extrabold">Joany Guy</h3> <br>
-        <span>Directeur monde</span>
+        <h3 class="font-extrabold">Christelle Reynes</h3>
+        <span>Responsable biostatistiques</span>
       </div>
     </div>
     <div>
-      <div class="h-40 w-40 bg-slate-100 rounded-3xl overflow-hidden">
-        <img src="assets/img/team/pp_joany.jpg" alt="Photo de Joany Guy pour Afyia Diagnostics">
+      <div class="h-40 w-40 bg-slate-100 rounded-3xl mx-auto overflow-hidden">
+        <img src="assets/img/team/pp_jc.png" alt="Photo de Joany Guy pour Afyia Diagnostics">
       </div>
       <div class="mt-5 text-center">
-        <h3 class="text-xl font-extrabold">Joany Guy</h3> <br>
-        <span>Directeur monde</span>
+        <h3 class="font-extrabold">Jean-Christophe Avarre</h3>
+        <span>Titre</span>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container bg-primary mx-auto rounded-xl p-10 lg:py-16 lg:px-20 text-white mt-40 reveal">
-  <div class="
-    flex flex-col text-center justify-between items-center gap-5
-    lg:flex-row lg:text-start lg:gap-0
-  ">
-    <div>
-      <span class="block mb-2 text-5xl font-extrabold">{{ 'sections.cta.speech' | translate }}</span>
-      <span class="block text-2xl font-extralight">{{ 'sections.cta.text' | translate }} - <b>contact&#64;afyia-diagnostics.com</b></span>
-    </div>
-    <div class="btn btn-lg bg-primary-dark" routerLink="/contact" role="button">{{ 'sections.cta.button' | translate }}</div>
-  </div>
+<div class="container mt-20 lg:mt-40">
+  <app-cta></app-cta>
 </div>

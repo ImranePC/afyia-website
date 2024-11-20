@@ -6,11 +6,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppService } from '../services/app.service';
 import { ArianeComponent } from '../ariane/ariane.component';
+import { CtaComponent } from '../cta/cta.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [ParallaxDirective, FontAwesomeModule, TranslateModule, ArianeComponent],
+  imports: [ParallaxDirective, FontAwesomeModule, TranslateModule, CtaComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

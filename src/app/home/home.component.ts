@@ -5,6 +5,7 @@ import { CardLinkComponent } from './card-link/card-link.component';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppService } from '../services/app.service';
+import { CtaComponent } from '../cta/cta.component';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ import { AppService } from '../services/app.service';
     RouterLink,
     RouterLinkActive,
     TranslateModule,
+    CtaComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
