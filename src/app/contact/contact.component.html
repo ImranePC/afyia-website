@@ -4,87 +4,90 @@
     <p class="mt-8 text-justify md:text-center text-2xl">{{ 'contact.subtitle' | translate }}</p>
   </div>
 
-  <div class="mt-40 bg-cyan-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
-    <h2 class="
-      text-5xl font-extrabold mb-5
-      lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
-    ">
-      {{ 'contact.sections.mail.title' | translate }}
-    </h2>
-    <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
-      <p class="block lg:self-center">{{ 'contact.sections.mail.text' | translate }}</p>
-      <a class="btn btn-lg text-white hover:text-white bg-cyan-700 text-lg self-start z-10 lg:self-center lg:whitespace-nowrap" href="mailto:contact@afyia-diagnostics.com">
-        contact&#64;afyia-diagnostics.com
-        <fa-icon class="ms-1" [icon]="faEnvelope"></fa-icon>
-      </a>
+  <div class="grid grid-rows-4 gap-5 mt-20 lg:gap-20 lg:mt-40">
+    <div class="bg-cyan-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
+      <h2 class="
+        text-5xl font-extrabold mb-5
+        lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
+      ">
+        {{ 'contact.sections.mail.title' | translate }}
+      </h2>
+      <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
+        <p class="block lg:self-center">{{ 'contact.sections.mail.text' | translate }}</p>
+        <a class="btn btn-lg text-white hover:text-white bg-cyan-700 text-lg self-start z-10 lg:self-center lg:whitespace-nowrap" href="mailto:contact@afyia-diagnostics.com">
+          contact&#64;afyia-diagnostics.com
+          <fa-icon class="ms-1" [icon]="faEnvelope"></fa-icon>
+        </a>
+      </div>
+      <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-cyan-800 opacity-5 ms-12" [icon]="faEnvelope" size="10x"></fa-icon>
     </div>
-    <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-cyan-800 opacity-5 ms-12" [icon]="faEnvelope" size="10x"></fa-icon>
-  </div>
 
-  <div class="mt-20 bg-sky-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
-    <h2 class="
-      text-5xl font-extrabold mb-5
-      lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
-    ">
-      {{ 'contact.sections.order.title' | translate }}
-    </h2>
-    <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
-      <p class="block lg:self-center">{{ 'contact.sections.order.text' | translate }}</p>
-      <a class="btn btn-lg text-white hover:text-white bg-sky-700 text-lg self-start z-10 lg:self-center lg:whitespace-nowrap" href="mailto:order@afyia-diagnostics.com">
-        order&#64;afyia-diagnostics.com
-        <fa-icon class="ms-1" [icon]="faEnvelope"></fa-icon>
-      </a>
+    <div class="bg-sky-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
+      <h2 class="
+        text-5xl font-extrabold mb-5
+        lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
+      ">
+        {{ 'contact.sections.order.title' | translate }}
+      </h2>
+      <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
+        <p class="block lg:self-center">{{ 'contact.sections.order.text' | translate }}</p>
+        <a class="btn btn-lg text-white hover:text-white bg-sky-700 text-lg self-start z-10 lg:self-center lg:whitespace-nowrap" href="mailto:order@afyia-diagnostics.com">
+          order&#64;afyia-diagnostics.com
+          <fa-icon class="ms-1" [icon]="faEnvelope"></fa-icon>
+        </a>
+      </div>
+      <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-sky-700 opacity-5 ms-12" [icon]="faTruckFast" size="10x"></fa-icon>
     </div>
-    <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-sky-700 opacity-5 ms-12" [icon]="faTruckFast" size="10x"></fa-icon>
-  </div>
 
-  <div class="mt-20 bg-violet-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
-    <h2 class="
-      text-5xl font-extrabold mb-5
-      lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
-    ">
-      {{ 'contact.sections.linkedin.title' | translate }}
-    </h2>
-    <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
-      <p class="block lg:self-center">{{ 'contact.sections.linkedin.text' | translate }}</p>
-      <a class="btn btn-lg text-white hover:text-white bg-violet-800 text-lg self-start z-10 lg:self-center text-center lg:whitespace-nowrap" href="https://linkedin.com/company/afyia-diagnostics" target="_blank">
-        Linkedin
-        <fa-icon class="ms-1" [icon]="faComment"></fa-icon>
-      </a>
+    <div class="bg-violet-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
+      <h2 class="
+        text-5xl font-extrabold mb-5
+        lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
+      ">
+        {{ 'contact.sections.linkedin.title' | translate }}
+      </h2>
+      <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
+        <p class="block lg:self-center">{{ 'contact.sections.linkedin.text' | translate }}</p>
+        <a class="btn btn-lg text-white hover:text-white bg-violet-800 text-lg self-start z-10 lg:self-center text-center lg:whitespace-nowrap" href="https://linkedin.com/company/afyia-diagnostics" target="_blank">
+          Linkedin
+          <fa-icon class="ms-1" [icon]="faComment"></fa-icon>
+        </a>
+      </div>
+      <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-violet-600 opacity-5 ms-12" [icon]="faComment" size="10x"></fa-icon>
     </div>
-    <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-violet-600 opacity-5 ms-12" [icon]="faComment" size="10x"></fa-icon>
-  </div>
 
-  <div class="mt-20 bg-pink-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
-    <h2 class="
-      text-5xl font-extrabold mb-5
-      lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
-    ">
-      {{ 'contact.sections.maps.title' | translate }}
-    </h2>
-    <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
-      <p class="block lg:self-center">
-        <b>AFYIA Diagnostics</b> <br>
-        310 rue Louis Pasteur, 34790 Grabels, France <br>
-        +33 (0)4 67 40 71 67
-      </p>
-      <a class="btn btn-lg text-white hover:text-white bg-pink-800 text-lg self-start z-10 lg:self-center text-center lg:whitespace-nowrap" href="https://maps.app.goo.gl/ZTmQ78UBhsC4JvDP9" target="_blank">
-        {{ 'contact.sections.maps.button' | translate }}
-        <fa-icon class="ms-1" [icon]="faLocationDot"></fa-icon>
-      </a>
+    <div class="bg-pink-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
+      <h2 class="
+        text-5xl font-extrabold mb-5
+        lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
+      ">
+        {{ 'contact.sections.maps.title' | translate }}
+      </h2>
+      <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
+        <p class="block lg:self-center">
+          <b>AFYIA Diagnostics</b> <br>
+          310 rue Louis Pasteur, 34790 Grabels, France <br>
+          +33 (0)4 67 40 71 67
+        </p>
+        <a class="btn btn-lg text-white hover:text-white bg-pink-800 text-lg self-start z-10 lg:self-center text-center lg:whitespace-nowrap" href="https://maps.app.goo.gl/ZTmQ78UBhsC4JvDP9" target="_blank">
+          {{ 'contact.sections.maps.button' | translate }}
+          <fa-icon class="ms-1" [icon]="faLocationDot"></fa-icon>
+        </a>
+      </div>
+      <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-pink-800 opacity-5 ms-12" [icon]="faLocationDot" size="10x"></fa-icon>
     </div>
-    <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-pink-800 opacity-5 ms-12" [icon]="faLocationDot" size="10x"></fa-icon>
   </div>
 </div>
 
-<div class="text-center reveal mt-40">
-  <h2 class="title">
-    <span>{{ 'contact.sections.form.title' | translate }} </span>
-    <img class="inline align-baseline" width="60px" src="assets/img/emoji_wave_hand.png" alt="Wave hand">
-  </h2>
+<div class="container text-center reveal mt-20 lg:mt-40">
+  <h2 class="title">{{ 'contact.sections.form.title' | translate }} 👋</h2>
 </div>
-<div class="container mx-auto mt-20">
-  <div class="bg-white w-full xl:w-2/3 mx-auto rounded-xl p-10 shadow-sm">
+<div class="container mx-auto mt-10 lg:mt-20">
+  <div class="
+    bg-white w-full mx-auto rounded-xl p-5 shadow-sm
+    lg:p-10
+    xl:w-2/3
+  ">
     <h3 class="text-2xl font-bold mb-3">
       {{ 'contact.sections.form.subject.title' | translate }}
     </h3>

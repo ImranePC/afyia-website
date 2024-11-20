@@ -44,7 +44,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     'assets/img/team/img_margot.jpg',
     'assets/img/team/img_ben_2.jpg',
     'assets/img/img_onehealth_sm.jpg',
-    'assets/img/img_machine.jpg',
     'assets/img/buildings_background_sm.jpg',
   ];
 

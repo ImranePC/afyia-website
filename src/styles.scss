@@ -241,12 +241,18 @@ strong {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 976px) {
   .title {
     @apply text-5xl;
   }
 
   .image {
     box-shadow: 0 0 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    @apply text-3xl;
   }
 }
