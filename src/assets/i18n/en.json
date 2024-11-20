@@ -168,17 +168,18 @@
     "about": {
       "bloodborne": "Bloodborne",
       "febrilerash": "Febrile rash",
-      "respiratory": "Respiratory"
+      "respiratory": "Respiratory",
+      "categories": "Categories"
     },
     "no_result": "No result found"
   },
   "about_illness": {
-    "monkeypox": {
-      "title": "About Monkeypox",
+    "respiratory": {
+      "title": "About",
       "content": "Monkeypox is a rare viral disease similar to smallpox. Initial symptoms, resembling common illnesses, evolve into a distinctive rash. <br><br> Diagnosis is challenging, underscoring the importance of timely and accurate identification for effective management. With limited treatment options available."
     },
     "febrilerash": {
-      "title": "About Febrile rash",
+      "title": "About febrile-rash",
       "content": "Febrile rash text content"
     },
     "associated_products": "Linked products"

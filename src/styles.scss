@@ -201,6 +201,7 @@ strong {
     &-start {
       @apply text-5xl;
       margin: 0;
+      text-wrap: wrap;
 
       &::before {
         @apply bg-cyan-100 rounded-xl;
@@ -211,6 +212,10 @@ strong {
         height: 75%;
         transform: translateX(0);
       }
+    }
+
+    &-sm {
+      @apply text-3xl;
     }
   }
 
@@ -243,6 +248,10 @@ strong {
 @media (max-width: 976px) {
   .title {
     @apply text-5xl;
+
+    &-sm {
+      @apply text-3xl;
+    }
   }
 
   .banner {

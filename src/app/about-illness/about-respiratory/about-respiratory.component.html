@@ -1,0 +1,13 @@
+<app-about-illness [pathogens]="['sars-cov', 'tuberculosis']" [path]="path">
+  <div header>
+    <h1 class="text-3xl lg:text-6xl font-extrabold mb-10">{{ 'products.about.respiratory' | translate }}</h1>
+    <p><span class="text-5xl font-bold">91 328</span> cas confirmés de <b>variole du singe</b> <br> dans <span class="text-5xl font-bold">116 pays</span></p>
+  </div>
+  <img image class="-z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full blur-sm" src="assets/img/viruses/illness_1.jpg" alt="Photo monkey pox">
+  <div content>
+    <div class="title title-start title-sm z-10 mb-10">
+      <h2>{{ 'about_illness.respiratory.title' | translate }}</h2>
+    </div>
+    <p class="mb-10" [innerHTML]="'about_illness.respiratory.content' | translate"></p>
+  </div>
+</app-about-illness>

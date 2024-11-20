@@ -6,11 +6,12 @@ import { ProductService } from '../services/product.service';
 import { Product } from '../products/product/product.component';
 import { ProductCardComponent } from '../products/product-card/product-card.component';
 import { AppService } from '../services/app.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about-illness',
   standalone: true,
-  imports: [ArianeComponent, TranslateModule, RouterModule, ProductCardComponent],
+  imports: [ArianeComponent, TranslateModule, RouterModule, ProductCardComponent, CommonModule],
   templateUrl: './about-illness.component.html',
   styleUrl: './about-illness.component.scss'
 })

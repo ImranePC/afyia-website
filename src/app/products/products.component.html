@@ -8,12 +8,12 @@
       <app-ariane></app-ariane>
     </div>
     <div class="text-start">
-      <div class="title title-start z-10 mb-10">{{ 'header.product' | translate }}</div>
+      <h2 class="title title-start z-10 mb-10">{{ 'products.about.categories' | translate }}</h2>
     </div>
 
     <div class="
-      illness-grid grid grid-cols-1 gap-10 reveal
-      md:grid-cols-2
+      illness-grid grid grid-cols-1 gap-5 reveal
+      md:grid-cols-2 md:gap-10
       xl:grid-cols-3
     ">
       <div role="button" routerLink="/febrile-rash" style="background-image: url('assets/img/viruses/illness_4.jpg')">
@@ -34,11 +34,11 @@
     <div class="title title-start mb-10">{{ 'products.all_product' | translate }}</div>
   </div>
   <div class="bg-white shadow-sm rounded-xl p-10">
-    <div class="flex gap-5 mb-10">
-      <div class="w-[250px] text-nowrap">
+    <div class="flex flex-wrap gap-5 mb-10">
+      <div class="w-full lg:w-[250px] text-nowrap">
         {{ 'products.filters.pathogens' | translate }}
         <div class="bg-cyan-50 rounded-lg">
-          <div class="flex justify-between px-3 py-1" role="button" (click)="openDropdown(pathogenDropdown, $event)">
+          <div class="flex justify-between px-3 py-1" role="button" (click)="closeDropdown(technologyDropdown, $event); openDropdown(pathogenDropdown, $event)">
             <div>
               {{ selectedFilter.pathogen?.label ?? 'products.filters.select' | translate }}
             </div>
@@ -66,10 +66,10 @@
           </div>
         </div>
       </div>
-      <div class="w-[250px] text-nowrap">
+      <div class="w-full lg:w-[250px] text-nowrap">
         {{ 'products.filters.technology' | translate }}
         <div class="bg-cyan-50 rounded-lg">
-          <div class="flex justify-between px-3 py-1" role="button" (click)="openDropdown(technologyDropdown, $event)">
+          <div class="flex justify-between px-3 py-1" role="button" (click)="closeDropdown(pathogenDropdown, $event); openDropdown(technologyDropdown, $event)">
             <div>
               {{ selectedFilter.technology?.label ?? 'products.filters.select' | translate }}
             </div>
@@ -98,17 +98,17 @@
         </div>
       </div>
       <button
-        class="btn bg-primary text-white self-end px-4 py-1"
+        class="btn w-full lg:w-auto bg-primary text-white self-end px-4 py-1"
         [class.disabled]="!hasFilter"
         (click)="resetFilter()"
       >
         {{ 'products.filters.reset' | translate }}
       </button>
     </div>
-    <div class="flex flex-col gap-5">
+    <div class="flex flex-col gap-10 lg:gap-5">
       @if (filteredProducts?.length > 0) {
-        @for (item of filteredProducts; track item) {
-        <app-product-card [product]="item"></app-product-card>
+        @for (item of filteredProducts; track item; let last = $last) {
+        <app-product-card [ngClass]="{'pb-5 border-b lg:pb-0 lg:border-0' : !last}" [product]="item"></app-product-card>
         }
       } @else {
         <div class="rounded-xl bg-slate-50 p-8 text-center">{{ 'products.no_result' | translate }}</div>

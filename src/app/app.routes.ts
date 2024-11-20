@@ -7,13 +7,13 @@ import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './products/product/product.component';
 import { AboutFebrileRashComponent } from './about-illness/about-febrile-rash/about-febrile-rash.component';
 import { AboutBloodborneComponent } from './about-illness/about-bloodborne/about-bloodborne.component';
-import { AboutMonkeypoxComponent } from './about-illness/about-monkeypox/about-monkeypox.component';
+import { AboutRespiratoryComponent } from './about-illness/about-respiratory/about-respiratory.component';
 
 export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'bloodborne', component: AboutBloodborneComponent },
   { path: 'febrile-rash', component: AboutFebrileRashComponent },
-  { path: 'respiratory', component: AboutMonkeypoxComponent },
+  { path: 'respiratory', component: AboutRespiratoryComponent },
   { path: 'product/:id', component: ProductComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'legal-mentions', component: LegalComponent },

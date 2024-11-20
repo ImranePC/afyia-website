@@ -169,13 +169,14 @@
     "about": {
       "bloodborne": "Transmissible par le sang",
       "febrilerash": "Éruptions cutanées",
-      "respiratory": "Respiratoire"
+      "respiratory": "Respiratoire",
+      "categories": "Catégories"
     },
     "no_result": "Aucun résultat"
   },
   "about_illness": {
-    "monkeypox": {
-      "title": "A propos de Monkeypox",
+    "respiratory": {
+      "title": "A propos",
       "content": "La variole du singe est une maladie virale rare semblable à la variole. Les premiers symptômes, qui ressemblent à des maladies courantes, évoluent vers une éruption cutanée caractéristique. <br><br> Le diagnostic est difficile, ce qui souligne l'importance d'une identification rapide et précise pour une prise en charge efficace. Les options thérapeutiques disponibles sont limitées."
     },
     "febrilerash": {

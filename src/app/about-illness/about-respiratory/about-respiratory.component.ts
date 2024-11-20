@@ -4,12 +4,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Path } from '../../ariane/ariane.component';
 
 @Component({
-  selector: 'app-about-monkeypox',
+  selector: 'app-about-respiratory',
   standalone: true,
   imports: [AboutIllnessComponent, TranslateModule],
-  templateUrl: './about-monkeypox.component.html',
-  styleUrl: './about-monkeypox.component.scss'
+  templateUrl: './about-respiratory.component.html',
+  styleUrl: './about-respiratory.component.scss'
 })
-export class AboutMonkeypoxComponent {
+export class AboutRespiratoryComponent {
   path: Path = { name: 'products.about.respiratory', link: '/respiratory' };
 }
