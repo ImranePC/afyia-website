@@ -8,11 +8,8 @@
       lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:text-start
     ">
       <div>
-        <h2 class="text-6xl font-extrabold mb-5">Qui sommes nous ?</h2>
-        <p class="py-5 lg:p-0">
-          At Afyia, we recognize that infectious diseases pose a major challenge to public health globally. <br>
-          Our journey is rooted in responding to this challenge, contributing to a world where advanced diagnostics are not only reliable but also accessible to all.
-        </p>
+        <h2 class="text-6xl font-extrabold mb-5">{{ 'about.title' | translate }}</h2>
+        <p class="py-5 lg:p-0" [innerHTML]="'about.description' | translate"></p>
       </div>
       <div class="reveal">
         <div class="lg:translate-x-20 image-container">
@@ -24,7 +21,7 @@
 
   <div class="mx-auto lg:w-9/12 bg-cyan-100 rounded-xl mt-10 p-10 relative">
     <p class="text-center">
-      Our goal is to shape a healthier future, where the principles of One Health and cutting-edge technology converge to make a meaningful impact on global well-being.
+      {{ 'about.one_health' | translate }}
     </p>
     <fa-icon class="absolute top-0 -left-3 text-primary opacity-50" [icon]="faQuoteLeft" size="4x"></fa-icon>
     <fa-icon class="absolute bottom-0 -right-3 text-primary opacity-50" [icon]="faQuoteRight" size="4x"></fa-icon>
@@ -37,35 +34,32 @@
       <img src="assets/img/team/img_team.jpg" alt="Photo de l'équipe AFYIA au complet">
     </div>
     <h2 class="text-4xl lg:text-6xl text-center font-extrabold mb-5" [innerHTML]="'about.team.title' | translate"></h2>
-    <p class="text-center" [innerHTML]="'about.team.text' | translate"></p>
+    <p [innerHTML]="'about.team.text' | translate"></p>
   </div>
 </div>
 
 <div class="bg-secondary-dark px-10 pt-10 lg:px-20 lg:pt-32 mt-28 lg:mt-40">
-  <h2 class="text-4xl lg:text-7xl text-white font-extrabold text-center reveal">
-    <b class="text-cyan-300"> {{ '' | translate }} AFYIA</b> se développe
-  </h2>
-  <p class="p-10 mb-10 text-center text-white">
-    <b>AFYIA</b> Lorem ipsum dorime est un projet débute il y a une dizaine d'année lorem ipsum
-  </p>
+  <div class="container">
+    <h2 class="text-4xl lg:text-7xl text-white font-extrabold text-center reveal" [innerHTML]="'about.timeline.title' | translate"></h2>
+    <p class="p-10 mb-10 text-center text-white" [innerHTML]="'about.timeline.text' | translate"></p>
+  </div>
   <div class="timeline flex flex-col gap-20 relative pt-20 text-white">
     <div id="timeline_element_1" class="relative mx-auto grid grid-cols-2">
       <div class="date">2012</div>
       <div class="description">
-        Création d'un algorithme de traitement des données HRM, qui fait aujourd'hui l'objet d'un brevet patati patata.
+        {{ 'about.timeline.2012' | translate }}
       </div>
     </div>
     <div id="timeline_element_2" class="relative mx-auto grid grid-cols-2 inactive">
       <div class="date">2017</div>
       <div class="description">
-        <b>Maturation de la technologie</b> <br>
-        Application vétérinaire
+        <span [innerHTML]="'about.timeline.2017' | translate"></span>
         <div class="flex gap-3 mt-5">
-          <div class="rounded-xl">
-            <img class="h-[50px] whiten" src="assets/img/partnership/partner_axlr.png" alt="Partner logo Axlr">
+          <div>
+            <img class="h-[80px] whiten" src="assets/img/partnership/partner_axlr.png" alt="Partner logo Axlr">
           </div>
-          <div class="rounded-xl">
-            <img class="h-[50px] rounded-lg" src="assets/img/partnership/partner_id.jpg" alt="Partner logo Innovative Diagnostics">
+          <div>
+            <img class="h-[80px] p-3 bg-white rounded-xl" src="assets/img/partnership/partner_id.jpg" alt="Partner logo Innovative Diagnostics">
           </div>
         </div>
       </div>
@@ -73,35 +67,52 @@
     <div id="timeline_element_3" class="relative mx-auto grid grid-cols-2 inactive">
       <div class="date">2022</div>
       <div class="description">
-        Obtention du marquage CE IDV, attestant de la conformité et de la qualité de nos produits selon les normes européennes. DICOV MOC/I, DICOV-REST, Afroscreen
+        <span [innerHTML]="'about.timeline.2022' | translate"></span>
+        <div class="flex gap-3 mt-5">
+          <div>
+            <img class="h-[80px]" src="assets/img/logo_afroscreen.png" alt="Logo afroscreen" title="Logo afroscreen">
+          </div>
+          <div>
+            <img class="h-[80px] p-3 invert" src="assets/img/logo_ce_ivd.png" alt="Logo cd ivd kit afyia diagnostics" title="Logo ce ivd kit afyia diagnostics">
+          </div>
+        </div>
       </div>
     </div>
     <div id="timeline_element_4" class="relative mx-auto grid grid-cols-2 inactive">
       <div class="date">2023</div>
       <div class="description">
-        Création d'<b>AFYIA</b> Diagnostics 🎉
-        <br>Blablabli
-        <br><br><br><br> Blablabla
+        <span [innerHTML]="'about.timeline.2023.1' | translate"></span>
+        <div class="mt-5 mb-10">
+          <img class="h-[80px]" src="assets/img/logo_irba.png" alt="Logo IRBA" title="Logo IRBA">
+        </div>
+        <span class="text-2xl" [innerHTML]="'about.timeline.2023.2' | translate"></span>
+        <div class="mt-5 mb-10">
+          <img class="h-[250px] bg-white p-5 rounded-xl" src="assets/img/afyia_logo_2.png" alt="Logo AFYIA Diagnostics" title="Logo AFYIA Diagnostics">
+        </div>
+        <span>
+          {{ 'about.timeline.2023.3' | translate }}
+        </span>
       </div>
     </div>
-    <div id="timeline_element_5" class="relative mx-auto grid grid-cols-2 inactive pb-[150px]">
+    <div id="timeline_element_5" class="relative mx-auto grid grid-cols-2 inactive">
       <div class="date">2024</div>
       <div class="description">
-        Certification ISO13485
+        {{ 'about.timeline.2024' | translate }}
       </div>
     </div>
+    <div class="h-[50px]"></div>
     <div class="timeline-bar"></div>
     <div id="timeline_progress" class="timeline-bar timeline-bar-progress"></div>
   </div>
-  <div class="text-center text-3xl">🚀</div>
-  <div class="bg-white shadow-sm rounded-xl p-10 translate-y-1/2 w-full lg:w-2/3 mx-auto text-center text-2xl mt-5">
-    Et ensuite ? Lorem ipsum, message pour le futur
-  </div>
+  <div class="text-center text-3xl pb-40">🚀</div>
+  <!-- <div class="bg-white shadow-sm rounded-xl p-10 translate-y-1/2 w-full lg:w-2/3 mx-auto text-center text-2xl mt-5">
+    Et ensuite ?
+  </div> -->
 </div>
 
 <div class="container mt-40">
   <div class="text-center mb-20">
-    <h2 class="title reveal">Les fondateurs</h2>
+    <h2 class="title reveal">{{ 'about.founders.title' | translate }}</h2>
   </div>
   <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
     <div>
@@ -110,7 +121,7 @@
       </div>
       <div class="mt-5 text-center">
         <h3 class="font-extrabold">Philippe Pourquier</h3>
-        <span>PDG</span>
+        <span>{{ 'about.founders.pourquier' | translate }}</span>
       </div>
     </div>
     <div>
@@ -119,25 +130,25 @@
       </div>
       <div class="mt-5 text-center">
         <h3 class="font-extrabold">Joany Guy</h3>
-        <span>Directrice générale</span>
+        <span>{{ 'about.founders.guy' | translate }}</span>
       </div>
     </div>
     <div>
       <div class="h-40 w-40 bg-slate-100 rounded-2xl mx-auto overflow-hidden">
-        <img src="assets/img/team/pp_christelle.png" alt="Photo de Joany Guy pour Afyia Diagnostics">
+        <img src="assets/img/team/pp_christelle.png" alt="Photo de Christelle Reynes pour Afyia Diagnostics">
       </div>
       <div class="mt-5 text-center">
         <h3 class="font-extrabold">Christelle Reynes</h3>
-        <span>Responsable biostatistiques</span>
+        <span>{{ 'about.founders.reynes' | translate }}</span>
       </div>
     </div>
     <div>
       <div class="h-40 w-40 bg-slate-100 rounded-2xl mx-auto overflow-hidden">
-        <img src="assets/img/team/pp_jc.png" alt="Photo de Joany Guy pour Afyia Diagnostics">
+        <img src="assets/img/team/pp_jc.png" alt="Photo de Jean Christophe Avarre pour Afyia Diagnostics">
       </div>
       <div class="mt-5 text-center">
         <h3 class="font-extrabold">Jean-Christophe Avarre</h3>
-        <span>Titre</span>
+        <span>Undefined</span>
       </div>
     </div>
   </div>

@@ -4,16 +4,16 @@
     "title": "Monkeypox Virus",
     "subtitle": "Kit de détection par PCR temps réel",
     "description": "(Monkeypox virus clades I et II) Validé par le CNR Orthopovirus",
-    "image": "viruses/illness_1.jpg",
+    "image": "kits/idvet_kit.jpg",
     "pathogens": ["mpox"],
     "technology": ["rt-pcr"],
-    "card": "pdf/DIMPOX_EN.pdf",
+    "card": "pdf/DIMPOX_FR.pdf",
     "content": [
-      { "title": "All clades detected", "text": "Qualitative detection of Monkeypox virus (clades Ia, Ib and II)." },
-      { "title": "Diverse samples", "text": "From mucocutaneous and oropharyngeal swabs." },
-      { "title": "Clinically validated", "text": "By the National Reference Center-LE Orthopovirus (France)" },
-      { "title": "Adaptable and easy to use", "text": "Quick and easy to use, transportable at room temperature, edaptable to various thermocyclers." },
-      { "title": "qPCR Duplex", "text": "MPOX virus specific DNA (F3L, B7R and G2R) and an endogenous internal control targeting a human housekeeping gene, both targets detected in a single well." }
+      { "title": "Diagnostic syndromique", "text": "Indentification du virus MPOX (clade I et clade II)." },
+      { "title": "Échantillons variés", "text": "À partir de prélèvements cutanéo-muqueux et oropharyngés." },
+      { "title": "Cliniquement validé", "text": "Par le Centre National de Référence - Laboratoire d'Expertise Orthopoxvirus (France)." },
+      { "title": "Adaptable", "text": "Facile d'utilisation et rapide (1h après extraction), transportable ç température ambiante (lyophilisé), adaptable à différents thermocycleurs (MCI, CFX96, QS5)." },
+      { "title": "qPCR Duplex", "text": "Le MPOX (F3L, B7R et G2R) et un contrôle interne endogène sont détectés dans un seul puits." }
     ]
   },
   {
@@ -24,14 +24,14 @@
     "image": "kits/idvet_kit.jpg",
     "pathogens": ["mpox", "varicella", "herpes"],
     "technology": ["hrm-pcr"],
-    "card": "pdf/DIRASH_EN.pdf",
+    "card": "pdf/DIRASH_FR.pdf",
     "content": [
-      { "title": "Syndromic diagnosis", "text": "Identification of the main viruses responsibles for febrile rash eruptions." },
-      { "title": "Diverse samples", "text": "From cutaneous-mucous and oropharyngeal samples." },
-      { "title": "Multiplex qPCR HRM", "text": "MPOX virus, VZV, HSV-1, HSV-2, and an endogenous internal control are detected in a single well." },
-      { "title": "Adaptable and easy to use", "text": "Easy to use and fast (1 hour post-extraction), transportable at room temperature (freeze fried), adaptable to different thermocyclers (MIC, CFX96, QS5)." },
-      { "title": "Automated interpretation", "text": "The obtained results are then analyzed by an artificial intelligence-based software: DISoft." },
-      { "title": "Clinically validated", "text": "Clinical validation of the DIRASH kit in collaboration with the Montpellier University Hospital (CHU) and the National Institude of Biomedical Research (INRB)." }
+      { "title": "Diagnostic syndromique", "text": "Identification des principaux virus responsables d'éruptions cutanées fébriles." },
+      { "title": "Échantillons variés", "text": "À partir de prélèvements cutanéo-muqueux et oropharyngés." },
+      { "title": "qPCR Multiplexe HRM", "text": "Les virus MPXV, VZV, HSV-1, HSV-2 et un contrôle interne endogène sont détectés dans un seul puit." },
+      { "title": "Adaptable", "text": "Facile d'utilisation et rapide (1h après extraction), transportable ç température ambiante (lyophilisé), adaptable à différents thermocycleurs (MCI, CFX96, QS5)." },
+      { "title": "Interprétation automatisée", "text": "Les résultats obtenus sont analysés par un logicel basé sur l'intelligence artificielle : DISoft" },
+      { "title": "Cliniquement validé", "text": "Validation clinique du kit DIRASH en collaboration avec le CHU de Montpellier et l'Institut National de Recherche Biomédicale (INRB)." }
     ]
   },
   {
@@ -48,6 +48,7 @@
     "subtitle": "Kit de quantification de la charge virale par PCR en temps réel",
     "description": "Hepatite description",
     "pathogens": ["hepatitis"],
-    "technology": ["qrt-pcr"]
+    "technology": ["qrt-pcr"],
+    "disabled": true
   }
 ]

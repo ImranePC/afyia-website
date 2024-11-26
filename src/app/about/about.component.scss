@@ -8,6 +8,10 @@
     transition: $transition-3;
   }
 
+  > div {
+    @apply pb-10;
+  }
+
   .date {
     @apply text-4xl;
     z-index: 1;

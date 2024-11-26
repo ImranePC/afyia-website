@@ -7,7 +7,12 @@
           "email": "Email",
           "message": "Message",
           "name": "Lastname",
-          "firstname": "Firstname"
+          "firstname": "Firstname",
+          "company": "Company",
+          "address": "Address",
+          "is_client": "I'm already a customer",
+          "phone": "Phone Number",
+          "address_more": "Address - Additional information"
         },
         "title": "Leave us a message",
         "subject": {
@@ -186,8 +191,30 @@
   },
   "about": {
     "team": {
-      "title": "Here is the <span class=\"text-primary\">AFYIA's</span> staff",
-      "text": "Lorem ipsum"
+      "title": "<span class=\"text-primary\">AFYIA's</span> staff",
+      "text": "R&D is at the heart of AFYIA Diagnostics and this team is mainly dedicated to it. AFYIA is a scientific company developing innovative solutions for diagnosing infectious diseases, combining molecular biology and artificial intelligence. This R&D is carried out continuously in our laboratory based in Grabels in the south of France."
+    },
+    "title": "About us",
+    "description": "While diagnostics is the primary means of combating infectious diseases, the vast majority of people living in low- and middle-income countries still do not have access to it. In these countries, infectious diseases are the first cause of mortality. <br><br>To help improve access to diagnostics for infectious diseases by developing high-performance, low-cost tools tailored to the needs and constraints of the most demanding laboratory environments, based on three areas of innovation: molecular biology, artificial intelligence and industrial processes.",
+    "one_health": "This approach is based on the scientific and technical expertise acquired by Innovative Diagnostics, which has developed solutions for the veterinary and human sectors, from a \"One Health\" perspective in in vitro diagnostics.",
+    "timeline": {
+      "2012": "Development of an HRM data processing algorithm.",
+      "2017": "<b>Maturation of the technology</b>, veterinary application",
+      "2022": "Development and marketing of <b>DICOV-MOC/I</b> and <b>DICOV-REST</b> kits.",
+      "2023": {
+        "1": "          <b>ID-ABORT-10</b> kit's first veterinary application on the market. Market launch, success in France and abroad. <br><br>Development, validation and marketing of <b>DIRASH</b> and <b>DIMPXV</b> kits.",
+        "2": "<b>AFYIA Diagnostics</b> creation.",
+        "3": "Development and launch of several tools: DIRESPI, DIMTB-HPE, DIHBV-VLQ, DITOSV."
+      },
+      "2024": "ISO13485 certified",
+      "text": "<b>AFYIA</b> was born of the shared desire of its founders to address healthcare issues in developing countries using innovative technical solutions. The story began around ten years ago ...",
+      "title": "<b class=\"text-cyan-300\">AFYIA</b> is growing"
+    },
+    "founders": {
+      "title": "The founders",
+      "pourquier": "CEO",
+      "guy": "General Manager",
+      "reynes": "Scientific Manager"
     }
   }
 }

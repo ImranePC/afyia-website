@@ -4,7 +4,7 @@
     "title": "Monkeypox Virus",
     "subtitle": "Detection kit by real-time PCR",
     "description": "(Monkeypox virus clades I et II) Validated by CNR Orthopovirus",
-    "image": "viruses/illness_1.jpg",
+    "image": "kits/idvet_kit.jpg",
     "pathogens": ["mpox"],
     "technology": ["rt-pcr"],
     "card": "pdf/DIMPOX_EN.pdf",
@@ -48,6 +48,7 @@
     "subtitle": "Viral load quantification by real-time PCR",
     "description": "Hepatitis description",
     "pathogens": ["hepatitis"],
-    "technology": ["qrt-pcr"]
+    "technology": ["qrt-pcr"],
+    "disabled": true
   }
 ]

@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "build-static": "npx scully build --project afyia-website",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -31,7 +31,9 @@
     "@scullyio/init": "^2.1.21",
     "@scullyio/scully-plugin-puppeteer": "^2.1.41",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.21.0",
+    "express-rate-limit": "^7.4.1",
     "ngx-cookie-service": "^17.1.0",
     "rxjs": "~7.8.0",
     "scrollreveal": "^4.0.9",
