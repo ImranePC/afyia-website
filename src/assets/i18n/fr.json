@@ -131,11 +131,11 @@
         }
       },
       "title": "Nos <strong>produits</strong>",
-      "view_more": "Voir plus",
-      "about_us": "Qui sommes <strong>nous</strong>"
+      "view_more": "Voir plus"
     },
     "about": {
       "title": "Qui sommes <strong>nous</strong>",
+      "description": "La R&D au cœur de AFYIA Diagnostics. AFYIA est une entreprise scientifique qui développe des solutions innovantes de diagnostic des maladies infectieuses. Cette R&D est menée en continu dans notre laboratoire basé dans le sud de la France à Grabels.",
       "view_more": "En savoir plus"
     }
   },
@@ -208,14 +208,15 @@
         "3": "Développement et mise sur le marché de plusieurs outils : DIRESPI, DIMTB-HPE, DIHBV-VLQ, DITOSV."
       },
       "2024": "Certification ISO13485",
-      "text": "<b>AFYIA</b> est née d’une envie commune de ses fondateurs d’adresser des problématiques de santé des pays du Sud à l’aide de solutions techniques innovantes. Cette histoire débute il y a une dizaine d’année ...",
-      "title": "<b class=\"text-cyan-300\">AFYIA</b> se développe"
+      "text": "<b>AFYIA</b> est née d’une envie commune de ses fondateurs d’adresser des problématiques de santé des pays du sud à l’aide de solutions techniques innovantes. Cette histoire débute il y a une dizaine d’année ...",
+      "title": "se développe"
     },
     "founders": {
       "title": "Les fondateurs",
       "pourquier": "PDG",
-      "guy": "Directrice Générale",
-      "reynes": "Responsable scientifique"
+      "guy": "Directrice scientifique",
+      "reynes": "Responsable biostatistiques",
+      "avarre": "Conseil scientifique"
     }
   }
 }

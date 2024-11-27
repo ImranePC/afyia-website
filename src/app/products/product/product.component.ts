@@ -5,8 +5,11 @@ import { ParallaxDirective } from '../../directives/parallax.directive';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ArianeComponent, Path } from '../../ariane/ariane.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBoxOpen, faUpRightFromSquare, faDna } from '@fortawesome/free-solid-svg-icons';
+import { faBoxOpen, faUpRightFromSquare, faDna, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { AppService } from '../../services/app.service';
+import { ModalComponent } from '../../modal/modal.component';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 export interface Product {
   id: string
@@ -18,17 +21,21 @@ export interface Product {
   technology: string[]
   content: any[]
   card?: string
+  disabled?: boolean
 }
 
 @Component({
   selector: 'app-product',
   standalone: true,
   imports: [
-    ParallaxDirective,
     TranslateModule,
     ArianeComponent,
     RouterModule,
     FontAwesomeModule,
+    ModalComponent,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss'
@@ -46,13 +53,28 @@ export class ProductComponent implements OnInit {
 
   faDna = faDna;
 
+  faPaperPlane = faPaperPlane;
+
+  contactForm: FormGroup;
+
+  isClient = false;
+
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
     private router: Router,
     private translate: TranslateService,
     private appService: AppService,
-  ) {}
+    private fb: FormBuilder,
+  ) {
+    this.contactForm = this.fb.group({
+      lastname: ['', Validators.required],
+      firstname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', Validators.required],
+      subject: [undefined, Validators.required],
+    })
+  }
 
   ngOnInit(): void {
     this.appService.initScrollReveal();
@@ -88,6 +110,10 @@ export class ProductComponent implements OnInit {
         { name: this.product.title, link: this.product.id },
       ];
     }
+  }
+
+  isFieldInvalid(test: string): boolean {
+    return false;
   }
 
   goBack(): void {

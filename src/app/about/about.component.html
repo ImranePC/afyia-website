@@ -40,7 +40,9 @@
 
 <div class="bg-secondary-dark px-10 pt-10 lg:px-20 lg:pt-32 mt-28 lg:mt-40">
   <div class="container">
-    <h2 class="text-4xl lg:text-7xl text-white font-extrabold text-center reveal" [innerHTML]="'about.timeline.title' | translate"></h2>
+    <h2 class="text-4xl lg:text-7xl text-white font-extrabold text-center reveal">
+      <span class="text-cyan-300">AFYIA</span> {{ 'about.timeline.title' | translate }}
+    </h2>
     <p class="p-10 mb-10 text-center text-white" [innerHTML]="'about.timeline.text' | translate"></p>
   </div>
   <div class="timeline flex flex-col gap-20 relative pt-20 text-white">
@@ -151,7 +153,7 @@
       </div>
       <div class="mt-5 text-center">
         <h3 class="font-extrabold">Jean-Christophe Avarre</h3>
-        <span>Undefined</span>
+        <span>{{ 'about.founders.avarre' | translate }}</span>
       </div>
     </div>
   </div>
