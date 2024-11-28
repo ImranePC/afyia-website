@@ -1,11 +1,14 @@
+require('dotenv').config({ path: './api/.env' });
+
 const express = require('express');
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./api/afyiadb.sqlite');
 const app = express();
-const PORT = 3001;
-
-const allowedOrigins = ['https://afyia-diagnostics.com'];
+const PORT = process.env.PORT;
+const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
+const rateLimit = require('express-rate-limit');
+const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100 });
 
 const corsOptions = {
   origin: (origin, callback) => {
@@ -21,13 +24,14 @@ const corsOptions = {
 
 app.use(express.json());
 app.use(cors());
+app.use(limiter);
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Internal Server Error' });
+});
 
 app.get('/', (req, res) => {
   res.send('hello world');
-})
-
-app.get('/hey', (req, res) => {
-  res.send('zoubir');
 })
 
 app.post('/send-message', (req, res) => {
