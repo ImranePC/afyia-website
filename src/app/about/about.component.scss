@@ -8,8 +8,8 @@
     transition: $transition-3;
   }
 
-  > div {
-    @apply pb-10;
+  &-element  {
+    @apply relative grid grid-cols-2 pb-10;
   }
 
   .date {
@@ -103,4 +103,24 @@
 
 .whiten {
   filter: brightness(100);
+}
+
+@media (max-width: theme('screens.lg')) {
+  .timeline {
+    &-element {
+      @apply grid-cols-3
+    }
+
+    .date {
+      @apply text-2xl;
+    }
+
+    .description {
+      @apply text-lg ps-10 pe-5 col-span-2;
+    }
+
+    &-bar {
+      left: 33.33%;
+    }
+  }
 }

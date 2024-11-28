@@ -61,7 +61,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: theme('screens.lg')) {
   .header {
     margin-top: 1em;
     width: calc(100% - 2em);

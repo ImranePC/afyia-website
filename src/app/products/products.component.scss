@@ -2,7 +2,7 @@
 
 .illness-grid {
   & > div {
-    @apply rounded-xl p-5 font-extrabold text-white text-3xl;
+    @apply rounded-xl p-5 font-extrabold text-white;
     position: relative;
     background-color: black;
     text-align: center;
@@ -40,6 +40,19 @@
     &:hover {
       &::after {
         scale: 1.08;
+      }
+    }
+  }
+}
+
+@media (max-width: theme('screens.md')) {
+  .illness-grid {
+    & > div {
+      @apply p-3;
+      height: 125px;
+
+      span {
+        @apply text-3xl;
       }
     }
   }

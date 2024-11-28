@@ -275,7 +275,7 @@ strong {
   }
 }
 
-@media (max-width: 976px) {
+@media (max-width: theme('screens.lg')) {
   .title {
     @apply text-5xl;
 
@@ -293,7 +293,7 @@ strong {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: theme('screens.md')) {
   .title {
     @apply text-3xl;
   }

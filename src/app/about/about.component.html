@@ -38,21 +38,21 @@
   </div>
 </div>
 
-<div class="bg-secondary-dark px-10 pt-10 lg:px-20 lg:pt-32 mt-28 lg:mt-40">
-  <div class="container">
+<div class="bg-secondary-dark pt-10 lg:px-20 lg:pt-32 mt-28 lg:mt-40">
+  <div class="container px-5 lg:px-10">
     <h2 class="text-4xl lg:text-7xl text-white font-extrabold text-center reveal">
       <span class="text-cyan-300">AFYIA</span> {{ 'about.timeline.title' | translate }}
     </h2>
-    <p class="p-10 mb-10 text-center text-white" [innerHTML]="'about.timeline.text' | translate"></p>
+    <p class="py-5 lg:py-10 lg:text-center text-white" [innerHTML]="'about.timeline.text' | translate"></p>
   </div>
   <div class="timeline flex flex-col gap-20 relative pt-20 text-white">
-    <div id="timeline_element_1" class="relative mx-auto grid grid-cols-2">
+    <div id="timeline_element_1" class="timeline-element">
       <div class="date">2012</div>
       <div class="description">
         {{ 'about.timeline.2012' | translate }}
       </div>
     </div>
-    <div id="timeline_element_2" class="relative mx-auto grid grid-cols-2 inactive">
+    <div id="timeline_element_2" class="timeline-element inactive">
       <div class="date">2017</div>
       <div class="description">
         <span [innerHTML]="'about.timeline.2017' | translate"></span>
@@ -66,7 +66,7 @@
         </div>
       </div>
     </div>
-    <div id="timeline_element_3" class="relative mx-auto grid grid-cols-2 inactive">
+    <div id="timeline_element_3" class="timeline-element inactive">
       <div class="date">2022</div>
       <div class="description">
         <span [innerHTML]="'about.timeline.2022' | translate"></span>
@@ -80,7 +80,7 @@
         </div>
       </div>
     </div>
-    <div id="timeline_element_4" class="relative mx-auto grid grid-cols-2 inactive">
+    <div id="timeline_element_4" class="timeline-element inactive">
       <div class="date">2023</div>
       <div class="description">
         <span [innerHTML]="'about.timeline.2023.1' | translate"></span>
@@ -96,7 +96,7 @@
         </span>
       </div>
     </div>
-    <div id="timeline_element_5" class="relative mx-auto grid grid-cols-2 inactive">
+    <div id="timeline_element_5" class="timeline-element inactive">
       <div class="date">2024</div>
       <div class="description">
         {{ 'about.timeline.2024' | translate }}
@@ -109,7 +109,9 @@
     <div class="timeline-bar"></div>
     <div id="timeline_progress" class="timeline-bar timeline-bar-progress"></div>
   </div>
-  <div class="text-center text-3xl pb-40">🚀</div>
+  <div class="relative pb-40">
+    <div class="absolute left-1/3 lg:left-1/2 -translate-x-1/2 text-3xl">🚀</div>
+  </div>
   <!-- <div class="bg-white shadow-sm rounded-xl p-10 translate-y-1/2 w-full lg:w-2/3 mx-auto text-center text-2xl mt-5">
     Et ensuite ?
   </div> -->
