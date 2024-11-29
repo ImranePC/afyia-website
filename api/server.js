@@ -62,7 +62,9 @@ app.post('/send-message', (req, res) => {
   });
 });
 
-app.listen(PORT);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log('API is listening');
+});
 
 function saveMessage(res, data) {
   console.log(data);
