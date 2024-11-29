@@ -11,11 +11,11 @@ import { AboutRespiratoryComponent } from './about-illness/about-respiratory/abo
 
 export const routes: Routes = [
   { path: 'about', component: AboutComponent },
-  { path: 'bloodborne', component: AboutBloodborneComponent },
-  { path: 'febrile-rash', component: AboutFebrileRashComponent },
-  { path: 'respiratory', component: AboutRespiratoryComponent },
-  { path: 'product/:id', component: ProductComponent },
-  { path: 'products', component: ProductsComponent },
+  // { path: 'bloodborne', component: AboutBloodborneComponent },
+  // { path: 'febrile-rash', component: AboutFebrileRashComponent },
+  // { path: 'respiratory', component: AboutRespiratoryComponent },
+  // { path: 'product/:id', component: ProductComponent },
+  // { path: 'products', component: ProductsComponent },
   { path: 'legal-mentions', component: LegalComponent },
   { path: 'contact', component: ContactComponent },
   { path: '', component: HomeComponent },
