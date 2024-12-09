@@ -1,0 +1,18 @@
+@import '../../assets/scss/variables.scss';
+
+h3 {
+  cursor: pointer;
+  transition: $transition-1;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.image-container {
+  cursor: pointer;
+
+  &:hover + div div h3 {
+    color: $primary;
+  }
+}

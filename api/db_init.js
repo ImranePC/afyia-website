@@ -12,6 +12,16 @@ function initDatabase() {
     message TEXT,
     subject TEXT
   `);
+
+  createTable('news', `
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title_en TEXT NOT NULL,
+    title_fr TEXT NOT NULL,
+    content_en TEXT NOT NULL,
+    content_fr TEXT NOT NULL,
+    published_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    image_url TEXT NOT NULL
+  `);
 }
 
 function createTable(name, query) {

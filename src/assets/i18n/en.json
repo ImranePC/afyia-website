@@ -218,5 +218,10 @@
       "reynes": "Biostatitic Manager",
       "avarre": "Scientific Consultant"
     }
+  },
+  "news": {
+    "news_description": "Find out the latest news from AFYIA.",
+    "last_news": "Latest news",
+    "view_more": "Read more"
   }
 }

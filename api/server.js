@@ -34,10 +34,32 @@ app.get('/', (req, res) => {
   res.send('hello world');
 })
 
-app.post('/send-message', (req, res) => {
-  const { body } = req;
+app.get('/news', async (req, res) => {
+  const language = req['body']['language'] ?? 'fr';
 
-  console.log(body);
+  try {
+    data = await getNews(language);
+    res.json(data);
+  } catch(err) {
+    res.status(500).json({ error: err.message });
+  }
+})
+
+app.get('/news/:id', async (req, res) => {
+  const params = req.params;
+  const language = req.get('x-app-lang') ?? 'fr';
+
+  try {
+    data = await getNewsById(params.id, language);
+    res.json(data[0]);
+  } catch(err) {
+    res.status(500).json({ error: err.message });
+  }
+})
+
+app.post('/send-message', (req, res) => {
+  const body = req.body;
+
   const data = {
     firstname: body.firstname,
     lastname: body.lastname,
@@ -46,8 +68,8 @@ app.post('/send-message', (req, res) => {
     subject: body.subject
   }
 
-  try{
-    saveMessage(res, data);
+  try {
+    saveMessage(data);
   } catch(err) {
     console.log(err);
     res.status(500).json({
@@ -64,8 +86,7 @@ app.post('/send-message', (req, res) => {
 
 app.listen(PORT);
 
-function saveMessage(res, data) {
-  console.log(data);
+function saveMessage(data) {
   if (!data.firstname || !data.lastname || !data.email || !data.message || !data.subject) {
     throw new Error('Missing argument');
   }
@@ -81,5 +102,44 @@ function saveMessage(res, data) {
     }
 
     return true;
+  });
+}
+
+async function getNews(language) {
+  const textLimit = 100;
+  const contentI18n = language === 'fr' ? 'content_fr' : 'content_en';
+  const titleI18n = language === 'fr' ? 'title_fr' : 'title_en';
+
+  const query = `SELECT id, ${titleI18n} as title, SUBSTRING(${contentI18n}, 1, ${textLimit}) as content, image_url FROM news`;
+
+  return new Promise((resolve, reject) => {
+    db.all(query, (err, rows) => {
+      if (err) {
+        reject(new Error('Error while fetching news'));
+      } else {
+        resolve(rows);
+      }
+    })
+  });
+}
+
+async function getNewsById(id, language) {
+  const contentI18n = language === 'fr' ? 'content_fr' : 'content_en';
+  const titleI18n = language === 'fr' ? 'title_fr' : 'title_en';
+
+  const query = `
+    SELECT id, ${titleI18n} as title, ${contentI18n} as content, published_at, image_url
+    FROM news
+    WHERE id = ${id}
+  `;
+
+  return new Promise((resolve, reject) => {
+    db.all(query, (err, rows) => {
+      if (err) {
+        reject(new Error('Error while fetching news'));
+      } else {
+        resolve(rows);
+      }
+    })
   });
 }

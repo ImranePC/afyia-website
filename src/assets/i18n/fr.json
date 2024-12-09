@@ -218,5 +218,10 @@
       "reynes": "Responsable biostatistiques",
       "avarre": "Conseil scientifique"
     }
+  },
+  "news": {
+    "last_news": "Les dernières actualités",
+    "news_description": "Découvrez les dernières actualités d'AFYIA.",
+    "view_more": "Lire plus"
   }
 }

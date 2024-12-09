@@ -5,8 +5,11 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { FooterComponent } from './footer/footer.component';
+import localeFr from '@angular/common/locales/fr';
+import { registerLocaleData } from '@angular/common';
 
 const DEFAULT_LANGUAGE = 'fr';
+registerLocaleData(localeFr, 'fr');
 
 @Component({
   selector: 'app-root',
