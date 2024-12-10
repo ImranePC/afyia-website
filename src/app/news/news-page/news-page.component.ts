@@ -38,21 +38,24 @@ export class NewsPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.appService.initScrollReveal();
-    this.loadCurrentNews();
+    this.loadCurrentNews(true);
 
     this.translate.onLangChange.subscribe(() => {
       this.loadCurrentNews();
     })
   }
 
-  loadCurrentNews(): void {
+  loadCurrentNews(firstCall = false): void {
     const newsId = this.route.snapshot.paramMap.get('id');
 
     this.newsService.getNewsById(newsId).subscribe((news) => {
       this.data = news;
       this.data.content = this.formatContent(this.data.content as string);
       this.navigationPath[this.navigationPath.length - 1].name = this.data.title;
+
+      if (firstCall) {
+        this.appService.initScrollReveal();
+      }
     });
   }
 

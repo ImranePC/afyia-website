@@ -8,7 +8,7 @@
       <h2 class="z-10 title title-start">{{ 'news.last_news' | translate }}</h2>
       <p class="mt-10">{{ 'news.news_description' | translate }}</p>
     </div>
-    <div class="flex flex-col gap-20 reveal">
+    <div class="flex flex-col gap-16 reveal">
       @for (news of newsList; track news) {
       <div class="grid grid-cols-3">
         <div routerLink="/news/{{ news.id }}" class="image-container max-h-[180px] col-span-1 rounded-2xl bg-cyan-100 -translate-x-20">
