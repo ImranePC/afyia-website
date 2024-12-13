@@ -10,12 +10,14 @@ import { AboutBloodborneComponent } from './about-illness/about-bloodborne/about
 import { AboutRespiratoryComponent } from './about-illness/about-respiratory/about-respiratory.component';
 import { NewsComponent } from './news/news.component';
 import { NewsPageComponent } from './news/news-page/news-page.component';
+import { SoftwareComponent } from './software/software.component';
 
 export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'bloodborne', component: AboutBloodborneComponent },
   { path: 'febrile-rash', component: AboutFebrileRashComponent },
   { path: 'respiratory', component: AboutRespiratoryComponent },
+  { path: 'software', component: SoftwareComponent },
   { path: 'news/:id', component: NewsPageComponent },
   { path: 'news', component: NewsComponent },
   { path: 'product/:id', component: ProductComponent },

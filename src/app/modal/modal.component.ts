@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { TranslateModule } from '@ngx-translate/core';
@@ -18,6 +18,9 @@ export class ModalComponent {
   @Input()
   size: 'auto' | 'lg' = 'auto';
 
+  @Output()
+  onClose: EventEmitter<any> = new EventEmitter();
+
   faXmark = faXmark;
 
   public open(): void {
@@ -26,5 +29,7 @@ export class ModalComponent {
 
   public close(): void {
     this.show = false;
+
+    this.onClose.emit(null);
   }
 }

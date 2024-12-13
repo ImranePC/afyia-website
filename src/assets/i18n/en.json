@@ -223,5 +223,15 @@
     "news_description": "Find out the latest news from AFYIA.",
     "last_news": "Latest news",
     "view_more": "Read more"
+  },
+  "software": {
+    "title": "DISoft software",
+    "subtitle": "<strong>AI</strong>-powered <b>software</b>",
+    "access_disoft": "How to access to <strong>DISoft</strong> <b>?</b>",
+    "disoft_description": "DISoft software classifies unknown samples into several possible groups by analyzing descriptors derived from melting curves, based on a supervised learning method. <br><br> The methodology behind DISoft was created by Christelle REYNES and Jean-Christophe AVARRE in 2016 (Patent FR n°3047013).",
+    "access": {
+      "request": "Request an access",
+      "description": "When you purchase a kit, you get full access to the software at no extra cost, for an unlimited period. Request an access by entering your purchase reference below, and we'll send you the procedure to access DISoft by e-mail."
+    }
   }
 }

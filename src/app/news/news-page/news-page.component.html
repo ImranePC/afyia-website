@@ -3,11 +3,13 @@
 </div>
 
 <div class="container">
-  <div class="relative -mt-20 z-1 mx-auto lg:w-8/12 bg-white shadow-sm rounded-xl p-5 lg:p-10 reveal">
+  <div class="relative -mt-20 z-1 mx-auto lg:w-8/12 bg-white shadow-sm rounded-xl p-5 lg:p-10">
     <div class="absolute -top-14 left-0 text-white">
       <app-ariane [path]="navigationPath"></app-ariane>
     </div>
-    <span class="text-gray-500 text-small">Publié le {{ data?.publishedAt | date:'shortDate' : undefined : currentLang }}</span>
-    <p [innerHTML]="data?.content"></p>
+    <div class="reveal min-h-[500px]">
+      <span class="text-gray-500 text-small">Publié le {{ data?.publishedAt | date:'shortDate' : undefined : currentLang }}</span>
+      <p [innerHTML]="data?.content"></p>
+    </div>
   </div>
 </div>

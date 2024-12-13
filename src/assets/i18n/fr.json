@@ -223,5 +223,15 @@
     "last_news": "Les dernières actualités",
     "news_description": "Découvrez les dernières actualités d'AFYIA.",
     "view_more": "Lire plus"
+  },
+  "software": {
+    "title": "Le logiciel DISoft",
+    "subtitle": "<b>Un logiciel</b> basé sur <br> l'<strong>IA</strong>",
+    "access_disoft": "Comment accéder à <strong>DISoft</strong> <b>?</b>",
+    "disoft_description": "Le logiciel DISoft propose de classer des échantillons inconnus parmi plusieurs groupes possibles via l'analyse de descripteurs issus de courbes de fusion en se basant sur une méthode d'apprentissage supervisé. <br><br> La méthodologie à l'origine de DISoft a été créée par Christelle REYNES et Jean-Christophe AVARRE en 2016 (Brevet FR n°3047013)",
+    "access": {
+      "request": "Demander un accès",
+      "description": "Pour l'achat d’un kit vous obtenez un accès au logiciel sans surcoût, pour une durée illimitée. Faite une demande de compte ci dessous en transmettant votre référence d’achat, vous recevrez ensuite la procédure pour accéder à DISoft par mail."
+    }
   }
 }
