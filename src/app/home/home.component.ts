@@ -3,7 +3,7 @@ import { HeaderComponent } from '../header/header.component';
 import { ParallaxDirective } from '../directives/parallax.directive';
 import { CardLinkComponent } from './card-link/card-link.component';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AppService } from '../services/app.service';
 import { CtaComponent } from '../cta/cta.component';
 
@@ -49,7 +49,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     'assets/img/buildings_background_sm.jpg',
   ];
 
-  constructor(private appService: AppService) { }
+  constructor(
+    private appService: AppService,
+    private translate: TranslateService,
+  ) { }
 
   ngOnInit(): void {
     this.appService.initScrollReveal();
@@ -193,5 +196,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     document.documentElement.style.scrollBehavior = 'smooth';
     document.getElementById(id).scrollIntoView();
     document.documentElement.style.scrollBehavior = 'auto';
+  }
+
+  get currentLang(): string {
+    return this.translate.currentLang.toUpperCase();
   }
 }

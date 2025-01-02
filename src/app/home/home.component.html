@@ -108,22 +108,24 @@
     lg:grid lg:grid-cols-2 lg:grid-rows-2
     xl:px-20
   ">
-    <a routerLink="/product/monkeypox">
+    <a href="assets/pdf/DIMPOX_{{ currentLang }}.pdf" target="_blank">
       <app-card-link
         title="Monkeypox Virus"
         [subTitle]="'sections.product.items.mpox_1.subtitle' | translate"
         imagePath="viruses/illness_1.jpg"
         [description]="'sections.product.items.mpox_1.text' | translate"
         [ruo]="true"
+        [link]="true"
       ></app-card-link>
     </a>
-    <a routerLink="/product/febrile-rash">
+    <a href="assets/pdf/DIRASH_{{ currentLang }}.pdf" target="_blank">
       <app-card-link
         [title]="'sections.product.items.mpox_2.title' | translate"
         [subTitle]="'sections.product.items.mpox_2.subtitle' | translate"
         imagePath="viruses/illness_4.jpg"
         [description]="'sections.product.items.mpox_2.text' | translate"
         [ruo]="true"
+        [link]="true"
       ></app-card-link>
     </a>
     <a href="https://www.innovative-diagnostics.com/produit/di-sars-cov-2-moc-i-multiplex/" target="_blank">
@@ -217,7 +219,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="container mt-20">
   <app-cta></app-cta>
