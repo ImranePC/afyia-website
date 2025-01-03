@@ -27,14 +27,16 @@ export class ApiService {
     });
 
     const body = {
-      firstname: 'John',
-      lastname: 'Doe',
-      email: 'zaza@zaza.com',
-      laboratory: 'undefined',
+      email: data.email,
       user_type: 'humain',
-      thermocyclers: ['MIC'],
+      thermocyclers: data.thermocyclers,
+      accounts: data.accounts,
     }
 
     return this.http.post(`${this.DISOFT_URL}/create-user-request`, body, { headers });
+  }
+
+  getAvailableThermocycler(): Observable<any> {
+    return this.http.get(`${this.DISOFT_URL}/available-thermocycler`);
   }
 }

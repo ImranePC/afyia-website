@@ -1,8 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
-import { ParallaxDirective } from '../directives/parallax.directive';
 import { CardLinkComponent } from './card-link/card-link.component';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppService } from '../services/app.service';
 import { CtaComponent } from '../cta/cta.component';
@@ -11,12 +9,8 @@ import { CtaComponent } from '../cta/cta.component';
   selector: 'app-home',
   standalone: true,
   imports: [
-    HeaderComponent,
-    ParallaxDirective,
     CardLinkComponent,
-    RouterOutlet,
     RouterLink,
-    RouterLinkActive,
     TranslateModule,
     CtaComponent,
   ],

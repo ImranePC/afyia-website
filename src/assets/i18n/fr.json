@@ -12,7 +12,8 @@
           "address": "Adresse",
           "is_client": "Je suis déjà client",
           "phone": "Numéro de téléphone",
-          "address_more": "Adresse - Informations complémentaires"
+          "address_more": "Adresse - Informations complémentaires",
+          "contact_email": "Email de contact"
         },
         "title": "Laissez nous un mot",
         "subject": {
@@ -228,10 +229,23 @@
     "title": "Le logiciel DISoft",
     "subtitle": "<b>Un logiciel</b> basé sur <br> l'<strong>IA</strong>",
     "access_disoft": "Comment accéder à <strong>DISoft</strong> <b>?</b>",
-    "disoft_description": "Le logiciel DISoft propose de classer des échantillons inconnus parmi plusieurs groupes possibles via l'analyse de descripteurs issus de courbes de fusion en se basant sur une méthode d'apprentissage supervisé. <br><br> La méthodologie à l'origine de DISoft a été créée par Christelle REYNES et Jean-Christophe AVARRE en 2016 (Brevet FR n°3047013)",
+    "disoft_description": "Le logiciel DISoft utilise une technologie innovante basée sur l’analyse de la fusion à haute résolution de l’ADN (High Resolution Melting, HRM) par intelligence artificielle, technologie développée dans le cadre d’une collaboration de longue date entre ID d’une part, l’institut de recherche pour le développement (IRD) et l’Université de Montpellier (UM) d’autre part.",
     "access": {
       "request": "Demander un accès",
-      "description": "Pour l'achat d’un kit vous obtenez un accès au logiciel sans surcoût, pour une durée illimitée. Faite une demande de compte ci dessous en transmettant votre référence d’achat, vous recevrez ensuite la procédure pour accéder à DISoft par mail."
+      "description": "L'accès au logiciel est fourni pour l'achat d'un kit, pour une duréee illimitée. Pour faire une demande de compte, remplissez le formulaire ci-dessous en transmettant votre référence d'achat, vous recevrez ensuite la procédure pour accéder à DISoft par mail."
+    },
+    "disoft_description_2": "A partir d’un brevet co-détenu par l’IRD et l’UM (Avarre et Reynes, 2017), et pour lequel AFYIA détient une licence d’exploitation exclusive, le logiciel DISoft a été développé par AFYIA. Ce logiciel utilise l’intelligence artificielle pour analyser et interpréter de façon autonome les résultats bruts de fusion, à partir de bases de données d’apprentissage créées spécifiquement pour chaque nouveau test.",
+    "account_request": {
+      "title": "Demande d'accès au logiciel DISoft",
+      "description": "Pour demander votre accès au  logiciel DISoft merci de remplir les informations ci-dessous.",
+      "purchase_number": "Numéro d'achat",
+      "used_thermocycler": "Thermocycleurs utilisés",
+      "text_accounts": "Veuillez ajouter ci-dessous la/les compte(s) qui seront affiliés à votre laboratoire.",
+      "add_account": "Ajouter un compte",
+      "text_confirmation": "Je confirme l'exactitude des informations transmises. En envoyant la demande, j'accepte les patati patata."
+    },
+    "form": {
+      "send_request": "Envoyer la demande"
     }
   }
 }

@@ -70,10 +70,6 @@ p {
   -webkit-text-fill-color: white;
 }
 
-label {
-  display: block;
-}
-
 select {
   @apply p-2 rounded-lg bg-cyan-50;
   color: $dark-text;
@@ -248,6 +244,7 @@ strong {
 .input-group {
   label {
     @apply mb-2;
+    display: block;
   }
 
   input[type=text], textarea {
@@ -262,17 +259,16 @@ strong {
     }
   }
 
-  input[type=checkbox] {
-    accent-color: theme('colors.cyan.600');
-  }
-
-
   &.is-invalid {
     input[type=text], textarea {
       outline: 1px solid theme('colors.red.300');
       box-shadow: 0 0 1px 4px theme('colors.red.200');
     }
   }
+}
+
+input[type=checkbox] {
+  accent-color: theme('colors.cyan.600');
 }
 
 @media (max-width: theme('screens.lg')) {

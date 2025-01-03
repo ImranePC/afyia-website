@@ -12,7 +12,8 @@
           "address": "Address",
           "is_client": "I'm already a customer",
           "phone": "Phone Number",
-          "address_more": "Address - Additional information"
+          "address_more": "Address - Additional information",
+          "contact_email": "Contact email"
         },
         "title": "Leave us a message",
         "subject": {
@@ -228,10 +229,26 @@
     "title": "DISoft software",
     "subtitle": "<strong>AI</strong>-powered <b>software</b>",
     "access_disoft": "How to access to <strong>DISoft</strong> <b>?</b>",
-    "disoft_description": "DISoft software classifies unknown samples into several possible groups by analyzing descriptors derived from melting curves, based on a supervised learning method. <br><br> The methodology behind DISoft was created by Christelle REYNES and Jean-Christophe AVARRE in 2016 (Patent FR n°3047013).",
+    "disoft_description": "The DISoft software uses an innovative technology based on High Resolution Melting (HRM) DNA analysis powered by artificial intelligence. This technology was developed as part of a longstanding collaboration between ID, the Research Institute for Development (IRD), and the University of Montpellier (UM).",
     "access": {
       "request": "Request an access",
-      "description": "When you purchase a kit, you get full access to the software at no extra cost, for an unlimited period. Request an access by entering your purchase reference below, and we'll send you the procedure to access DISoft by e-mail."
+      "description": "Software access is provided with the purchase of a kit, for an unlimited time. To request an account, please fill in the form below, including your purchase reference. You will receive the procedure for accessing DISoft by e-mail."
+    },
+    "disoft_description_2": "Based on a patent co-owned by the IRD and UM (Avarre and Reynes, 2017), for which AFYIA holds an exclusive exploitation license, the DISoft software was developed by AFYIA. This software uses artificial intelligence to autonomously analyze and interpret raw melting results, leveraging learning databases specifically created for each new test.",
+    "form": {
+      "send_request": "Send request"
+    },
+    "request": {
+      "title": "DISoft account request"
+    },
+    "account_request": {
+      "used_thermocycler": "Used thermocyclers",
+      "purchase_number": "Purchase number",
+      "title": "DISoft account request",
+      "description": "To request access to the DISoft software, please fill out the information below.",
+      "text_accounts": "Please add below the account(s) that will be affiliated with your laboratory.",
+      "add_account": "Add account",
+      "text_confirmation": "I confirm the accuracy of the information provided. By submitting the request, I accept the terms and conditions, etc patati patata."
     }
   }
 }

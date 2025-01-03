@@ -1,0 +1,107 @@
+<div class="container mt-48">
+  <div class="relative mx-auto lg:w-8/12 bg-white shadow-sm rounded-xl mb-5 p-5 lg:p-10">
+    <div class="absolute -top-14 left-0">
+      <app-ariane [path]="navigationPath"></app-ariane>
+    </div>
+    <div class="text-center mb-5">
+      <h1 class="text-2xl lg:text-4xl font-extrabold" [innerHTML]="'software.account_request.title' | translate"></h1>
+    </div>
+    <div>
+      <p class="text-small text-base mb-3 text-cyan-700">{{ 'software.account_request.description' | translate }}</p>
+      <form [formGroup]="contactForm">
+        <div class="flex flex-col gap-5">
+          <div class="input-group" [class.is-invalid]="isFieldInvalid('email')">
+            <label for="email">{{ 'contact.sections.form.inputs.contact_email' | translate }}</label>
+            <input id="email" formControlName="email" type="text" maxlength="50">
+          </div>
+
+          <div class="input-group" [class.is-invalid]="isFieldInvalid('purchaseNumber')">
+            <label for="purchase_number">{{ 'software.account_request.purchase_number' | translate }}</label>
+            <input id="purchase_number" formControlName="purchaseNumber" type="text" maxlength="50">
+          </div>
+
+          <div>
+            <span class="block mb-1">{{ 'software.account_request.used_thermocycler' | translate }}</span>
+            <div *ngFor="let thermocycler of thermocyclerList; index as i">
+              <input
+                role="button"
+                id="thermocycler_{{ i }}"
+                name="thermocycler_{{ i }}"
+                type="checkbox"
+                [checked]="isThermocyclerSelected(thermocycler)"
+                (change)="onCheckboxChange($event, thermocycler)"
+              >
+              <label role="button" class="text-sm" for="thermocycler_{{ i }}"> {{ thermocycler }}</label>
+            </div>
+          </div>
+        </div>
+        <p class="text-small text-base mt-10 mb-3 text-cyan-700">
+          {{ 'software.account_request.text_accounts' | translate }}
+        </p>
+        <div formArrayName="accounts">
+          <div
+            *ngFor="let account of accounts.controls; index as i; last as last"
+            class="border-b border-slate-200 pb-5 mb-5 animation-slide"
+            [formGroupName]="i"
+          >
+            <div class="flex justify-between mb-3">
+              <div class="font-extrabold text-cyan-700">Compte n°{{ i + 1 }}</div>
+              <div
+                *ngIf="accounts.controls.length > 1"
+                role="button"
+                class="text-slate-500 transition hover:opacity-50"
+                (click)="removeAccount(i)"
+              >
+                <fa-icon [icon]="faTimes" size="lg"></fa-icon>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-5 mb-5">
+              <div class="input-group" [class.is-invalid]="isFieldInvalid('accounts.' + i + '.lastname')">
+                <label for="lastname_{{ i }}">{{ 'contact.sections.form.inputs.name' | translate }}</label>
+                <input id="lastname_{{ i }}" formControlName="lastname" type="text" maxlength="50">
+              </div>
+              <div class="input-group" [class.is-invalid]="isFieldInvalid('accounts.' + i + '.firstname')">
+                <label for="firstname_{{ i }}">{{ 'contact.sections.form.inputs.firstname' | translate }}</label>
+                <input id="firstname_{{ i }}" formControlName="firstname" type="text" maxlength="50">
+              </div>
+            </div>
+            <div class="input-group" [class.is-invalid]="isFieldInvalid('accounts.' + i + '.email')">
+              <label for="email_{{ i }}">{{ 'contact.sections.form.inputs.email' | translate }}</label>
+              <input id="email_{{ i }}" formControlName="email" type="text" maxlength="50">
+            </div>
+          </div>
+        </div>
+
+        <button class="btn bg-slate-100" (click)="addAccount()">
+          <fa-icon [icon]="faPlus"></fa-icon>
+          {{ 'software.account_request.add_account' | translate }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="mx-auto lg:w-8/12">
+    <p class="mb-5 text-lg">{{ 'software.account_request.text_confirmation' | translate }}</p>
+    <button class="self-start btn btn-lg bg-cyan-700 text-white" [class.disabled]="!contactForm.valid" (click)="onSubmit()">
+      <fa-icon class="me-1" [icon]="faPaperPlane"></fa-icon>
+      {{ 'software.form.send_request' | translate }}
+    </button>
+  </div>
+</div>
+<app-modal #validModal>
+  <div title>
+    {{ 'contact.modal.title' | translate }} <img class="inline align-baseline" width="24px" src="assets/img/emoji_hands_up.png" alt="Wave hand">
+  </div>
+  <div body>
+    {{ 'contact.modal.valid' | translate }}
+  </div>
+</app-modal>
+<app-modal #errorModal>
+  <div title>
+    {{ 'contact.modal.title_error' | translate }} 🚧
+  </div>
+  <div body>
+    {{ 'contact.modal.error' | translate }}
+  </div>
+</app-modal>

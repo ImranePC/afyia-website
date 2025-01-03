@@ -11,8 +11,10 @@ import { AboutRespiratoryComponent } from './about-illness/about-respiratory/abo
 import { NewsComponent } from './news/news.component';
 import { NewsPageComponent } from './news/news-page/news-page.component';
 import { SoftwareComponent } from './software/software.component';
+import { RequestAccountComponent } from './software/request-account/request-account.component';
 
 export const routes: Routes = [
+  { path: 'account-request', component: RequestAccountComponent },
   { path: 'about', component: AboutComponent },
   { path: 'bloodborne', component: AboutBloodborneComponent },
   { path: 'febrile-rash', component: AboutFebrileRashComponent },
