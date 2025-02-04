@@ -3,7 +3,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ParallaxDirective } from '../directives/parallax.directive';
 import { AppService } from '../services/app.service';
 import { ArianeComponent, Path } from '../ariane/ariane.component';
-import { faComputer } from '@fortawesome/free-solid-svg-icons';
+import {
+  faComputer,
+  faPenNib,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -24,6 +27,8 @@ import { RouterModule } from '@angular/router';
 })
 export class SoftwareComponent {
   faComputer = faComputer;
+
+  faPenNib = faPenNib;
 
   navigationPath: Path[] = [
     { name: 'header.technology', link: '/technology' },

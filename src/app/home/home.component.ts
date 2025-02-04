@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CardLinkComponent } from './card-link/card-link.component';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -17,7 +17,7 @@ import { CtaComponent } from '../cta/cta.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
   @ViewChild('scroller', { static: true })
   scroller!: ElementRef;
 
@@ -84,15 +84,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     observer.observe(mark1);
     observer.observe(approachTitle);
-  }
-
-  ngAfterViewInit() {
-    setTimeout(() => {
-      const container = this.scroller.nativeElement;
-      container.scrollLeft = (container.scrollWidth - container.clientWidth) / 2;
-
-      this.updateScrollerImages();
-    }, 0);
   }
 
   startDrag(event: MouseEvent): void {
