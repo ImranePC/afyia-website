@@ -110,7 +110,15 @@ async function getNews(language) {
   const contentI18n = language === 'fr' ? 'content_fr' : 'content_en';
   const titleI18n = language === 'fr' ? 'title_fr' : 'title_en';
 
-  const query = `SELECT id, ${titleI18n} as title, SUBSTRING(${contentI18n}, 1, ${textLimit}) as content, image_url FROM news`;
+  const query = `SELECT id,
+    ${titleI18n} as title,
+    CASE
+      WHEN LENGTH(${contentI18n}) > ${textLimit}
+      THEN SUBSTRING(${contentI18n}, 1, ${textLimit}) || '...'
+      ELSE ${contentI18n}
+    END as content,
+    image_url
+  FROM news ORDER BY published_at DESC`;
 
   return new Promise((resolve, reject) => {
     db.all(query, (err, rows) => {

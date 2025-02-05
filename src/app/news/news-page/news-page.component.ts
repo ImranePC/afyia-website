@@ -64,7 +64,7 @@ export class NewsPageComponent implements OnInit {
 
     return this.sanitizer.bypassSecurityTrustHtml(
       content.replace(regex, (match: any, image: string) => {
-        return `<img class='test' src="assets/img/news/${image}" title="" alt="">`;
+        return `<img src="assets/img/news/${image}" title="" alt="">`;
       })
     );
   }

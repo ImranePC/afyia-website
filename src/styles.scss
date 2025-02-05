@@ -152,6 +152,12 @@ strong {
       transform: scale(1.05);
     }
   }
+
+  &--top {
+    img {
+      object-position: 50% 20%;
+    }
+  }
 }
 
 .banner {

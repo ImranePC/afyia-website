@@ -20,6 +20,10 @@
   }
 }
 
-p img {
-  @apply mx-auto rounded-xl my-5;
+p {
+  line-height: 1.8em;
+
+  img {
+    @apply mx-auto rounded-xl my-5;
+  }
 }

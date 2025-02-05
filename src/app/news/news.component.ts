@@ -3,7 +3,7 @@ import { ParallaxDirective } from '../directives/parallax.directive';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppService } from '../services/app.service';
 import { RouterModule } from '@angular/router';
-import { NewsService } from '../services/news.service';
+import { News, NewsService } from '../services/news.service';
 import { ArianeComponent, Path } from '../ariane/ariane.component';
 
 @Component({
@@ -19,7 +19,7 @@ import { ArianeComponent, Path } from '../ariane/ariane.component';
   styleUrl: './news.component.scss'
 })
 export class NewsComponent implements OnInit {
-  newsList: any[] = []
+  newsList: News[] = []
 
   navigationPath: Path[] = [
     { name: 'header.news', link: '/news' },
@@ -32,7 +32,8 @@ export class NewsComponent implements OnInit {
 
   ngOnInit(): void {
     this.appService.initScrollReveal();
-    this.newsService.getNews().subscribe((data) => {
+
+    this.newsService.getNews().subscribe((data: News[]) => {
       this.newsList = data;
     })
   }

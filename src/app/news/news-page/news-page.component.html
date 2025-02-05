@@ -1,14 +1,13 @@
 <div class="banner banner--dark" appParallax [ratio]="-0.3" style="background-image: url('../../assets/img/news/{{ data?.imageUrl }}')">
   <h1 class="reveal text-6xl">{{ data?.title }}</h1>
 </div>
-
 <div class="container">
   <div class="relative -mt-20 z-1 mx-auto lg:w-8/12 bg-white shadow-sm rounded-xl p-5 lg:p-10">
     <div class="absolute -top-14 left-0 text-white">
       <app-ariane [path]="navigationPath"></app-ariane>
     </div>
-    <div class="reveal min-h-[500px]">
-      <span class="text-gray-500 text-small">Publié le {{ data?.publishedAt | date:'shortDate' : undefined : currentLang }}</span>
+    <div class="reveal">
+      <div class="text-gray-500 text-small mb-3">{{ data?.publishedAt | date:'shortDate' : undefined : currentLang }}</div>
       <p [innerHTML]="data?.content"></p>
     </div>
   </div>
