@@ -162,6 +162,9 @@ strong {
 
 .banner {
   @apply font-extrabold text-8xl text-center shadow-xl;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   text-align: center;
   min-height: 550px;
@@ -169,7 +172,6 @@ strong {
   background-size: cover;
 
   h1 {
-    line-height: 550px;
     text-align: center;
     color: white;
     text-shadow: 0 4px 8px rgba(black, 0.33);
