@@ -10,3 +10,19 @@ services:
       - "4200:80"
     volumes:
       - ./dist/afyia-website/browser:/usr/share/nginx/html
+
+  api:
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    container_name: afyia-api
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - ./api/afyiadb.sqlite:/app/afyiadb.sqlite
+    env_file:
+      - ./api/.env
+    environment:
+      - NODE_ENV=production
