@@ -4,10 +4,10 @@ import {
   faComment,
   faLocationDot,
   faPaperPlane,
-  faBox,
   faCircleQuestion,
   faUserTie,
   faTruckFast,
+  faComputer,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
@@ -16,6 +16,9 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { ModalComponent } from '../modal/modal.component';
+import { ActivatedRoute } from '@angular/router';
+
+type Subject = 'command' | 'question' | 'hire' | 'other' | 'software' | undefined;
 
 @Component({
   selector: 'app-contact',
@@ -45,22 +48,37 @@ export class ContactComponent implements OnInit {
 
   faCircleQuestion = faCircleQuestion;
 
-  selectedSubject: 'command' | 'question' | 'hire' | 'other' | undefined = undefined;
+  faComputer = faComputer
+
+  selectedSubject: Subject = undefined;
 
   messageForm: FormGroup;
 
-  constructor(private appService: AppService, private fb: FormBuilder, private api: ApiService) {
+  dataConsent = false;
+
+  constructor(
+    private appService: AppService,
+    private fb: FormBuilder,
+    private api: ApiService,
+    private route: ActivatedRoute,
+  ) {
     this.messageForm = this.fb.group({
       lastname: ['', Validators.required],
       firstname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       message: ['', Validators.required],
       subject: [undefined, Validators.required],
-    })
+    });
   }
 
   ngOnInit(): void {
     this.appService.initScrollReveal();
+
+    this.route.queryParams.subscribe((parameters) => {
+      if (this.isValidSubject(parameters['subject'])) {
+        this.setSelectedSubject(parameters['subject']);
+      }
+    })
   }
 
   setSelectedSubject(subject: any): void {
@@ -69,7 +87,7 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.messageForm.valid) {
+    if (this.messageForm.valid && this.dataConsent) {
       this.api.sendMessage(this.messageForm.value).subscribe({
         next: () => {
           this.messageForm.reset({
@@ -86,5 +104,9 @@ export class ContactComponent implements OnInit {
 
   isFieldInvalid(field: string): boolean {
     return this.messageForm.get(field)?.invalid && this.messageForm.get(field)?.touched
+  }
+
+  private isValidSubject(value: any): boolean {
+    return ['command', 'question', 'hire', 'other', 'software'].includes(value);
   }
 }

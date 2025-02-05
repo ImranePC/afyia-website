@@ -21,8 +21,10 @@
           "question": "Demande d'information",
           "other": "Autre",
           "title": "Quel est l'objet de votre demande ?",
-          "hire": "Recrutement"
-        }
+          "hire": "Recrutement",
+          "software": "Logiciel"
+        },
+        "consent": "J'accepte que les informations transmises soient conservées et utilisées afin d'être recontacté par email."
       },
       "linkedin": {
         "text": "Suivez notre actualité",
@@ -232,7 +234,7 @@
     "disoft_description": "DISoft utilise une <b>technologie innovante</b> qui repose sur l'analyse de la fusion de l'ADN à haute résolution (HRM) par <b>IA</b>. Cette technologie a été développée grâce à une longue collaboration entre <b>Innovative Diagnostics</b>, <b>l'Institut de recherche pour le développement</b> (IRD) et <b>l'Université de Montpellier</b>.",
     "access": {
       "request": "Demander un accès",
-      "description": "L'accès au logiciel est fourni pour l'achat d'un kit, pour une duréee illimitée. Pour faire une demande de compte, remplissez le formulaire ci-dessous en transmettant votre référence d'achat, vous recevrez ensuite la procédure pour accéder à DISoft par mail."
+      "description": "L'accès au logiciel est fourni pour l'achat d'un kit, pour une duréee illimitée. Pour faire une demande de compte, remplissez le formulaire en transmettant votre référence d'achat, vous recevrez ensuite la procédure pour accéder à DISoft par mail."
     },
     "disoft_description_2": "Conçu pour s’intégrer parfaitement à nos kits de diagnostic, DISoft traite et analyse les données HRM générées par les thermocycleurs. Développé par AFYIA, il classe les échantillons à l’aide de méthodes statistiques <b>avancées</b> basées sur <b>l’intelligence artificielle</b>, offrant des résultats <b>précis</b> et <b>fiables</b>.",
     "account_request": {

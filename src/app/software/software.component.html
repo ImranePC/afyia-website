@@ -56,7 +56,12 @@
       {{ 'software.access.description' | translate }}
     </p>
     <div class="text-center">
-      <button *ngIf="false" class="align-middle btn btn-lg" routerLink="/account-request">
+      <button
+        class="align-middle btn btn-lg"
+        [routerLink]="['/contact']"
+        [queryParams]="{ subject: 'software'}"
+        fragment="form"
+      >
         {{ 'software.access.request' | translate }}
         <fa-icon class="ms-1" [icon]="faComputer"></fa-icon>
       </button>
