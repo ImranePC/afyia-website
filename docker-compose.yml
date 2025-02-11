@@ -22,6 +22,7 @@ services:
       - .:/app
       - /app/node_modules
       - ./api/afyiadb.sqlite:/app/afyiadb.sqlite
+      - /etc/ssl/letsencrypt/certs:/etc/ssl/letsencrypt/certs
     env_file:
       - ./api/.env
     environment:
