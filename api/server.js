@@ -1,14 +1,17 @@
 require('dotenv').config({ path: './api/.env' });
-
 const express = require('express');
+const fs = require('fs');
+const https = require('https');
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./api/afyiadb.sqlite');
+const rateLimit = require('express-rate-limit');
+
 const app = express();
+const db = new sqlite3.Database('./api/afyiadb.sqlite');
 const PORT = process.env.PORT;
 const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
-const rateLimit = require('express-rate-limit');
 const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100 });
+const ENV = process.env.NODE_ENV;
 
 const corsOptions = {
   origin: (origin, callback) => {
@@ -84,7 +87,22 @@ app.post('/send-message', (req, res) => {
   });
 });
 
-app.listen(PORT);
+if (ENV === 'production') {
+  const privateKey  = fs.readFileSync(process.env.SSL_KEY, 'utf8');
+  const certificate = fs.readFileSync(process.env.SSL_CERT, 'utf8');
+  const credentials = {
+    key: privateKey,
+    cert: certificate,
+  };
+
+  https.createServer(credentials, app).listen(PORT, () => {
+    console.log('HTTPS: Server listening on port ' + PORT);
+  });
+} else {
+  app.listen(PORT, () => {
+    console.log('HTTP : Server listening on port ' + PORT);
+  });
+}
 
 function saveMessage(data) {
   if (!data.firstname || !data.lastname || !data.email || !data.message || !data.subject) {
