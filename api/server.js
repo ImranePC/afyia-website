@@ -136,7 +136,7 @@ async function getNewsById(id, language) {
   const titleI18n = language === 'fr' ? 'title_fr' : 'title_en';
 
   const query = `
-    SELECT id, ${titleI18n} as title, ${contentI18n} as content, published_at, image_url
+    SELECT id, ${titleI18n} as title, ${contentI18n} as content, published_at, image_url, banner_url
     FROM news
     WHERE id = ${id}
   `;

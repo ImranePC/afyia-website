@@ -147,7 +147,7 @@
     "title": "Legal mentions",
     "property": {
       "title": "Property",
-      "text": "AFYIA Diagnostics, SAS with capital of 6000 euros <br> Head office : 310 Rue Louis Pasteur <br> SIRET : 982 039 323 00018 <br> VAT number : FR31 982 039 323 <br> <br>Telephone: +33 (0) 67 40 71 67 <br>Email : contact&#64;afyia-diagnostics.com <br>"
+      "text": "AFYIA Diagnostics, SAS with capital of 6000 euros <br> Head office : 310 Rue Louis Pasteur <br> SIRET : 982 039 323 00018 <br> VAT number : FR31 982 039 323 <br> <br>Telephone: +33 (0) 67 40 71 67 <br>Email : info&#64;afyia-diagnostics.com <br>"
     },
     "intellectual_property": {
       "title": "Intellectual property",
@@ -155,11 +155,11 @@
     },
     "host": {
       "title": "Hosting",
-      "text": "This site is hosted by: OVEA SARL, 59 rue Nelson Mandela, 34070 Montpellier, France <br> Telephone: +33 (0)4 67 67 00 00 <br><br> Email: contact&#64;ovea.com"
+      "text": "This site is hosted by: OVEA SARL, 59 rue Nelson Mandela, 34070 Montpellier, France <br> Telephone: +33 (0)4 67 67 00 00 <br><br> Email: info&#64;ovea.com"
     },
     "data": {
       "title": "Data protection",
-      "text": "Your data will not be communicated free of charge or with compensation to a third party. <br> You have a right to request access to your personal data, their modifications or their deletions. To assert your right please contact us via the address contact&#64;afyia-diagnostics.com."
+      "text": "Your data will not be communicated free of charge or with compensation to a third party. <br> You have a right to request access to your personal data, their modifications or their deletions. To assert your right please contact us via the address info&#64;afyia-diagnostics.com."
     }
   },
   "products": {
@@ -196,7 +196,8 @@
   "about": {
     "team": {
       "title": "<span class=\"text-primary\">AFYIA's</span> staff",
-      "text": "R&D is at the heart of AFYIA Diagnostics and this team is mainly dedicated to it. AFYIA is a scientific company developing innovative solutions for diagnosing infectious diseases, combining molecular biology and artificial intelligence. This R&D is carried out continuously in our laboratory based in Grabels in the south of France."
+      "text": "R&D is at the heart of AFYIA Diagnostics and this team is mainly dedicated to it.",
+      "text_2": "AFYIA is a scientific company developing innovative solutions for diagnosing infectious diseases, combining molecular biology and artificial intelligence. This R&D is carried out continuously in our laboratory based in Grabels in the south of France."
     },
     "title": "About us",
     "description": "While diagnostics is the primary means of combating infectious diseases, the vast majority of people living in low- and middle-income countries still do not have access to it. In these countries, infectious diseases are the first cause of mortality. <br><br>To help improve access to diagnostics for infectious diseases by developing high-performance, low-cost tools tailored to the needs and constraints of the most demanding laboratory environments, based on three areas of innovation: molecular biology, artificial intelligence and industrial processes.",

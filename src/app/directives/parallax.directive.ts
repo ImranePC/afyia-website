@@ -18,7 +18,6 @@ export class ParallaxDirective {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-    const scrollPosition = window.scrollY;
-    this.el.nativeElement.style.backgroundPositionY = `${(this.initialOffsetTop - scrollPosition * this.parallaxRatio)}px`;
+    this.el.nativeElement.style.backgroundPositionY = `${(this.initialOffsetTop - window.scrollY * this.parallaxRatio)}px`;
   }
 }

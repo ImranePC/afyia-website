@@ -138,7 +138,7 @@
     },
     "about": {
       "title": "Qui sommes <strong>nous</strong>",
-      "description": "La R&D au cœur de AFYIA Diagnostics. AFYIA est une entreprise scientifique qui développe des solutions innovantes de diagnostic des maladies infectieuses. Cette R&D est menée en continu dans notre laboratoire basé dans le sud de la France à Grabels.",
+      "description": "La R&D est au coeur de AFYIA Diagnostics. AFYIA est une entreprise scientifique qui développe des solutions innovantes de diagnostic des maladies infectieuses. Cette R&D est menée en continu dans notre laboratoire basé dans le sud de la France à Grabels.",
       "view_more": "En savoir plus"
     }
   },
@@ -147,7 +147,7 @@
     "title": "Mentions légales",
     "property": {
       "title": "Propriété",
-      "text": "AFYIA Diagnostics, SAS au capital de 6000 euros <br> Siège social : 310 Rue Louis Pasteur <br> SIRET : 982 039 323 00018 <br> N°TVA intracommunautaire : FR31 982 039 323 <br> <br>Tél: +33 (0) 67 40 71 67 <br>Email : contact&#64;afyia-diagnostics.com <br>"
+      "text": "AFYIA Diagnostics, SAS au capital de 6000 euros <br> Siège social : 310 Rue Louis Pasteur <br> SIRET : 982 039 323 00018 <br> N°TVA intracommunautaire : FR31 982 039 323 <br> <br>Tél: +33 (0) 67 40 71 67 <br>Email : info&#64;afyia-diagnostics.com <br>"
     },
     "intellectual_property": {
       "title": "Propriété intellectuelle",
@@ -155,11 +155,11 @@
     },
     "host": {
       "title": "Hébergement",
-      "text": "Ce site est hébergé par : OVEA SARL, 59 rue Nelson Mandela, 34070 Montpellier, France <br> Téléphone : +33 (0)4 67 67 00 00 <br><br> Email : contact&#64;ovea.com"
+      "text": "Ce site est hébergé par : OVEA SARL, 59 rue Nelson Mandela, 34070 Montpellier, France <br> Téléphone : +33 (0)4 67 67 00 00 <br><br> Email : info&#64;ovea.com"
     },
     "data": {
       "title": "Protections des données",
-      "text": "Vos données ne seront pas communiquées à titre gratuit ou avec contrepartie à un tiers. <br> Vous disposez d'un droit vous permettant de demander l'accès à vos données personnelles, leurs modifications ou leurs suppressions. Pour faire valoir votre droit veuillez nous contacter via l'adresse contact&#64;afyia-diagnostics.com."
+      "text": "Vos données ne seront pas communiquées à titre gratuit ou avec contrepartie à un tiers. <br> Vous disposez d'un droit vous permettant de demander l'accès à vos données personnelles, leurs modifications ou leurs suppressions. Pour faire valoir votre droit veuillez nous contacter via l'adresse info&#64;afyia-diagnostics.com."
     }
   },
   "products": {
@@ -196,7 +196,8 @@
   "about": {
     "team": {
       "title": "L'équipe <span class=\"text-primary\">AFYIA</span>",
-      "text": "La R&D au coeur de AFYIA Diagnostics et cette équipe y est principalement dédiée. AFYIA est une entreprise scientifique qui développe des solutions innovantes de diagnostic des maladies infectieuses combinant la biologie moléculaire et l’intelligence artificielle. Cette R&D est menée en continu dans notre laboratoire basé dans le sud de la France à Grabels."
+      "text": "La R&D est au coeur de AFYIA Diagnostics et cette équipe y est principalement dédiée.",
+      "text_2": "AFYIA est une entreprise scientifique développant des solutions innovantes de diagnostic des maladies infectieuses combinant la biologie moléculaire et l’intelligence artificielle. Cette R&D est menée en continu dans notre laboratoire basé dans le sud de la France à Grabels."
     },
     "title": "Qui sommes nous ?",
     "description": "Alors que le diagnostic est le premier moyen de lutte contre les maladies infectieuses, l'immense majorité des populations vivant dans les pays à revenus faibles et intermédiaires n’y a toujours pas accès. Les maladies infectieuses représentent dans ces pays la première cause de mortalité. <br><br>Participer à l’amélioration de l’accès au diagnostic des maladies infectieuses en développant des outils performants, moins onéreux et adaptés aux besoins et aux contraintes des environnements de laboratoire les plus exigeants en se basant sur trois axes d’innovation : biologie moléculaire, intelligence artificielle et procédé industriel.",

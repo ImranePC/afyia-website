@@ -7,11 +7,12 @@ import { map } from 'rxjs/operators';
 import { SafeHtml } from '@angular/platform-browser';
 
 export interface News {
-  id: string
-  title: string
-  content: string | SafeHtml
-  imageUrl: string
-  publishedAt: Date
+  id: string,
+  title: string,
+  content: string | SafeHtml,
+  imageUrl: string,
+  bannerUrl: string,
+  publishedAt: Date,
 }
 
 @Injectable({
@@ -48,6 +49,7 @@ export class NewsService {
       title: data.title,
       content: shortenContent ? this.removeTags(data.content) : data.content,
       imageUrl: data.image_url,
+      bannerUrl: data.banner_url ?? data.image_url,
       publishedAt: data.published_at
     };
   }
