@@ -158,6 +158,16 @@ strong {
       object-position: 50% 20%;
     }
   }
+
+  &--scaled {
+    img {
+      transform: scale(1.3);
+
+      &:hover {
+        transform: scale(1.35);
+      }
+    }
+  }
 }
 
 .banner {
