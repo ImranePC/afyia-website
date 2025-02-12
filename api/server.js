@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/news', async (req, res) => {
-  const language = req['body']['language'] ?? 'fr';
+  const language = req.get('x-app-lang') ?? 'fr';
 
   try {
     data = await getNews(language);

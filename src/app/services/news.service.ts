@@ -24,19 +24,19 @@ export class NewsService {
   constructor(private http: HttpClient, private translate: TranslateService) {}
 
   getNews(): Observable<any> {
-    const language = this.translate.currentLang;
+    const headers = new HttpHeaders({
+      'X-App-Lang': this.translate.currentLang,
+    });
 
-    return this.http.get(`${this.API_URL}/news`)
+    return this.http.get(`${this.API_URL}/news`, { headers })
       .pipe(map((data: any) =>
         data.map((news: any) => this.formatResponse(news, true)),
       ));
   }
 
   getNewsById(id: string): Observable<any> {
-    const language = this.translate.currentLang;
-
     const headers = new HttpHeaders({
-      'X-App-Lang': language,
+      'X-App-Lang': this.translate.currentLang,
     });
 
     return this.http.get(`${this.API_URL}/news/${id}`, { headers })
