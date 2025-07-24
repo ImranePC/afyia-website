@@ -4,11 +4,14 @@
   </div>
   <button class="btn btn-white mb-5" routerLink="/products">{{ 'products.back' | translate }}</button>
   <div class="bg-white rounded-xl mt-10 px-5 lg:px-10 pb-5 lg:pb-10 shadow-sm">
-    <div class="relative overflow-hidden rounded-xl -translate-y-10 text-white p-5 reveal">
+    <div class="relative overflow-hidden rounded-xl -translate-y-10 text-white p-14 text-center reveal">
       <ng-content select="[header]"></ng-content>
       <ng-content select="[image]"></ng-content>
     </div>
     <ng-content select="[content]"></ng-content>
+  </div>
+  <ng-content select="[numbers]"></ng-content>
+  <div class="bg-white rounded-xl mt-10 p-5 lg:p-10 shadow-sm">
     <div class="title title-start title-sm z-10 mb-10">
       {{ 'about_illness.associated_products' | translate }}
     </div>

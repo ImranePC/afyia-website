@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterContentInit, Component, Input, OnInit } from '@angular/core';
 import { ArianeComponent, Path } from '../ariane/ariane.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './about-illness.component.html',
   styleUrl: './about-illness.component.scss'
 })
-export class AboutIllnessComponent implements OnInit {
+export class AboutIllnessComponent implements OnInit, AfterContentInit {
   @Input()
   pathogens: string[];
 
@@ -35,14 +35,16 @@ export class AboutIllnessComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.appService.initScrollReveal();
-
     this.navigationPath.push(this.path);
     this.loadAssociatedProducts();
 
     this.translate.onLangChange.subscribe(() => {
       this.loadAssociatedProducts();
     })
+  }
+
+  ngAfterContentInit(): void {
+    this.appService.initScrollReveal();
   }
 
   loadAssociatedProducts(): void {

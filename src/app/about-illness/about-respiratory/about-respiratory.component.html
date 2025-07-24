@@ -1,13 +1,49 @@
 <app-about-illness [pathogens]="['sars-cov', 'tuberculosis']" [path]="path">
   <div header>
-    <h1 class="text-3xl lg:text-6xl font-extrabold mb-10">{{ 'products.about.respiratory' | translate }}</h1>
-    <p><span class="text-5xl font-bold">91 328</span> cas confirmés de <b>variole du singe</b> <br> dans <span class="text-5xl font-bold">116 pays</span></p>
+    <h1 class="text-xl lg:text-3xl font-extrabold">{{ 'products.about.respiratory' | translate }}</h1>
   </div>
-  <img image class="-z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full blur-sm" src="assets/img/viruses/illness_1.jpg" alt="Photo monkey pox">
+  <img image class="-z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full blur-sm scale-110" src="assets/img/viruses/illness_1.jpg" alt="Photo monkey pox">
   <div content>
     <div class="title title-start title-sm z-10 mb-10">
       <h2>{{ 'about_illness.respiratory.title' | translate }}</h2>
     </div>
-    <p class="mb-10" [innerHTML]="'about_illness.respiratory.content' | translate"></p>
+    <div class="grid grid-cols-2 mb-10">
+      <p class="mb-10" [innerHTML]="'about_illness.respiratory.content' | translate"></p>
+      <div class="image-container lg:translate-x-20">
+        <img src="assets/img/img_onehealth_tagged.jpg" alt="Photo illustration One Health">
+      </div>
+    </div>
+    <div>
+      <div class="title title-start title-sm z-10 mb-10">
+        <h2>{{ 'about_illness.respiratory.title_2' | translate }}</h2>
+      </div>
+      <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-4">
+        @for (virus of 'about_illness.respiratory.viruses' | translate; track virus) {
+        <div class="bg-cyan-100 rounded-xl px-10 py-5 relative overflow-hidden">
+          <h3 class="text-center font-bold text-2xl mb-3">{{ virus.title }}</h3>
+          <p class="text-sm">{{ virus.description }}</p>
+          <fa-icon class="absolute top-1/2 -translate-y-1/2 rotate-6 left-0 text-cyan-600 opacity-10 ms-12 pointer-events-none" [icon]="faViruses" size="10x"></fa-icon>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+  <div numbers class="container grid lg:grid-cols-2 xl:grid-cols-4 gap-4 mt-10">
+    <div class="card-number reveal">
+      <h3>{{ 'about_illness.respiratory.numbers.1.title' | translate }}</h3>
+      <p [innerHtml]="'about_illness.respiratory.numbers.1.description' | translate"></p>
+    </div>
+    <div class="card-number reveal">
+      <h3 class="font-extrabold text-5xl mb-3">{{ 'about_illness.respiratory.numbers.2.title' | translate }}</h3>
+      <p [innerHtml]="'about_illness.respiratory.numbers.2.description' | translate"></p>
+    </div>
+    <div class="card-number reveal">
+      <h3 class="font-extrabold text-5xl mb-3">{{ 'about_illness.respiratory.numbers.3.title' | translate }}</h3>
+      <p [innerHtml]="'about_illness.respiratory.numbers.3.description' | translate"></p>
+    </div>
+    <div class="card-number reveal">
+      <h3 class="font-extrabold text-5xl mb-3">{{ 'about_illness.respiratory.numbers.4.title' | translate }}</h3>
+      <p [innerHtml]="'about_illness.respiratory.numbers.4.description' | translate"></p>
+    </div>
   </div>
 </app-about-illness>

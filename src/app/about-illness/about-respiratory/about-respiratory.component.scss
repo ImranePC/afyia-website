@@ -1,0 +1,11 @@
+.card-number {
+  @apply bg-gradient-to-r from-gray-900 to-cyan-800 text-white rounded-xl p-10 relative overflow-hidden;
+
+  h3 {
+    @apply font-extrabold text-5xl mb-3;
+  }
+
+  p {
+    @apply text-left text-base;
+  }
+}

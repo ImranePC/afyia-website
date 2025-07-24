@@ -12,7 +12,7 @@
       { "title": "Diagnostic syndromique", "text": "Indentification du virus MPOX (clade I et clade II)." },
       { "title": "Échantillons variés", "text": "À partir de prélèvements cutanéo-muqueux et oropharyngés." },
       { "title": "Cliniquement validé", "text": "Par le Centre National de Référence - Laboratoire d'Expertise Orthopoxvirus (France)." },
-      { "title": "Adaptable", "text": "Facile d'utilisation et rapide (1h après extraction), transportable ç température ambiante (lyophilisé), adaptable à différents thermocycleurs (MCI, CFX96, QS5)." },
+      { "title": "Adaptable", "text": "Facile d'utilisation et rapide (1h après extraction), transportable à température ambiante (lyophilisé), adaptable à différents thermocycleurs (MCI, CFX96, QS5)." },
       { "title": "qPCR Duplex", "text": "Le MPOX (F3L, B7R et G2R) et un contrôle interne endogène sont détectés dans un seul puits." }
     ]
   },
@@ -29,7 +29,7 @@
       { "title": "Diagnostic syndromique", "text": "Identification des principaux virus responsables d'éruptions cutanées fébriles." },
       { "title": "Échantillons variés", "text": "À partir de prélèvements cutanéo-muqueux et oropharyngés." },
       { "title": "qPCR Multiplexe HRM", "text": "Les virus MPXV, VZV, HSV-1, HSV-2 et un contrôle interne endogène sont détectés dans un seul puit." },
-      { "title": "Adaptable", "text": "Facile d'utilisation et rapide (1h après extraction), transportable ç température ambiante (lyophilisé), adaptable à différents thermocycleurs (MCI, CFX96, QS5)." },
+      { "title": "Adaptable", "text": "Facile d'utilisation et rapide (1h après extraction), transportable à température ambiante (lyophilisé), adaptable à différents thermocycleurs (MCI, CFX96, QS5)." },
       { "title": "Interprétation automatisée", "text": "Les résultats obtenus sont analysés par un logicel basé sur l'intelligence artificielle : DISoft" },
       { "title": "Cliniquement validé", "text": "Validation clinique du kit DIRASH en collaboration avec le CHU de Montpellier et l'Institut National de Recherche Biomédicale (INRB)." }
     ]

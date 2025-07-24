@@ -186,7 +186,8 @@
   "about_illness": {
     "respiratory": {
       "title": "About",
-      "content": "Monkeypox is a rare viral disease similar to smallpox. Initial symptoms, resembling common illnesses, evolve into a distinctive rash. <br><br> Diagnosis is challenging, underscoring the importance of timely and accurate identification for effective management. With limited treatment options available."
+      "content": "Monkeypox is a rare viral disease similar to smallpox. Initial symptoms, resembling common illnesses, evolve into a distinctive rash. <br><br> Diagnosis is challenging, underscoring the importance of timely and accurate identification for effective management. With limited treatment options available.",
+      "title_2": "Main viruses"
     },
     "febrilerash": {
       "title": "About febrile-rash",

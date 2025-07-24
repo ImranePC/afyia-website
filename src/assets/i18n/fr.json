@@ -185,8 +185,53 @@
   },
   "about_illness": {
     "respiratory": {
-      "title": "A propos",
-      "content": "La variole du singe est une maladie virale rare semblable à la variole. Les premiers symptômes, qui ressemblent à des maladies courantes, évoluent vers une éruption cutanée caractéristique. <br><br> Le diagnostic est difficile, ce qui souligne l'importance d'une identification rapide et précise pour une prise en charge efficace. Les options thérapeutiques disponibles sont limitées."
+      "title": "Présentation et enjeux",
+      "content": "Les infections virales respiratoires représentent un défi majeur pour la santé publique en raison de leur forte transmissibilité et de leur impact clinique. Elles touchent toutes les populations, avec des risques accrus chez les personnes âgées, les enfants, les patients immunodéprimés et les individus souffrant de comorbidités.  <br><br>Ces pathologies constituent une préoccupation mondiale, avec des épidémies saisonnières récurrentes et des pandémies ayant des répercussions sanitaires et économiques considérables. La diversité des virus en cause et leur capacité à évoluer compliquent leur surveillance et leur prise en charge.",
+      "title_2": "Les principaux virus",
+      "viruses": [
+        {
+          "title": "Virus Influenza A et B",
+          "description": "Responsables de la grippe saisonnière, pouvant entraîner des complications sévères, notamment des pneumonies et des décompensations cardiaques."
+        },
+        {
+          "title": "SARS-CoV-2",
+          "description": "A l’origine de la pandémie de COVID-19, il a mis en lumière l’importance des stratégies de dépistage et de contrôle des infections virales."
+        },
+        {
+          "title": "Virus respiratoire syncytial (VRS)",
+          "description": "Principale cause d’hospitalisation pour bronchiolite chez les nourrissons."
+        },
+        {
+          "title": "Métapneumovirus",
+          "description": "Impliqué dans des infections respiratoires sévères souvent sous-estimées."
+        },
+        {
+          "title": "Rhinovirus et Enterovirus",
+          "description": "Fréquemment responsables de rhumes et d’exacerbations d’asthme."
+        },
+        {
+          "title": "Adénorivus et Bocavirus",
+          "description": "Souvent détectés dans les infections respiratoires sévères chez les enfants."
+        }
+      ],
+      "numbers": {
+        "1": {
+          "title": "290 000 à 650 000",
+          "description": "cas de décès chaque année à cause de la <b>gripe saisonnière</b>."
+        },
+        "2": {
+          "title": "6,9 millions",
+          "description": "cas de décès entrainé par le <b>SARS-CoV-2</b> dans le monde."
+        },
+        "3": {
+          "title": "3,2 millions",
+          "description": "<b>d'hospitalisations annuelles</b> chez les enfants de moins de 5 ans est causé par <b>le VRS</b>."
+        },
+        "4": {
+          "title": "50%",
+          "description": "<b>des infections respiratoires</b> implique le <b>rhinovirus</b>."
+        }
+      }
     },
     "febrilerash": {
       "title": "A propos de Febrile rash",
@@ -236,7 +281,7 @@
     "disoft_description": "DISoft utilise une <b>technologie innovante</b> qui repose sur l'analyse de la fusion de l'ADN à haute résolution (HRM) par <b>IA</b>. Cette technologie a été développée grâce à une longue collaboration entre <b>Innovative Diagnostics</b>, <b>l'Institut de recherche pour le développement</b> (IRD) et <b>l'Université de Montpellier</b>.",
     "access": {
       "request": "Demander un accès",
-      "description": "L'accès au logiciel est fourni pour l'achat d'un kit, pour une duréee illimitée. Pour faire une demande de compte, remplissez le formulaire en transmettant votre référence d'achat, vous recevrez ensuite la procédure pour accéder à DISoft par mail."
+      "description": "L'accès au logiciel est fourni pour l'achat d'un kit, pour une durée illimitée. Pour faire une demande de compte, remplissez le formulaire en transmettant votre référence d'achat, vous recevrez ensuite la procédure pour accéder à DISoft par mail."
     },
     "disoft_description_2": "Conçu pour s’intégrer parfaitement à nos kits de diagnostic, DISoft traite et analyse les données HRM générées par les thermocycleurs. Développé par AFYIA, il classe les échantillons à l’aide de méthodes statistiques <b>avancées</b> basées sur <b>l’intelligence artificielle</b>, offrant des résultats <b>précis</b> et <b>fiables</b>.",
     "account_request": {
@@ -253,7 +298,7 @@
     },
     "disoft_description_3": " Grâce à son interface conviviale, DISoft permet aux utilisateurs d'explorer et visualiser les résultats des diagnostics de façon intuitive.",
     "disoft_description_4": "La technologie de DISoft est issu d’un brevet co-détenu par l’IRD et l’Université de Montpellier, exploité sous licence exclusive par AFYIA.",
-    "subtitle_2": "<b>Préçis</b> et <strong>fiable</strong>",
+    "subtitle_2": "<b>Précis</b> et <strong>fiable</strong>",
     "subtitle_3": "Une interface <strong>intuitive</strong>"
   },
   "login": {
