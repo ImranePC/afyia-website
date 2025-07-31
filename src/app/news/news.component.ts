@@ -37,12 +37,17 @@ export class NewsComponent implements OnInit {
 
     this.translate.onLangChange.subscribe(() => {
       this.loadNews();
-    })
+    });
   }
 
   loadNews(): void {
     this.newsService.getNews().subscribe((data: News[]) => {
       this.newsList = data;
-    })
+      console.log(data);
+    });
+  }
+
+  get currentLang(): string {
+    return this.translate.currentLang;
   }
 }

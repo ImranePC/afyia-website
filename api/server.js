@@ -5,13 +5,43 @@ const https = require('https');
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
 const rateLimit = require('express-rate-limit');
+const multer = require('multer');
+const path = require('path');
 
+// const setup
 const app = express();
+
 const db = new sqlite3.Database('./api/afyiadb.sqlite');
+
 const PORT = process.env.PORT;
+
 const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
+
 const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100 });
+
 const ENV = process.env.NODE_ENV;
+
+const LANGUAGES = ['fr', 'en'];
+
+const imagesDir = path.join(__dirname, 'uploads/images');
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, imagesDir);
+  },
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname);
+    const safeName = path.basename(file.originalname, ext)
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-_]/g, '');
+
+    const uniqueName = Date.now() + '-' + safeName + ext;
+    cb(null, uniqueName);
+  },
+});
+
+const upload = multer({ storage });
 
 const corsOptions = {
   origin: (origin, callback) => {
@@ -50,7 +80,7 @@ app.get('/news', async (req, res) => {
 
 app.get('/news/:id', async (req, res) => {
   const params = req.params;
-  const language = req.get('x-app-lang') ?? 'fr';
+  const language = req.get('x-app-lang');
 
   try {
     data = await getNewsById(params.id, language);
@@ -58,6 +88,51 @@ app.get('/news/:id', async (req, res) => {
   } catch(err) {
     res.status(500).json({ error: err.message });
   }
+})
+
+app.get('/list-images', (req, res) => {
+  fs.readdir(imagesDir, (err, files) => {
+    if (err) {
+      console.error('Erreur lecture du dossier :', err);
+      return res.status(500).json({ error: 'Erreur lors de la lecture du dossier' });
+    }
+
+    res.json({ files });
+  })
+})
+
+app.put('/news', (req, res) => {
+  const body = req.body;
+
+  const data = {
+    id: body.id,
+    title: {
+      fr: body.title.fr,
+      en: body.title.fr,
+    },
+    content: {
+      fr: body.content.fr,
+      en: body.content.en,
+    },
+    publishedAt: body.published_at,
+    imageUrl: body.image_url,
+    bannerUrl: body.banner_url,
+  };
+
+  try {
+    updateNews(data);
+  } catch(err) {
+    console.log(err);
+    res.status(500).json({
+      message: 'Internal server error, please check logs'
+    });
+
+    return;
+  }
+
+  res.status(201).json({
+    message: 'Done',
+  })
 })
 
 app.post('/send-message', (req, res) => {
@@ -86,6 +161,74 @@ app.post('/send-message', (req, res) => {
     message: 'Done'
   });
 });
+
+app.post('/upload-image', upload.single('image'), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: 'No image file provided' });
+  }
+
+  const imageUrl = `/uploads/images/${req.file.filename}`;
+  res.status(200).json({ message: 'Image uploadée avec succès', imageUrl });
+});
+
+app.post('/news', async (req, res) => {
+  const body = req.body;
+
+  const data = {
+    title: {
+      fr: body.title.fr,
+      en: body.title.en,
+    },
+    content: {
+      fr: body.content.fr,
+      en: body.content.en,
+    },
+    imageUrl: body.image_url,
+    bannerUrl: body.banner_url,
+    publishetAd: body.published_at,
+  };
+
+  try {
+    newsId = await createNews(data);
+  } catch(err) {
+    console.log(err);
+    res.status(500).json({
+      message: 'Internal server error, please check logs'
+    });
+
+    return;
+  }
+
+  res.status(200).json({
+    message: 'OK',
+  });
+});
+
+app.delete('/news/:id', async (req, res) => {
+  const params = req.params;
+
+  const data = {
+    id: params.id,
+  };
+
+  console.log(data);
+
+  try {
+    removeNews(data);
+  } catch {
+    res.status(500).json({
+      message: 'Internal server error, please check logs'
+    });
+
+    return;
+  }
+
+  res.status(200).json({
+    message: 'OK',
+  })
+});
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 if (ENV === 'production') {
   const privateKey  = fs.readFileSync(process.env.SSL_KEY, 'utf8');
@@ -125,16 +268,22 @@ function saveMessage(data) {
 
 async function getNews(language) {
   const textLimit = 100;
-  const contentI18n = language === 'fr' ? 'content_fr' : 'content_en';
-  const titleI18n = language === 'fr' ? 'title_fr' : 'title_en';
+  let contentI18n;
+  let titleI18n;
+  let queryCase;
+
+  if (LANGUAGES.includes(language)) {
+    contentI18n = `content_${language}`;
+    titleI18n = `title_${language}`;
+  }
 
   const query = `SELECT id,
-    ${titleI18n} as title,
+    ${titleI18n},
     CASE
       WHEN LENGTH(${contentI18n}) > ${textLimit}
       THEN SUBSTRING(${contentI18n}, 1, ${textLimit}) || '...'
       ELSE ${contentI18n}
-    END as content,
+    END as ${contentI18n},
     image_url
   FROM news ORDER BY published_at DESC`;
 
@@ -150,11 +299,20 @@ async function getNews(language) {
 }
 
 async function getNewsById(id, language) {
-  const contentI18n = language === 'fr' ? 'content_fr' : 'content_en';
-  const titleI18n = language === 'fr' ? 'title_fr' : 'title_en';
+  let contentI18n;
+  let titleI18n;
+
+  if (['fr', 'en'].includes(language)) {
+    contentI18n = `content_${language}`;
+    titleI18n = `title_${language}`;
+  } else {
+    // Fetch all language
+    contentI18n = `content_fr, content_en`;
+    titleI18n = `title_fr, title_en`;
+  }
 
   const query = `
-    SELECT id, ${titleI18n} as title, ${contentI18n} as content, published_at, image_url, banner_url
+    SELECT id, ${titleI18n}, ${contentI18n}, published_at, image_url, banner_url
     FROM news
     WHERE id = ${id}
   `;
@@ -168,4 +326,84 @@ async function getNewsById(id, language) {
       }
     })
   });
+}
+
+async function updateNews(data) {
+  if (!data.id) {
+    throw new Error('Missing news id');
+  }
+
+  const query = `
+    UPDATE news
+    SET title_en = ?,
+      title_fr = ?,
+      content_en = ?,
+      content_fr = ?,
+      published_at = ?
+    WHERE news.id = ?
+  `;
+
+  const inputs = [
+    data.title.en,
+    data.title.fr,
+    data.content.en,
+    data.content.fr,
+    data.publishedAt,
+    data.id,
+  ];
+
+  return new Promise((resolve, reject) => {
+    db.run(query, inputs, (err) => {
+      if (err) {
+        console.log(err);
+        reject(new Error('Error while fetching news'));
+      } else {
+        resolve({ changes: this.changes });
+      }
+    })
+  });
+}
+
+async function createNews(data) {
+  const query = `
+    INSERT into news VALUES (null, ?, ?, ?, ?, ?, ?, ?)
+  `;
+
+  const inputs = [
+    data.title.en,
+    data.title.fr,
+    data.content.en,
+    data.content.fr,
+    data.publishedAt,
+    data.imageUrl,
+    data.bannerUrl,
+  ];
+
+  return new Promise((resolve, reject) => {
+    db.run(query, inputs, function (err) {
+      if (err) {
+        reject(new Error('Error while INSERT news'));
+      }
+
+      resolve(this.lastID);
+    });
+  })
+}
+
+function removeNews(data) {
+  const query = `
+    DELETE from news WHERE id = ?
+  `;
+
+  const inputs = [Number(data.id)];
+
+  return new Promise((resolve, reject) => {
+    db.run(query, inputs, function (err) {
+      if (err) {
+        return reject(new Error('Error while DELETE news'));
+      }
+
+      resolve({ changes: this.changes })
+    })
+  })
 }

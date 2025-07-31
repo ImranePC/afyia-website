@@ -1,0 +1,20 @@
+<div class="container mt-40">
+  <button class="btn bg-white mb-5" [routerLink]="['/admin/manage-news/create']">+ Ajouter un article</button>
+  <div class="bg-white p-5 shadow-sm rounded-xl">
+    <ul>
+      <li class="mb-3 flex" *ngFor="let news of newsList">
+        <div class="me-5 max-h-[150px] max-w-[150px] overflow-hidden bg-slate-100 rounded-lg content-center">
+          <img [src]="news.fullImageUrl">
+        </div>
+        <div>
+          <div class="text-lg">
+            <span class="text-xs text-slate-500">(ID: {{ news.id }})</span> <br> {{ news.title[translate.currentLang] }}
+          </div>
+          <span>{{ news.content[translate.currentLang] }}</span> <br>
+          <button [routerLink]="['/admin/manage-news', news.id]" class="btn bg-cyan-100 mt-1">Modifier</button>
+        </div>
+        <hr class="mt-3">
+      </li>
+    </ul>
+  </div>
+</div>

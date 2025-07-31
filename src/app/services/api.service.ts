@@ -39,4 +39,12 @@ export class ApiService {
   getAvailableThermocycler(): Observable<any> {
     return this.http.get(`${this.DISOFT_URL}/available-thermocycler`);
   }
+
+  uploadImage(data: any): Observable<any> {
+    return this.http.post(`${this.API_URL}/upload-image`, data);
+  }
+
+  getImagesList(): Observable<any> {
+    return this.http.get(`${this.API_URL}/list-images`);
+  }
 }

@@ -4,15 +4,38 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
-import { SafeHtml } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-export interface News {
-  id: string,
-  title: string,
-  content: string | SafeHtml,
-  imageUrl: string,
-  bannerUrl: string,
-  publishedAt: Date,
+export class News {
+  private imagePath = environment.apiUrl + '/uploads/images/'
+
+  constructor(
+    public id: string,
+    public title: {
+      [lang: string]: string | SafeHtml
+    },
+    public content: {
+      [lang: string]: string | SafeHtml
+    },
+    public imageUrl: string,
+    public bannerUrl: string,
+    public publishedAt: string,
+  ) {
+    this.id = id;
+    this.title = title;
+    this.content = content;
+    this.imageUrl = imageUrl;
+    this.bannerUrl = bannerUrl;
+    this.publishedAt = publishedAt;
+  }
+
+  get fullImageUrl(): string {
+    return this.imagePath + this.imageUrl;
+  }
+
+  get fullBannerUrl(): string {
+    return this.imagePath + this.bannerUrl;
+  }
 }
 
 @Injectable({
@@ -21,7 +44,15 @@ export interface News {
 export class NewsService {
   private API_URL = environment.apiUrl;
 
-  constructor(private http: HttpClient, private translate: TranslateService) {}
+  public IMAGE_URL = environment.apiUrl + '/uploads/images/'
+
+  private LANGUAGES = ['fr', 'en'];
+
+  constructor(
+    private http: HttpClient,
+    private translate: TranslateService,
+    private sanitizer: DomSanitizer,
+  ) {}
 
   getNews(): Observable<any> {
     const headers = new HttpHeaders({
@@ -34,28 +65,84 @@ export class NewsService {
       ));
   }
 
-  getNewsById(id: string): Observable<any> {
+  getNewsById(id: string, getAllTranslations = false): Observable<any> {
     const headers = new HttpHeaders({
-      'X-App-Lang': this.translate.currentLang,
+      'X-App-Lang': getAllTranslations ? 'all' : this.translate.currentLang,
     });
 
     return this.http.get(`${this.API_URL}/news/${id}`, { headers })
       .pipe(map((data: any) => this.formatResponse(data)));
   }
 
-  private formatResponse(data: any, shortenContent = false): News {
-    return {
+  updateNews(data: any): Observable<any> {
+    const body = {
       id: data.id,
       title: data.title,
-      content: shortenContent ? this.removeTags(data.content) : data.content,
-      imageUrl: data.image_url,
-      bannerUrl: data.banner_url ?? data.image_url,
-      publishedAt: data.published_at
-    };
+      content: data.content,
+      image_url: data.imageUrl,
+      banner_url: data.bannerUrl,
+      published_at: data.publishedAt,
+    }
+
+    return this.http.put(`${this.API_URL}/news`, body);
+  }
+
+  createNews(data: any): Observable<any> {
+    const body = {
+      id: data.id,
+      title: data.title,
+      content: data.content,
+      image_url: data.imageUrl,
+      banner_url: data.bannerUrl,
+      published_at: data.publishedAt,
+    }
+
+    return this.http.post(`${this.API_URL}/news`, body);
+  }
+
+  deleteNews(newsId: string): Observable<any> {
+    return this.http.delete(`${this.API_URL}/news/${newsId}`);
+  }
+
+  private formatResponse(data: any, shortenContent = false): News {
+    const title: any = {};
+    const content: any = {};
+
+    this.LANGUAGES.forEach((language: string) => {
+      const contentData = data['content_' + language];
+      if (contentData) {
+        content[language] = shortenContent ? this.removeTags(contentData) : contentData;
+      }
+
+      const titleData = data['title_' + language];
+      if (titleData) {
+        title[language] = titleData;
+      }
+    })
+
+    return new News(
+      data.id,
+      title,
+      content,
+      data.image_url,
+      data.banner_url,
+      data.published_at,
+    );
   }
 
   private removeTags(content: string): string {
     const regex = new RegExp('\\{.*?\\}|<.*?>', 'g');
     return content.replace(regex, '');
+  }
+
+  public formatContent(content: string): SafeHtml {
+    const regex = new RegExp('{\\s*img:(.*?)\\s*}', 'g');
+    const imageUrl = this.IMAGE_URL;
+
+    return this.sanitizer.bypassSecurityTrustHtml(
+      content.replace(regex, (match: any, image: string) => {
+        return `<img class='mx-auto rounded-xl my-5' src="${imageUrl}${image}" title="" alt="">`;
+      })
+    );
   }
 }

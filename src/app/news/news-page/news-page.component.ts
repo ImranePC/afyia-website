@@ -6,7 +6,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { News, NewsService } from '../../services/news.service';
 import { AppService } from '../../services/app.service';
 import { DatePipe } from '@angular/common';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-news-page',
@@ -24,6 +24,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class NewsPageComponent implements OnInit {
   data: News;
 
+  formattedContent: string | SafeHtml;
+
   navigationPath: Path[] = [
     { name: 'header.news', link: '/news' },
     { name: '', link: '/news/:id' },
@@ -34,7 +36,6 @@ export class NewsPageComponent implements OnInit {
     private appService: AppService,
     private newsService: NewsService,
     private translate: TranslateService,
-    private sanitizer: DomSanitizer,
   ) { }
 
   ngOnInit(): void {
@@ -47,26 +48,17 @@ export class NewsPageComponent implements OnInit {
 
   loadCurrentNews(firstCall = false): void {
     const newsId = this.route.snapshot.paramMap.get('id');
+    const language = this.translate.currentLang;
 
-    this.newsService.getNewsById(newsId).subscribe((news) => {
+    this.newsService.getNewsById(newsId, true).subscribe((news) => {
       this.data = news;
-      this.data.content = this.formatContent(this.data.content as string);
-      this.navigationPath[this.navigationPath.length - 1].name = this.data.title;
+      this.formattedContent = this.newsService.formatContent(this.data.content[this.translate.currentLang] as string);
+      this.navigationPath[this.navigationPath.length - 1].name = this.data.title[language] as string;
 
       if (firstCall) {
         this.appService.initScrollReveal();
       }
     });
-  }
-
-  formatContent(content: string): SafeHtml {
-    const regex = new RegExp('{\\s*img:(.*?)\\s*}', 'g');
-
-    return this.sanitizer.bypassSecurityTrustHtml(
-      content.replace(regex, (match: any, image: string) => {
-        return `<img src="assets/img/news/${image}" title="" alt="">`;
-      })
-    );
   }
 
   get currentLang(): string {

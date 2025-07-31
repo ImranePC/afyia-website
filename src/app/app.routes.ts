@@ -12,8 +12,17 @@ import { NewsComponent } from './news/news.component';
 import { NewsPageComponent } from './news/news-page/news-page.component';
 import { SoftwareComponent } from './software/software.component';
 import { RequestAccountComponent } from './software/request-account/request-account.component';
+import { ManageNewsComponent } from './admin/manage-news/manage-news.component';
+import { ManageNewsPageComponent } from './admin/manage-news/manage-news-page/manage-news-page.component';
+
+export const adminRoutes: Routes = [
+  { path: 'admin/manage-news/create', component: ManageNewsPageComponent },
+  { path: 'admin/manage-news/:id', component: ManageNewsPageComponent },
+  { path: 'admin/manage-news', component: ManageNewsComponent },
+]
 
 export const routes: Routes = [
+  ...adminRoutes,
   { path: 'account-request', component: RequestAccountComponent },
   { path: 'about', component: AboutComponent },
   { path: 'bloodborne', component: AboutBloodborneComponent },
