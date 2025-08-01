@@ -1,0 +1,105 @@
+<div class="container mt-40">
+  <button class="btn bg-white mb-3" [routerLink]="['/admin/manage-news/']">Retour aux articles</button>
+  <div class="bg-white mb-5 rounded-xl p-5 shadow-sm">
+    <label for="news_image">
+      Envoyer une image
+    </label>
+    <br>
+    <input
+      #fileInput
+      id="news_image"
+      class="bg-slate-50 p-2 rounded-xl"
+      type="file"
+      name="news_image"
+      accept="image/*"
+      (change)="onFileSelected($event)"
+    >
+    <button class="btn bg-cyan-100 ms-3" (click)="onSubmit()">Sauvegarder l'image</button>
+    <hr class="my-5">
+    Images enregistrées <br>
+    <ul class="text-xs">
+      <li *ngFor="let image of imagesList">
+        <a href="{{ imageUrl }}/{{ image }}" target="_blank">{{ image }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="data" class="p-5 bg-white rounded-xl shadow-sm">
+    <div *ngIf="isEditMode" class="text-xl mb-5 pb-5 border-b">Modification de l'article <b>"{{ data.title['fr'] }}"</b></div>
+    <div *ngIf="!isEditMode" class="text-xl mb-5 pb-5 border-b">Nouvel article</div>
+    <div class="input-group">
+      <label class="mt-3" for="date">Date</label>
+      <input class="w-auto" type="date" name="date" [(ngModel)]="data.publishedAt">
+      <label class="mt-3" for="news_img">Image</label>
+      <input type="text" placeholder="article_image.png" name="news_img" [(ngModel)]="data.imageUrl">
+      <label class="mt-3" for="news_banner">Bannière</label>
+      <input type="text" placeholder="banniere.png" name="news_banner" [(ngModel)]="data.bannerUrl">
+      <hr class="my-3">
+      <div class="mt-3">
+        Voir en
+        <select [(ngModel)]="selectedLang" name="select_display_language" id="select_display_language">
+          <option selected value="fr">Français</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+      <input class="mt-3" type="text" placeholder="Titre" [(ngModel)]="data.title[selectedLang]">
+      <textarea class="mt-3" rows="5" placeholder="Contenu" [(ngModel)]="data.content[selectedLang]"></textarea>
+    </div>
+
+    <div class="p-3 border rounded-xl mt-2 text-sm">
+      <b>Aide à la mise en page</b> <br>
+      Afficher une image : <pre>{{ "{{ img:nom_de_limage.png }}" }}</pre> <br>
+      Mise en page : <pre><b>{{ '\<b>gras\</b>' }}</b> <i>{{ '\<i>italique\</i>' }}</i></pre>
+    </div>
+
+    <span class="block text-cyan-700 mt-3 text-bold text-sm" *ngIf="!isDataValid">*Veuillez remplir chaque champs en Anglais et Français avant d'enregistrer.</span>
+    <button class="btn bg-cyan-100 mt-3" [class.disabled]="!isDataValid" (click)="save()">Enregistrer</button>
+    <a
+      *ngIf="isEditMode"
+      class="btn ms-3 bg-cyan-100"
+      [href]="getRouteUrl(['/news', data.id])"
+      target="_blank"
+    >
+      Voir la page
+    </a>
+    <button class="btn bg-red-100 mt-3 ms-3" (click)="remove()">Supprimer</button>
+  </div>
+</div>
+
+<div *ngIf="data" class="container mt-5">
+  <div class="w-8/12 bg-white shadow-sm mx-auto rounded-xl p-10">
+    <div class="text-gray-500 text-small mb-3">{{ data.publishedAt | date:'shortDate' : undefined : selectedLang }}</div>
+    <p [innerHTML]="formattedContent"></p>
+  </div>
+</div>
+
+<app-modal #saveModal>
+  <div title>
+    Terminé ✅
+  </div>
+  <div body>
+    @if (isEditMode) {
+      Les changements ont bien été enregistrés.
+    } @else {
+      L'article à bien été publié.
+    }
+  </div>
+</app-modal>
+
+<app-modal #saveImageModal>
+  <div title>
+    Terminé ✅
+  </div>
+  <div body>
+    L'image a bien été envoyée.
+  </div>
+</app-modal>
+
+<app-modal #errorModal>
+  <div title>
+    Oops ...
+  </div>
+  <div body>
+    Un problème est survenu, merci de contacter l'administrateur.
+  </div>
+</app-modal>

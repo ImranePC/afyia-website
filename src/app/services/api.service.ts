@@ -3,22 +3,24 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from './auth.service';
+
+export const API_URL = environment.apiUrl;
+
+export const DISOFT_URL = 'https://disoft-ruo.di4diag.com/api/v1';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private API_URL = environment.apiUrl;
-
-  private DISOFT_URL = 'https://disoft-ruo.di4diag.com/api/v1';
-
   constructor(
     private http: HttpClient,
     private translate: TranslateService,
+    private authService: AuthService
   ) { }
 
   sendMessage(data: any): Observable<any> {
-    return this.http.post(`${this.API_URL}/send-message`, data);
+    return this.http.post(`${API_URL}/send-message`, data);
   }
 
   sendSoftwareRequest(data: any): Observable<any> {
@@ -33,10 +35,23 @@ export class ApiService {
       accounts: data.accounts,
     }
 
-    return this.http.post(`${this.DISOFT_URL}/create-user-request`, body, { headers });
+    return this.http.post(`${DISOFT_URL}/create-user-request`, body, { headers });
   }
 
   getAvailableThermocycler(): Observable<any> {
-    return this.http.get(`${this.DISOFT_URL}/available-thermocycler`);
+    return this.http.get(`${DISOFT_URL}/available-thermocycler`);
+  }
+
+  uploadImage(data: any): Observable<any> {
+    return this.http.post(`${API_URL}/admin/upload-image`, data);
+  }
+
+  getImagesList(): Observable<any> {
+    const token = this.authService.getToken();
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    })
+
+    return this.http.get(`${API_URL}/admin/list-images`, { headers });
   }
 }

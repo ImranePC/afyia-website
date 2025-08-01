@@ -18,4 +18,8 @@ export class AppService {
 
     ScrollReveal().reveal('.reveal', config);
   }
+
+  getRouteUrl(route: string[]) {
+    return window.location.origin + route.join('/')
+  }
 }
