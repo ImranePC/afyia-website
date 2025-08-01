@@ -56,7 +56,8 @@
   "footer": {
     "company": {
       "about": "About",
-      "title": "The company"
+      "title": "The company",
+      "private": "Private access"
     },
     "contact": {
       "message": "Leave us a message",
@@ -257,5 +258,12 @@
     "disoft_description_4": "The technology behind DISoft is based on a patent co-owned by IRD and the University of Montpellier, and exclusively licensed to AFYIA.",
     "subtitle_2": "<b>Precise</b> and <strong>reliable</strong>",
     "subtitle_3": "<b>User</b>-<strong>friendly</strong>"
+  },
+  "login": {
+    "title": "Log in",
+    "id": "Login",
+    "password": "Password",
+    "connection": "Log in",
+    "error": "Wrong login or password."
   }
 }

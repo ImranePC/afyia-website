@@ -266,7 +266,10 @@ strong {
     display: block;
   }
 
-  input[type=text], input[type=date], textarea {
+  input[type=text],
+  input[type=date],
+  input[type=password],
+  textarea {
     @apply p-3 rounded-lg bg-slate-50;
     transition: $transition-1;
     outline: 1px solid transparent;

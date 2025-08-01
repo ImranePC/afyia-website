@@ -54,7 +54,6 @@ export class ManageNewsPageComponent implements OnInit {
     if (this.isEditMode) {
       this.newsService.getNewsById(newsId, true).subscribe((news) => {
         this.data = news;
-        console.log(this.data);
       })
     } else {
       this.initData();

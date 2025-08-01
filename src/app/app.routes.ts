@@ -14,15 +14,18 @@ import { SoftwareComponent } from './software/software.component';
 import { RequestAccountComponent } from './software/request-account/request-account.component';
 import { ManageNewsComponent } from './admin/manage-news/manage-news.component';
 import { ManageNewsPageComponent } from './admin/manage-news/manage-news-page/manage-news-page.component';
+import { PrivateLoginComponent } from './private-login/private-login.component';
+import { authGuard } from './guards/auth.guard';
 
 export const adminRoutes: Routes = [
-  { path: 'admin/manage-news/create', component: ManageNewsPageComponent },
-  { path: 'admin/manage-news/:id', component: ManageNewsPageComponent },
-  { path: 'admin/manage-news', component: ManageNewsComponent },
+  { path: 'admin/manage-news/create', component: ManageNewsPageComponent, canActivate: [authGuard]},
+  { path: 'admin/manage-news/:id', component: ManageNewsPageComponent, canActivate: [authGuard]},
+  { path: 'admin/manage-news', component: ManageNewsComponent, canActivate: [authGuard]},
 ]
 
 export const routes: Routes = [
   ...adminRoutes,
+  { path: 'private-login', component: PrivateLoginComponent },
   { path: 'account-request', component: RequestAccountComponent },
   { path: 'about', component: AboutComponent },
   { path: 'bloodborne', component: AboutBloodborneComponent },

@@ -43,7 +43,6 @@ export class NewsComponent implements OnInit {
   loadNews(): void {
     this.newsService.getNews().subscribe((data: News[]) => {
       this.newsList = data;
-      console.log(data);
     });
   }
 

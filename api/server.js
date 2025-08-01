@@ -7,6 +7,7 @@ const sqlite3 = require('sqlite3').verbose();
 const rateLimit = require('express-rate-limit');
 const multer = require('multer');
 const path = require('path');
+const jwt = require('jsonwebtoken');
 
 // const setup
 const app = express();
@@ -55,6 +56,9 @@ const corsOptions = {
   }
 };
 
+const JWT_SECRET = process.env.JWT_SECRET;
+// end const setup
+
 app.use(express.json());
 app.use(cors());
 app.use(limiter);
@@ -90,7 +94,7 @@ app.get('/news/:id', async (req, res) => {
   }
 })
 
-app.get('/list-images', (req, res) => {
+app.get('/admin/list-images', authMiddleware, (req, res) => {
   fs.readdir(imagesDir, (err, files) => {
     if (err) {
       console.error('Erreur lecture du dossier :', err);
@@ -101,7 +105,7 @@ app.get('/list-images', (req, res) => {
   })
 })
 
-app.put('/news', (req, res) => {
+app.put('/admin/news', (req, res) => {
   const body = req.body;
 
   const data = {
@@ -162,7 +166,7 @@ app.post('/send-message', (req, res) => {
   });
 });
 
-app.post('/upload-image', upload.single('image'), (req, res) => {
+app.post('/admin/upload-image', upload.single('image'), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: 'No image file provided' });
   }
@@ -171,7 +175,7 @@ app.post('/upload-image', upload.single('image'), (req, res) => {
   res.status(200).json({ message: 'Image uploadée avec succès', imageUrl });
 });
 
-app.post('/news', async (req, res) => {
+app.post('/admin/news', async (req, res) => {
   const body = req.body;
 
   const data = {
@@ -204,14 +208,12 @@ app.post('/news', async (req, res) => {
   });
 });
 
-app.delete('/news/:id', async (req, res) => {
+app.delete('/admin/news/:id', async (req, res) => {
   const params = req.params;
 
   const data = {
     id: params.id,
   };
-
-  console.log(data);
 
   try {
     removeNews(data);
@@ -229,6 +231,28 @@ app.delete('/news/:id', async (req, res) => {
 });
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+app.use('/admin', (req, res, next) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_PASSWORD}`) {
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
+
+  next();
+})
+
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  if (username === process.env.ADMIN_LOGIN && password === process.env.ADMIN_PASSWORD) {
+    const token = jwt.sign({ username }, JWT_SECRET, { expiresIn: '1h' });
+
+    return res.json({ token })
+  }
+
+  res.status(401).json({ message: 'Wrong login' });
+});
 
 if (ENV === 'production') {
   const privateKey  = fs.readFileSync(process.env.SSL_KEY, 'utf8');
@@ -339,7 +363,9 @@ async function updateNews(data) {
       title_fr = ?,
       content_en = ?,
       content_fr = ?,
-      published_at = ?
+      published_at = ?,
+      image_url = ?,
+      banner_url = ?
     WHERE news.id = ?
   `;
 
@@ -349,6 +375,8 @@ async function updateNews(data) {
     data.content.en,
     data.content.fr,
     data.publishedAt,
+    data.imageUrl,
+    data.bannerUrl,
     data.id,
   ];
 
@@ -406,4 +434,22 @@ function removeNews(data) {
       resolve({ changes: this.changes })
     })
   })
+}
+
+function authMiddleware(req, res, next) {
+  const authHeader = req.headers.authorization;
+  const token = authHeader?.split(' ')[1];
+
+  if (!token) {
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
+
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    req.user = decoded;
+
+    next()
+  } catch (err) {
+    return res.status(403).json({ message: 'Invalid token' });
+  }
 }

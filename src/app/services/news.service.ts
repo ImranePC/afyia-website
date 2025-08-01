@@ -84,10 +84,14 @@ export class NewsService {
       published_at: data.publishedAt,
     }
 
-    return this.http.put(`${this.API_URL}/news`, body);
+    return this.http.put(`${this.API_URL}/admin/news`, body);
   }
 
   createNews(data: any): Observable<any> {
+    const headers = {
+      Authorization: 'Bearer admin123',
+    }
+
     const body = {
       id: data.id,
       title: data.title,
@@ -97,11 +101,11 @@ export class NewsService {
       published_at: data.publishedAt,
     }
 
-    return this.http.post(`${this.API_URL}/news`, body);
+    return this.http.post(`${this.API_URL}/admin/news`, body, { headers });
   }
 
   deleteNews(newsId: string): Observable<any> {
-    return this.http.delete(`${this.API_URL}/news/${newsId}`);
+    return this.http.delete(`${this.API_URL}/admin/news/${newsId}`);
   }
 
   private formatResponse(data: any, shortenContent = false): News {
