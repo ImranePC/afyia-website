@@ -8,6 +8,7 @@ const rateLimit = require('express-rate-limit');
 const multer = require('multer');
 const path = require('path');
 const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
 
 // const setup
 const app = express();
@@ -53,14 +54,16 @@ const corsOptions = {
     } else {
       callback(new Error('Unauthorized request'));
     }
-  }
+  },
+  credentials: true,
 };
 
 const JWT_SECRET = process.env.JWT_SECRET;
 // end const setup
 
+app.use(cors(corsOptions));
 app.use(express.json());
-app.use(cors());
+app.use(cookieParser());
 app.use(limiter);
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -105,7 +108,11 @@ app.get('/admin/list-images', authMiddleware, (req, res) => {
   })
 })
 
-app.put('/admin/news', (req, res) => {
+app.get('/check-auth', authMiddleware, (req, res) => {
+  res.json({ authenticated: true });
+})
+
+app.put('/admin/news', authMiddleware, (req, res) => {
   const body = req.body;
 
   const data = {
@@ -232,23 +239,20 @@ app.delete('/admin/news/:id', async (req, res) => {
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-app.use('/admin', (req, res, next) => {
-  const authHeader = req.headers.authorization;
-
-  if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_PASSWORD}`) {
-    return res.status(401).json({ message: 'Unauthorized' });
-  }
-
-  next();
-})
-
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
   if (username === process.env.ADMIN_LOGIN && password === process.env.ADMIN_PASSWORD) {
     const token = jwt.sign({ username }, JWT_SECRET, { expiresIn: '1h' });
 
-    return res.json({ token })
+    res.cookie('log_token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: (60 * 60) * 1000,
+    })
+
+    return res.json({ message: 'Login OK' });
   }
 
   res.status(401).json({ message: 'Wrong login' });
@@ -437,8 +441,7 @@ function removeNews(data) {
 }
 
 function authMiddleware(req, res, next) {
-  const authHeader = req.headers.authorization;
-  const token = authHeader?.split(' ')[1];
+  const token = req.cookies.log_token;
 
   if (!token) {
     return res.status(401).json({ message: 'Unauthorized' });
@@ -448,7 +451,7 @@ function authMiddleware(req, res, next) {
     const decoded = jwt.verify(token, JWT_SECRET);
     req.user = decoded;
 
-    next()
+    next();
   } catch (err) {
     return res.status(403).json({ message: 'Invalid token' });
   }

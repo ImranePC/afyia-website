@@ -7,8 +7,6 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  private tokenKey = 'log_token';
-
   constructor(
     private http: HttpClient,
   ) { }
@@ -20,14 +18,10 @@ export class AuthService {
       password,
     };
 
-    return this.http.post(`${API_URL}/login`, body);
+    return this.http.post(`${API_URL}/login`, body, { withCredentials: true });
   }
 
-  saveToken(token: string): void {
-    localStorage.setItem(this.tokenKey, token);
-  }
-
-  getToken(): string {
-    return localStorage.getItem(this.tokenKey);
+  checkAuth(): Observable<any> {
+    return this.http.get(`${API_URL}/check-auth`, { withCredentials: true });
   }
 }

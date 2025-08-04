@@ -47,11 +47,6 @@ export class ApiService {
   }
 
   getImagesList(): Observable<any> {
-    const token = this.authService.getToken();
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${token}`,
-    })
-
-    return this.http.get(`${API_URL}/admin/list-images`, { headers });
+    return this.http.get(`${API_URL}/admin/list-images`, { withCredentials: true });
   }
 }

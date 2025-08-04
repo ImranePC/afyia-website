@@ -8,7 +8,7 @@
         </div>
         <div>
           <div class="text-lg">
-            <span class="text-xs text-slate-500">(ID: {{ news.id }})</span> <br> {{ news.title[translate.currentLang] }}
+            <span class="text-xs text-slate-500"> (ID: {{ news.id }})</span> <br> {{ news.title[translate.currentLang] }}
           </div>
           <span>{{ news.content[translate.currentLang] }}</span> <br>
           <button [routerLink]="['/admin/manage-news', news.id]" class="btn bg-cyan-100 mt-1">Modifier</button>

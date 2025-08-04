@@ -28,7 +28,6 @@ export class PrivateLoginComponent {
   login(): void {
     this.authService.login(this.loginData.id, this.loginData.password).subscribe({
       next: (response: any) => {
-        this.authService.saveToken(response.token);
         this.router.navigate(['/admin/manage-news']);
       }, error: () => {
         this.loginData.password = '';

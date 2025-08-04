@@ -1,13 +1,26 @@
+import { HttpClient } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
+import { API_URL } from '../services/api.service';
+import { catchError, map, of } from 'rxjs';
 
 export const authGuard: CanActivateFn = (route, state) => {
-  const token = localStorage.getItem('log_token');
+  const http = inject(HttpClient);
   const router = inject(Router);
 
-  if (token) {
-    return true;
-  }
+  return http.get(`${API_URL}/check-auth`, { withCredentials: true }).pipe(
+    map((response: any) => {
+      if (response.authenticated) {
+        return true;
+      } else {
+        router.navigate(['/']);
+        return false;
+      }
+    }),
+    catchError(() => {
+      router.navigate(['/']);
 
-  return router.createUrlTree(['/']);
+      return of(false);
+    })
+  )
 };
