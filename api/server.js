@@ -19,7 +19,10 @@ const PORT = process.env.PORT;
 
 const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
 
-const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100 });
+const limiter = rateLimit({
+  windowMs: 10 * 60 * 1000,
+  max: 500,
+});
 
 const ENV = process.env.NODE_ENV;
 
@@ -119,7 +122,7 @@ app.put('/admin/news', authMiddleware, (req, res) => {
     id: body.id,
     title: {
       fr: body.title.fr,
-      en: body.title.fr,
+      en: body.title.en,
     },
     content: {
       fr: body.content.fr,

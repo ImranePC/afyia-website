@@ -45,3 +45,5 @@ Thumbs.db
 
 /api/.env
 /api/uploads/*
+
+/api/afyiadb.sqlite
