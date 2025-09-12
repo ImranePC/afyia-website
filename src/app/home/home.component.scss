@@ -43,12 +43,11 @@
 .partner-grid {
   img {
     transition: $transition-2;
-    filter: grayscale(1);
     width: 120px;
     margin: auto;
 
     &:hover {
-      filter: grayscale(0);
+      scale: 1.07;
     }
 
     &.size-square {
