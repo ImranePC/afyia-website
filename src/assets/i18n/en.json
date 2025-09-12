@@ -176,10 +176,11 @@
     "view_product_card": "View product card",
     "contact_us": "Contact us",
     "about": {
-      "bloodborne": "Bloodborne",
-      "febrilerash": "Febrile rash",
-      "respiratory": "Respiratory",
-      "categories": "Categories"
+      "febrilerash": "Febrile rash viruses",
+      "respiratory": "Respiratory viruses",
+      "categories": "Categories",
+      "hepatic": "Hepatic viruses",
+      "tuberculosis": "Tuberculosis"
     },
     "no_result": "No result found"
   },
