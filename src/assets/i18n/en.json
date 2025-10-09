@@ -179,10 +179,22 @@
       "febrilerash": "Febrile rash viruses",
       "respiratory": "Respiratory viruses",
       "categories": "Categories",
-      "hepatic": "Hepatic viruses",
+      "hepatic": "Hepatitis B virus",
       "tuberculosis": "Tuberculosis"
     },
-    "no_result": "No result found"
+    "no_result": "No result found",
+    "text_1": {
+      "title": "English <strong>title</strong>",
+      "content": "Need english content"
+    },
+    "text_2": {
+      "title": "English title please",
+      "content": "English content",
+      "list": "      <li><b>Identifier les agents pathogènes et orienter une prise en charge adaptée</b>, permettant l’administration de traitements antiviraux ou antibiotiques spécifiques.</li>       <li><b>Limiter la transmission</b> des pathogènes grâce à la mise en place de mesures d’isolement et de prévention ciblées.</li>       <li>Réduire l’usage inapproprié des antibiotiques et contribuer à la <b>lutte contre l’antibiorésistance.</b></li>       <li><b>Éviter les erreurs diagnostiques</b> qui pourraient retarder la prise en charge de pathologies graves, telles que les méningo-encéphalites virales ou certaines infections bactériennes.</li>       <li><b>Détecter précocement les épidémies</b> et ajuster les politiques de santé publique.</li>"
+    },
+    "text_3": {
+      "content": "English"
+    }
   },
   "about_illness": {
     "respiratory": {

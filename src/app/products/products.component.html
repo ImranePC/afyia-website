@@ -13,19 +13,19 @@
 
     <div class="
       illness-grid grid grid-cols-1 gap-5 reveal
-      md:grid-cols-2 md:gap-10
-      xl:grid-cols-3
+      md:grid-cols-2
+      xl:grid-cols-4
     ">
-      <div role="button" routerLink="/febrile-rash-viruses" style="background-image: url('assets/img/viruses/illness_4.jpg')">
+      <div role="button" routerLink="/febrile-rash-viruses" style="background-image: url('assets/img/illnesses/illness_dirash.jpg')">
         <span class="w-full">{{ 'products.about.febrilerash' | translate }}</span>
       </div>
-      <div role="button" routerLink="/hepatic-viruses" style="background-image: url('assets/img/viruses/illness_2.jpg')">
+      <div role="button" routerLink="/hepatic-viruses" style="background-image: url('assets/img/illnesses/illness_hepatitis.jpg')">
         <span class="w-full">{{ 'products.about.hepatic' | translate }}</span>
       </div>
-      <div role="button" routerLink="/respiratory-viruses" style="background-image: url('assets/img/viruses/illness_1.jpg')">
+      <div role="button" routerLink="/respiratory-viruses" style="background-image: url('assets/img/illnesses/illness_respiratory.jpg')">
         <span class="w-full">{{ 'products.about.respiratory' | translate }}</span>
       </div>
-      <div role="button" routerLink="/tuberculosis" style="background-image: url('assets/img/viruses/illness_1.jpg')">
+      <div role="button" routerLink="/tuberculosis" style="background-image: url('assets/img/illnesses/illness_tuberculosis.jpg')">
         <span class="w-full">{{ 'products.about.tuberculosis' | translate }}</span>
       </div>
     </div>
@@ -34,48 +34,28 @@
 
 <div class="container mb-10 lg:mb-20">
   <div class="bg-white rounded-xl shadow-sm p-5 lg:p-10 lg:pt-0 mb-10">
-    <h2 class="text-4xl text-center mb-5 lg:text-start lg:text-6xl lg:-translate-y-8 lg:mb-0">
-      Titre <strong>titre</strong>
-    </h2>
-    <p>
-      De nombreuses <b>maladies infectieuses</b> restent aujourd’hui <b>non diagnostiquées</b>, ce qui constitue un véritable <b>fléau de santé publique</b>. Même lorsque des traitements existent, faute de diagnostic fiable et accessible, certains patients ne bénéficient pas de la prise en charge adaptée et continuent de transmettre ces pathologies dans leurs communautés.
-    </p>
+    <h2 class="text-4xl text-center mb-5 lg:text-start lg:text-6xl lg:-translate-y-8 lg:mb-0" [innerHTML]="'products.text_1.title' | translate"></h2>
+    <p [innerHTML]="'products.text_1.content' | translate"></p>
   </div>
 
-  <div class="mx-auto lg:w-10/12 bg-cyan-600 bg-opacity-5 shadow-sm rounded-xl mb-10 p-5 lg:p-10">
-    <div class="grid lg:grid-cols-2">
-      <p class="mb-5 lg:mb-0 self-center">
-        Par exemple, dans le cas de la <b>tuberculose</b>, on estime qu’en 2024, sur les 10,8 millions de cas de tuberculose active, environ 3 millions d’individus n’ont pas été diagnostiqués, sans compter les formes asymptomatiques.
-      </p>
-      <div class="lg:translate-x-20">
-        <img class="w-full rounded-xl border col-span-2" src="assets/img/img_diag_insuffisant.png" alt="Infographie sur la tuberculose">
-      </div>
+  <div class="xl:w-8/12 mx-auto shadow-sm">
+    <div class="image-container">
+      <img class="w-full" src="assets/img/img_diag_insuffisant.png" alt="Infographie sur la tuberculose">
     </div>
   </div>
 
   <div class="bg-white p-5 lg:p-10 lg:pt-0 lg:mt-20 shadow-sm rounded-xl">
-    <h2 class="text-4xl text-center mb-5 lg:text-6xl lg:-translate-y-8 lg:mb-0">
-      Rendre le diagnostic <strong>accessible</strong>
-    </h2>
-
-    <p>
+    <h2 class="text-4xl text-center mb-5 lg:text-6xl lg:-translate-y-8 lg:mb-0" [innerHTML]="'products.text_2.title' | translate"></h2>
+    <p [innerHTML]="'products.text_2.content' | translate">
       Chez <b>AFYIA Diagnostics</b>, nous plaçons le <b>diagnostic innovant, simple, fiable, sensible et abordable</b> au cœur de notre mission. Identifier rapidement et avec précision les agents infectieux est une étape essentielle pour améliorer la santé mondiale, en particulier dans les contextes où l’accès aux soins reste limité.
 
       Un <b>diagnostic rapide et précis</b> est essentiel pour :
     </p>
-    <ul class="ms-10 primary-list text-xl mt-5">
-      <li><b>Identifier les agents pathogènes et orienter une prise en charge adaptée</b>, permettant l’administration de traitements antiviraux ou antibiotiques spécifiques.</li>
-      <li><b>Limiter la transmission</b> des pathogènes grâce à la mise en place de mesures d’isolement et de prévention ciblées.</li>
-      <li>Réduire l’usage inapproprié des antibiotiques et contribuer à la <b>lutte contre l’antibiorésistance.</b></li>
-      <li><b>Éviter les erreurs diagnostiques</b> qui pourraient retarder la prise en charge de pathologies graves, telles que les méningo-encéphalites virales ou certaines infections bactériennes.</li>
-      <li><b>Détecter précocement les épidémies</b> et ajuster les politiques de santé publique.</li>
-    </ul>
+    <ul class="ms-10 primary-list text-xl mt-5" [innerHTML]="'products.text_2.list' | translate"></ul>
   </div>
 
   <div class="bg-cyan-500 bg-opacity-10 p-5 lg:p-10 rounded-xl my-10">
-    <p class="text-center">
-      Notre ambition est de <b>rendre le diagnostic de haute performance accessible à tous</b>, afin de mieux prévenir, traiter et contrôler les maladies infectieuses à l’échelle mondiale.
-    </p>
+    <p class="text-center" [innerHTML]="'products.text_3.content' | translate"></p>
   </div>
 </div>
 

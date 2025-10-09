@@ -179,10 +179,22 @@
       "febrilerash": "Virus à éruptions cutanées",
       "respiratory": "Virus respiratoires",
       "categories": "Catégories",
-      "hepatic": "Virus hépatiques",
+      "hepatic": "Virus de l'hépatite B",
       "tuberculosis": "Tuberculose"
     },
-    "no_result": "Aucun résultat"
+    "no_result": "Aucun résultat",
+    "text_1": {
+      "title": "Un diagnostic <strong>insuffisant</strong>",
+      "content": "De nombreuses <b>maladies infectieuses</b> restent aujourd’hui <b>non diagnostiquées</b>, ce qui constitue un véritable <b>fléau de santé publique</b>. Même lorsque des traitements existent, faute de diagnostic fiable et accessible, certains patients ne bénéficient pas de la prise en charge adaptée et continuent de transmettre ces pathologies dans leurs communautés."
+    },
+    "text_2": {
+      "title": "Rendre le diagnostic <strong>accessible</strong>",
+      "content": "Chez <b>AFYIA Diagnostics</b>, nous plaçons le <b>diagnostic innovant, simple, fiable, sensible et abordable</b> au cœur de notre mission. Identifier rapidement et avec précision les agents infectieux est une étape essentielle pour améliorer la santé mondiale, en particulier dans les contextes où l’accès aux soins reste limité.        Un <b>diagnostic rapide et précis</b> est essentiel pour :",
+      "list": "      <li><b>Identifier les agents pathogènes et orienter une prise en charge adaptée</b>, permettant l’administration de traitements antiviraux ou antibiotiques spécifiques.</li>       <li><b>Limiter la transmission</b> des pathogènes grâce à la mise en place de mesures d’isolement et de prévention ciblées.</li>       <li>Réduire l’usage inapproprié des antibiotiques et contribuer à la <b>lutte contre l’antibiorésistance.</b></li>       <li><b>Éviter les erreurs diagnostiques</b> qui pourraient retarder la prise en charge de pathologies graves, telles que les méningo-encéphalites virales ou certaines infections bactériennes.</li>       <li><b>Détecter précocement les épidémies</b> et ajuster les politiques de santé publique.</li>"
+    },
+    "text_3": {
+      "content": "Notre ambition est de <b>rendre le diagnostic de haute performance accessible à tous</b>, afin de mieux prévenir, traiter et contrôler les maladies infectieuses à l’échelle mondiale."
+    }
   },
   "about_illness": {
     "respiratory": {
