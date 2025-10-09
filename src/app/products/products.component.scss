@@ -7,14 +7,14 @@
     background-color: black;
     text-align: center;
     color: white;
-    height: 200px;
+    height: 150px;
     overflow: hidden;
     background-size: cover;
     background-position: center;
     cursor: pointer;
 
     span {
-      @apply text-4xl;
+      @apply text-3xl px-5;
       z-index: 1;
       position: absolute;
       display: inline-block;

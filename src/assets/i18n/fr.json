@@ -176,10 +176,11 @@
     "view_product_card": "Voir la fiche produit",
     "contact_us": "Nous contacter",
     "about": {
-      "bloodborne": "Transmissible par le sang",
-      "febrilerash": "Éruptions cutanées",
-      "respiratory": "Respiratoire",
-      "categories": "Catégories"
+      "febrilerash": "Virus à éruptions cutanées",
+      "respiratory": "Virus respiratoires",
+      "categories": "Catégories",
+      "hepatic": "Virus hépatiques",
+      "tuberculosis": "Tuberculose"
     },
     "no_result": "Aucun résultat"
   },

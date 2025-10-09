@@ -6,7 +6,6 @@
     <nav class="hidden lg:block">
       <ul>
         <li><a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">{{ 'header.home' | translate }}</a></li>
-        <!-- <li><a routerLink="/technology" routerLinkActive="active">{{ 'header.technology' | translate }}</a></li>-->
         <li><a routerLink="/software" routerLinkActive="active">{{ 'header.technology' | translate }}</a></li>
         <li><a routerLink="/products" routerLinkActive="active">{{ 'header.product' | translate }}</a></li>
         <li><a routerLink="/news" routerLinkActive="active">{{ 'header.news' | translate }}</a></li>
@@ -66,9 +65,6 @@
           </div>
           <div class="p-2">
             <a routerLink="/software" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.technology' | translate }}</a>
-          </div>
-          <div class="p-2">
-            <a routerLink="/products" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.product' | translate }}</a>
           </div>
           <div class="p-2">
             <a routerLink="/news" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.news' | translate }}</a>
