@@ -1,7 +1,9 @@
-<div class="container mx-auto mt-60">
-  <div class="w-full lg:w-2/3 mx-auto reveal">
-    <h1 class="text-center text-6xl lg:text-8xl font-extrabold">{{ 'contact.title' | translate }}</h1>
-    <p class="mt-8 text-justify md:text-center text-2xl">{{ 'contact.subtitle' | translate }}</p>
+<div class="banner" appParallax [ratio]="-0.3" style="background-image: url('../../assets/img/banner/banner_contact.jpg')">
+  <h1 class="reveal">{{ 'header.contact' | translate }}</h1>
+</div>
+<div class="container mx-auto">
+  <div class="w-full lg:w-2/3 mx-auto reveal mt-20 lg:mt-40">
+    <p class="mt-8 text-justify md:text-center text-3xl">{{ 'contact.subtitle' | translate }}</p>
   </div>
 
   <div class="flex flex-col gap-5 mt-20 lg:gap-20 lg:mt-40">
@@ -75,6 +77,34 @@
         </a>
       </div>
       <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-pink-800 opacity-5 ms-12 pointer-events-none" [icon]="faLocationDot" size="10x"></fa-icon>
+    </div>
+
+    <div class="bg-cyan-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
+      <h2 class="
+        text-5xl font-extrabold mb-5
+        lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
+      ">
+        {{ 'contact.sections.newsletter.title' | translate }}
+      </h2>
+      <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
+        <p class="block lg:self-center">
+          Inscrivez vous à la newsletter pour recevoir nos dernières actualités
+        </p>
+        <div class="group-btn">
+          <div [formGroup]="newsletterForm" class="input-group">
+            <input id="user_email" type="email" formControlName="user_email" maxlength="50" placeholder="email@example.com">
+          </div>
+          <button
+            class="btn btn-lg text-white hover:text-white bg-cyan-800 text-lg self-start z-10 lg:self-center text-center lg:whitespace-nowrap h-full"
+            [class.disabled]="!newsletterForm.valid"
+            (click)="subscribeNewsletter()"
+          >
+            {{ 'contact.sections.title.button' | translate }}
+            <fa-icon class="ms-1" [icon]="faNewspaper"></fa-icon>
+          </button>
+        </div>
+      </div>
+      <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-cyan-800 opacity-5 ms-12 pointer-events-none" [icon]="faNewspaper" size="10x"></fa-icon>
     </div>
   </div>
 </div>
@@ -151,7 +181,7 @@
         </div>
         <div class="input-group" [class.is-invalid]="isFieldInvalid('email')">
           <label for="email">{{ 'contact.sections.form.inputs.email' | translate }}</label>
-          <input id="email" formControlName="email" type="text" maxlength="50">
+          <input id="email" formControlName="email" type="email" maxlength="50">
         </div>
         <div class="input-group" [class.is-invalid]="isFieldInvalid('message')">
           <label for="message">{{ 'contact.sections.form.inputs.message' | translate }}</label>
@@ -200,5 +230,13 @@
   </div>
   <div body>
     {{ 'contact.modal.error' | translate }}
+  </div>
+</app-modal>
+<app-modal #newsletterModal>
+  <div title>
+    {{ 'contact.modal.title_newsletter' | translate }} <img class="inline align-baseline" width="24px" src="assets/img/emoji_hands_up.png" alt="Wave hand">
+  </div>
+  <div body>
+    {{ 'contact.modal.newsletter_confirm' | translate }}
   </div>
 </app-modal>

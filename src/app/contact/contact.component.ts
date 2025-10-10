@@ -8,6 +8,7 @@ import {
   faUserTie,
   faTruckFast,
   faComputer,
+  faNewspaper,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
@@ -17,13 +18,14 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ApiService } from '../services/api.service';
 import { ModalComponent } from '../modal/modal.component';
 import { ActivatedRoute } from '@angular/router';
+import { ParallaxDirective } from '../directives/parallax.directive';
 
 type Subject = 'command' | 'question' | 'hire' | 'other' | 'software' | undefined;
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FontAwesomeModule, TranslateModule, CommonModule, ReactiveFormsModule, ModalComponent],
+  imports: [FontAwesomeModule, TranslateModule, CommonModule, ReactiveFormsModule, ModalComponent, ParallaxDirective],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -33,6 +35,9 @@ export class ContactComponent implements OnInit {
 
   @ViewChild('errorModal')
   errorModal: ModalComponent;
+
+  @ViewChild('newsletterModal')
+  newsletterModal: ModalComponent;
 
   faPaperPlane = faPaperPlane;
 
@@ -50,9 +55,13 @@ export class ContactComponent implements OnInit {
 
   faComputer = faComputer
 
+  faNewspaper = faNewspaper
+
   selectedSubject: Subject = undefined;
 
   messageForm: FormGroup;
+
+  newsletterForm: FormGroup;
 
   dataConsent = false;
 
@@ -69,6 +78,10 @@ export class ContactComponent implements OnInit {
       message: ['', Validators.required],
       subject: [undefined, Validators.required],
     });
+
+    this.newsletterForm = this.fb.group({
+      user_email: ['', [Validators.required, Validators.email]],
+    })
   }
 
   ngOnInit(): void {
@@ -100,6 +113,11 @@ export class ContactComponent implements OnInit {
         }
       });
     }
+  }
+
+  subscribeNewsletter(): void {
+    this.newsletterModal.open();
+    this.newsletterForm.reset();
   }
 
   isFieldInvalid(field: string): boolean {

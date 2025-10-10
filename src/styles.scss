@@ -177,7 +177,7 @@ strong {
   justify-content: center;
   position: relative;
   text-align: center;
-  min-height: 550px;
+  min-height: 500px;
   background-image: url('assets/img/buildings_background.jpg');
   background-size: cover;
 
@@ -269,6 +269,7 @@ strong {
   input[type=text],
   input[type=date],
   input[type=password],
+  input[type=email],
   textarea {
     @apply p-3 rounded-lg bg-slate-50;
     transition: $transition-1;
@@ -291,6 +292,22 @@ strong {
 
 input[type=checkbox] {
   accent-color: theme('colors.cyan.600');
+}
+
+.group-btn {
+  display: flex;
+
+  input[type=email] {
+    @apply rounded-l-full pl-5;
+  }
+
+  .btn {
+    @apply rounded-none rounded-r-full;
+
+    &:hover {
+      scale: 1;
+    }
+  }
 }
 
 @media (max-width: theme('screens.lg')) {

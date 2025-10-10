@@ -41,6 +41,12 @@
       "order": {
         "title": "Ordering",
         "text": "To place an order, please contact us"
+      },
+      "newsletter": {
+        "title": "Newsletter"
+      },
+      "title": {
+        "button": "Subscribe"
       }
     },
     "subtitle": "Looking for an opportunity or to work together, feel free to reach us through our contact options.",
@@ -50,7 +56,9 @@
       "title": "Request sent",
       "close": "Close",
       "error": "An error has occurred. Please try again later.",
-      "title_error": "Error"
+      "title_error": "Error",
+      "title_newsletter": "Registration confirmed",
+      "newsletter_confirm": "You’ve successfully subscribed to our newsletter. Thanks for joining!"
     }
   },
   "footer": {

@@ -41,6 +41,12 @@
       "order": {
         "title": "Passer commande",
         "text": "Pour passer une commande, merci de nous contacter"
+      },
+      "newsletter": {
+        "title": "Newsletter"
+      },
+      "title": {
+        "button": "S'inscrire"
       }
     },
     "subtitle": "À la recherche d'une opportunité ou d'une collaboration, contactez nous par les moyens suivants.",
@@ -50,7 +56,9 @@
       "title": "Demande envoyée",
       "close": "Fermer",
       "error": "Une erreur est survenue. Merci de réessayer ultérieurement.",
-      "title_error": "Erreur"
+      "title_error": "Erreur",
+      "title_newsletter": "Inscription enregistrée",
+      "newsletter_confirm": "Votre inscription à la newsletter a bien été prise en compte. Merci !"
     }
   },
   "footer": {
