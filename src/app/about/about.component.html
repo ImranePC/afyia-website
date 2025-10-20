@@ -123,17 +123,12 @@
   <div class="text-center mb-20">
     <h2 class="title reveal">{{ 'about.founders.title' | translate }}</h2>
   </div>
-  <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
-    <div>
-      <div class="h-40 w-40 bg-slate-100 rounded-2xl mx-auto overflow-hidden">
-        <img src="assets/img/team/pp_mpourquier.png" alt="Photo de Pourquier Philippe pour Afyia Diagnostics">
-      </div>
-      <div class="mt-5 text-center">
-        <h3 class="font-extrabold">Philippe Pourquier</h3>
-        <span>{{ 'about.founders.pourquier' | translate }}</span>
-      </div>
-    </div>
-    <div>
+  <div class="grid grid-cols-2 gap-y-10 gap-x-5">
+    <app-business-card name="POURQUIER Philippe" person="pourquier"></app-business-card>
+    <app-business-card name="GUY Joany" person="guy"></app-business-card>
+    <app-business-card name="REYNES Christelle" person="reynes"></app-business-card>
+    <app-business-card name="AVARRE Jean-Christophe" person="avarre"></app-business-card>
+    <!-- <div>
       <div class="h-40 w-40 bg-slate-100 rounded-2xl mx-auto overflow-hidden">
         <img class="mx-auto" src="assets/img/team/pp_joany.png" alt="Photo de Joany Guy pour Afyia Diagnostics">
       </div>
@@ -159,7 +154,7 @@
         <h3 class="font-extrabold">Jean-Christophe Avarre</h3>
         <span>{{ 'about.founders.avarre' | translate }}</span>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 

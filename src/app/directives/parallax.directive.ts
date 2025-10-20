@@ -8,12 +8,16 @@ export class ParallaxDirective {
   @Input('ratio')
   parallaxRatio: number = 0.15;
 
+  @Input()
+  offsetY = 0;
+
   initialOffsetTop: number = 0;
 
   constructor(private el: ElementRef) { }
 
   ngOnInit() {
-    this.initialOffsetTop = this.el.nativeElement.offsetTop;
+    this.initialOffsetTop = this.el.nativeElement.offsetTop + this.offsetY;
+    this.onWindowScroll();
   }
 
   @HostListener('window:scroll', ['$event'])

@@ -1,0 +1,31 @@
+<div
+  class="card-container"
+  (click)="flipCard()"
+  (mouseenter)="isHover = true"
+  (mouseleave)="isHover = false"
+>
+  <div class="card" [ngStyle]="{'transform': 'rotateY(' + ((isFlipped ? 180 : 0) + (isHover ? (isFlipped ? -8 : 8) : 0)) + 'deg)'}">
+    <div class="card-face front">
+      <div class="min-h-32 min-w-32 max-h-32 max-w-32 bg-slate-100 self-center rounded-full overflow-hidden">
+        <img src="assets/img/team/pp_{{ person }}.png" alt="Photo de Pourquier Philippe pour Afyia Diagnostics">
+      </div>
+      <div class="content">
+        <div class="content-header">
+          <div>
+            <h2 class="font-extrabold text-2xl">{{ name }}</h2>
+            <h3 class="text-xl">{{ 'about.founders.' + person + '.title' | translate }}</h3>
+          </div>
+          <img src="assets/img/afyia_logo.png" alt="AFYIA Logo">
+        </div>
+        <p class="pt-5 text-lg">
+          {{ 'about.founders.' + person + '.text_1' | translate }}
+        </p>
+      </div>
+      <fa-icon class="icon-background" [icon]="faDna"></fa-icon>
+    </div>
+    <div class="card-face back">
+      <div class="ps-5 border-l h-full" [innerHTML]="'about.founders.' + person + '.text_2' | translate"></div>
+      <fa-icon class="icon-background" [icon]="faDna"></fa-icon>
+    </div>
+  </div>
+</div>

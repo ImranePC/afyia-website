@@ -1,17 +1,12 @@
-<div class="bg-image hidden lg:block">
-  <img src="assets/img/hands_background.png" alt="Main jointe image de fond du site">
-</div>
-
-<div class="bg-image bg-image-responsive lg:hidden"></div>
-
-<div class="container mb-20 h-screen flex flex-col justify-center m-auto">
-  <div class="text-5xl font-extralight reveal text-center lg:text-start">
-    <span class="shadow-background" [innerHtml]="'welcome' | translate"></span><br>
+<div class="relative reveal rounded-2xl m-10 mt-20 overflow-hidden">
+  <div appParallax [ratio]="-0.3" [offsetY]="-200" class="home-banner"></div>
+  <div class="absolute reveal top-1/2 w-full text-5xl font-extralight text-center -translate-y-1/2">
+    <span class="text-white text-shadow-lg strong-white" [innerHtml]="'welcome' | translate"></span><br>
     <button class="btn mt-5 text-2xl lg:text-lg bg-white" (click)="scrollTo('product')">{{ 'sections.product.button' | translate }}</button>
   </div>
 </div>
 
-<div class="container">
+<div class="container mt-40">
   <div class="
   bg-white rounded-xl shadow-sm p-5 pt-0
     lg:ps-10 lg:pb-10 lg:pe-0
@@ -90,7 +85,7 @@
             class="grow hover-hightlight"
             [title]="'sections.approach.health_title' | translate"
             [subTitle]="'sections.approach.health_subtitle' | translate"
-            imagePath="img_swab.jpg"
+            imagePath="img_human_health.jpg"
           ></app-card-link>
         </div>
       </div>

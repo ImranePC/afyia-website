@@ -87,6 +87,12 @@ strong {
   }
 }
 
+.strong-white {
+  strong {
+    color: white;
+  }
+}
+
 .primary-list {
   li {
     position: relative;
@@ -182,6 +188,7 @@ strong {
   background-size: cover;
 
   h1 {
+    @apply px-10;
     text-align: center;
     color: white;
     text-shadow: 0 4px 8px rgba(black, 0.33);

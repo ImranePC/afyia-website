@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppService } from '../services/app.service';
 import { CtaComponent } from '../cta/cta.component';
+import { ParallaxDirective } from '../directives/parallax.directive';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ import { CtaComponent } from '../cta/cta.component';
     RouterLink,
     TranslateModule,
     CtaComponent,
+    ParallaxDirective,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
