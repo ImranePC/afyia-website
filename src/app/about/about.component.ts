@@ -41,6 +41,7 @@ export class AboutComponent implements OnInit {
       document.getElementById('timeline_element_3'),
       document.getElementById('timeline_element_4'),
       document.getElementById('timeline_element_5'),
+      document.getElementById('timeline_element_6'),
     ];
 
     this.timelineBar = document.getElementById('timeline_progress');

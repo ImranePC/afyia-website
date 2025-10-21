@@ -2,32 +2,30 @@
   <h1 class="reveal">{{ 'header.product' | translate }}</h1>
 </div>
 
-<div class="container">
-  <div class="relative z-1 bg-white -mt-20 p-5 md:p-10 rounded-xl shadow-sm mb-32">
-    <div class="absolute -top-14 left-0 text-white">
-      <app-ariane></app-ariane>
-    </div>
-    <div class="text-start">
-      <h2 class="title title-start z-10 mb-10">{{ 'products.about.categories' | translate }}</h2>
-    </div>
+<div class="container mb-40">
+  <div class="my-10">
+    <app-ariane></app-ariane>
+  </div>
+  <div class="text-start mb-10">
+    <h2 class="title title-start">{{ 'products.about.categories' | translate }}</h2>
+  </div>
 
-    <div class="
-      illness-grid grid grid-cols-1 gap-5 reveal
-      md:grid-cols-2
-      xl:grid-cols-4
-    ">
-      <div role="button" routerLink="/febrile-rash-viruses" style="background-image: url('assets/img/illnesses/illness_dirash.jpg')">
-        <span class="w-full">{{ 'products.about.febrilerash' | translate }}</span>
-      </div>
-      <div role="button" routerLink="/hepatic-viruses" style="background-image: url('assets/img/illnesses/illness_hepatitis.jpg')">
-        <span class="w-full">{{ 'products.about.hepatic' | translate }}</span>
-      </div>
-      <div role="button" routerLink="/respiratory-viruses" style="background-image: url('assets/img/illnesses/illness_respiratory.jpg')">
-        <span class="w-full">{{ 'products.about.respiratory' | translate }}</span>
-      </div>
-      <div role="button" routerLink="/tuberculosis" style="background-image: url('assets/img/illnesses/illness_tuberculosis.jpg')">
-        <span class="w-full">{{ 'products.about.tuberculosis' | translate }}</span>
-      </div>
+  <div class="
+    illness-grid grid grid-cols-1 gap-5 reveal
+    md:grid-cols-2
+    xl:grid-cols-4
+  ">
+    <div role="button" routerLink="/febrile-rash-viruses" style="background-image: url('assets/img/illnesses/illness_dirash.jpg')">
+      <span class="w-full">{{ 'products.about.febrilerash' | translate }}</span>
+    </div>
+    <div role="button" routerLink="/hepatic-viruses" style="background-image: url('assets/img/illnesses/illness_hepatitis.jpg')">
+      <span class="w-full">{{ 'products.about.hepatic' | translate }}</span>
+    </div>
+    <div role="button" routerLink="/respiratory-viruses" style="background-image: url('assets/img/illnesses/illness_respiratory.jpg')">
+      <span class="w-full">{{ 'products.about.respiratory' | translate }}</span>
+    </div>
+    <div role="button" routerLink="/tuberculosis" style="background-image: url('assets/img/illnesses/illness_tuberculosis.jpg')">
+      <span class="w-full">{{ 'products.about.tuberculosis' | translate }}</span>
     </div>
   </div>
 </div>

@@ -5,9 +5,6 @@ import { LegalComponent } from './legal/legal.component';
 import { AboutComponent } from './about/about.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './products/product/product.component';
-import { AboutFebrileRashComponent } from './about-illness/about-febrile-rash/about-febrile-rash.component';
-import { AboutBloodborneComponent } from './about-illness/about-bloodborne/about-bloodborne.component';
-import { AboutRespiratoryComponent } from './about-illness/about-respiratory/about-respiratory.component';
 import { NewsComponent } from './news/news.component';
 import { NewsPageComponent } from './news/news-page/news-page.component';
 import { SoftwareComponent } from './software/software.component';
@@ -16,6 +13,10 @@ import { ManageNewsComponent } from './admin/manage-news/manage-news.component';
 import { ManageNewsPageComponent } from './admin/manage-news/manage-news-page/manage-news-page.component';
 import { PrivateLoginComponent } from './private-login/private-login.component';
 import { authGuard } from './guards/auth.guard';
+import { AboutIllnessBComponent } from './about-illness/illness-b/about-illness-b.component';
+import { AboutIllnessDComponent } from './about-illness/illness-d/about-illness-d.component';
+import { AboutIllnessComponent } from './about-illness/about-illness.component';
+import { AboutIllnessAComponent } from './about-illness/illness-a/about-illness-a.component';
 
 export const adminRoutes: Routes = [
   { path: 'admin/manage-news/create', component: ManageNewsPageComponent, canActivate: [authGuard]},
@@ -28,10 +29,10 @@ export const routes: Routes = [
   { path: 'private-login', component: PrivateLoginComponent },
   { path: 'account-request', component: RequestAccountComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'hepatic-viruses', component: AboutRespiratoryComponent },
-  { path: 'tuberculosis', component: AboutRespiratoryComponent },
-  { path: 'febrile-rash-viruses', component: AboutFebrileRashComponent },
-  { path: 'respiratory-viruses', component: AboutRespiratoryComponent },
+  { path: 'febrile-rash-viruses', component: AboutIllnessAComponent },
+  { path: 'hepatic-viruses', component: AboutIllnessBComponent },
+  { path: 'respiratory-viruses', component: AboutIllnessComponent },
+  { path: 'tuberculosis', component: AboutIllnessDComponent },
   { path: 'software', component: SoftwareComponent },
   { path: 'news/:id', component: NewsPageComponent },
   { path: 'news', component: NewsComponent },

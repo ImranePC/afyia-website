@@ -22,6 +22,12 @@ export class AboutIllnessComponent implements OnInit {
   @Input()
   path: Path = { name: 'Undefined', link: '/'};
 
+  @Input()
+  title: string;
+
+  @Input()
+  bannerImage: string;
+
   navigationPath: Path[] = [
     { name: 'header.product', link: '/products' },
   ]
