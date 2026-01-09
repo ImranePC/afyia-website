@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 export class News {
-  private imagePath = environment.apiUrl + '/uploads/images/'
+  private imagePath = environment.apiUrl + '/uploads/'
 
   constructor(
     public id: string,
@@ -44,7 +44,7 @@ export class News {
 export class NewsService {
   private API_URL = environment.apiUrl;
 
-  public IMAGE_URL = environment.apiUrl + '/uploads/images/'
+  public IMAGE_URL = environment.apiUrl + '/uploads/'
 
   private LANGUAGES = ['fr', 'en'];
 
@@ -128,8 +128,8 @@ export class NewsService {
       data.id,
       title,
       content,
-      data.image_url,
-      data.banner_url,
+      data.image_file ?? data.image_url,
+      data.banner_file ?? data.banner_url,
       data.published_at,
     );
   }

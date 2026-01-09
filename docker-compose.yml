@@ -21,9 +21,24 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-      - ./api/afyiadb.sqlite:/app/afyiadb.sqlite
+      - ./directus/database/afyiadb.sqlite:/app/afyiadb.sqlite
       - /etc/ssl/letsencrypt/certs:/etc/ssl/letsencrypt/certs
     env_file:
       - ./api/.env
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
+
+  directus:
+    image: directus/directus:11.5.1
+    container_name: afyia-directus
+    ports:
+      - 8055:8055
+    volumes:
+      - ./directus/database:/directus/database
+      - ./api/uploads:/directus/uploads
+      - ./directus/extensions:/directus/extensions
+    environment:
+      SECRET: "secret"
+      DB_CLIENT: "sqlite3"
+      DB_FILENAME: "/directus/database/afyiadb.sqlite"
+      WEBSOCKETS_ENABLED: "true"

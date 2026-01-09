@@ -27,4 +27,13 @@ p {
   img {
     @apply mx-auto rounded-xl my-5;
   }
+
+  strong {
+    color: black;
+    font-weight: 600!important;
+  }
+
+  a {
+    color: $primary;
+  }
 }

@@ -13,7 +13,7 @@ const cookieParser = require('cookie-parser');
 // const setup
 const app = express();
 
-const db = new sqlite3.Database('./api/afyiadb.sqlite');
+const db = new sqlite3.Database('./directus/database/afyiadb.sqlite');
 
 const PORT = process.env.PORT;
 
@@ -181,7 +181,7 @@ app.post('/admin/upload-image', upload.single('image'), (req, res) => {
     return res.status(400).json({ error: 'No image file provided' });
   }
 
-  const imageUrl = `/uploads/images/${req.file.filename}`;
+  const imageUrl = `/uploads/${req.file.filename}`;
   res.status(200).json({ message: 'Image uploadée avec succès', imageUrl });
 });
 
@@ -240,7 +240,11 @@ app.delete('/admin/news/:id', async (req, res) => {
   })
 });
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads',
+  express.static(path.join(__dirname, 'uploads'), {
+    extensions: ['png', 'jpg', 'jpeg', 'gif'],
+  })
+);
 
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
@@ -299,28 +303,35 @@ function saveMessage(data) {
 
 async function getNews(language) {
   const textLimit = 100;
+  const directusEnabled = true;
   let contentI18n;
   let titleI18n;
-  let queryCase;
 
   if (LANGUAGES.includes(language)) {
     contentI18n = `content_${language}`;
     titleI18n = `title_${language}`;
   }
 
-  const query = `SELECT id,
+  const query = `SELECT
+    news.id,
     ${titleI18n},
     CASE
       WHEN LENGTH(${contentI18n}) > ${textLimit}
       THEN SUBSTRING(${contentI18n}, 1, ${textLimit}) || '...'
       ELSE ${contentI18n}
     END as ${contentI18n},
-    image_url
-  FROM news ORDER BY published_at DESC`;
+    image_url,
+    image_file,
+    directus_files.type
+    FROM news
+    LEFT JOIN directus_files ON news.image_file = directus_files.id
+    ORDER BY published_at DESC
+  `;
 
   return new Promise((resolve, reject) => {
     db.all(query, (err, rows) => {
       if (err) {
+        console.error(err.message);
         reject(new Error('Error while fetching news'));
       } else {
         resolve(rows);
@@ -343,7 +354,7 @@ async function getNewsById(id, language) {
   }
 
   const query = `
-    SELECT id, ${titleI18n}, ${contentI18n}, published_at, image_url, banner_url
+    SELECT id, ${titleI18n}, ${contentI18n}, published_at, image_url, banner_url, image_file, banner_file
     FROM news
     WHERE id = ${id}
   `;

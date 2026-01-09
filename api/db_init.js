@@ -22,6 +22,12 @@ function initDatabase() {
     published_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     image_url TEXT NOT NULL
   `);
+
+  createTable('product_categories', `
+    id TEXT PRIMARY KEY,
+    name_en TEXT,
+    name_fr TEXT,
+  `);
 }
 
 function createTable(name, query) {
@@ -42,4 +48,3 @@ function createTable(name, query) {
 
 initDatabase();
 db.close();
-
