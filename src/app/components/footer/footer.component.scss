@@ -1,0 +1,14 @@
+@import '../../../assets/scss/variables.scss';
+
+.footer-container {
+  background-color: $secondary-dark;
+}
+
+a {
+  display: block;
+  color: white;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

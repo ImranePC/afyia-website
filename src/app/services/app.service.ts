@@ -1,10 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import ScrollReveal from 'scrollreveal';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
+  isDark = signal(true);
+
+  private darkTimeout: any;
 
   constructor() { }
 
@@ -21,5 +24,9 @@ export class AppService {
 
   getRouteUrl(route: string[]) {
     return window.location.origin + route.join('/')
+  }
+
+  setDark(value: boolean) {
+    this.isDark.set(value);
   }
 }

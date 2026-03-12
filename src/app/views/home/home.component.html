@@ -1,0 +1,218 @@
+<div id="banner" class="relative reveal mx-10 my-5">
+  <div appParallax [ratio]="-0.3" [offsetY]="-200" class="home-banner rounded-2xl"></div>
+  <div class="absolute reveal top-1/2 w-full text-5xl font-extralight text-center -translate-y-1/2">
+    <span class="text-white text-shadow-lg strong-white" [innerHtml]="'welcome' | translate"></span><br>
+    <button class="btn mt-5 text-2xl lg:text-lg bg-white" (click)="scrollTo('product')">{{ 'sections.product.button' | translate }}</button>
+  </div>
+</div>
+
+<div class="container mt-40">
+  <div class="
+  bg-white rounded-xl shadow-sm p-5 pt-0
+    lg:ps-10 lg:pb-10 lg:pe-0
+  ">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div>
+        <h1 class="text-4xl mt-5 lg:text-6xl lg:-translate-y-8 lg:mt-0" [innerHTML]="'sections.mission.title' | translate"></h1>
+        <p class="mt-5 lg:mt-0 text-xl lg:text-2xl">{{ 'sections.mission.text' | translate }}</p>
+        <ul class="text-xl lg:text-2xl mt-5 font-bold leading-10 primary-list">
+          <li>{{ 'sections.mission.list.element_1' | translate }}</li>
+          <li>{{ 'sections.mission.list.element_2' | translate }}</li>
+          <li>{{ 'sections.mission.list.element_3' | translate }}</li>
+          <li>{{ 'sections.mission.list.element_4' | translate }}</li>
+        </ul>
+      </div>
+      <div class="relative lg:-mt-10 lg:translate-x-10">
+        <div class="image-container reveal">
+          <img appParallax [ratio]="-0.3" [offsetY]="-200" src="assets/img/team/img_ben.jpg" alt="Afyia Benjamin SAULDE">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mx-auto mt-10 text-xl flex justify-center items-center gap-5">
+  <img width="100px" src="assets/img/un_health_green.png" alt="United nations sustainable development goal 3">
+  {{ 'sections.mission.goal_3' | translate }}
+</div>
+
+<div class="relative mt-40 lg:mt-60">
+  <div class="w-full lg:w-10/12 mx-auto px-5 lg:px-0">
+    <div id="section_approach" class="
+      p-5 bg-violet-100 rounded-xl scale-90 transition duration-700
+      lg:p-10 lg:pt-0
+    ">
+      <h2
+        id="approach_title"
+        class="
+          text-center text-fuchsia-950 font-extrabold text-5xl scale-95 transition duration-500 strong-alt
+          lg:mb-0 lg:-translate-y-1/2 lg:text-8xl
+        "
+        [innerHTML]="'sections.approach.title' | translate"
+      ></h2>
+      <div class="xl:px-20 xl:pb-10">
+        <p class="
+            w-full text-justify p-light text-xl lg:text-2xl my-10
+            lg:mb-20
+          "
+          [innerHTML]="'sections.approach.text' | translate"
+        >
+        </p>
+        <div class="
+          mx-auto gap-5 flex flex-col
+          md:gap-10 md:grid md:grid-cols-2 md:grid-rows-2
+          xl:flex xl:flex-row
+        ">
+          <app-card-link
+            class="grow hover-hightlight"
+            [title]="'sections.approach.ai_title' | translate"
+            [subTitle]="'sections.approach.ai_subtitle' | translate"
+            imagePath="team/img_sarah_faustine.jpg"
+          ></app-card-link>
+          <app-card-link
+            class="grow hover-hightlight"
+            [title]="'sections.approach.biology_title' | translate"
+            [subTitle]="'sections.approach.biology_subtitle' | translate"
+            imagePath="team/img_margot.jpg"
+          ></app-card-link>
+          <app-card-link
+            class="grow hover-hightlight"
+            [title]="'sections.approach.process_title' | translate"
+            [subTitle]="'sections.approach.process_subtitle' | translate"
+            imagePath="img_process_2.jpg"
+          ></app-card-link>
+          <app-card-link
+            class="grow hover-hightlight"
+            [title]="'sections.approach.health_title' | translate"
+            [subTitle]="'sections.approach.health_subtitle' | translate"
+            imagePath="img_human_health.jpg"
+          ></app-card-link>
+        </div>
+      </div>
+    </div>
+    <div id="mark_1" class="absolute h-full -translate-y-full md:h-0 md:-translate-y-0 md:top-2/3"></div>
+  </div>
+</div>
+
+<div class="container mx-auto mt-32 lg:mt-40">
+  <div class="text-center mb-10 lg:mb-20">
+    <h2 id="product" class="title" [innerHTML]="'sections.product.title' | translate"></h2>
+  </div>
+  <div class="
+    flex flex-col justify-center flex-wrap gap-10 mx-auto reveal w-full
+    lg:grid lg:grid-cols-2 lg:grid-rows-2
+    xl:px-20
+  ">
+    <a routerLink="/product/monkeypox">
+      <app-card-link
+        title="Monkeypox Virus"
+        [subTitle]="'sections.product.items.mpox_1.subtitle' | translate"
+        imagePath="viruses/virus_mpox.jpg"
+        [description]="'sections.product.items.mpox_1.text' | translate"
+        [ruo]="true"
+      ></app-card-link>
+    </a>
+    <a routerLink="/product/febrile-rash">
+      <app-card-link
+        [title]="'sections.product.items.mpox_2.title' | translate"
+        [subTitle]="'sections.product.items.mpox_2.subtitle' | translate"
+        imagePath="viruses/virus_dirash.jpg"
+        [description]="'sections.product.items.mpox_2.text' | translate"
+        [ruo]="true"
+      ></app-card-link>
+    </a>
+    <a href="https://www.innovative-diagnostics.com/produit/di-sars-cov-2-moc-i-multiplex/" target="_blank">
+      <app-card-link
+        title="SARS-CoV-2"
+        [subTitle]="'sections.product.items.sars_cov.subtitle' | translate"
+        imagePath="viruses/illness_2.jpg"
+        [description]="'sections.product.items.sars_cov.text' | translate"
+        [link]="true"
+      ></app-card-link>
+    </a>
+    <div>
+      <app-card-link
+        [title]="'sections.product.items.hepa.title' | translate"
+        [subTitle]="'sections.product.items.hepa.subtitle' | translate"
+        imagePath="viruses/virus_hepatitis.jpg"
+        [description]="'sections.product.items.hepa.text' | translate"
+        [disabled]="true"
+      ></app-card-link>
+    </div>
+  </div>
+</div>
+
+<div class="reveal">
+  <div class="container mt-60">
+    <div class="
+      bg-white rounded-xl shadow-sm px-5 pt-5 w-full mx-auto
+      lg:px-10 lg:pt-0
+      xl:w-8/12
+    ">
+      <h2 class="
+          text-5xl font-extrabold text-center
+          lg:text-7xl lg:-translate-y-1/2
+        "
+        [innerHTML]="'sections.about.title' | translate">
+      </h2>
+      <p class="text-xl p-light pt-5 lg:pt-0">
+        {{ 'sections.about.description' | translate }}
+      </p>
+      <div class="flex justify-center mt-10">
+        <button class="btn btn-lg bg-primary-dark" routerLink="/about">{{ 'sections.about.view_more' | translate }}</button>
+      </div>
+      <div class="image-container translate-y-10">
+        <img class="w-full" src="assets/img/buildings_background_sm.jpg" alt="AFYIA batiment Grabels" title="AFYIA batiment Grabels">
+      </div>
+      <!-- <div class="scroll-container absolute left-0">
+        <div
+          #scroller
+          class="scroller h-[500px]"
+          (mousedown)="startDrag($event)"
+          (mouseup)="endDrag($event)"
+          (mouseleave)="endDrag($event)"
+          (mousemove)="onDrag($event)"
+          (scroll)="updateScrollerImages()"
+        >
+        <div class="min-w-[2200px]"></div>
+        @for (imagePath of images; track imagePath; let index = $index) {
+          <img [src]="imagePath" [alt]="'carousel_img_' + index" title="Image carousel">
+        }
+        <div class="min-w-[300px]"></div>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="shadow-colored bg-white rounded-xl px-10 pb-10 mt-32 lg:mt-40">
+    <h2 class="
+      title-gradient text-center w-full text-5xl font-extrabold py-8
+      lg:-translate-y-8 lg:top-0 lg:left-[50%] lg:text-6xl lg:py-0
+    ">
+      {{ 'sections.partners.title' | translate }}
+    </h2>
+    <div class="
+      grid grid-cols-3 grid-rows-4 partner-grid items-center gap-10
+      lg:grid-cols-6 lg:grid-rows-2
+    ">
+      <img src="assets/img/partnership/partner_axlr.png" alt="Partner Axlr">
+      <img class="size-square" src="assets/img/partnership/partner_occitanie.jpg" alt="Partner Occitanie Montpellier">
+      <img class="size-square" src="assets/img/partnership/partner_id.jpg" alt="Partner Innovative Diagnostics">
+      <img src="assets/img/partnership/partner_inserm.jpg" alt="Partner Inserm">
+      <img src="assets/img/partnership/partner_isem.jpg" alt="Partner Isem">
+      <img src="assets/img/partnership/partner_ird.png" alt="Partner ">
+      <img class="size-square" src="assets/img/partnership/partner_um.jpg" alt="Partner Université de Montpellier">
+      <img src="assets/img/partnership/partner_pccei.jpg" alt="Partner Pathogenesis and control of chronic and emerging infections">
+      <img src="assets/img/partnership/partner_eurobiomed.jpg" alt="Partner Eurobiomed">
+      <img src="assets/img/partnership/partner_chu.jpg" alt="Partner Centre Hospitalier Universitaire">
+      <img src="assets/img/partnership/partner_prism.jpg" alt="Partner Prism">
+      <img src="assets/img/partnership/partner_bpi.jpg" alt="Partner BPI">
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-20">
+  <app-cta></app-cta>
+</div>

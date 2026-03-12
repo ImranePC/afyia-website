@@ -1,0 +1,30 @@
+<app-banner [title]="'header.news' | translate" imageUrl="../../assets/img/banner/banner_news.png"></app-banner>
+
+<div class="container">
+  <div class="relative z-1 -mt-20 mx-auto xl:w-8/12 bg-white shadow-sm rounded-xl pb-5 Xl:pb-10 min-h-[500px]">
+    <div class="absolute -top-14 left-0 text-white">
+      <app-ariane [path]="navigationPath"></app-ariane>
+    </div>
+    <div class="p-5 lg:p-10">
+      <h2 class="z-10 title title-start">{{ 'news.last_news' | translate }}</h2>
+      <p class="mt-10">{{ 'news.news_description' | translate }}</p>
+    </div>
+    <div class="flex flex-col reveal">
+      @for (news of newsList; track news; let last = $last) {
+      <div class="grid grid-rows-1 grid-cols-1 lg:grid-rows-1 lg:grid-cols-3 px-5 lg:px-0">
+        <div [routerLink]="['/news', news.id]" class="image-container image-container--top max-h-[180px] col-span-1 rounded-2xl bg-cyan-100 lg:-translate-x-20 shadow">
+          <img class="w-full" src="{{ news.fullImageUrl }}" alt="News image" [title]="news.title['en']">
+        </div>
+        <div class="col-span-2 flex flex-col justify-between lg:-ms-10 me-10">
+          <div>
+            <h3 [routerLink]="['/news', news.id]" class="font-bold text-4xl mb-3 mt-5 lg:mt-0">{{ news.title[currentLang] }}</h3>
+            <h4>{{ news.content[currentLang] }}</h4>
+          </div>
+          <button [routerLink]="['/news', news.id]" class="btn bg-cyan-100 self-start mt-3">{{ 'news.view_more' | translate }}</button>
+        </div>
+      </div>
+      @if (!last) { <div class="border-b my-10 mx-10"></div> }
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,126 @@
+@import '../../../assets/scss/variables';
+
+.timeline {
+  position: relative;
+  clip-path: border-box;
+
+  div, img {
+    transition: $transition-3;
+  }
+
+  &-element  {
+    @apply relative grid grid-cols-2 pb-10;
+  }
+
+  .date {
+    @apply text-4xl;
+    z-index: 1;
+    position: relative;
+    font-weight: 900;
+    text-align: end;
+    position: sticky;
+    top: 50%;
+    align-self: flex-start;
+    padding-right: 3rem;
+
+    &::after {
+      content: '';
+      z-index: 2;
+      position: absolute;
+      height: 24px;
+      width: 24px;
+      background-color: white;
+      top: 50%;
+      right: 0;
+      border-radius: 100%;
+      transform: translate(50%, -50%);
+      border: 6px solid $secondary-dark;
+      transition: $transition-3;
+    }
+  }
+
+  .description {
+    @apply text-xl;
+    padding-left: 3rem;
+  }
+
+  .inactive {
+    .date, .description {
+      color: desaturate(lighten($secondary-dark, 20), 20%);
+    }
+
+    img {
+      opacity: 0.3;
+    }
+
+    .date::after {
+      background-color: desaturate(lighten($secondary-dark, 20), 20%);
+    }
+  }
+
+  &-bar {
+    z-index: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 3px;
+    transform: translateX(-50%);
+    background-color: rgba(white, 0.33);
+
+    &-progress {
+      z-index: 0;
+      top: 0;
+      position: fixed;
+      height: calc(50% + 24px);
+      background: linear-gradient(to bottom, #a716d4 10%, rgb(11, 225, 225));
+    }
+  }
+
+  &::before {
+    content: '';
+    z-index: 2;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    background: linear-gradient(to bottom, $secondary-dark 30%, transparent);
+  }
+
+  &::after {
+    content: '';
+    z-index: 2;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    background: linear-gradient(to top, $secondary-dark 30%, transparent);
+  }
+}
+
+.whiten {
+  filter: brightness(100);
+}
+
+@media (max-width: theme('screens.lg')) {
+  .timeline {
+    &-element {
+      @apply grid-cols-3
+    }
+
+    .date {
+      @apply text-2xl;
+    }
+
+    .description {
+      @apply text-lg ps-10 pe-5 col-span-2;
+    }
+
+    &-bar {
+      left: 33.33%;
+    }
+  }
+}

@@ -1,22 +1,22 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
-import { LegalComponent } from './legal/legal.component';
-import { AboutComponent } from './about/about.component';
-import { ProductsComponent } from './products/products.component';
-import { ProductComponent } from './products/product/product.component';
-import { NewsComponent } from './news/news.component';
-import { NewsPageComponent } from './news/news-page/news-page.component';
-import { SoftwareComponent } from './software/software.component';
-import { RequestAccountComponent } from './software/request-account/request-account.component';
+import { HomeComponent } from './views/home/home.component';
+import { ContactComponent } from './views/contact/contact.component';
+import { LegalComponent } from './views/legal/legal.component';
+import { AboutComponent } from './views/about/about.component';
+import { ProductsComponent } from './views/products/products.component';
+import { ProductComponent } from './views/products/product/product.component';
+import { NewsComponent } from './views/news/news.component';
+import { NewsPageComponent } from './views/news/news-page/news-page.component';
+import { SoftwareComponent } from './views/software/software.component';
+import { RequestAccountComponent } from './views/software/request-account/request-account.component';
 import { ManageNewsComponent } from './admin/manage-news/manage-news.component';
 import { ManageNewsPageComponent } from './admin/manage-news/manage-news-page/manage-news-page.component';
 import { PrivateLoginComponent } from './private-login/private-login.component';
 import { authGuard } from './guards/auth.guard';
-import { AboutIllnessBComponent } from './about-illness/illness-b/about-illness-b.component';
-import { AboutIllnessDComponent } from './about-illness/illness-d/about-illness-d.component';
-import { AboutIllnessComponent } from './about-illness/about-illness.component';
-import { AboutIllnessAComponent } from './about-illness/illness-a/about-illness-a.component';
+import { AboutIllnessBComponent } from './views/about-illness/illness-b/about-illness-b.component';
+import { AboutIllnessDComponent } from './views/about-illness/illness-d/about-illness-d.component';
+import { AboutIllnessComponent } from './views/about-illness/about-illness.component';
+import { AboutIllnessAComponent } from './views/about-illness/illness-a/about-illness-a.component';
 
 export const adminRoutes: Routes = [
   { path: 'admin/manage-news/create', component: ManageNewsPageComponent, canActivate: [authGuard]},

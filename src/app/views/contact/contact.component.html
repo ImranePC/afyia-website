@@ -1,0 +1,241 @@
+<app-banner [title]="'header.contact' | translate" imageUrl="../../../assets/img/banner/banner_contact.jpg"></app-banner>
+
+<div class="container mx-auto">
+  <div class="w-full lg:w-2/3 mx-auto reveal mt-20 lg:mt-40">
+    <p class="mt-8 text-justify md:text-center text-3xl">{{ 'contact.subtitle' | translate }}</p>
+  </div>
+
+  <div class="flex flex-col gap-5 mt-20 lg:gap-20 lg:mt-40">
+    <div class="bg-cyan-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
+      <h2 class="
+        text-5xl font-extrabold mb-5
+        lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
+      ">
+        {{ 'contact.sections.mail.title' | translate }}
+      </h2>
+      <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
+        <p class="block lg:self-center">{{ 'contact.sections.mail.text' | translate }}</p>
+        <a class="btn btn-lg text-white hover:text-white bg-cyan-700 text-lg self-start z-10 lg:self-center lg:whitespace-nowrap" href="mailto:info@afyia-diagnostics.com">
+          info&#64;afyia-diagnostics.com
+          <fa-icon class="ms-1" [icon]="faEnvelope"></fa-icon>
+        </a>
+      </div>
+      <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-cyan-800 opacity-5 ms-12 pointer-events-none" [icon]="faEnvelope" size="10x"></fa-icon>
+    </div>
+
+    <div class="bg-sky-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
+      <h2 class="
+        text-5xl font-extrabold mb-5
+        lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
+      ">
+        {{ 'contact.sections.order.title' | translate }}
+      </h2>
+      <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
+        <p class="block lg:self-center">{{ 'contact.sections.order.text' | translate }}</p>
+        <a class="btn btn-lg text-white hover:text-white bg-sky-700 text-lg self-start z-10 lg:self-center lg:whitespace-nowrap" href="mailto:order@afyia-diagnostics.com">
+          order&#64;afyia-diagnostics.com
+          <fa-icon class="ms-1" [icon]="faEnvelope"></fa-icon>
+        </a>
+      </div>
+      <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-sky-700 opacity-5 ms-12 pointer-events-none" [icon]="faTruckFast" size="10x"></fa-icon>
+    </div>
+
+    <div class="bg-violet-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
+      <h2 class="
+        text-5xl font-extrabold mb-5
+        lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
+      ">
+        {{ 'contact.sections.linkedin.title' | translate }}
+      </h2>
+      <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
+        <p class="block lg:self-center">{{ 'contact.sections.linkedin.text' | translate }}</p>
+        <a class="btn btn-lg text-white hover:text-white bg-violet-800 text-lg self-start z-10 lg:self-center text-center lg:whitespace-nowrap" href="https://linkedin.com/company/afyia-diagnostics" target="_blank">
+          Linkedin
+          <fa-icon class="ms-1" [icon]="faComment"></fa-icon>
+        </a>
+      </div>
+      <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-violet-600 opacity-5 ms-12 pointer-events-none" [icon]="faComment" size="10x"></fa-icon>
+    </div>
+
+    <div class="bg-pink-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
+      <h2 class="
+        text-5xl font-extrabold mb-5
+        lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
+      ">
+        {{ 'contact.sections.maps.title' | translate }}
+      </h2>
+      <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
+        <p class="block lg:self-center">
+          <b>AFYIA Diagnostics</b> <br>
+          310 rue Louis Pasteur, 34790 Grabels, France <br>
+          +33 (0)4 67 40 71 67
+        </p>
+        <a class="btn btn-lg text-white hover:text-white bg-pink-800 text-lg self-start z-10 lg:self-center text-center lg:whitespace-nowrap" href="https://maps.app.goo.gl/ZTmQ78UBhsC4JvDP9" target="_blank">
+          {{ 'contact.sections.maps.button' | translate }}
+          <fa-icon class="ms-1" [icon]="faLocationDot"></fa-icon>
+        </a>
+      </div>
+      <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-pink-800 opacity-5 ms-12 pointer-events-none" [icon]="faLocationDot" size="10x"></fa-icon>
+    </div>
+
+    <div class="bg-cyan-100 relative rounded-xl p-8 lg:px-10 lg:py-16 reveal">
+      <h2 class="
+        text-5xl font-extrabold mb-5
+        lg:absolute lg:top-0 lg:mb-0 lg:-translate-y-1/2
+      ">
+        {{ 'contact.sections.newsletter.title' | translate }}
+      </h2>
+      <div class="flex flex-col justify-start lg:flex-row lg:justify-between gap-5">
+        <p class="block lg:self-center">
+          Inscrivez vous à la newsletter pour recevoir nos dernières actualités
+        </p>
+        <div class="group-btn">
+          <div [formGroup]="newsletterForm" class="input-group">
+            <input id="user_email" type="email" formControlName="user_email" maxlength="50" placeholder="email@example.com">
+          </div>
+          <button
+            class="btn btn-lg text-white hover:text-white bg-cyan-800 text-lg self-start z-10 lg:self-center text-center lg:whitespace-nowrap h-full"
+            [class.disabled]="!newsletterForm.valid"
+            (click)="subscribeNewsletter()"
+          >
+            {{ 'contact.sections.title.button' | translate }}
+            <fa-icon class="ms-1" [icon]="faNewspaper"></fa-icon>
+          </button>
+        </div>
+      </div>
+      <fa-icon class="absolute top-1/2 -translate-y-1/2 left-0 text-cyan-800 opacity-5 ms-12 pointer-events-none" [icon]="faNewspaper" size="10x"></fa-icon>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center reveal mt-20 lg:mt-40" id="form">
+  <h2 class="title">{{ 'contact.sections.form.title' | translate }} 👋</h2>
+</div>
+<div class="container mx-auto mt-10 lg:mt-20">
+  <div class="
+    bg-white w-full mx-auto rounded-xl p-5 shadow-sm
+    lg:p-10
+    xl:w-2/3
+  ">
+    <h3 class="text-2xl font-bold mb-3">
+      {{ 'contact.sections.form.subject.title' | translate }}
+    </h3>
+    <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+      <div class="flex gap-3 text-center flex-wrap">
+        <h4
+          class="btn py-2 px-5 border border-gray-300 text-gray-400 rounded-full shadow-none"
+          [ngClass]="{ 'border-sky-700 text-sky-700': selectedSubject === 'command' }"
+          (click)="setSelectedSubject('command')"
+        >
+          <fa-icon class="me-1" [icon]="faTruckFast"></fa-icon>
+          {{ 'contact.sections.form.subject.command' | translate }}
+        </h4>
+        <h4
+          class="btn py-2 px-3 border border-gray-300 text-gray-400 rounded-full shadow-none"
+          [ngClass]="{ 'border-violet-500 text-violet-500': selectedSubject === 'question' }"
+          (click)="setSelectedSubject('question')"
+        >
+          <fa-icon class="me-1" [icon]="faCircleQuestion"></fa-icon>
+          {{ 'contact.sections.form.subject.question' | translate }}
+        </h4>
+        <h4
+          class="btn py-2 px-3 border border-gray-300 text-gray-400 rounded-full shadow-none"
+          [ngClass]="{ 'border-pink-600 text-pink-600': selectedSubject === 'hire' }"
+          (click)="setSelectedSubject('hire')"
+        >
+          <fa-icon class="me-1" [icon]="faComment"></fa-icon>
+          {{ 'contact.sections.form.subject.hire' | translate }}
+        </h4>
+        <h4
+          class="btn py-2 px-3 border border-gray-300 text-gray-400 rounded-full shadow-none"
+          [ngClass]="{ 'border-purple-600 text-purple-600': selectedSubject === 'software' }"
+          (click)="setSelectedSubject('software')"
+        >
+          <fa-icon class="me-1" [icon]="faComputer"></fa-icon>
+          {{ 'contact.sections.form.subject.software' | translate }}
+        </h4>
+        <h4
+          class="btn py-2 px-3 border border-gray-300 text-gray-400 rounded-full shadow-none"
+          [ngClass]="{ 'border-green-600 text-green-600': selectedSubject === 'other' }"
+          (click)="setSelectedSubject('other')"
+        >
+          <fa-icon class="me-1" [icon]="faComment"></fa-icon>
+          {{ 'contact.sections.form.subject.other' | translate }}
+        </h4>
+      </div>
+      <div
+        class="flex flex-col gap-5 mt-10 transition-all animation-slide"
+        *ngIf="selectedSubject !== undefined"
+        [ngClass]="{ 'pointer-events-none opacity-50': selectedSubject === undefined}"
+      >
+        <div class="grid grid-cols-2 gap-5">
+          <div class="input-group" [class.is-invalid]="isFieldInvalid('lastname')">
+            <label for="lastname">{{ 'contact.sections.form.inputs.name' | translate }}</label>
+            <input id="lastname" formControlName="lastname" type="text" maxlength="50">
+          </div>
+          <div class="input-group" [class.is-invalid]="isFieldInvalid('firstname')">
+            <label for="firstname">{{ 'contact.sections.form.inputs.firstname' | translate }}</label>
+            <input id="firstname" formControlName="firstname" type="text" maxlength="50">
+          </div>
+        </div>
+        <div class="input-group" [class.is-invalid]="isFieldInvalid('email')">
+          <label for="email">{{ 'contact.sections.form.inputs.email' | translate }}</label>
+          <input id="email" formControlName="email" type="email" maxlength="50">
+        </div>
+        <div class="input-group" [class.is-invalid]="isFieldInvalid('message')">
+          <label for="message">{{ 'contact.sections.form.inputs.message' | translate }}</label>
+          <textarea id="message" formControlName="message" rows="5"></textarea>
+        </div>
+        <div class="inline-flex items-center">
+          <label class="flex items-center cursor-pointer relative" for="check-2">
+            <input type="checkbox"
+              id="check-2"
+              class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded border border-slate-300 checked:bg-cyan-800 checked:border-cyan-800"
+              [checked]="dataConsent"
+              (change)="dataConsent = !dataConsent"
+            >
+            <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
+                stroke="currentColor" stroke-width="1">
+                <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+              </svg>
+            </span>
+          </label>
+          <label class="cursor-pointer ms-2" for="check-2">
+            {{ 'contact.sections.form.consent' | translate }}
+          </label>
+        </div>
+        <button class="self-start btn btn-lg bg-cyan-700 text-white" [class.disabled]="!messageForm.valid || !dataConsent">
+          <fa-icon class="me-1" [icon]="faPaperPlane"></fa-icon>
+          {{ 'contact.sections.form.inputs.button' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-modal #validModal>
+  <div title>
+    {{ 'contact.modal.title' | translate }} <img class="inline align-baseline" width="24px" src="assets/img/emoji_hands_up.png" alt="Wave hand">
+  </div>
+  <div body>
+    {{ 'contact.modal.valid' | translate }}
+  </div>
+</app-modal>
+<app-modal #errorModal>
+  <div title>
+    {{ 'contact.modal.title_error' | translate }} 🚧
+  </div>
+  <div body>
+    {{ 'contact.modal.error' | translate }}
+  </div>
+</app-modal>
+<app-modal #newsletterModal>
+  <div title>
+    {{ 'contact.modal.title_newsletter' | translate }} <img class="inline align-baseline" width="24px" src="assets/img/emoji_hands_up.png" alt="Wave hand">
+  </div>
+  <div body>
+    {{ 'contact.modal.newsletter_confirm' | translate }}
+  </div>
+</app-modal>

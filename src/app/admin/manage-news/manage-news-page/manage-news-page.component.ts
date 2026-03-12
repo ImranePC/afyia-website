@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SafeHtml } from '@angular/platform-browser';
 import { AppService } from '../../../services/app.service';
-import { ModalComponent } from '../../../modal/modal.component';
+import { ModalComponent } from '../../../components/modal/modal.component';
 import { ApiService } from '../../../services/api.service';
 
 @Component({
