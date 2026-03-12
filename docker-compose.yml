@@ -2,14 +2,27 @@ version: '3.8'
 
 services:
   nginx:
+    profiles: ["prod"]
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: docker/nginx/Dockerfile
     container_name: afyia-website
     ports:
-      - "4200:80"
+      - "8000:80"
     volumes:
       - ./dist/afyia-website/browser:/usr/share/nginx/html
+
+  angular-dev:
+    profiles: ["dev"]
+    build:
+      context: .
+      dockerfile: docker/angular/Dockerfile
+    container_name: afyia-website-dev
+    volumes:
+    - .:/app
+    - /app/node_modules
+    ports:
+    - "4200:4200"
 
   api:
     build:
