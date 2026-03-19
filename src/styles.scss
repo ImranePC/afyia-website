@@ -268,6 +268,9 @@ strong {
 }
 
 .input-group {
+  display: inline-block;
+  height: 100%;
+
   label {
     @apply mb-2;
     display: block;
@@ -303,13 +306,14 @@ input[type=checkbox] {
 
 .group-btn {
   display: flex;
+  height: 50px;
 
   input[type=email] {
-    @apply rounded-l-full pl-5;
+    @apply h-full rounded-l-full pl-5;
   }
 
   .btn {
-    @apply rounded-none rounded-r-full;
+    @apply h-full rounded-none rounded-r-full;
 
     &:hover {
       scale: 1;

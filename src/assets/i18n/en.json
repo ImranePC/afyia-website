@@ -43,7 +43,8 @@
         "text": "To place an order, please contact us"
       },
       "newsletter": {
-        "title": "Newsletter"
+        "title": "Newsletter",
+        "text": "Sign up for the newsletter to receive our latest updates"
       },
       "title": {
         "button": "Subscribe"
@@ -58,7 +59,9 @@
       "error": "An error has occurred. Please try again later.",
       "title_error": "Error",
       "title_newsletter": "Registration confirmed",
-      "newsletter_confirm": "You’ve successfully subscribed to our newsletter. Thanks for joining!"
+      "newsletter_confirm": "You’ve successfully subscribed to our newsletter. Thanks for joining!",
+      "newsletter_error": "An error occured, please try again.",
+      "newsletter_title_error": "An error has occured"
     }
   },
   "footer": {
@@ -101,7 +104,7 @@
     },
     "cta": {
       "button": "Contact us",
-      "speech": "You share our vision ?",
+      "speech": "Join our newsletter",
       "text": "To collaborate or join us"
     },
     "mission": {

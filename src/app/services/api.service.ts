@@ -49,4 +49,12 @@ export class ApiService {
   getImagesList(): Observable<any> {
     return this.http.get(`${API_URL}/admin/list-images`, { withCredentials: true });
   }
+
+  subscribeToNewsletter(email: string): Observable<any> {
+    const body = {
+      email,
+    }
+
+    return this.http.post(`${API_URL}/newsletter/save`, body);
+  }
 }

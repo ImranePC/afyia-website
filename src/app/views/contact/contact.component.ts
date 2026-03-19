@@ -20,6 +20,7 @@ import { ModalComponent } from '../../components/modal/modal.component';
 import { ActivatedRoute } from '@angular/router';
 import { ParallaxDirective } from '../../directives/parallax.directive';
 import { BannerComponent } from '../../components/banner/banner.component';
+import { NewsletterButtonComponent } from '../../components/newsletter-button/newsletter-button.component';
 
 type Subject = 'command' | 'question' | 'hire' | 'other' | 'software' | undefined;
 
@@ -34,6 +35,7 @@ type Subject = 'command' | 'question' | 'hire' | 'other' | 'software' | undefine
     ModalComponent,
     ParallaxDirective,
     BannerComponent,
+    NewsletterButtonComponent,
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'

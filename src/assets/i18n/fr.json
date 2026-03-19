@@ -43,7 +43,8 @@
         "text": "Pour passer une commande, merci de nous contacter"
       },
       "newsletter": {
-        "title": "Newsletter"
+        "title": "Newsletter",
+        "text": "Inscrivez vous à la newsletter pour recevoir nos dernières actualités"
       },
       "title": {
         "button": "S'inscrire"
@@ -58,7 +59,9 @@
       "error": "Une erreur est survenue. Merci de réessayer ultérieurement.",
       "title_error": "Erreur",
       "title_newsletter": "Inscription enregistrée",
-      "newsletter_confirm": "Votre inscription à la newsletter a bien été prise en compte. Merci !"
+      "newsletter_confirm": "Votre inscription à la newsletter a bien été prise en compte. Merci !",
+      "newsletter_error": "Merci de réessayer plus tard.",
+      "newsletter_title_error": "Une erreur est survenue"
     }
   },
   "footer": {
@@ -101,7 +104,7 @@
     },
     "cta": {
       "button": "Nous contacter",
-      "speech": "Vous partagez notre vision ?",
+      "speech": "Rejoignez la newsletter",
       "text": "Pour collaborer ou nous rejoindre"
     },
     "mission": {

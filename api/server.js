@@ -265,6 +265,22 @@ app.post('/login', (req, res) => {
   res.status(401).json({ message: 'Wrong login' });
 });
 
+app.post('/newsletter/save', async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    await saveNewsletterEmail(email);
+  } catch(err) {
+    res.status(500).json({
+      message: 'Internal server error',
+    });
+
+    return;
+  }
+
+  res.status(201).json({ message: 'Done' });
+});
+
 if (ENV === 'production') {
   const privateKey  = fs.readFileSync(process.env.SSL_KEY, 'utf8');
   const certificate = fs.readFileSync(process.env.SSL_CERT, 'utf8');
@@ -299,6 +315,25 @@ function saveMessage(data) {
 
     return true;
   });
+}
+
+async function saveNewsletterEmail(email) {
+  if (!email) {
+    throw new Error('Missing argument');
+  }
+
+  const query = `INSERT OR IGNORE INTO newsletter_email (email) VALUES (?)`;
+
+  return new Promise((resolve, reject) => {
+    db.run(query, [email], function (err) {
+      if (err) {
+        console.error(err.message);
+        reject(new Error('Error while INSERT to newsletter_email'));
+      } else {
+        resolve(true)
+      }
+    })
+  })
 }
 
 async function getNews(language) {

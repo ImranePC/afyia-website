@@ -7,6 +7,10 @@
       <span class="block mb-2 text-3xl lg:text-5xl font-extrabold">{{ 'sections.cta.speech' | translate }}</span>
       <span class="block text-lg lg:text-2xl font-extralight">{{ 'sections.cta.text' | translate }} - <b>info&#64;afyia-diagnostics.com</b></span>
     </div>
-    <div class="btn btn-lg bg-primary-dark" routerLink="/contact" role="button">{{ 'sections.cta.button' | translate }}</div>
+    @if (newsletter) {
+      <app-newsletter-button></app-newsletter-button>
+    } @else {
+      <div class="btn btn-lg bg-primary-dark" routerLink="/contact" role="button">{{ 'sections.cta.button' | translate }}</div>
+    }
   </div>
 </div>

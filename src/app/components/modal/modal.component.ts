@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { TranslateModule } from '@ngx-translate/core';
@@ -11,7 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.scss'
 })
-export class ModalComponent {
+export class ModalComponent implements OnInit {
   @Input()
   show = false;
 
@@ -22,6 +22,12 @@ export class ModalComponent {
   onClose: EventEmitter<any> = new EventEmitter();
 
   faXmark = faXmark;
+
+  constructor(private el: ElementRef) { }
+
+  ngOnInit(): void {
+    document.body.appendChild(this.el.nativeElement);
+  }
 
   public open(): void {
     this.show = true;

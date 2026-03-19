@@ -7,8 +7,6 @@ import ScrollReveal from 'scrollreveal';
 export class AppService {
   isDark = signal(true);
 
-  private darkTimeout: any;
-
   constructor() { }
 
   initScrollReveal(): void {

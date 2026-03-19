@@ -2,11 +2,13 @@
 
 Ce projet à été créer avec [Angular](https://github.com/angular/angular-cli) version 17.3.8.
 
-## Ouvrir le serveur de developpement
+## Démarrer en local
 
-Ouvrir le serveur de developpement d'Angular avec `ng serve`. Le port par défaut est `4200`.
+Pour démarrer le site en local avec l'API, Directus et le serveur web utilisez docker
 
-Avec Scully utiliser `npx scully serve`.
+`docker compose --profile dev up`
+
+Le profile `dev` permet de démarrer le serveur local d'Angular.
 
 ## Build avec Scully
 
