@@ -50,5 +50,14 @@
     "pathogens": ["hepatitis"],
     "technology": ["qrt-pcr"],
     "disabled": true
+  },
+  {
+    "id": "tuberculosis",
+    "title": "TB",
+    "subtitle": "Tuberculosis",
+    "description": "Tuberculosis description",
+    "pathogens": ["tuberculosis"],
+    "technology": ["qrt-pcr"],
+    "disabled": false
   }
 ]

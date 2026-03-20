@@ -13,10 +13,10 @@ import { ManageNewsComponent } from './admin/manage-news/manage-news.component';
 import { ManageNewsPageComponent } from './admin/manage-news/manage-news-page/manage-news-page.component';
 import { PrivateLoginComponent } from './private-login/private-login.component';
 import { authGuard } from './guards/auth.guard';
-import { AboutIllnessBComponent } from './views/about-illness/illness-b/about-illness-b.component';
-import { AboutIllnessDComponent } from './views/about-illness/illness-d/about-illness-d.component';
-import { AboutIllnessComponent } from './views/about-illness/about-illness.component';
 import { AboutIllnessAComponent } from './views/about-illness/illness-a/about-illness-a.component';
+import { AboutIllnessBComponent } from './views/about-illness/illness-b/about-illness-b.component';
+import { AboutIllnessCComponent } from './views/about-illness/illness-c/about-illness-c.component';
+import { AboutIllnessDComponent } from './views/about-illness/illness-d/about-illness-d.component';
 
 export const adminRoutes: Routes = [
   { path: 'admin/manage-news/create', component: ManageNewsPageComponent, canActivate: [authGuard]},
@@ -29,10 +29,10 @@ export const routes: Routes = [
   { path: 'private-login', component: PrivateLoginComponent },
   { path: 'account-request', component: RequestAccountComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'febrile-rash-viruses', component: AboutIllnessAComponent },
-  { path: 'hepatic-viruses', component: AboutIllnessBComponent },
-  { path: 'respiratory-viruses', component: AboutIllnessComponent },
-  { path: 'tuberculosis', component: AboutIllnessDComponent },
+  { path: 'products/febrile-rash', component: AboutIllnessAComponent },
+  { path: 'products/hepatitis', component: AboutIllnessBComponent },
+  { path: 'products/respiratory', component: AboutIllnessCComponent },
+  { path: 'products/tuberculosis', component: AboutIllnessDComponent },
   { path: 'software', component: SoftwareComponent },
   { path: 'news/:id', component: NewsPageComponent },
   { path: 'news', component: NewsComponent },
