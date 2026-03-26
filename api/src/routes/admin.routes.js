@@ -53,7 +53,7 @@ router.post('/admin/news', async (req, res) => {
   try {
     newsId = await createNews(data);
   } catch(err) {
-    console.log(err);
+    console.error(err);
     res.status(500).json({
       message: 'Internal server error, please check logs'
     });
@@ -109,7 +109,7 @@ router.put('/admin/news', authMiddleware, (req, res) => {
   try {
     updateNews(data);
   } catch(err) {
-    console.log(err);
+    console.error(err);
     res.status(500).json({
       message: 'Internal server error, please check logs'
     });

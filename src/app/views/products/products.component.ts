@@ -52,14 +52,16 @@ export class ProductsComponent implements OnInit {
 
   faCaretDown = faCaretDown;
 
-  pathogenList = PATHOGENS;
-
-  technologyList = TECHNOLOGIES;
-
   selectedFilter: any = {
     pathogen: null,
     technology: null,
   }
+
+  categories: any = [];
+
+  pathogens: any = [];
+
+  technologies: any = [];
 
   constructor(
     private productService: ProductService,
@@ -72,28 +74,53 @@ export class ProductsComponent implements OnInit {
 
     this.translate.onLangChange.subscribe(() => {
       this.loadProducts();
+      this.loadData();
     })
 
     this.loadProducts();
+    this.loadData();
   }
 
   loadProducts(): void {
-    this.productService.getProducts().subscribe((data) => {
+    this.productService.getProducts(
+      this.selectedFilter.pathogen,
+      this.selectedFilter.technology,
+    ).subscribe((data) => {
       this.products = data;
     })
+  }
+
+  loadData(): void {
+    // Categories
+    this.productService.getProductsCategories().subscribe((data) => {
+      this.categories = data;
+    });
+
+    // Pathogens
+    this.productService.getPathogens().subscribe((data) => {
+      this.pathogens = data;
+    });
+
+    // Technologies
+    this.productService.getTechnologies().subscribe((data) => {
+      this.technologies = data;
+    });
   }
 
   resetFilter(): void {
     this.selectedFilter.pathogen = null;
     this.selectedFilter.technology = null;
+    this.loadProducts()
   }
 
   selectPathogen(pathogen: any): void {
     this.selectedFilter.pathogen = pathogen;
+    this.loadProducts();
   }
 
   selectTechnology(technology: any): void {
     this.selectedFilter.technology = technology;
+    this.loadProducts();
   }
 
   openDropdown(dropdown: HTMLElement, event: any): void {
@@ -108,16 +135,5 @@ export class ProductsComponent implements OnInit {
 
   get hasFilter(): boolean {
     return Object.values(this.selectedFilter).some((value) => value !== null);
-  }
-
-  get filteredProducts(): any {
-    if (!this.hasFilter) {
-      return this.products;
-    }
-
-    return this.products.filter((product: any) =>
-      (this.selectedFilter.technology ? product.technology.includes(this.selectedFilter.technology.value) : true)
-      && (this.selectedFilter.pathogen ? product.pathogens.includes(this.selectedFilter.pathogen.value) : true)
-    );
   }
 }

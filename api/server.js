@@ -11,6 +11,7 @@ const globalRoutes = require('./src/routes/global.routes');
 const adminRoutes = require('./src/routes/admin.routes');
 const newsRoutes = require('./src/routes/news.routes');
 const authRoutes = require('./src/routes/auth.routes');
+const productsRoutes = require('./src/routes/products.routes');
 
 // const setup
 const app = express();
@@ -48,6 +49,7 @@ app.use('/', globalRoutes);
 app.use('/', adminRoutes);
 app.use('/', newsRoutes);
 app.use('/', authRoutes);
+app.use('/', productsRoutes);
 app.use('/uploads',
   express.static(path.join(__dirname, 'uploads'), {
     extensions: ['png', 'jpg', 'jpeg', 'gif'],

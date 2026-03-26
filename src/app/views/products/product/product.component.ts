@@ -11,16 +11,20 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { CommonModule } from '@angular/common';
 
 export interface Product {
-  id: string
-  title: string
-  subtitle: string
-  description: string
-  image: string
-  pathogens: string[]
-  technology: string[]
-  content: any[]
-  card?: string
-  disabled?: boolean
+  id: string;
+  name: string;
+  subname: string;
+  description: string;
+  image: string;
+  imageUrl: string;
+  pathogens: string[];
+  technology: string[];
+  content: any[];
+  card?: string;
+  disabled?: boolean;
+  isRuo?: boolean;
+  isCe?: boolean;
+  isComingSoon?: boolean;
 }
 
 @Component({
@@ -101,12 +105,12 @@ export class ProductComponent implements OnInit {
       this.navigationPath = [
         { name: 'header.product', link: '/products' },
         { name: this.previousPath.name, link: this.previousPath.link },
-        { name: this.product.title, link: this.product.id },
+        { name: this.product.name, link: this.product.id },
       ];
     } else {
       this.navigationPath = [
         { name: 'header.product', link: '/products' },
-        { name: this.product.title, link: this.product.id },
+        { name: this.product.name, link: this.product.id },
       ];
     }
   }

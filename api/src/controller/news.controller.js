@@ -77,7 +77,7 @@ async function updateNews(data) {
   return new Promise((resolve, reject) => {
     db.run(query, inputs, (err) => {
       if (err) {
-        console.log(err);
+        console.error(err);
         reject(new Error('Error while fetching news'));
       } else {
         resolve({ changes: this.changes });
@@ -151,7 +151,7 @@ async function getNews(language) {
       } else {
         resolve(rows);
       }
-    })
+    });
   });
 }
 
@@ -181,4 +181,5 @@ module.exports = {
   getNewsById,
   getNews,
   saveNewsletterEmail,
+  LANGUAGES,
 }

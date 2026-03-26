@@ -17,14 +17,14 @@
           </div>
           <img src="assets/img/afyia_logo.png" alt="AFYIA Logo">
         </div>
-        <p class="pt-5 text-lg">
+        <p class="pt-5 text-lg text-justify">
           {{ 'about.founders.' + person + '.text_1' | translate }}
         </p>
       </div>
       <fa-icon class="icon-background" [icon]="faDna"></fa-icon>
     </div>
     <div class="card-face back">
-      <div class="ps-5 border-l h-full" [innerHTML]="'about.founders.' + person + '.text_2' | translate"></div>
+      <div class="ps-5 border-l h-full text-justify" [innerHTML]="'about.founders.' + person + '.text_2' | translate"></div>
       <fa-icon class="icon-background" [icon]="faDna"></fa-icon>
     </div>
   </div>

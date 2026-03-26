@@ -146,7 +146,8 @@
         }
       },
       "title": "Our <strong>products</strong>",
-      "view_more": "View more"
+      "view_more": "View more",
+      "coming_soon": "Coming soon"
     },
     "about": {
       "title": "About <strong>us</strong>",
@@ -245,12 +246,12 @@
       "pourquier": {
         "title": "CEO",
         "text_1": "A graduate engineer from AgroParisTech, I founded Innovative Diagnostics in 2004, a company specialized in developing ELISA and PCR reagents for the diagnosis of zoonotic and veterinary infectious diseases.",
-        "text_2": "Today, ID employs over 170 people at its 5,000 m² headquarters in Montpellier and distributes its tests in more than 80 countries. Driven by the importance of an integrated One Health approach linking human, animal, and environmental health, I expanded my activities by co-founding AFYIA Diagnostics in 2023. This company emerged from a collaborative initiative bringing together talents from Montpellier University and ID, with the ambition to make diagnostics accessible to the widest possible audience, particularly in countries of the Global South, within a framework of global health."
+        "text_2": "Today, ID employs over 170 people at its 5,000 m² headquarters in Montpellier and distributes its tests in more than 80 countries. <br><br> Driven by the importance of an integrated One Health approach linking human, animal, and environmental health, I expanded my activities by co-founding AFYIA Diagnostics in 2023. This company emerged from a collaborative initiative bringing together talents from Montpellier University and ID, with the ambition to make diagnostics accessible to the widest possible audience, particularly in countries of the Global South, within a framework of global health."
       },
       "guy": {
         "title": "Scientific director",
         "text_1": "With a background as an agronomist and a PhD in microbiology and molecular biology, I have been working for over ten years in the field of biology and health, specializing in infectious disease diagnostics.",
-        "text_2": "Passionate about scientific innovation and deeply committed to addressing healthcare access inequalities, I am now co-founder and Chief Scientific Officer of AFYIA Diagnostics, a company dedicated to developing innovative, robust, and accessible diagnostic solutions. My scientific expertise lies at the intersection of applied research and technological development, aimed at tackling the critical challenges of diagnostic accessibility, particularly in low- and middle-income countries. My work focuses especially on major, emerging, and neglected infectious diseases, addressing key global public health challenges."
+        "text_2": "Passionate about scientific innovation and deeply committed to addressing healthcare access inequalities, I am now co-founder and Chief Scientific Officer of AFYIA Diagnostics, a company dedicated to developing innovative, robust, and accessible diagnostic solutions. <br><br> My scientific expertise lies at the intersection of applied research and technological development, aimed at tackling the critical challenges of diagnostic accessibility, particularly in low- and middle-income countries. My work focuses especially on major, emerging, and neglected infectious diseases, addressing key global public health challenges."
       },
       "reynes": {
         "title": "Biostatitic Manager",
@@ -260,7 +261,7 @@
       "avarre": {
         "title": "Scientific Consultant",
         "text_1": "As a researcher at IRD, I lead the scientific department “Ecology and Biodiversity of Continental Ecosystems,” where my work focuses primarily on the evolution and virulence of major pathogens in aquaculture.",
-        "text_2": "Convinced that frugal innovation offers a relevant solution not only to ecological and climate crises but also to North-South inequalities, I co-founded AFYIA Diagnostics. This initiative aims to make infectious disease diagnostics accessible to everyone, especially in countries of the Global South. Achieving universal access to diagnostics has been a long-held dream of mine, as it would help reduce both the impact of epidemics and global health inequalities."
+        "text_2": "Convinced that frugal innovation offers a relevant solution not only to ecological and climate crises but also to North-South inequalities, I co-founded AFYIA Diagnostics. This initiative aims to make infectious disease diagnostics accessible to everyone, especially in countries of the Global South. <br><br> Achieving universal access to diagnostics has been a long-held dream of mine, as it would help reduce both the impact of epidemics and global health inequalities."
       }
     }
   },

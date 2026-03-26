@@ -5,20 +5,31 @@
   <button class="btn btn-white mb-5" (click)="goBack()">{{ 'products.back' | translate }}</button>
   <div class="bg-white rounded-xl shadow-sm p-5 lg:p-10">
     <div class="grid grid-cols-1 lg:grid-cols-8 gap-5 mb-10">
-      <div class="lg:col-span-5 text-3xl lg:text-4xl"><b>{{ product?.title }}</b> <br> {{ product?.subtitle }}</div>
+      <div class="lg:col-span-5 text-3xl lg:text-4xl">
+        <div class="inline-block text-3xl lg:text-4xl font-bold">{{ product?.name }}</div>
+        <div class="inline-block">{{ product?.subname }}</div>
+        <p>{{ product?.description }}</p>
+        @if (product?.isRuo) {
+          <div class="inline-block text-sm border border-black px-1">RUO</div>
+        }
+        @if (product?.isCe) {
+          <img class="inline-block invert" src="assets/img/ce.svg" width="30px" alt="CE Logo SVG">
+        }
+      </div>
       <div class="relative h-[250px] lg:col-span-3 bg-slate-100 rounded-xl overflow-hidden reveal">
-        @if (product?.image) {
+        @if (product?.imageUrl) {
         <img
           class="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          src="assets/img/{{ product.image }}"
-          alt="Photo de produit {{ product.title }}"
+          [src]="product.imageUrl"
+          alt="Photo de produit {{ product.name }}"
         >
         } @else {
           <fa-icon class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary opacity-25" [icon]="faBoxOpen" size="4x"></fa-icon>
         }
       </div>
     </div>
-    <div class="mb-10 grid grid-cols-1 lg:grid-cols-2 gap-5 reveal">
+    <div class="product-content" [innerHTML]="product?.content"></div>
+    <!-- <div class="mb-10 grid grid-cols-1 lg:grid-cols-2 gap-5 reveal">
       @for (element of product?.content; track element) {
       <div class="relative flex flex-col justify-center bg-cyan-100 p-3 lg:p-5 rounded-xl overflow-hidden">
         <div class="font-extrabold text-xl mb-1">{{ element.title }}</div>
@@ -26,12 +37,10 @@
         <fa-icon class="absolute top-1/2 -translate-y-1/2 rotate-6 left-0 text-cyan-600 opacity-10 ms-12 pointer-events-none" [icon]="faDna" size="7x"></fa-icon>
       </div>
       }
-    </div>
-    <div class="mb-10">
-      <p class="text-primary">{{ 'products.command_message' | translate }}</p>
-    </div>
+    </div> -->
+    <div class="mb-10 border-bottom pb-10"></div>
     <div class="flex gap-5">
-      <button class="btn btn-lg bg-primary text-white" (click)="contactModal.open()">
+      <button class="btn btn-lg bg-primary text-white"> <!-- (click)="contactModal.open()"> -->
         {{ 'products.contact_us' | translate }}
       </button>
       @if (product?.card) {
@@ -43,13 +52,12 @@
     </div>
   </div>
 </div>
-<app-modal #contactModal size="lg">
+<!-- <app-modal #contactModal size="lg">
   <div body>
-    <div class="input-group mb-3 pb-3 border-b">
-      <label class="inline !font-light" for="is_client">
-        <input type="checkbox" name="is_client" id="is_client" [(ngModel)]="isClient">
+    <div class="border-b pb-4 mb-4">
+      <button class="btn bg-primary text-white">
         {{ 'contact.sections.form.inputs.is_client' | translate }}
-      </label>
+      </button>
     </div>
     <div class="flex flex-col gap-5" [class.hidden]="isClient">
       <div class="grid grid-cols-2 gap-5">
@@ -84,14 +92,17 @@
       </div>
     </div>
 
-    <div class="flex flex-col gap-5" [class.hidden]="!isClient">
-      <div class="input-group" [class.is-invalid]="isFieldInvalid('email')">
-        <label for="email">{{ 'contact.sections.form.inputs.email' | translate }}</label>
-        <input id="email" formControlName="email" type="text" maxlength="50">
-      </div>
-      <div class="input-group" [class.is-invalid]="isFieldInvalid('company')">
-        <label for="company">{{ 'contact.sections.form.inputs.company' | translate }}</label>
-        <input id="company" formControlName="company" type="text" maxlength="50">
+    <div *ngIf="!isClient">
+      Si vous êtes déjà client, merci de renseigner les informations supplémentaires pour que nous puissons vous recontacter.
+      <div class="flex flex-col gap-5">
+        <div class="input-group" [class.is-invalid]="isFieldInvalid('email')">
+          <label for="email">{{ 'contact.sections.form.inputs.email' | translate }}</label>
+          <input id="email" formControlName="email" type="text" maxlength="50">
+        </div>
+        <div class="input-group" [class.is-invalid]="isFieldInvalid('company')">
+          <label for="company">{{ 'contact.sections.form.inputs.company' | translate }}</label>
+          <input id="company" formControlName="company" type="text" maxlength="50">
+        </div>
       </div>
     </div>
   </div>
@@ -101,4 +112,4 @@
       {{ 'contact.sections.form.inputs.button' | translate }}
     </button>
   </div>
-</app-modal>
+</app-modal> -->

@@ -5,6 +5,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AppService } from '../../services/app.service';
 import { CtaComponent } from '../../components/cta/cta.component';
 import { ParallaxDirective } from '../../directives/parallax.directive';
+import { ProductService } from '../../services/product.service';
+import { Product } from '../products/product/product.component';
 
 @Component({
   selector: 'app-home',
@@ -37,6 +39,8 @@ export class HomeComponent implements OnInit {
 
   isWindowSm: boolean;
 
+  products: Product[];
+
   images: string[] = [
     'assets/img/team/img_mic.jpg',
     'assets/img/team/img_margot.jpg',
@@ -45,11 +49,15 @@ export class HomeComponent implements OnInit {
     'assets/img/buildings_background_sm.jpg',
   ];
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService, private productService: ProductService) { }
 
   ngOnInit(): void {
     this.appService.initScrollReveal();
     this.isWindowSm = window.screen.width <= 1200;
+
+    this.productService.getFeaturedProducts().subscribe((data) => {
+      this.products = data;
+    });
 
     const mark1 = document.getElementById('mark_1');
     const approachTitle = document.getElementById('approach_title');

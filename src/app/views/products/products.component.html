@@ -13,18 +13,11 @@
     md:grid-cols-2
     xl:grid-cols-4
   ">
-    <div role="button" routerLink="/products/febrile-rash" style="background-image: url('assets/img/illnesses/illness_dirash.jpg')">
-      <span class="w-full">{{ 'products.about.febrilerash' | translate }}</span>
-    </div>
-    <div role="button" routerLink="/products/hepatitis" style="background-image: url('assets/img/illnesses/illness_hepatitis.jpg')">
-      <span class="w-full">{{ 'products.about.hepatic' | translate }}</span>
-    </div>
-    <div role="button" routerLink="/products/respiratory" style="background-image: url('assets/img/illnesses/illness_respiratory.jpg')">
-      <span class="w-full">{{ 'products.about.respiratory' | translate }}</span>
-    </div>
-    <div role="button" routerLink="/products/tuberculosis" style="background-image: url('assets/img/illnesses/illness_tuberculosis.jpg')">
-      <span class="w-full">{{ 'products.about.tuberculosis' | translate }}</span>
-    </div>
+    @for (category of categories; track category) {
+      <div role="button" routerLink="/products/febrile-rash" style="background-image: url('{{ category.imageUrl }}')">
+        <span class="w-full">{{ category.name }}</span>
+      </div>
+    }
   </div>
 </div>
 
@@ -66,7 +59,7 @@
         <div class="bg-cyan-50 rounded-lg">
           <div class="flex justify-between px-3 py-1" role="button" (click)="closeDropdown(technologyDropdown, $event); openDropdown(pathogenDropdown, $event)">
             <div>
-              {{ selectedFilter.pathogen?.label ?? 'products.filters.select' | translate }}
+              {{ selectedFilter.pathogen?.name ?? 'products.filters.select' | translate }}
             </div>
             <fa-icon [icon]="faCaretDown" size="sm"></fa-icon>
           </div>
@@ -77,14 +70,14 @@
             (clickOutside)="closeDropdown(pathogenDropdown, $event)"
           >
             <ul class="text-sm flex flex-col text-left m-2 gap-2">
-              @for (pathogen of pathogenList; track pathogen) {
+              @for (pathogen of pathogens; track pathogen) {
               <li>
                 <button
                   class="inline-block text-start w-full py-1 px-2 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
-                  [ngClass]="{'bg-gray-100 pointer-events-none' : selectedFilter.pathogen?.value === pathogen.value}"
+                  [ngClass]="{'bg-gray-100 pointer-events-none' : selectedFilter.pathogen?.id === pathogen.id}"
                   (click)="selectPathogen(pathogen); closeDropdown(pathogenDropdown, $event)"
                 >
-                  <span>{{ pathogen.label }}</span>
+                  <span>{{ pathogen.name }}</span>
                 </button>
               </li>
               }
@@ -97,7 +90,7 @@
         <div class="bg-cyan-50 rounded-lg">
           <div class="flex justify-between px-3 py-1" role="button" (click)="closeDropdown(pathogenDropdown, $event); openDropdown(technologyDropdown, $event)">
             <div>
-              {{ selectedFilter.technology?.label ?? 'products.filters.select' | translate }}
+              {{ selectedFilter.technology?.name ?? 'products.filters.select' | translate }}
             </div>
             <fa-icon [icon]="faCaretDown" size="sm"></fa-icon>
           </div>
@@ -108,14 +101,14 @@
             (clickOutside)="closeDropdown(technologyDropdown, $event)"
           >
             <ul class="text-sm flex flex-col text-left m-2 gap-2">
-              @for (technology of technologyList; track technology) {
+              @for (technology of technologies; track technology) {
               <li>
                 <button
                   class="inline-block text-start w-full py-1 px-2 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
-                  [ngClass]="{'bg-gray-100 pointer-events-none' : selectedFilter.technology?.value === technology.value}"
+                  [ngClass]="{'bg-gray-100 pointer-events-none' : selectedFilter.technology?.id === technology.id}"
                   (click)="selectTechnology(technology); closeDropdown(technologyDropdown, $event)"
                 >
-                  <span>{{ technology.label }}</span>
+                  <span>{{ technology.name }}</span>
                 </button>
               </li>
               }
@@ -132,8 +125,8 @@
       </button>
     </div>
     <div class="flex flex-col gap-10 lg:gap-5">
-      @if (filteredProducts?.length > 0) {
-        @for (item of filteredProducts; track item; let last = $last) {
+      @if (products?.length > 0) {
+        @for (item of products; track item; let last = $last) {
         <app-product-card [ngClass]="{'pb-5 border-b lg:pb-0 lg:border-0' : !last}" [product]="item"></app-product-card>
         }
       } @else {

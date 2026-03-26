@@ -1,0 +1,40 @@
+@import "../../../../assets/scss/variables.scss";
+
+.product-content {
+  ::ng-deep ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+
+    li {
+      @apply bg-cyan-100 p-3 lg:p-5 rounded-xl;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+
+      strong {
+        @apply text-xl mb-1;
+        font-weight: 800!important;
+        color: $dark-text;
+        display: block;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) rotate(6deg) scale(1.45);
+        width: 10rem;
+        height: 10rem;
+        background: $primary;
+        -webkit-mask: url('../../../../assets/img/dna-solid-full.svg') no-repeat center / contain;
+        mask-image: url('../../../../assets/img/dna-solid-full.svg') no-repeat center / contain;
+        opacity: 0.1;
+        pointer-events: none;
+      }
+    }
+  }
+}

@@ -13,13 +13,13 @@
 } @else {
 <div
   class="min-h-[250px] h-full p-5 rounded-2xl text-left flex flex-col justify-between relative background-image background-image-darken"
-  [class.disabled]="disabled"
+  [class.disabled]="comingSoon"
   style="background-image: url('../../../assets/img/{{ imagePath }}')"
 >
   <h3 class="z-10 text-white text-shadow">
     <span class="font-extrabold text-4xl">{{ title }}</span> <br>
     <span class="block mb-2 text-2xl"> {{ subTitle }}</span>
-    @if (!disabled) {
+    @if (!comingSoon) {
       <span>{{ description }}</span>
     }
   </h3>
@@ -27,17 +27,18 @@
     <div class="z-10">
     @if (ce) {
       <img src="assets/img/ce.svg" width="30px" alt="CE Logo SVG">
-    } @else if (ruo) {
+    }
+    @if (ruo) {
       <b class="block border px-1 border-white text-white">RUO</b>
     }
     </div>
-    @if (!disabled) {
+    @if (!comingSoon) {
     <div class="btn btn-white z-10">
       {{ 'sections.product.view_more' | translate }} @if (link) { <fa-icon class="ms-1" [icon]="faUpRightFromSquare" size="sm"></fa-icon> }
     </div>
     } @else {
       <div class="btn bg-black bg-opacity-75 text-white z-10">
-        {{ description }}
+        {{ 'sections.product.coming_soon' | translate }}
       </div>
     }
   </div>

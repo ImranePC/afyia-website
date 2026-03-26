@@ -146,7 +146,8 @@
         }
       },
       "title": "Nos <strong>produits</strong>",
-      "view_more": "Voir plus"
+      "view_more": "Voir plus",
+      "coming_soon": "À venir"
     },
     "about": {
       "title": "Qui sommes <strong>nous</strong>",
@@ -245,12 +246,12 @@
       "pourquier": {
         "title": "PDG",
         "text_1": "Ingénieur diplômé d’AgroParisTech, j’ai fondé en 2004 la société Innovative Diagnostics, spécialisée dans le développement de réactifs ELISA et PCR pour le diagnostic des maladies infectieuses zoonotiques et vétérinaires.",
-        "text_2": "Aujourd’hui, ID emploie plus de 170 personnes dans son siège de 5 000 m² à Montpellier, et commercialise ses tests dans plus de 80 pays. Convaincu de l’importance d’une approche intégrée One Health, qui relie la santé humaine, animale et environnementale, j’ai élargi mes activités en cofondant notamment AFYIA Diagnostics, en 2023, société née d’une initiative collaborative réunissant des talents issus de l’Université de Montpellier et d’ID, avec pour ambition de rendre les diagnostics accessibles au plus grand nombre, en particulier dans les pays du Sud, dans une logique de santé globale."
+        "text_2": "Aujourd’hui, ID emploie plus de 170 personnes dans son siège de 5 000 m² à Montpellier, et commercialise ses tests dans plus de 80 pays. <br><br> Convaincu de l’importance d’une approche intégrée One Health, qui relie la santé humaine, animale et environnementale, j’ai élargi mes activités en cofondant notamment AFYIA Diagnostics, en 2023, société née d’une initiative collaborative réunissant des talents issus de l’Université de Montpellier et d’ID, avec pour ambition de rendre les diagnostics accessibles au plus grand nombre, en particulier dans les pays du Sud, dans une logique de santé globale."
       },
       "guy": {
         "title": "Directrice scientifique",
         "text_1": "Ingénieure agronome de formation et docteure en microbiologie et biologie moléculaire, je travaille depuis plus de dix ans dans le domaine de la biologie et de la santé, avec une spécialisation en diagnostic des maladies infectieuses.",
-        "text_2": "Passionnée par l’innovation scientifique et profondément engagée dans la lutte contre les inégalités Nord-Sud, je suis aujourd’hui cofondatrice et directrice scientifique d’AFYIA Diagnostics, une entreprise dédiée au développement de solutions de diagnostic innovantes, robustes et accessibles. Mon expertise scientifique, à l’interface entre recherche appliquée et développement technologique, vise à relever les défis critiques de l’accessibilité au diagnostic, notamment dans les pays à revenus faibles et intermédiaires. Mes travaux se concentrent particulièrement sur les maladies infectieuses majeures, émergentes ou négligées, en réponse aux grands enjeux de santé publique mondiale."
+        "text_2": "Passionnée par l’innovation scientifique et profondément engagée dans la lutte contre les inégalités Nord-Sud, je suis aujourd’hui cofondatrice et directrice scientifique d’AFYIA Diagnostics, une entreprise dédiée au développement de solutions de diagnostic innovantes, robustes et accessibles. <br><br> Mon expertise scientifique, à l’interface entre recherche appliquée et développement technologique, vise à relever les défis critiques de l’accessibilité au diagnostic, notamment dans les pays à revenus faibles et intermédiaires. Mes travaux se concentrent particulièrement sur les maladies infectieuses majeures, émergentes ou négligées, en réponse aux grands enjeux de santé publique mondiale."
       },
       "reynes": {
         "title": "Responsable biostatistiques",
@@ -260,7 +261,7 @@
       "avarre": {
         "title": "Conseil scientifique",
         "text_1": "Chercheur à l’IRD, je dirige le département scientifique « Écologie et biodiversité des écosystèmes continentaux », où mes travaux portent principalement sur l’évolution et la virulence des principaux agents pathogènes en aquaculture.",
-        "text_2": "Convaincu que l’innovation frugale constitue une réponse pertinente non seulement aux crises écologiques et climatiques, mais aussi aux inégalités Nord-Sud, j’ai cofondé AFYIA Diagnostics. Cette initiative vise à rendre le diagnostic des maladies infectieuses accessible à toutes et tous, en particulier dans les pays du Sud. Offrir un accès universel au diagnostic est un rêve que je poursuis depuis de nombreuses années. Il permettrait de réduire à la fois l’impact des épidémies et les inégalités sanitaires à l’échelle mondiale."
+        "text_2": "Convaincu que l’innovation frugale constitue une réponse pertinente non seulement aux crises écologiques et climatiques, mais aussi aux inégalités Nord-Sud, j’ai cofondé AFYIA Diagnostics. Cette initiative vise à rendre le diagnostic des maladies infectieuses accessible à toutes et tous, en particulier dans les pays du Sud. <br><br> Offrir un accès universel au diagnostic est un rêve que je poursuis depuis de nombreuses années. Il permettrait de réduire à la fois l’impact des épidémies et les inégalités sanitaires à l’échelle mondiale."
       }
     }
   },

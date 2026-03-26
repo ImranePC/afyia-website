@@ -3,7 +3,6 @@ const router = express.Router();
 const path = require('path');
 const newsController = require('../controller/news.controller');
 
-
 router.get('/news', async (req, res) => {
   const language = req.get('x-app-lang') ?? 'fr';
 

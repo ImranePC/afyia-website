@@ -33,7 +33,7 @@ export class CardLinkComponent {
   ruo = false;
 
   @Input()
-  disabled = false;
+  comingSoon = false;
 
   faUpRightFromSquare = faUpRightFromSquare;
 }
