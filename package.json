@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration production",
+    "build-dev": "ng build --configuration development",
+    "build-preprod": "ng build --configuration preproduction",
     "build-static": "npx scully build --project afyia-website",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
