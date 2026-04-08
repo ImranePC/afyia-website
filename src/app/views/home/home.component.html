@@ -104,11 +104,11 @@
     xl:px-20
   ">
     @for (product of products; track product) {
-      <a class="w-full md:w-1/2 p-5" routerLink="/product/monkeypox">
+      <a class="w-full md:w-1/2 p-5" [routerLink]="['/product/', product.id]">
         <app-card-link
           [title]="product.name"
           [subTitle]="product.subname"
-          imagePath="viruses/virus_mpox.jpg"
+          [imagePath]="product.imageUrl"
           [description]="product.description"
           [ruo]="product.isRuo"
           [ce]="product.isCe"
@@ -116,42 +116,6 @@
         ></app-card-link>
       </a>
     }
-    <!-- <a routerLink="/product/monkeypox">
-      <app-card-link
-        title="Monkeypox Virus"
-        [subTitle]="'sections.product.items.mpox_1.subtitle' | translate"
-        imagePath="viruses/virus_mpox.jpg"
-        [description]="'sections.product.items.mpox_1.text' | translate"
-        [ruo]="true"
-      ></app-card-link>
-    </a>
-    <a routerLink="/product/febrile-rash">
-      <app-card-link
-        [title]="'sections.product.items.mpox_2.title' | translate"
-        [subTitle]="'sections.product.items.mpox_2.subtitle' | translate"
-        imagePath="viruses/virus_dirash.jpg"
-        [description]="'sections.product.items.mpox_2.text' | translate"
-        [ruo]="true"
-      ></app-card-link>
-    </a>
-    <a href="https://www.innovative-diagnostics.com/produit/di-sars-cov-2-moc-i-multiplex/" target="_blank">
-      <app-card-link
-        title="SARS-CoV-2"
-        [subTitle]="'sections.product.items.sars_cov.subtitle' | translate"
-        imagePath="viruses/illness_2.jpg"
-        [description]="'sections.product.items.sars_cov.text' | translate"
-        [link]="true"
-      ></app-card-link>
-    </a>
-    <div>
-      <app-card-link
-        [title]="'sections.product.items.hepa.title' | translate"
-        [subTitle]="'sections.product.items.hepa.subtitle' | translate"
-        imagePath="viruses/virus_hepatitis.jpg"
-        [description]="'sections.product.items.hepa.text' | translate"
-        [disabled]="true"
-      ></app-card-link>
-    </div> -->
   </div>
 </div>
 

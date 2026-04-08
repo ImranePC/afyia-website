@@ -63,4 +63,17 @@ router.get('/products/featured', async (req, res) => {
   }
 });
 
+router.get('/products/category/:id', async (req, res) => {
+  const language = req.get('x-app-lang') ?? 'en';
+  const id = req.params.id;
+
+  try {
+    data = await productsController.getCategories(language, id);
+    res.json(data);
+  } catch(err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = router;

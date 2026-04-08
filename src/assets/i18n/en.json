@@ -194,7 +194,7 @@
       "hepatic": "Hepatitis B virus",
       "tuberculosis": "Tuberculosis"
     },
-    "no_result": "No result found",
+    "no_result": "No products found.",
     "text_1": {
       "title": "English <strong>title</strong>",
       "content": "Need english content"
@@ -217,7 +217,8 @@
       "title": "About febrile-rash",
       "content": "Febrile rash text content"
     },
-    "associated_products": "Linked products"
+    "associated_products": "Linked products",
+    "about": "About"
   },
   "about": {
     "team": {

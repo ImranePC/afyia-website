@@ -194,7 +194,7 @@
       "hepatic": "Virus de l'hépatite B",
       "tuberculosis": "Tuberculose"
     },
-    "no_result": "Aucun résultat",
+    "no_result": "Aucun produit trouvé.",
     "text_1": {
       "title": "Un diagnostic <strong>insuffisant</strong>",
       "content": "De nombreuses <b>maladies infectieuses</b> restent aujourd’hui <b>non diagnostiquées</b>, ce qui constitue un véritable <b>fléau de santé publique</b>. Même lorsque des traitements existent, faute de diagnostic fiable et accessible, certains patients ne bénéficient pas de la prise en charge adaptée et continuent de transmettre ces pathologies dans leurs communautés."
@@ -217,7 +217,8 @@
       "title": "A propos de Febrile rash",
       "content": "Contenu sur Febrile rash"
     },
-    "associated_products": "Produits associés"
+    "associated_products": "Produits associés",
+    "about": "A propos"
   },
   "about": {
     "team": {

@@ -5,8 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AppService } from '../../services/app.service';
 import { CtaComponent } from '../../components/cta/cta.component';
 import { ParallaxDirective } from '../../directives/parallax.directive';
-import { ProductService } from '../../services/product.service';
-import { Product } from '../products/product/product.component';
+import { Product, ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-home',

@@ -5,9 +5,9 @@ import { ArianeComponent } from '../../components/ariane/ariane.component';
 import { faBoxOpen, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
-import { ProductService } from '../../services/product.service';
+import { Category, ProductService } from '../../services/product.service';
 import { ProductCardComponent } from './product-card/product-card.component';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AppService } from '../../services/app.service';
 import { CommonModule } from '@angular/common';
 import { ClickOutsideDirective } from '../../directives/click-outside.directive';
@@ -67,6 +67,7 @@ export class ProductsComponent implements OnInit {
     private productService: ProductService,
     private translate: TranslateService,
     private appService: AppService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -131,6 +132,11 @@ export class ProductsComponent implements OnInit {
   closeDropdown(dropdown: HTMLElement, event: any): void {
     event.stopPropagation();
     dropdown.style.display = 'none';
+  }
+
+  openCategoryPage(category: Category): void {
+    this.productService.setCategory(category);
+    this.router.navigate(['/products/', category.id]);
   }
 
   get hasFilter(): boolean {

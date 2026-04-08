@@ -1,0 +1,25 @@
+@import '../../../assets/scss/variables';
+
+.banner {
+  @apply font-extrabold text-7xl text-center shadow-xl;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  min-height: 400px;
+  background-image: url('../../../assets/img/buildings_background.jpg');
+  background-size: cover;
+
+  h1 {
+    @apply px-10;
+    text-align: center;
+    color: white;
+    text-shadow: 0 4px 8px rgba(black, 0.33);
+  }
+
+  &--small {
+    @apply text-6xl;
+    min-height: 150px;
+  }
+}

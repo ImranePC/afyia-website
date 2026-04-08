@@ -176,25 +176,6 @@ strong {
   }
 }
 
-.banner {
-  @apply font-extrabold text-8xl text-center shadow-xl;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  min-height: 500px;
-  background-image: url('assets/img/buildings_background.jpg');
-  background-size: cover;
-
-  h1 {
-    @apply px-10;
-    text-align: center;
-    color: white;
-    text-shadow: 0 4px 8px rgba(black, 0.33);
-  }
-}
-
 .reveal {
   visibility: hidden;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../../services/product.service';
+import { Product, ProductService } from '../../../services/product.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ArianeComponent, Path } from '../../../components/ariane/ariane.component';
@@ -9,23 +9,6 @@ import { AppService } from '../../../services/app.service';
 import { ModalComponent } from '../../../components/modal/modal.component';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
-export interface Product {
-  id: string;
-  name: string;
-  subname: string;
-  description: string;
-  image: string;
-  imageUrl: string;
-  pathogens: string[];
-  technology: string[];
-  content: any[];
-  card?: string;
-  disabled?: boolean;
-  isRuo?: boolean;
-  isCe?: boolean;
-  isComingSoon?: boolean;
-}
 
 @Component({
   selector: 'app-product',
@@ -85,6 +68,7 @@ export class ProductComponent implements OnInit {
     this.loadProduct();
 
     this.previousPath = history.state?.previousPath;
+
     this.translate.onLangChange.subscribe(() => {
       this.loadProduct();
     })

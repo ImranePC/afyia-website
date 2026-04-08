@@ -1,20 +1,30 @@
-import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, computed, input, Input, OnDestroy } from '@angular/core';
 import { ParallaxDirective } from '../../directives/parallax.directive';
 import { AppService } from '../../services/app.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
+import { SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-banner',
   standalone: true,
   imports: [ParallaxDirective],
   templateUrl: './banner.component.html',
-  styleUrl: './banner.component.scss'
+  styleUrl: './banner.component.scss',
 })
 export class BannerComponent implements AfterViewInit, OnDestroy {
   @Input()
   imageUrl: string;
 
   @Input()
-  title: string;
+  title: string | SafeHtml;
+
+  @Input()
+  dark = false;
+
+  @Input()
+  size: 'small' | 'large' = 'large';
+
+  isSmall = computed(() => this.size === 'small');
 
   private observer: IntersectionObserver;
 
@@ -30,6 +40,10 @@ export class BannerComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.observer.disconnect();
+    this.observer?.disconnect();
+  }
+
+  reduceSize(): void {
+    this.size = 'small';
   }
 }

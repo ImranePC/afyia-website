@@ -14,7 +14,7 @@
     xl:grid-cols-4
   ">
     @for (category of categories; track category) {
-      <div role="button" routerLink="/products/febrile-rash" style="background-image: url('{{ category.imageUrl }}')">
+      <div role="button" (click)="openCategoryPage(category)" style="background-image: url('{{ category.imageUrl }}')">
         <span class="w-full">{{ category.name }}</span>
       </div>
     }

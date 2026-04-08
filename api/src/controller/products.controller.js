@@ -2,18 +2,59 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./directus/database/afyiadb.sqlite');
 const { LANGUAGES } = require('./news.controller');
 
-async function getCategories(language) {
-  const columnI18n = {
-    fr: 'name_fr',
-    en: 'name_en',
+async function getCategories(language, id) {
+  const fieldsI18n = {
+    name: {
+      fr: 'name_fr',
+      en: 'name_en',
+    },
+    description: {
+      fr: 'description_fr',
+      en: 'description_en',
+    },
+    content: {
+      fr: 'content_fr',
+      en: 'content_en',
+    }
   }
 
-  const nameI18n = columnI18n[language] || columnI18n['en'];
+  const name = fieldsI18n['name'][language];
+  const description = fieldsI18n['description'][language];
+  const content = fieldsI18n['content'][language];
 
-  const query = `SELECT id, ${nameI18n} as name, image FROM product_categories`;
+  let where = '';
+  const params = [];
+
+  if (id) {
+    where = 'WHERE pc.id = ?';
+    params.push(id);
+  }
+
+  const query = `
+    SELECT pc.id,
+    pc.${name} as name,
+    pc.${description} as description,
+    pc.${content} as content,
+    pc.image,
+    json_group_array(
+      json_object(
+        'product_id', p.id,
+        'product_name', p.name_fr,
+        'product_subname', p.subname_fr,
+        'product_description', p.description_fr,
+        'product_name', p.name_fr,
+        'product_image', p.product_image
+      )
+    ) FILTER (WHERE p.id IS NOT NULL) AS products
+    FROM product_categories pc
+    LEFT JOIN product_categories_product pcp ON pcp.product_categories_id = pc.id
+    LEFT JOIN product p ON p.id = pcp.product_id
+    ${where}
+    GROUP BY pc.id
+  `;
 
   return new Promise((resolve, reject) => {
-    db.all(query, (err, rows) => {
+    db.all(query, params, (err, rows) => {
       if (err) {
         console.error(err.message);
         reject(new Error('Error while fetching categories'));

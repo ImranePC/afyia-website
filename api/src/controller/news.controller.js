@@ -100,7 +100,7 @@ async function getNewsById(id, language) {
   }
 
   const query = `
-    SELECT id, ${titleI18n}, ${contentI18n}, published_at, image_url, banner_url, image_file, banner_file
+    SELECT id, ${titleI18n}, ${contentI18n}, published_at, image_file, banner_file
     FROM news
     WHERE id = ${id}
   `;
@@ -135,7 +135,6 @@ async function getNews(language) {
       THEN SUBSTRING(${contentI18n}, 1, ${textLimit}) || '...'
       ELSE ${contentI18n}
     END as ${contentI18n},
-    image_url,
     image_file,
     directus_files.type
     FROM news

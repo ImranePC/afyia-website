@@ -7,6 +7,7 @@ import { News, NewsService } from '../../../services/news.service';
 import { AppService } from '../../../services/app.service';
 import { DatePipe } from '@angular/common';
 import { SafeHtml } from '@angular/platform-browser';
+import { BannerComponent } from '../../../components/banner/banner.component';
 
 @Component({
   selector: 'app-news-page',
@@ -16,6 +17,7 @@ import { SafeHtml } from '@angular/platform-browser';
     ParallaxDirective,
     TranslateModule,
     DatePipe,
+    BannerComponent,
   ],
   templateUrl: './news-page.component.html',
   styleUrl: './news-page.component.scss',
