@@ -11,8 +11,10 @@ export interface Category {
   description: string,
   image: string,
   imageUrl: string,
+  imageAboutUrl: string,
   content: string,
   products: Product[],
+  stats: string,
 }
 
 export interface Product {
@@ -113,6 +115,7 @@ export class ProductService {
       map((categories: any) => categories.map((category: any) => ({
         ...category,
         imageUrl: `${IMAGE_URL}/${category.image}`,
+        imageAboutUrl: `${IMAGE_URL}/${category.image_about}`,
         products: JSON.parse(category.products ?? '[]').map(this.mapProduct),
       })))
     );
@@ -150,8 +153,9 @@ export class ProductService {
         return {
           ...category,
           imageUrl: `${IMAGE_URL}/${category.image}`,
+          imageAboutUrl: `${IMAGE_URL}/${category.image_about}`,
           products: JSON.parse(category.products ?? []).map(this.mapProduct),
-        }
+        };
       })
     );
   }

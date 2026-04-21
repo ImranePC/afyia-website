@@ -15,12 +15,17 @@ async function getCategories(language, id) {
     content: {
       fr: 'content_fr',
       en: 'content_en',
+    },
+    content_stats: {
+      fr: 'content_stats_fr',
+      en: 'content_stats_en',
     }
   }
 
   const name = fieldsI18n['name'][language];
   const description = fieldsI18n['description'][language];
   const content = fieldsI18n['content'][language];
+  const content_stats = fieldsI18n['content_stats'][language];
 
   let where = '';
   const params = [];
@@ -35,7 +40,9 @@ async function getCategories(language, id) {
     pc.${name} as name,
     pc.${description} as description,
     pc.${content} as content,
+    pc.${content_stats} as stats,
     pc.image,
+    pc.image_about,
     json_group_array(
       json_object(
         'product_id', p.id,

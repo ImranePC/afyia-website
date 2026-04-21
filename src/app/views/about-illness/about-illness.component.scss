@@ -49,3 +49,42 @@
     @apply text-5xl font-extrabold text-center text-white;
   }
 }
+
+.stats-container {
+  ::ng-deep ul {
+    display: flex;
+    flex-wrap: wrap;
+    background-clip: content-box;
+
+    li {
+      @apply text-xl p-5 rounded-xl;
+      color: white;
+      margin: 1rem;
+      flex: 0 0 calc(33.33% - 2rem);
+      display: block;
+      list-style: none;
+      background: linear-gradient(45deg, rgba($primary, 0.5), rgba($primary, 1), rgb(41, 66, 150) 99%);
+      background-attachment: fixed;
+
+      strong {
+        @apply text-5xl;
+        color: white;
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: theme('screens.xl')) {
+  .stats-container ::ng-deep ul li {
+    margin: 1rem;
+    flex: 0 0 calc(50% - 2rem);
+  }
+}
+
+@media (max-width: theme('screens.lg')) {
+  .stats-container ::ng-deep ul li {
+    margin: 0 0 1rem 0;
+    flex: 0 0 100%;
+  }
+}
