@@ -22,6 +22,12 @@ async function getCategories(language, id) {
     }
   }
 
+  const productFieldsI18n = {
+    name: 'name_' + language,
+    subname: 'subname_' + language,
+    description: 'description_' + language,
+  }
+
   const name = fieldsI18n['name'][language];
   const description = fieldsI18n['description'][language];
   const content = fieldsI18n['content'][language];
@@ -46,10 +52,9 @@ async function getCategories(language, id) {
     json_group_array(
       json_object(
         'product_id', p.id,
-        'product_name', p.name_fr,
-        'product_subname', p.subname_fr,
-        'product_description', p.description_fr,
-        'product_name', p.name_fr,
+        'product_name', p.${productFieldsI18n['name']},
+        'product_subname', p.${productFieldsI18n['subname']},
+        'product_description', p.${productFieldsI18n['description']},
         'product_image', p.product_image
       )
     ) FILTER (WHERE p.id IS NOT NULL) AS products
@@ -72,10 +77,15 @@ async function getCategories(language, id) {
   });
 }
 
-async function getProducts(language, pathogens = [], technologies = []) {
+async function getProducts(language, pathogens = [], technologies = [], id = null) {
   const lang = LANGUAGES.includes(language) ? language : 'en';
   const joinList = [];
   const whereList = [];
+  const params = [];
+  const fieldsI18n = Object.fromEntries(
+    ['name', 'subname', 'description', 'description_full', 'content', 'features_table']
+    .map(key => [key, `${key}_${language}`])
+  );
 
   technologies = technologies.map((technology) => `'${technology}'`);
 
@@ -89,24 +99,33 @@ async function getProducts(language, pathogens = [], technologies = []) {
     whereList.push(`pt.technologies_id IN (${technologies.join(', ')})`);
   }
 
+  if (id) {
+    whereList.push('p.id = ?');
+    params.push(id);
+  }
+
   const join = joinList.join(' ');
   const where = whereList.length > 0 ? 'WHERE ' + whereList.join(' AND ') : '';
 
   const query = `
-    SELECT p.id,
-      p.name_fr as name,
-      subname_fr as subname,
-      description_fr as description,
-      content_fr as content,
-      is_ruo as isRuo,
-      is_ce as isCe,
-      is_coming_soon as isComingSoon,
-      product_image
+    SELECT p.id as product_id,
+      p.${fieldsI18n['name']} as product_name,
+      p.${fieldsI18n['subname']} as product_subname,
+      p.${fieldsI18n['description']} as product_description,
+      p.${fieldsI18n['description_full']} as product_full_description,
+      p.${fieldsI18n['content']} as product_content,
+      p.is_ruo,
+      p.is_ce,
+      p.is_coming_soon,
+      p.product_image,
+      p.description_image,
+      p.show_software_link,
+      p.${fieldsI18n['features_table']} as features_table
     FROM product p
     ${join}
     ${where}`;
 
-  return runQuery(query);
+  return runQuery(query, params);
 }
 
 async function getPathogens(language) {

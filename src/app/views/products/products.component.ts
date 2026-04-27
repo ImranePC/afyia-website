@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ParallaxDirective } from '../../directives/parallax.directive';
+import { Component, computed, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ArianeComponent } from '../../components/ariane/ariane.component';
 import { faBoxOpen, faCaretDown } from '@fortawesome/free-solid-svg-icons';
@@ -63,6 +62,8 @@ export class ProductsComponent implements OnInit {
 
   technologies: any = [];
 
+  isCategoriesLoading = true;
+
   constructor(
     private productService: ProductService,
     private translate: TranslateService,
@@ -95,6 +96,7 @@ export class ProductsComponent implements OnInit {
     // Categories
     this.productService.getProductsCategories().subscribe((data) => {
       this.categories = data;
+      this.isCategoriesLoading = false;
     });
 
     // Pathogens

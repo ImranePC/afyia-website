@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { API_URL, IMAGE_URL } from './api.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 export interface Category {
   id: string,
@@ -22,15 +23,19 @@ export interface Product {
   name: string;
   subname: string;
   description: string;
-  imageUrl: string;
+  fullDescription: SafeHtml;
+  mainImageUrl: string;
+  descriptionImageUrl: string;
+  showSoftwareLink: boolean;
   pathogens?: string[];
   technology?: string[];
-  content?: any[];
+  content?: SafeHtml;
   card?: string;
   disabled?: boolean;
   isRuo?: boolean;
   isCe?: boolean;
   isComingSoon?: boolean;
+  featuresTable?: SafeHtml,
 }
 
 @Injectable({
@@ -44,6 +49,7 @@ export class ProductService {
   constructor(
     private http: HttpClient,
     private translate: TranslateService,
+    private sanitizer: DomSanitizer,
   ) { }
 
   getProducts(pathogen?: any, technology?: any): Observable<any> {
@@ -62,11 +68,8 @@ export class ProductService {
     }
 
     return this.http.get<any[]>(`${API_URL}/products`, { headers, params }).pipe(
-      map((products) => products.map((product) => ({
-        ...product,
-        imageUrl: `${IMAGE_URL}/${product.product_image}`,
-      })))
-    );
+      map((products) => products.map((product: any) => this.mapProduct(product))
+    ));
   }
 
   getFeaturedProducts(): Observable<any> {
@@ -98,10 +101,16 @@ export class ProductService {
     )
   }
 
-  findProduct(productId: string): Observable<any> {
-    return this.getProducts().pipe(
+  getProductById(productId: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'X-App-Lang': this.translate.currentLang,
+    });
+
+    return this.http.get<any[]>(`${API_URL}/product/${productId}`, { headers }).pipe(
       map((products: any[]) => {
-        return products.find((product) => product.id === productId);
+        const product = products[0];
+
+        return this.mapProduct(product);
       })
     );
   }
@@ -116,7 +125,7 @@ export class ProductService {
         ...category,
         imageUrl: `${IMAGE_URL}/${category.image}`,
         imageAboutUrl: `${IMAGE_URL}/${category.image_about}`,
-        products: JSON.parse(category.products ?? '[]').map(this.mapProduct),
+        products: JSON.parse(category.products ?? '[]').map((p: any) => this.mapProduct(p)),
       })))
     );
   }
@@ -154,7 +163,7 @@ export class ProductService {
           ...category,
           imageUrl: `${IMAGE_URL}/${category.image}`,
           imageAboutUrl: `${IMAGE_URL}/${category.image_about}`,
-          products: JSON.parse(category.products ?? []).map(this.mapProduct),
+          products: JSON.parse(category.products ?? []).map((p: any) => this.mapProduct(p)),
         };
       })
     );
@@ -166,8 +175,15 @@ export class ProductService {
       name: raw.product_name,
       subname: raw.product_subname,
       description: raw.product_description,
-      imageUrl: `${IMAGE_URL}/${raw.product_image}`,
-      content: undefined,
+      fullDescription: this.sanitizer.bypassSecurityTrustHtml(raw.product_full_description),
+      mainImageUrl: `${IMAGE_URL}/${raw.product_image}`,
+      descriptionImageUrl: `${IMAGE_URL}/${raw.description_image}`,
+      content: this.sanitizer.bypassSecurityTrustHtml(raw.product_content),
+      isRuo: raw.is_ruo,
+      isCe: raw.is_ce,
+      isComingSoon: raw.is_coming_soon,
+      showSoftwareLink: raw.show_software_link,
+      featuresTable: this.sanitizer.bypassSecurityTrustHtml(raw.features_table),
     }
   }
 }

@@ -4,10 +4,10 @@
     role="button"
     (click)="goToProduct()"
   >
-    @if (product.imageUrl) {
+    @if (product.mainImageUrl) {
     <img
       class="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-      [src]="product.imageUrl"
+      [src]="product.mainImageUrl"
       alt="Photo produit {{ product.name }}"
     >
     } @else {

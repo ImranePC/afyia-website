@@ -38,3 +38,23 @@
     }
   }
 }
+
+.table-container {
+  @apply p-2 rounded bg-slate-50;
+
+  ::ng-deep table {
+    border-collapse: collapse;
+
+    td {
+      @apply p-2;
+    }
+
+    tr:not(:last-child) {
+      @apply border-b;
+    }
+
+    tr td:first-child {
+      @apply border-e font-bold;
+    }
+  }
+}

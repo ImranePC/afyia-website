@@ -9,6 +9,8 @@ import { AppService } from '../../../services/app.service';
 import { ModalComponent } from '../../../components/modal/modal.component';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { SoftwareLinkCardComponent } from '../../../components/software-link-card/software-link-card.component';
+import { BannerComponent } from '../../../components/banner/banner.component';
 
 @Component({
   selector: 'app-product',
@@ -22,6 +24,8 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    SoftwareLinkCardComponent,
+    BannerComponent,
   ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss'
@@ -44,6 +48,8 @@ export class ProductComponent implements OnInit {
   contactForm: FormGroup;
 
   isClient = false;
+
+  isLoading = true;
 
   constructor(
     private productService: ProductService,
@@ -77,9 +83,10 @@ export class ProductComponent implements OnInit {
   loadProduct(): void {
     const productId = this.route.snapshot.paramMap.get('id');
 
-    this.productService.findProduct(productId).subscribe((product) => {
+    this.productService.getProductById(productId).subscribe((product) => {
       this.product = product;
 
+      this.isLoading = false;
       this.setNavigationPath();
     });
   }

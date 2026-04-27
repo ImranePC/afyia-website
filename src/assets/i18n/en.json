@@ -200,13 +200,15 @@
       "content": "Need english content"
     },
     "text_2": {
-      "title": "English title please",
-      "content": "English content",
-      "list": "      <li><b>Identifier les agents pathogènes et orienter une prise en charge adaptée</b>, permettant l’administration de traitements antiviraux ou antibiotiques spécifiques.</li>       <li><b>Limiter la transmission</b> des pathogènes grâce à la mise en place de mesures d’isolement et de prévention ciblées.</li>       <li>Réduire l’usage inapproprié des antibiotiques et contribuer à la <b>lutte contre l’antibiorésistance.</b></li>       <li><b>Éviter les erreurs diagnostiques</b> qui pourraient retarder la prise en charge de pathologies graves, telles que les méningo-encéphalites virales ou certaines infections bactériennes.</li>       <li><b>Détecter précocement les épidémies</b> et ajuster les politiques de santé publique.</li>"
+      "title": "Make diagnosis <strong>accessible</strong>",
+      "content": "At <b>AFYIA Diagnostics</b>, we place <b>innovative, simple, reliable, sensitive, and affordable diagnostics</b> at the heart of our mission. Rapid and accurate identification of infectious agents is a crucial step in improving global health, particularly in settings where access to healthcare remains limited. A rapid and accurate diagnosis is essential for",
+      "list": "<li><b>Identify pathogens and guide appropriate care</b>, allowing the administration of specific antiviral or antibiotic treatments.</li> <li><b>Limit the transmission</b> of pathogens through the implementation of targeted isolation and prevention measures.</li> <li>Reduce the inappropriate use of antibiotics and contribute to the <b>fight against antibiotic resistance.</b></li> <li><b>Avoid errors \ndiagnostics</b> which could delay the treatment of serious pathologies, such as viral meningoencephalitis or certain bacterial infections.</li> <li><b>Detect epidemics early</b> and adjust public health policies.</li>"
     },
     "text_3": {
-      "content": "English"
-    }
+      "content": "Our ambition is to make high-performance diagnostics accessible to everyone, in order to better prevent, treat, and control infectious diseases on a global scale."
+    },
+    "learn_more": "Learn more",
+    "features": "Features"
   },
   "about_illness": {
     "respiratory": {

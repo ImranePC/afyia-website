@@ -75,6 +75,33 @@
   }
 }
 
+.list-dark {
+  list-style: none;
+  display: flex;
+
+  ::ng-deep li {
+    @apply p-3 rounded-xl bg-black bg-opacity-50 font-light;
+
+    b {
+      @apply font-extrabold;
+    }
+  }
+}
+
+.category-content {
+  ::ng-deep {
+    white-space: pre-line;
+
+    ul {
+      margin-left: 1em;
+
+      li {
+        list-style: disc!important;
+      }
+    }
+  }
+}
+
 @media (max-width: theme('screens.xl')) {
   .stats-container ::ng-deep ul li {
     margin: 1rem;

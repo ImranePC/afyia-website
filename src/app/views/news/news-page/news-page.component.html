@@ -9,7 +9,12 @@
     </div>
     <div class="reveal">
       <div class="text-gray-500 text-small mb-3">{{ data?.publishedAt | date:'shortDate' : undefined : currentLang }}</div>
-      <p [innerHTML]="formattedContent"></p>
+      <div class="news-content" [innerHTML]="formattedContent"></div>
+        <ul>
+          <li>Test</li>
+          <li>Test</li>
+          <li>Test</li>
+        </ul>
     </div>
   </div>
 </div>

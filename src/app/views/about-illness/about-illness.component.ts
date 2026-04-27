@@ -38,13 +38,6 @@ export class AboutIllnessComponent implements OnInit {
 
   isLoading = true;
 
-  // @ViewChild('banner')
-  // set banner(component: BannerComponent) {
-  //   if (component) {
-  //     component.reduceSize();
-  //   }
-  // }
-
   navigationPath: Path[] = [
     { name: 'header.product', link: '/products' },
   ]
@@ -64,8 +57,8 @@ export class AboutIllnessComponent implements OnInit {
     this.appService.setDark(false);
     this.appService.initScrollReveal();
 
-    this.translate.onLangChange.subscribe(() => {
-      //
+    this.translate.onLangChange.subscribe(async () => {
+      this.category = await this.loadCategory();
     })
 
     this.productService.selectedCategory$.subscribe(async (category: Category) => {
@@ -75,11 +68,17 @@ export class AboutIllnessComponent implements OnInit {
         this.path = { name: this.category.name, link: `/products/${this.category.id}`};
         this.navigationPath.push(this.path);
       } else {
-        const id = this.route.snapshot.paramMap.get('id');
-        this.category = await firstValueFrom(this.productService.getCategoryById(id));
+        this.category = await this.loadCategory();
         this.isLoading = false;
+        this.path = { name: this.category.name, link: `/products/${this.category.id}`};
         this.navigationPath.push({ name: this.category.name, link: `/products/${this.category.id}`});
       }
     });
+  }
+
+  async loadCategory() {
+    const id = this.route.snapshot.paramMap.get('id');
+
+    return await firstValueFrom(this.productService.getCategoryById(id));
   }
 }

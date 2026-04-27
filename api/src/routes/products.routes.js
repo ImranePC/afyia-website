@@ -27,6 +27,19 @@ router.get('/products', async (req, res) => {
   }
 });
 
+router.get('/product/:id', async (req, res) => {
+  const language = req.get('x-app-lang') ?? 'en';
+  const id = req.params.id;
+
+  try {
+    data = await productsController.getProducts(language, [], [], id);
+    res.json(data);
+  } catch(err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 router.get('/pathogens', async (req, res) => {
   const language = req.get('x-app-lang') ?? 'fr';
 

@@ -26,8 +26,8 @@
     <div class="title title-start z-10 mb-10 mt-5">{{ 'about_illness.about' | translate }}</div>
     <div class="bg-white rounded-xl p-5 lg:p-10 shadow-sm mb-10 animation-pop">
       <div class="xl:grid xl:grid-cols-2 flex flex-col">
-        <div [innerHTML]="category.content"></div>
-        <div class="mt-10 xl:mt-0 xl:translate-x-20 image-container">
+        <div class="category-content" [innerHTML]="category.content"></div>
+        <div class="mt-10 xl:mt-0 xl:translate-x-20 image-container max-h-[750px]">
           <img [src]="category.imageAboutUrl" alt="Photo illustration One Health">
         </div>
       </div>
@@ -44,7 +44,7 @@
     </div> -->
     <div class="stats-container mb-10 lg:mx-10" [innerHTML]="category.stats"></div>
   }
-  <div class="bg-white rounded-xl p-5 lg:p-10 shadow-sm">
+  <div class="bg-white rounded-xl p-5 lg:p-10 shadow-sm mb-10">
     <div class="title title-start title-sm z-10 mb-10">
       {{ 'about_illness.associated_products' | translate }}
     </div>
@@ -72,5 +72,10 @@
         </div>
       }
     </div>
+  </div>
+  <div class="mt-20 xl:w-2/3 mx-auto rounded-xl bg-gradient-to-b from-cyan-950 to-slate-900 text-white p-10 relative">
+    <div class="text-5xl font-bold text-center mb-5 reveal" [innerHTML]="'products.text_1.title' | translate"></div>
+    <p class="mb-5" [innerHTML]="'products.text_2.content' | translate"></p>
+    <p class="list-dark flex flex-col gap-5" [innerHTML]="'products.text_2.list' | translate"></p>
   </div>
 </div>

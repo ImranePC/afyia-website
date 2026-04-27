@@ -18,7 +18,7 @@
         <div class="col-span-2 flex flex-col justify-between lg:-ms-10 me-10">
           <div>
             <h3 [routerLink]="['/news', news.id]" class="font-bold text-4xl mb-3 mt-5 lg:mt-0">{{ news.title[currentLang] }}</h3>
-            <h4>{{ news.content[currentLang] }}</h4>
+            <h4 [innerHTML]="news.content[currentLang]"></h4>
           </div>
           <button [routerLink]="['/news', news.id]" class="btn bg-cyan-100 self-start mt-3">{{ 'news.view_more' | translate }}</button>
         </div>

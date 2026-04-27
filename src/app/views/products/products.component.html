@@ -1,6 +1,6 @@
 <app-banner [title]="'header.product' | translate" imageUrl="../../assets/img/banner/banner_products.png"></app-banner>
 
-<div class="container mb-40">
+<div class="container mb-32">
   <div class="my-10">
     <app-ariane></app-ariane>
   </div>
@@ -19,10 +19,17 @@
       </div>
     }
   </div>
+
+  <div *ngIf="isCategoriesLoading" class="skeleton-wrapper flex h-[170px] justify-start gap-5">
+    <div class="skeleton-area"></div>
+    <div class="skeleton-area"></div>
+    <div class="skeleton-area"></div>
+    <div class="skeleton-area"></div>
+  </div>
 </div>
 
 <div class="container mb-10 lg:mb-20">
-  <div class="bg-white rounded-xl shadow-sm p-5 lg:p-10 lg:pt-0 mb-10">
+  <!-- <div class="bg-white rounded-xl shadow-sm p-5 lg:p-10 lg:pt-0 mb-10">
     <h2 class="text-4xl text-center mb-5 lg:text-start lg:text-6xl lg:-translate-y-8 lg:mb-0" [innerHTML]="'products.text_1.title' | translate"></h2>
     <p [innerHTML]="'products.text_1.content' | translate"></p>
   </div>
@@ -31,16 +38,12 @@
     <div class="image-container">
       <img class="w-full" src="assets/img/img_diag_insuffisant.png" alt="Infographie sur la tuberculose">
     </div>
-  </div>
+  </div> -->
 
   <div class="bg-white p-5 lg:p-10 lg:pt-0 lg:mt-20 shadow-sm rounded-xl">
-    <h2 class="text-4xl text-center mb-5 lg:text-6xl lg:-translate-y-8 lg:mb-0" [innerHTML]="'products.text_2.title' | translate"></h2>
-    <p [innerHTML]="'products.text_2.content' | translate">
-      Chez <b>AFYIA Diagnostics</b>, nous plaçons le <b>diagnostic innovant, simple, fiable, sensible et abordable</b> au cœur de notre mission. Identifier rapidement et avec précision les agents infectieux est une étape essentielle pour améliorer la santé mondiale, en particulier dans les contextes où l’accès aux soins reste limité.
-
-      Un <b>diagnostic rapide et précis</b> est essentiel pour :
-    </p>
-    <ul class="ms-10 primary-list text-xl mt-5" [innerHTML]="'products.text_2.list' | translate"></ul>
+    <h2 class="text-3xl font-bold text-center mb-5 lg:text-5xl lg:-translate-y-1/2 lg:mb-0" [innerHTML]="'products.text_2.title' | translate"></h2>
+    <p [innerHTML]="'products.text_2.content' | translate"></p>
+    <div class="ms-10 primary-list text-xl mt-5" [innerHTML]="'products.text_2.list' | translate"></div>
   </div>
 
   <div class="bg-cyan-500 bg-opacity-10 p-5 lg:p-10 rounded-xl my-10">

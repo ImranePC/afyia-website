@@ -206,7 +206,9 @@
     },
     "text_3": {
       "content": "Notre ambition est de <b>rendre le diagnostic de haute performance accessible à tous</b>, afin de mieux prévenir, traiter et contrôler les maladies infectieuses à l’échelle mondiale."
-    }
+    },
+    "learn_more": "En savoir plus",
+    "features": "Caractéristiques"
   },
   "about_illness": {
     "respiratory": {
