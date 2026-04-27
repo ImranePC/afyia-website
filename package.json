@@ -11,7 +11,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "start-api": "nodemon api/server.js",
-    "serve:ssr:afyia-website": "node dist/afyia-website/server/server.mjs"
+    "serve:ssr:afyia-website": "node dist/afyia-website/server/server.mjs",
+    "create-snapshot": "sudo docker compose exec directus npx directus schema snapshot /directus/database/snapshot.yaml"
   },
   "private": true,
   "dependencies": {
