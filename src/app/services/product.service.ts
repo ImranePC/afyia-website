@@ -80,7 +80,7 @@ export class ProductService {
     return this.http.get<any[]>(`${API_URL}/products/featured`, { headers }).pipe(
       map((products) => products.map((product) => ({
         ...product,
-        imageUrl: `${IMAGE_URL}/${product.product_image}`,
+        mainImageUrl: `${IMAGE_URL}/${product.product_image}`,
       })))
     );
   }
