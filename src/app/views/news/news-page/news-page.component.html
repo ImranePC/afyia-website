@@ -1,7 +1,9 @@
-<!-- <div class="banner banner--dark" appParallax [ratio]="-0.3" style="background-image: url('{{ data?.fullBannerUrl }}')">
-  <h1 class="reveal text-6xl">{{ data?.title[currentLang] }}</h1>
-</div> -->
-<app-banner [title]="data?.title[currentLang]" [dark]=true [imageUrl]="data?.fullBannerUrl"></app-banner>
+<app-banner
+  [title]="data?.title[currentLang]"
+  [dark]="true"
+  [imageUrl]="data?.fullBannerUrl"
+  [titleSmall]="true"
+></app-banner>
 <div class="container">
   <div class="relative -mt-20 z-1 mx-auto lg:w-8/12 bg-white shadow-sm rounded-xl p-5 lg:p-10">
     <div class="absolute -top-14 left-0 text-white">
@@ -10,11 +12,6 @@
     <div class="reveal">
       <div class="text-gray-500 text-small mb-3">{{ data?.publishedAt | date:'shortDate' : undefined : currentLang }}</div>
       <div class="news-content" [innerHTML]="formattedContent"></div>
-        <ul>
-          <li>Test</li>
-          <li>Test</li>
-          <li>Test</li>
-        </ul>
     </div>
   </div>
 </div>

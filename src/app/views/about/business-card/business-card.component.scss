@@ -27,7 +27,10 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
     overflow: hidden;
+    transform-style: preserve-3d;
 
     .icon-background {
       position: absolute;
@@ -36,7 +39,6 @@
       opacity: 0.05;
       color: $primary;
       font-size: 16em;
-
       transform: rotate(20deg);
     }
   }

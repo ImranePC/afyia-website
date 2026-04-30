@@ -23,7 +23,8 @@
       <div class="bg-slate-200 h-3 rounded w-2/3"></div>
     </div>
   } @else {
-    <div class="title title-start z-10 mb-10 mt-5">{{ 'about_illness.about' | translate }}</div>
+    <div class="stats-container mb-10 lg:mx-10" [innerHTML]="category.stats"></div>
+    <div class="title title-start z-10 mb-10">{{ 'about_illness.about' | translate }}</div>
     <div class="bg-white rounded-xl p-5 lg:p-10 shadow-sm mb-10 animation-pop">
       <div class="xl:grid xl:grid-cols-2 flex flex-col">
         <div class="category-content" [innerHTML]="category.content"></div>
@@ -32,17 +33,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="bg-cyan-300 bg-opacity-20 rounded-xl p-5 lg:p-10 lg:pt-0 shadow-sm mb-10 lg:mt-20">
-      <div class="text-xl text-center text-bold lg:text-4xl lg:-translate-y-1/2 text-cyan-900">L'importance du <strong>diagnostic</strong></div>
-      <p class="text-cyan-900">
-        Un diagnostic rapide et précis est essentiel pour une prise en charge efficace et responsable. <br>
-        Identifier les agents pathogènes et administrer une prise en charge adaptée.
-        Limiter la transmission en mettant en place des mesures d’isolement et de prévention.
-        Réduire l’usage inapproprié des antibiotiques et lutter contre l’antibiorésistance.
-        Détecter précocement les épidémies et ajuster les politiques de santé publique.
-      </p>
-    </div> -->
-    <div class="stats-container mb-10 lg:mx-10" [innerHTML]="category.stats"></div>
   }
   <div class="bg-white rounded-xl p-5 lg:p-10 shadow-sm mb-10">
     <div class="title title-start title-sm z-10 mb-10">

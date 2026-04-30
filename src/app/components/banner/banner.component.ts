@@ -1,7 +1,6 @@
-import { AfterViewInit, Component, computed, input, Input, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, computed, Input, OnDestroy } from '@angular/core';
 import { ParallaxDirective } from '../../directives/parallax.directive';
 import { AppService } from '../../services/app.service';
-import { trigger, state, style, animate, transition } from '@angular/animations';
 import { SafeHtml } from '@angular/platform-browser';
 
 @Component({
@@ -17,6 +16,9 @@ export class BannerComponent implements AfterViewInit, OnDestroy {
 
   @Input()
   title: string | SafeHtml;
+
+  @Input()
+  titleSmall: boolean = false;
 
   @Input()
   dark = false;

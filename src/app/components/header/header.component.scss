@@ -30,7 +30,7 @@
       color: white;
 
       &:hover {
-        color: $primary;
+        color: $primary-light;
       }
     }
 
@@ -66,13 +66,13 @@
       transition: $transition-1;
 
       &:hover {
-        color: $primary;
+        color: $primary-light;
       }
     }
   }
 
   .active {
-    color: $primary;
+    color: $primary-light!important;
   }
 
   .submenu {

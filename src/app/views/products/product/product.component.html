@@ -59,17 +59,17 @@
   </div>
   <div class="bg-white rounded-xl shadow-sm p-5 lg:p-10 mb-10">
     <h3 class="title title-sm title-start z-10 mb-5">{{ 'products.learn_more' | translate }}</h3>
-    <div class="flex justify-between gap-5 flex-col lg:flex-row">
+    <div class="flex justify-between gap-5 flex-col xl:flex-row">
       @if (isLoading) {
       <div class="skeleton-wrapper">
         <div class="skeleton-text-line"></div>
         <div class="skeleton-text-line"></div>
       </div>
       } @else {
-        <p [innerHTML]="product.fullDescription"></p>
+        <p class="w-full xl:w-2/3" [innerHTML]="product.fullDescription"></p>
         <img
           *ngIf="product.descriptionImageUrl"
-          class="rounded-xl w-full lg:w-1/3"
+          class="rounded-xl w-full h-auto xl:h-full xl:w-auto"
           [src]="product.descriptionImageUrl"
           alt="image description product"
         >

@@ -80,7 +80,7 @@
   display: flex;
 
   ::ng-deep li {
-    @apply p-3 rounded-xl bg-black bg-opacity-50 font-light;
+    @apply py-3 px-5 rounded-xl bg-black bg-opacity-50 font-light;
 
     b {
       @apply font-extrabold;

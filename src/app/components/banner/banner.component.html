@@ -7,7 +7,7 @@
   [ratio]="-0.3"
   style="background-image: url('{{ imageUrl }}')"
 >
-  <div [class]="{'opacity-0': isSmall(), 'opacity-100': !isSmall()}">
-    <h1 class="reveal">{{ title }}</h1>
+  <div>
+    <h1 [class.text-3xl]="titleSmall" class="reveal">{{ title }}</h1>
   </div>
 </div>

@@ -19,7 +19,10 @@
   }
 
   &--small {
-    @apply text-6xl;
     min-height: 150px;
+
+    h1 {
+      display: none;
+    }
   }
 }
