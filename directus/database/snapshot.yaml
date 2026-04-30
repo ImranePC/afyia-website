@@ -774,7 +774,7 @@ fields:
       name: published_at
       table: news
       data_type: datetime
-      default_value: CURRENT_DATE
+      default_value: null
       max_length: null
       numeric_precision: null
       numeric_scale: null
@@ -2638,7 +2638,22 @@ fields:
       hidden: false
       interface: input-rich-text-html
       note: null
-      options: null
+      options:
+        toolbar:
+          - bold
+          - italic
+          - alignleft
+          - aligncenter
+          - alignright
+          - alignjustify
+          - numlist
+          - bullist
+          - removeformat
+          - customLink
+          - customImage
+          - hr
+          - code
+          - fullscreen
       readonly: false
       required: true
       sort: 5
@@ -2677,7 +2692,22 @@ fields:
       hidden: false
       interface: input-rich-text-html
       note: null
-      options: null
+      options:
+        toolbar:
+          - bold
+          - italic
+          - alignleft
+          - aligncenter
+          - alignright
+          - alignjustify
+          - numlist
+          - bullist
+          - removeformat
+          - customLink
+          - customImage
+          - hr
+          - code
+          - fullscreen
       readonly: false
       required: true
       sort: 10
