@@ -15,7 +15,7 @@
           "address_more": "Address - Additional information",
           "contact_email": "Contact email"
         },
-        "title": "Contact us",
+        "title": "Leave a message",
         "subject": {
           "command": "Order",
           "question": "Information",
@@ -196,7 +196,7 @@
     },
     "no_result": "No products found.",
     "text_1": {
-      "title": "English <strong>title</strong>",
+      "title": "An <strong>insufficient</strong> diagnosis",
       "content": "Need english content"
     },
     "text_2": {
@@ -258,8 +258,8 @@
       },
       "reynes": {
         "title": "Biostatitic Manager",
-        "text_1": "Coming soon",
-        "text_2": "Coming soon 2"
+        "text_1": "-",
+        "text_2": "-"
       },
       "avarre": {
         "title": "Scientific Consultant",
