@@ -6,6 +6,8 @@ import { AppService } from '../../services/app.service';
 import { CtaComponent } from '../../components/cta/cta.component';
 import { ParallaxDirective } from '../../directives/parallax.directive';
 import { Product, ProductService } from '../../services/product.service';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { fromEvent, map, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -47,6 +49,14 @@ export class HomeComponent implements OnInit {
     'assets/img/img_onehealth_sm.jpg',
     'assets/img/buildings_background_sm.jpg',
   ];
+
+  isMobileLayout = toSignal(
+    fromEvent(window, 'resize').pipe(
+      startWith(null),
+      map(() => window.innerWidth < 1280)
+    ),
+    { initialValue: window.innerWidth < 1280 }
+  );
 
   constructor(private appService: AppService, private productService: ProductService) { }
 

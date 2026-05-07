@@ -3,12 +3,12 @@
     <input id="user_email" class="text-dark" type="email" formControlName="user_email" maxlength="50" placeholder="your@email.com">
   </div>
   <button
-    class="btn btn-lg text-white hover:text-white bg-cyan-800 text-lg self-start z-10 lg:self-center text-center lg:whitespace-nowrap h-full"
+    class="btn btn-lg flex items-center text-white hover:text-white bg-cyan-800 text-lg self-start z-10 lg:self-center text-center lg:whitespace-nowrap h-full"
     [class.disabled]="!newsletterForm.valid"
     (click)="subscribeNewsletter()"
   >
     {{ 'contact.sections.title.button' | translate }}
-    <fa-icon class="ms-1" [icon]="faNewspaper"></fa-icon>
+    <fa-icon class="inline ms-1" [icon]="faNewspaper"></fa-icon>
   </button>
 </div>
 

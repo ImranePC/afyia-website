@@ -1,8 +1,14 @@
-<div id="banner" class="relative reveal mx-10 my-5">
-  <div appParallax [ratio]="-0.3" [offsetY]="-200" class="home-banner rounded-2xl"></div>
-  <div class="absolute reveal top-1/2 w-full text-5xl font-extralight text-center -translate-y-1/2">
-    <span class="text-white text-shadow-lg strong-white" [innerHtml]="'welcome' | translate"></span><br>
-    <button class="btn mt-5 text-2xl lg:text-lg bg-white" (click)="scrollTo('product')">{{ 'sections.product.button' | translate }}</button>
+<div id="banner" class="relative flex flex-col align-items-center justify-center reveal mx-10 my-5">
+  @if (isMobileLayout()) {
+    <div class="home-banner rounded-2xl"></div>
+  } @else {
+    <div appParallax [ratio]="-0.3" [offsetY]="-200" class="home-banner rounded-2xl"></div>
+  }
+  <div class="absolute flex flex-col justify-center top-0 left-0 h-full w-full text-2xl md:text-3xl lg:text-5xl font-extralight text-center reveal">
+    <div>
+      <div class="text-white text-shadow-lg strong-white px-5" [innerHtml]="'welcome' | translate"></div>
+      <button class="btn mt-5 text-lg lg:text-xl bg-white" (click)="scrollTo('product')">{{ 'sections.product.button' | translate }}</button>
+    </div>
   </div>
 </div>
 
@@ -24,7 +30,7 @@
       </div>
       <div class="relative lg:-mt-10 lg:translate-x-10">
         <div class="image-container reveal">
-          <img appParallax [ratio]="-0.3" [offsetY]="-200" src="assets/img/team/img_ben.jpg" alt="Afyia Benjamin SAULDE">
+          <img src="assets/img/team/img_ben.jpg" alt="Afyia Benjamin SAULDE">
         </div>
       </div>
     </div>
@@ -60,8 +66,8 @@
         </p>
         <div class="
           mx-auto gap-5 flex flex-col
-          md:gap-10 md:grid md:grid-cols-2 md:grid-rows-2
-          xl:flex xl:flex-row
+          md:grid md:grid-cols-2 md:grid-rows-2
+          xl:flex xl:flex-row xl:gap-10
         ">
           <app-card-link
             class="grow hover-hightlight"
@@ -100,7 +106,7 @@
   </div>
   <div class="
     flex flex-wrap justify-center mx-auto reveal w-full
-    lg:grid-cols-2
+    lg:grid-cols-2²
     xl:px-20
   ">
     @for (product of products; track product) {

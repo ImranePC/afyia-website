@@ -1,12 +1,12 @@
 <div class="flex flex-col lg:flex-row gap-3 lg:pb-0 lg:gap-5" [class.disabled]="product?.disabled">
   <div
-    class="image-card-container relative h-[150px] w-full lg:w-[240px] bg-slate-100 rounded-xl overflow-hidden hover:text-blue"
+    class="image-card-container relative h-[200px] w-full lg:h-[150px] lg:min-w-[240px] lg:max-w-[240px] bg-slate-100 rounded-xl overflow-clip hover:text-blue"
     role="button"
     (click)="goToProduct()"
   >
     @if (product.mainImageUrl) {
     <img
-      class="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      class="w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:scale-150"
       [src]="product.mainImageUrl"
       alt="Photo produit {{ product.name }}"
     >

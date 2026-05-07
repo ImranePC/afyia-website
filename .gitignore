@@ -48,3 +48,4 @@ Thumbs.db
 /api/afyiadb.sqlite
 /directus/uploads/*
 /directus/database/afyiadb.sqlite
+docker-compose.override.yml

@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: center;
   transition: 0.28s;
-  overflow: hidden;
+  overflow: clip;
 
   &:hover {
     .btn {

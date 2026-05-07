@@ -66,10 +66,10 @@
         <div class="skeleton-text-line"></div>
       </div>
       } @else {
-        <p class="w-full xl:w-2/3" [innerHTML]="product.fullDescription"></p>
+        <p class="xl:w-2/3" [innerHTML]="product.fullDescription"></p>
         <img
           *ngIf="product.descriptionImageUrl"
-          class="rounded-xl w-full h-auto xl:h-full xl:w-auto"
+          class="xl:w-1/3 rounded-xl"
           [src]="product.descriptionImageUrl"
           alt="image description product"
         >

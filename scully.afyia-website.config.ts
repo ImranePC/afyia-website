@@ -7,5 +7,5 @@ export const config: ScullyConfig = {
   outDir: './dist/static',
   defaultPostRenderers: [],
   routes: {},
-  extraRoutes: ['/contact', '/about', '/news', '/software', '/legal-mentions', '/news/:id', '/private-login', '/manage-news', '/manage-news/:id']
+  extraRoutes: ['/contact', '/about', '/news', '/software', '/legal-mentions', '/news/:id', '/private-login', '/manage-news', '/manage-news/:id', '/products', 'products/:id', '/product/:id']
 };
