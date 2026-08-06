@@ -75,19 +75,6 @@
   }
 }
 
-.list-dark {
-  list-style: none;
-  display: flex;
-
-  ::ng-deep li {
-    @apply py-3 px-5 rounded-xl bg-black bg-opacity-50 font-light;
-
-    b {
-      @apply font-extrabold;
-    }
-  }
-}
-
 .category-content {
   ::ng-deep {
     white-space: pre-line;

@@ -2,13 +2,13 @@
   #banner
   size="small"
   [title]="'header.product' | translate"
-  imageUrl="../../assets/img/banner/banner_products.png"
+  imageUrl="../../assets/img/banner/banner_products.webp"
 ></app-banner>
 <div class="container">
   <div class="my-10">
     <app-ariane [path]="navigationPath"></app-ariane>
   </div>
-  <button class="btn btn-white mb-5" routerLink="/products">{{ 'products.back' | translate }}</button>
+  <button class="btn btn-white mb-5" [routerLink]="['/', currentLang, 'products']">{{ 'products.back' | translate }}</button>
   <div *ngIf="!isLoading" class="illness-banner mb-10 animation-pop" style="background-image: url('{{ category.imageUrl }}')">
     <div>
       <h1>{{ category.name }}</h1>
@@ -62,10 +62,5 @@
         </div>
       }
     </div>
-  </div>
-  <div class="mt-20 xl:w-2/3 mx-auto rounded-xl bg-gradient-to-b from-cyan-950 to-slate-900 text-white p-10 relative">
-    <div class="text-5xl font-bold text-center mb-5 reveal" [innerHTML]="'products.text_1.title' | translate"></div>
-    <p class="mb-5" [innerHTML]="'products.text_2.content' | translate"></p>
-    <p class="list-dark flex flex-col gap-5" [innerHTML]="'products.text_2.list' | translate"></p>
   </div>
 </div>

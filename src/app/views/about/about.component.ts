@@ -1,5 +1,4 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { ParallaxDirective } from '../../directives/parallax.directive';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -13,7 +12,6 @@ import { BannerComponent } from '../../components/banner/banner.component';
   selector: 'app-about',
   standalone: true,
   imports: [
-    ParallaxDirective,
     FontAwesomeModule,
     TranslateModule,
     CtaComponent,
