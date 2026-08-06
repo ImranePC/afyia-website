@@ -1,24 +1,5 @@
 @import '../../../assets/scss/variables.scss';
 
-.shadow-background {
-  text-shadow: 0 0 30px $background-color, 0 0 30px $background-color, 0 0 30px $background-color, 0 0 30px $background-color;
-}
-
-.card-transition {
-  opacity: 0;
-  transform: translateY(2rem); // rotate(-10deg) scale(1.05);
-  transition: 0.3s;
-}
-
-.card-bg-image {
-  height: 450px;
-  width: 300px;
-  background-image: url('../../../assets/img/img_molecule.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .title-gradient {
   background: linear-gradient(to right, #00fbff 20%, $primary-dark);
   -webkit-background-clip: text;
@@ -57,42 +38,12 @@
   }
 }
 
-.scroll-container {
-  z-index: 10;
-  width: 100%;
-  margin: auto;
-  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-
-  .scroller {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 3rem;
-    padding-top: 1em;
-    width: 100%;
-    margin: auto;
-    overflow-x: auto;
-    overflow-y: hidden;
-    justify-content: center;
-    user-select: none!important;
-    scroll-margin: 20px;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    img {
-      @apply rounded-xl;
-      height: 300px;
-      pointer-events: none!important;
-    }
-  }
-}
-
 .home-banner {
+  position: relative;
   width: 100%;
   height: 500px;
   background-position: center;
   background-size: cover;
-  background-image: url('../../../assets/img/banner/banner_home.jpg');
-  filter: brightness(140%);
+  background-image: url('../../../assets/img/banner/banner_home.webp');
+  filter: brightness(120%);
 }
