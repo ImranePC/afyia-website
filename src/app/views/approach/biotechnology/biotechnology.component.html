@@ -1,0 +1,39 @@
+<app-banner [title]="'header.biotechnology' | translate" imageUrl="../../assets/img/banner/banner_biotechnology.webp"></app-banner>
+
+<div class="container">
+  <div class="mx-auto mt-10 lg:mt-20 lg:w-8/12 bg-white shadow-sm rounded-xl mb-20 p-5 lg:p-10 lg:pt-0">
+    <h2 class="text-5xl mb-5 lg:text-7xl lg:-translate-y-8 lg:mb-0" [innerHTML]="'biotechnology.title_1' | translate"></h2>
+    <div class="grid lg:grid-cols-2">
+      <p class="mb-5 lg:mb-0 self-center" [innerHTML]="'biotechnology.description_1' | translate"></p>
+      <div class="relative lg:translate-x-20">
+        <div class="image-container max-h-[400px]">
+          <img class="w-full" src="assets/img/team/img_paillasse_1.jpg" alt="Photo utilisateur disoft logiciel" title="Photo utilisateur disoft logiciel">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto lg:w-8/12 bg-white shadow-sm rounded-xl mb-20 p-5 lg:p-10 lg:pt-0 reveal">
+    <h2 class="text-4xl text-center mb-5 lg:text-end lg:text-6xl lg:-translate-y-8 lg:mb-0" [innerHTML]="'software.subtitle_2' | translate"></h2>
+    <div class="grid lg:grid-cols-2">
+      <div class="mb-5 lg:-translate-x-20 lg:mb-0">
+        <div class="shadow image-container">
+          <img src="assets/img/img_peignage_moleculaire.webp" alt="Peinage moléculaire" title="Peinage moléculaire">
+        </div>
+      </div>
+      <p class="self-center" [innerHTML]="'biotechnology.description_2' | translate"></p>
+    </div>
+  </div>
+
+  <div class="mx-auto lg:w-8/12 bg-white shadow-sm rounded-xl mb-20 p-5 lg:p-10 reveal">
+    <!-- <h2 class="text-5xl mb-5 lg:text-7xl text-center lg:-translate-y-8 lg:mb-0" [innerHTML]="'software.subtitle' | translate"></h2> -->
+    <div class="grid lg:grid-cols-2">
+      <p class="mb-5 lg:mb-0 self-center" [innerHTML]="'biotechnology.description_3' | translate"></p>
+      <div class="lg:translate-x-20">
+        <div class="image-container image-container--scaled">
+          <img src="assets/img/img_labo_1.jpg" alt="Photo laboratoire" title="Photo laboratoire">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
