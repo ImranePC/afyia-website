@@ -5,7 +5,7 @@
   background-image: url('../../../assets/img/buildings_background_sm.jpg');
   background-size: cover;
   background-position: 0 50%;
-  overflow: hidden;
+  overflow: clip;
 
   &::before {
     position: absolute;

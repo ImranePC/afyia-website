@@ -19,29 +19,8 @@
   align-items: center;
   box-shadow: 0px 4px 25px 0px rgba($primary-dark, 5%);
   transition: 0.35s;
-  font-size: 18px;
+  font-size: 16px;
   border: 1px solid transparent;
-
-  &--dark {
-    background-color: rgba(black, 0.1);
-    border: 1px solid #ffffff1c;
-
-    nav > ul li > a {
-      color: white;
-
-      &:hover {
-        color: $primary-light;
-      }
-    }
-
-    .dark-btn {
-      color: white;
-    }
-
-    img {
-      filter: brightness(1.4)!important;
-    }
-  }
 
   div:first-child {
     transition: $transition-1;
@@ -55,21 +34,57 @@
   nav > ul {
     list-style-type: none;
     display: flex;
-    gap: 24px;
+    gap: 8px;
     transition: $transition-1;
+    align-items: center;
+    white-space: nowrap;
 
     li > a {
       cursor: pointer;
-    }
+      border-radius: 100px;
+      padding: 0.5rem 1rem;
+      vertical-align: middle;
 
-    button {
-      transition: $transition-1;
+      svg {
+        transition: $transition-1;
+      }
 
       &:hover {
         color: $primary-light;
+        background-color: rgba($primary-dark, 0.05);
+
+        svg {
+          rotate: 180deg;
+        }
       }
     }
   }
+
+  &--dark {
+    background-color: rgba(black, 0.2);
+    border: 1px solid #ffffff1c;
+
+    nav > ul li > a {
+      color: white;
+
+      &:hover {
+        background-color: rgba(white, 0.1);
+      }
+    }
+
+    img {
+      filter: brightness(1.4)!important;
+    }
+
+    .btn-lang {
+      color: white;
+
+      &:hover {
+        background-color: rgba(white, 0.1)!important;
+      }
+    }
+  }
+
 
   .active {
     color: $primary-light!important;
@@ -87,6 +102,56 @@
       color: black;
     }
   }
+}
+
+@mixin dropdown-trigger {
+  transition: $transition-1;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  vertical-align: middle;
+
+  .dropdown-content {
+    @apply shadow rounded-xl animation-pop;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    display: none;
+    color: initial;
+    background-color: white;
+    z-index: 10;
+    white-space: nowrap;
+
+    ul {
+      @apply text-sm flex flex-col m-2 gap-2;
+
+      li {
+        @apply px-3 py-2 rounded-lg;
+
+        &:hover, &.active {
+          @apply bg-gray-100;
+        }
+      }
+    }
+
+    &--left {
+      left: 25%;
+    }
+  }
+
+  &:hover {
+    color: $primary-light;
+    background-color: rgba($primary-dark, 0.05);
+
+    .dropdown-content {
+      display: block;
+    }
+  }
+}
+
+.btn-lang,
+.btn-approach {
+  @include dropdown-trigger;
 }
 
 @media (max-width: theme('screens.lg')) {

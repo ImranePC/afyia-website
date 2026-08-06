@@ -4,8 +4,12 @@
     lg:flex-row lg:text-start lg:gap-0
   ">
     <div>
+    @if (newsletter) {
       <span class="block mb-2 text-3xl lg:text-5xl font-extrabold">{{ 'sections.cta.speech' | translate }}</span>
+    } @else {
+      <span class="block mb-2 text-3xl lg:text-5xl font-extrabold">{{ 'sections.cta.vision' | translate }}</span>
       <span class="block text-lg lg:text-2xl font-extralight">{{ 'sections.cta.text' | translate }} - <b>info&#64;afyia-diagnostics.com</b></span>
+    }
     </div>
     @if (newsletter) {
       <app-newsletter-button></app-newsletter-button>

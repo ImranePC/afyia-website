@@ -7,14 +7,18 @@
   justify-content: center;
   position: relative;
   text-align: center;
-  min-height: 400px;
-  background-image: url('../../../assets/img/buildings_background.jpg');
-  background-size: cover;
+  height: 400px;
+  overflow: clip;
 
   h1 {
     @apply px-10;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: white;
+    inset: 0;
     text-shadow: 0 4px 8px rgba(black, 0.33);
   }
 
@@ -24,5 +28,9 @@
     h1 {
       display: none;
     }
+  }
+
+  img {
+    object-fit: cover;
   }
 }

@@ -1,13 +1,9 @@
 <div
-  appParallax
   id="banner"
   class="banner"
   [class.banner--small]="isSmall()"
   [class.banner--dark]="dark"
-  [ratio]="-0.3"
-  style="background-image: url('{{ imageUrl }}')"
 >
-  <div>
-    <h1 [class.text-3xl]="titleSmall" class="reveal">{{ title }}</h1>
-  </div>
+  <img appParallaxImg [ratio]="-0.3" [src]="imageUrl">
+  <h1 [class.text-3xl]="titleSmall" class="reveal">{{ title }}</h1>
 </div>

@@ -6,50 +6,65 @@
     <nav class="hidden lg:block">
       <ul>
         <li><a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">{{ 'header.home' | translate }}</a></li>
-        <li><a routerLink="/software" routerLinkActive="active">{{ 'header.technology' | translate }}</a></li>
-        <li><a routerLink="/products" routerLinkActive="active">{{ 'header.product' | translate }}</a></li>
-        <li><a routerLink="/news" routerLinkActive="active">{{ 'header.news' | translate }}</a></li>
-        <li><a routerLink="/about" routerLinkActive="active">{{ 'header.about' | translate }}</a></li>
-        <li><a routerLink="/contact" routerLinkActive="active">{{ 'header.contact' | translate }}</a></li>
-        <li class="border-s ps-6" (clickOutside)="closeDropdown(langDropDown, $event)">
-          <button class="dark-btn inline-flex items-center" (click)="toggleDropDown(langDropDown)">
-            <span class="inline w-[14px]">{{ currentLang | uppercase }}</span>
-            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <li class="relative">
+          <a class="btn-approach">
+            <span>{{ 'header.approach' | translate }}</span>
+            <svg class="w-2.5 h-2.5 ms-2 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
             </svg>
-          </button>
-          <div
-            #langDropDown
-            class="z-10 absolute bg-white rounded-xl shadow -translate-x-1/2 animation-pop"
-            style="display: none"
-          >
-            <ul class="text-sm flex flex-col text-left m-2 gap-2">
-              <li>
-                <button
-                  class="inline-block py-1 pe-4 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
+            <div class="dropdown-content">
+              <ul>
+                <li role="button" [routerLink]="['/', currentLang, 'software']" routerLinkActive="active">
+                  {{ 'header.technology' | translate }}
+                </li>
+                <li role="button" [routerLink]="['/', currentLang, 'biotechnology']" routerLinkActive="active">
+                  {{ 'header.biotechnology' | translate }}
+                </li>
+                <li role="button" [routerLink]="['/', currentLang, 'industrial-process']" routerLinkActive="active">
+                  {{ 'header.process' | translate }}
+                </li>
+                <li role="button" [routerLink]="['/', currentLang, 'human-health']" routerLinkActive="active">
+                  {{ 'header.health' | translate }}
+                </li>
+              </ul>
+            </div>
+          </a>
+        </li>
+        <li><a [routerLink]="['/', currentLang, 'products']" routerLinkActive="active">{{ 'header.product' | translate }}</a></li>
+        <li><a [routerLink]="['/', currentLang, 'news']" routerLinkActive="active">{{ 'header.news' | translate }}</a></li>
+        <li><a [routerLink]="['/', currentLang, 'about']" routerLinkActive="active">{{ 'header.about' | translate }}</a></li>
+        <li><a [routerLink]="['/', currentLang, 'contact']" routerLinkActive="active">{{ 'header.contact' | translate }}</a></li>
+        <li class="border-s ps-2 relative">
+          <a class="btn-lang">
+            <span>{{ currentLang | uppercase }}</span>
+            <svg class="w-2.5 h-2.5 ms-2 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+            </svg>
+            <div class="dropdown-content dropdown-content--left">
+              <ul>
+                <li
+                  role="button"
                   [ngClass]="{'bg-gray-100 pointer-events-none' : isLanguageSelected('fr')}"
-                  (click)="selectLanguage('fr'); closeDropdown(langDropDown, $event)"
+                  (click)="selectLanguage('fr')"
                 >
-                  <img class="inline-block ms-4" width="20px" src="assets/img/emoji_fl_fr.png" alt="French flag emoji">
+                  <img class="inline-block" width="20px" src="assets/img/emoji_fl_fr.png" alt="French flag emoji">
                   <span class="ms-2 me-4">Français</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  class="inline-block py-1 pe-4 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
+                </li>
+                <li
+                  role="button"
                   [ngClass]="{'bg-gray-100 pointer-events-none' : isLanguageSelected('en')}"
-                  (click)="selectLanguage('en'); closeDropdown(langDropDown, $event)"
+                  (click)="selectLanguage('en')"
                 >
-                  <img class="inline-block ms-4" width="20px" src="assets/img/emoji_fl_en.png" alt="French flag emoji">
+                  <img class="inline-block" width="20px" src="assets/img/emoji_fl_en.png" alt="English flag emoji">
                   <span class="ms-2 me-4">English</span>
-                </button>
-              </li>
-            </ul>
-          </div>
+                </li>
+              </ul>
+            </div>
+          </a>
         </li>
       </ul>
     </nav>
-    <button class="dark-btn lg:hidden px-3" (click)="openDropdown(mobileSubmenu, $event)" (clickOutside)="closeDropdown(mobileSubmenu, $event)">
+    <button class="btn-lang lg:hidden px-3" (click)="openDropdown(mobileSubmenu, $event)" (clickOutside)="closeDropdown(mobileSubmenu, $event)">
       <fa-icon class="ms-1" [icon]="faBars" size="lg"></fa-icon>
       <div
         #mobileSubmenu
@@ -64,16 +79,16 @@
             <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.home' | translate }}</a>
           </div>
           <div class="p-2">
-            <a routerLink="/software" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.technology' | translate }}</a>
+            <a [routerLink]="['/', currentLang, 'software']" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.technology' | translate }}</a>
           </div>
           <div class="p-2">
-            <a routerLink="/products" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.product' | translate }}</a>
+            <a [routerLink]="['/', currentLang, 'products']" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.product' | translate }}</a>
           </div>
           <div class="p-2">
-            <a routerLink="/news" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.news' | translate }}</a>
+            <a [routerLink]="['/', currentLang, 'news']" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.news' | translate }}</a>
           </div>
           <div class="p-2">
-            <a routerLink="/about" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.about' | translate }}</a>
+            <a [routerLink]="['/', currentLang, 'about']" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.about' | translate }}</a>
           </div>
           <div class="p-2">
             <a routerLink="/contact" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.contact' | translate }}</a>

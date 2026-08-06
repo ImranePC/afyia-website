@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBars, faCaretDown, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -37,7 +37,12 @@ export class HeaderComponent {
 
   faTimes = faTimes;
 
-  constructor(private translate: TranslateService, private cookie: CookieService, private appService: AppService) {
+  constructor(
+    private translate: TranslateService,
+    private cookie: CookieService,
+    private appService: AppService,
+    private router: Router,
+  ) {
   }
 
   @HostListener('window:scroll')
@@ -61,8 +66,11 @@ export class HeaderComponent {
   }
 
   selectLanguage(language: string): void {
-    this.translate.use(language);
     this.cookie.set('language', language);
+
+    const currentUrl = this.router.url;
+    const newUrl = currentUrl.replace(/^\/(fr|en)/, `${language}`);
+    window.location.href = newUrl;
   }
 
   toggleDropDown(dropdown: HTMLElement): void {

@@ -2,11 +2,13 @@ import { AfterViewInit, Component, computed, Input, OnDestroy } from '@angular/c
 import { ParallaxDirective } from '../../directives/parallax.directive';
 import { AppService } from '../../services/app.service';
 import { SafeHtml } from '@angular/platform-browser';
+import { NgOptimizedImage } from '@angular/common';
+import { ParallaxImgDirective } from '../../directives/parallax-img.directive';
 
 @Component({
   selector: 'app-banner',
   standalone: true,
-  imports: [ParallaxDirective],
+  imports: [ParallaxDirective, ParallaxImgDirective, NgOptimizedImage],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
 })
