@@ -84,11 +84,8 @@
     <div id="timeline_element_4" class="timeline-element inactive">
       <div class="date">2023</div>
       <div class="description">
-        <span [innerHTML]="'about.timeline.2023.1' | translate"></span>
-        <div class="mt-5 mb-10">
-          <img class="h-[80px]" src="assets/img/logo_irba.png" alt="Logo IRBA" title="Logo IRBA">
-        </div>
-        <span class="text-2xl" [innerHTML]="'about.timeline.2023.2' | translate"></span>
+        <span class="block mb-5" [innerHTML]="'about.timeline.2023.1' | translate"></span>
+        <span class="block" class="text-2xl" [innerHTML]="'about.timeline.2023.2' | translate"></span>
         <div class="mt-5 mb-10">
           <img class="h-[150px] bg-white p-5 rounded-xl" src="assets/img/afyia_logo_2.png" alt="Logo AFYIA Diagnostics" title="Logo AFYIA Diagnostics">
         </div>
@@ -108,9 +105,15 @@
     </div>
     <div id="timeline_element_6" class="timeline-element inactive">
       <div class="date">2025</div>
-      <div class="description">
-        Mais encore ?
-      </div>
+      <div class="description" [innerHTML]="'about.timeline.2025' | translate"></div>
+    </div>
+    <div id="timeline_element_7" class="timeline-element inactive">
+      <div class="date">2026</div>
+      <div class="description" [innerHTML]="'about.timeline.2026' | translate"></div>
+    </div>
+    <div id="timeline_element_8" class="timeline-element inactive">
+      <div class="date">2027</div>
+      <div class="description" [innerHTML]="'about.timeline.2027' | translate"></div>
     </div>
     <div class="h-[50px]"></div>
     <div class="timeline-bar"></div>

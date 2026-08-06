@@ -29,7 +29,7 @@
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
-    overflow: hidden;
+    overflow: clip;
     transform-style: preserve-3d;
 
     .icon-background {
