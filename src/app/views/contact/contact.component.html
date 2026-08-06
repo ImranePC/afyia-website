@@ -1,4 +1,4 @@
-<app-banner [title]="'header.contact' | translate" imageUrl="../../../assets/img/banner/banner_contact.jpg"></app-banner>
+<app-banner [title]="'header.contact' | translate" imageUrl="../../../assets/img/banner/banner_contact.webp"></app-banner>
 
 <div class="container mx-auto">
   <div class="w-full lg:w-2/3 mx-auto reveal mt-20 lg:mt-40">
@@ -151,10 +151,9 @@
           {{ 'contact.sections.form.subject.other' | translate }}
         </h4>
       </div>
+      <hr class="my-5">
       <div
-        class="flex flex-col gap-5 mt-10 transition-all animation-slide"
-        *ngIf="selectedSubject !== undefined"
-        [ngClass]="{ 'pointer-events-none opacity-50': selectedSubject === undefined}"
+        class="flex flex-col gap-5 transition-all animation-slide hide-gradient"
       >
         <div class="grid grid-cols-2 gap-5">
           <div class="input-group" [class.is-invalid]="isFieldInvalid('lastname')">
@@ -174,26 +173,8 @@
           <label for="message">{{ 'contact.sections.form.inputs.message' | translate }}</label>
           <textarea id="message" formControlName="message" rows="5"></textarea>
         </div>
-        <div class="inline-flex items-center">
-          <label class="flex items-center cursor-pointer relative" for="check-2">
-            <input type="checkbox"
-              id="check-2"
-              class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded border border-slate-300 checked:bg-cyan-800 checked:border-cyan-800"
-              [checked]="dataConsent"
-              (change)="dataConsent = !dataConsent"
-            >
-            <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"
-                stroke="currentColor" stroke-width="1">
-                <path fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"></path>
-              </svg>
-            </span>
-          </label>
-          <label class="cursor-pointer ms-2" for="check-2">
-            {{ 'contact.sections.form.consent' | translate }}
-          </label>
+        <div>
+          {{ 'contact.sections.form.consent' | translate }}
         </div>
         <button class="self-start btn btn-lg bg-cyan-700 text-white" [class.disabled]="!messageForm.valid || !dataConsent">
           <fa-icon class="me-1" [icon]="faPaperPlane"></fa-icon>
