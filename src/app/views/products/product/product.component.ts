@@ -20,7 +20,6 @@ import { BannerComponent } from '../../../components/banner/banner.component';
     ArianeComponent,
     RouterModule,
     FontAwesomeModule,
-    ModalComponent,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
@@ -112,9 +111,9 @@ export class ProductComponent implements OnInit {
 
   goBack(): void {
     if (this.previousPath) {
-      this.router.navigate([this.previousPath.link]);
+      this.router.navigate(this.appService.path(this.previousPath.link));
     } else {
-      this.router.navigate(['/products']);
+      this.router.navigate(this.appService.path('products'));
     }
   }
 }

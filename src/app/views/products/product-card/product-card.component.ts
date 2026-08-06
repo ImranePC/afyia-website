@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Router, RouterModule } from '@angular/router';
 import { Path } from '../../../components/ariane/ariane.component';
 import { Product } from '../../../services/product.service';
+import { AppService } from '../../../services/app.service';
 
 @Component({
   selector: 'app-product-card',
@@ -22,9 +23,9 @@ export class ProductCardComponent {
   @Input()
   previousPath: Path;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private app: AppService) {}
 
   goToProduct(): void {
-    this.router.navigate([`/product/${this.product.id}`], { state: { previousPath: this.previousPath } })
+    this.router.navigate(this.app.path('product', this.product.id), { state: { previousPath: this.previousPath } })
   }
 }

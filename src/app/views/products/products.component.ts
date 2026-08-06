@@ -138,7 +138,7 @@ export class ProductsComponent implements OnInit {
 
   openCategoryPage(category: Category): void {
     this.productService.setCategory(category);
-    this.router.navigate(['/products/', category.id]);
+    this.router.navigate(['/', this.translate.currentLang, 'products', category.id]);
   }
 
   get hasFilter(): boolean {

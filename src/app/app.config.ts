@@ -2,9 +2,8 @@ import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter, InMemoryScrollingOptions, withInMemoryScrolling } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 const scrollConfig: InMemoryScrollingOptions = {
@@ -22,8 +21,7 @@ export const appConfig: ApplicationConfig = {
       routes,
       withInMemoryScrolling(scrollConfig),
     ),
-    provideClientHydration(),
-    importProvidersFrom(HttpClientModule),
+    provideHttpClient(),
     importProvidersFrom(TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -28,7 +28,7 @@ export class AboutIllnessComponent implements OnInit {
   pathogens: string[];
 
   @Input()
-  path: Path = { name: 'Undefined', link: '/'};
+  path: Path = { name: 'Undefined', link: '/' };
 
   @Input()
   title: string;
@@ -50,16 +50,12 @@ export class AboutIllnessComponent implements OnInit {
     private translate: TranslateService,
     private productService: ProductService,
     private appService: AppService,
-    private route : ActivatedRoute,
+    private route: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
     this.appService.setDark(false);
     this.appService.initScrollReveal();
-
-    this.translate.onLangChange.subscribe(async () => {
-      this.category = await this.loadCategory();
-    })
 
     this.productService.selectedCategory$.subscribe(async (category: Category) => {
       if (category) {
@@ -80,5 +76,9 @@ export class AboutIllnessComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
 
     return await firstValueFrom(this.productService.getCategoryById(id));
+  }
+
+  get currentLang(): string {
+    return this.translate.currentLang;
   }
 }

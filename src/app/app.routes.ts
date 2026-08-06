@@ -7,13 +7,17 @@ import { ProductsComponent } from './views/products/products.component';
 import { ProductComponent } from './views/products/product/product.component';
 import { NewsComponent } from './views/news/news.component';
 import { NewsPageComponent } from './views/news/news-page/news-page.component';
-import { SoftwareComponent } from './views/software/software.component';
-import { RequestAccountComponent } from './views/software/request-account/request-account.component';
+import { SoftwareComponent } from './views/approach/software/software.component';
+import { RequestAccountComponent } from './views/approach/software/request-account/request-account.component';
 import { ManageNewsComponent } from './admin/manage-news/manage-news.component';
 import { ManageNewsPageComponent } from './admin/manage-news/manage-news-page/manage-news-page.component';
 import { PrivateLoginComponent } from './private-login/private-login.component';
 import { authGuard } from './guards/auth.guard';
 import { AboutIllnessComponent } from './views/about-illness/about-illness.component';
+import { langResolver } from './resolvers/lang.resolver';
+import { BiotechnologyComponent } from './views/approach/biotechnology/biotechnology.component';
+import { ProcessComponent } from './views/approach/process/process.component';
+import { HealthComponent } from './views/approach/health/health.component';
 
 export const adminRoutes: Routes = [
   { path: 'admin/manage-news/create', component: ManageNewsPageComponent, canActivate: [authGuard]},
@@ -23,17 +27,27 @@ export const adminRoutes: Routes = [
 
 export const routes: Routes = [
   ...adminRoutes,
-  { path: 'private-login', component: PrivateLoginComponent },
-  { path: 'account-request', component: RequestAccountComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'products/:id', component: AboutIllnessComponent },
-  { path: 'software', component: SoftwareComponent },
-  { path: 'news/:id', component: NewsPageComponent },
-  { path: 'news', component: NewsComponent },
-  { path: 'product/:id', component: ProductComponent },
-  { path: 'products', component: ProductsComponent },
-  { path: 'legal-mentions', component: LegalComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: '', component: HomeComponent },
-  { path: '**', redirectTo: '' },
+  {
+    path: ':lang',
+    resolve: { lang: langResolver },
+    children: [
+      { path: '', component: HomeComponent },
+      { path: 'private-login', component: PrivateLoginComponent },
+      { path: 'account-request', component: RequestAccountComponent },
+      { path: 'about', component: AboutComponent },
+      { path: 'products/:id', component: AboutIllnessComponent },
+      { path: 'software', component: SoftwareComponent },
+      { path: 'news/:id', component: NewsPageComponent },
+      { path: 'news', component: NewsComponent },
+      { path: 'product/:id', component: ProductComponent },
+      { path: 'products', component: ProductsComponent },
+      { path: 'legal-mentions', component: LegalComponent },
+      { path: 'contact', component: ContactComponent },
+      { path: 'biotechnology', component: BiotechnologyComponent },
+      { path: 'industrial-process', component: ProcessComponent },
+      { path: 'human-health', component: HealthComponent },
+    ]
+  },
+  { path: '', redirectTo: '/fr', pathMatch: 'full' },
+  { path: '**', redirectTo: '/fr' },
 ];
