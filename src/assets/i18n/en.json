@@ -24,7 +24,7 @@
           "hire": "Hiring",
           "software": "Software"
         },
-        "consent": "I agree that the information provided may be stored and used in order to be contacted again."
+        "consent": "By submitting this form, you agree that your information may be used to contact you. For more information on how your personal data is processed, please see here."
       },
       "linkedin": {
         "text": "Follow our news",
@@ -83,15 +83,19 @@
   },
   "header": {
     "about": "About",
+    "approach": "Our approach",
     "contact": "Contact",
     "home": "Home",
     "news": "News",
     "product": "Products",
-    "technology": "Software"
+    "technology": "Software",
+    "biotechnology": "Biotechnology",
+    "process": "Industrial process",
+    "health": "Human health"
   },
   "sections": {
     "approach": {
-      "ai_title": "Artificial",
+      "ai_title": "Software",
       "ai_subtitle": "intelligence",
       "biology_subtitle": "biology",
       "biology_title": "Molecular",
@@ -105,7 +109,8 @@
     "cta": {
       "button": "Contact us",
       "speech": "Join our newsletter",
-      "text": "To collaborate or join us"
+      "text": "To collaborate or join us",
+      "vision": "You share our vision ?"
     },
     "mission": {
       "goal_3": "Aligns with the United Nations Sustainable Development Goal 3 of the 2030 Agenda.",
@@ -176,7 +181,7 @@
     }
   },
   "products": {
-    "all_product": "All products",
+    "all_product": "Our products",
     "filters": {
       "pathogens": "Pathogen",
       "select": "Select",
@@ -197,7 +202,7 @@
     "no_result": "No products found.",
     "text_1": {
       "title": "An <strong>insufficient</strong> diagnosis",
-      "content": "Need english content"
+      "content": "Many infectious diseases remain undiagnosed today, representing a genuine public health scourge. Even when treatments exist, the lack of reliable, accessible diagnostics means some patients miss out on appropriate care and continue to spread these diseases within their communities."
     },
     "text_2": {
       "title": "Make diagnosis <strong>accessible</strong>",
@@ -309,5 +314,27 @@
     "password": "Password",
     "connection": "Log in",
     "error": "Wrong login or password."
+  },
+  "biotechnology": {
+    "title_1": "Innovation at the service of diagnostics"
+  },
+  "health": {
+    "title_1": "Access to <strong>diagnosis</strong>, a <b>global</b> challenge",
+    "description_1": "Many infectious diseases remain undiagnosed today, representing a genuine public health scourge. Even when treatments exist, the lack of reliable, accessible diagnostics means some patients miss out on appropriate care and continue to spread these diseases within their communities.",
+    "example_1": "Tuberculosis, 2024: <strong>3 million</strong> active cases out of <strong>10.8 million</strong> went undiagnosed.",
+    "title_2": "Make diagnosis <strong>accessible</strong>",
+    "description_2": "At <b>AFYIA Diagnostics</b>, we place <b>innovative, simple, reliable, sensitive, and affordable diagnostics</b> at the heart of our mission. Rapid and accurate identification of infectious agents is a crucial step in improving global health, particularly in settings where access to healthcare remains limited. A rapid and accurate diagnosis is essential to:",
+    "list_2": "<li><b>Identify pathogens and guide appropriate care</b>, allowing the administration of specific antiviral or antibiotic treatments.</li><li><b>Limit the transmission</b> of pathogens through the implementation of targeted isolation and prevention measures.</li><li>Reduce the inappropriate use of antibiotics and contribute to the <b>fight against antibiotic resistance.</b></li><li><b>Avoid diagnostic errors</b> which could delay the treatment of serious pathologies, such as viral meningoencephalitis or certain bacterial infections.</li><li><b>Detect epidemics early</b> and adjust public health policies.</li>",
+    "title_3": "<strong>High-performance</strong> diagnostics, accessible to <b>everyone</b>",
+    "description_3": "Our ambition is to make high-performance diagnostics accessible to everyone, in order to better prevent, treat, and control infectious diseases on a global scale."
+  },
+  "process": {
+    "title_1": "<b>Independence</b> and <strong>responsiveness</strong>",
+    "description_1": "AFYIA Diagnostics is an independent company with its own R&D capabilities and ISO 13485:2016 certified production facilities, ensuring an immediate response to health emergencies, as demonstrated by its response to SARS-CoV-2.",
+    "title_2": "A <strong>robotized</strong> <b>industrial</b> infrastructure",
+    "description_2": "Around twenty employees work on the campus of our sister company Innovative Diagnostics, the world leader in veterinary diagnostics. These modern facilities span 7,000 m² and are located near Montpellier, France, giving AFYIA access to robotized industrial production capabilities.",
+    "title_3": "<b>Automated</b> production, <strong>accessible everywhere</strong>",
+    "description_3": "All the components of our kits are manufactured on-site to guarantee the quality and availability of our reagents. These tests meet the highest standards of stability and standardization. Thanks to investment in the automation of our production line, we can produce freeze-dried kits at high throughput, making them transportable at room temperature.",
+    "see_products": "See our products"
   }
 }

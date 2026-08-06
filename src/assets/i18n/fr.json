@@ -24,7 +24,7 @@
           "hire": "Recrutement",
           "software": "Logiciel"
         },
-        "consent": "J'accepte que les informations transmises soient conservées et utilisées afin d'être recontacté."
+        "consent": "En validant ce formulaire, vous acceptez que vos informations soient utilisées pour vous recontacter. Plus d'informations sur le traitement de vos données personnelles ici."
       },
       "linkedin": {
         "text": "Suivez notre actualité",
@@ -83,15 +83,19 @@
   },
   "header": {
     "about": "À propos",
+    "approach": "Notre approche",
     "contact": "Contact",
     "home": "Accueil",
     "news": "Actualités",
     "product": "Produits",
-    "technology": "Logiciel"
+    "technology": "Logiciel",
+    "biotechnology": "Biotechnologie",
+    "process": "Procédé industriel",
+    "health": "Santé humaine"
   },
   "sections": {
     "approach": {
-      "ai_title": "Intelligence",
+      "ai_title": "Logiciel",
       "ai_subtitle": "artificielle",
       "biology_subtitle": "moléculaire",
       "biology_title": "Biologie",
@@ -105,7 +109,8 @@
     "cta": {
       "button": "Nous contacter",
       "speech": "Rejoignez la newsletter",
-      "text": "Pour collaborer ou nous rejoindre"
+      "text": "Pour collaborer ou nous rejoindre",
+      "vision": "Vous partagez notre vision ?"
     },
     "mission": {
       "goal_3": "S'inscrit dans l'objectif 3 de développement durable de l'agenda 2030 des Nations Unies.",
@@ -176,7 +181,7 @@
     }
   },
   "products": {
-    "all_product": "Tous nos produits",
+    "all_product": "Nos produits",
     "filters": {
       "pathogens": "Pathogène",
       "select": "Choisir",
@@ -306,5 +311,30 @@
     "password": "Mot de passe",
     "connection": "Se connecter",
     "error": "Identifiant ou mot de passe incorrect."
+  },
+  "biotechnology": {
+    "description_1": "Chez Afyia Diagnostics, nous mettons notre expertise en biologie moléculaire au service du développement de solutions diagnostiques innovantes, robustes et accessibles. Nous concevons des tests PCR simples, performants et économiques, optimisés pour une conservation et un transport à température ambiante, tout en répondant aux plus hauts standards de qualité grâce à des contrôles rigoureux intégrés.",
+    "description_2": "Au-delà des tests PCR conventionnels, Afyia Diagnostics s’est développée autour d’un savoir-faire en PCR multiplexée avec des techniques de fusion reposant sur des technologies brevetées par Afyia Diagnostics associée à l’utilisation de DISOFT (lien). Ces innovations permettent la détection simultanée de plusieurs dizaines de cibles au sein d'un seul test, sur des thermocycleurs dit « ouverts », offrant un gain considérable en rapidité, en efficacité et en coût, tout en garantissant un haut niveau de sensibilité et de spécificité.",
+    "description_3": "AFYIA Diagnostics, par l’intermédiaire de la société soeur Innovative Diagnostics, dispose également d'expertises dans le développement, l’évaluation et la production de tests d'immunochromatographie sur membrane (Lateral Flow Assay, LFA) ainsi que dans la capture de microorganisme dans des prélèvements complexe type selles ou expectorations.",
+    "title_1": "<b>L’innovation</b> au service du <strong>diagnostic</strong>"
+  },
+  "health": {
+    "title_1": "L'accès au <strong>diagnostic</strong>, un enjeu <b>mondial</b>",
+    "description_1": "De nombreuses maladies infectieuses restent aujourd’hui non diagnostiquées, ce qui constitue un véritable fléau de santé publique. Même lorsque des traitements existent, faute de diagnostic fiable et accessible, certains patients ne bénéficient pas de la prise en charge adaptée et continuent de transmettre ces pathologies dans leurs communautés.",
+    "example_1": "Tuberculose, 2024 : <strong>3 millions</strong> de cas actifs sur <strong>10,8 millions</strong> sont passés inaperçus.",
+    "title_2": "Rendre le diagnostic <strong>accessible</strong>",
+    "description_2": "Chez <b>AFYIA Diagnostics</b>, nous plaçons le <b>diagnostic innovant, simple, fiable, sensible et abordable</b> au cœur de notre mission. Identifier rapidement et avec précision les agents infectieux est une étape essentielle pour améliorer la santé mondiale, en particulier dans les contextes où l’accès aux soins reste limité. Un <b>diagnostic rapide et précis</b> est essentiel pour :",
+    "list_2": "<li><b>Identifier les agents pathogènes et orienter une prise en charge adaptée</b>, permettant l’administration de traitements antiviraux ou antibiotiques spécifiques.</li><li><b>Limiter la transmission</b> des pathogènes grâce à la mise en place de mesures d’isolement et de prévention ciblées.</li><li>Réduire l’usage inapproprié des antibiotiques et contribuer à la <b>lutte contre l’antibiorésistance.</b></li><li><b>Éviter les erreurs diagnostiques</b> qui pourraient retarder la prise en charge de pathologies graves, telles que les méningo-encéphalites virales ou certaines infections bactériennes.</li><li><b>Détecter précocement les épidémies</b> et ajuster les politiques de santé publique.</li>",
+    "title_3": "Le diagnostic <strong>haute performance</strong>, accessible à <b>tous</b>",
+    "description_3": "Notre ambition est de <b>rendre le diagnostic de haute performance accessible à tous</b>, afin de mieux prévenir, traiter et contrôler les maladies infectieuses à l’échelle mondiale."
+  },
+  "process": {
+    "title_1": "<b>Indépendance</b> et <strong>réactivité</strong>",
+    "description_1": "AFYIA Diagnostics est une entreprise indépendante disposant de ses propres capacités de R&D et infrastructures de production certifiées ISO 13485 : 2016, garantissant une réactivité immédiate face aux urgences sanitaires, comme démontré par la réactivité au SARS-CoV-2.",
+    "title_2": "Une infrastructure <strong>industrielle</strong> <b>robotisée</b>",
+    "description_2": "Une vingtaine d’employés travaillent sur le campus de la société sœur Innovative Diagnostics, leader mondial du diagnostic vétérinaire. L’ensemble de ces locaux modernes s’étendent sur 7,000m² et sont situés à proximité de Montpellier en France. Ils permettent à AFYIA de bénéficier de capacités de production industrielle robotisée.",
+    "title_3": "Une production <b>automatisée</b>, <strong>accessible partout</strong>",
+    "description_3": "Tous les composants de nos kits sont fabriqués sur place, afin de garantir la qualité et la disponibilité des réactifs. Ces tests répondent aux plus hauts critères de stabilité et de standardisation. Grace à l’investissement dans l’automatisation de notre chaine de production, nous pouvons produire à haut débit des kits entièrement lyophilisés et donc transportable à température ambiante.",
+    "see_products": "Voir nos produits"
   }
 }
