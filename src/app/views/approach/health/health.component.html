@@ -1,22 +1,15 @@
 <app-banner [title]="'header.health' | translate" imageUrl="assets/img/banner/banner_health.webp"></app-banner>
 
-<div class="container">
-  <div class="mx-auto mt-10 lg:mt-20 lg:w-8/12 bg-white shadow-sm rounded-xl mb-20 p-5 lg:p-10 lg:pt-0">
-    <h2 class="text-5xl mb-5 lg:text-7xl lg:-translate-y-8 lg:mb-0" [innerHTML]="'health.title_1' | translate"></h2>
-    <div class="grid lg:grid-cols-2">
-      <p class="mb-5 lg:mb-0 self-center" [innerHTML]="'health.description_1' | translate"></p>
-      <div class="relative lg:translate-x-20">
-        <div class="image-container max-h-[400px]">
-          <img class="w-full" src="https://picsum.photos/seed/health-1/800/600" alt="Illustration santé humaine" title="Illustration santé humaine">
-        </div>
-      </div>
-    </div>
+<div class="container mt-10 lg:mt-20 mb-20 lg:mb-32">
+  <div class="max-w-4xl mx-auto text-center mb-10 lg:mb-16 reveal">
+    <h2 class="text-4xl lg:text-6xl mb-6" [innerHTML]="'health.title_1' | translate"></h2>
+    <p class="text-justify text-xl lg:text-2xl p-light" [innerHTML]="'health.description_1' | translate"></p>
   </div>
 
-  <div class="w-full rounded-2xl mb-20 p-5 lg:p-14 reveal">
+  <div class="w-full rounded-2xl bg-cyan-500 bg-opacity-10 mb-20 p-5 lg:p-14 reveal">
     <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
       <p class="text-xl lg:text-2xl font-medium text-center lg:text-start" [innerHTML]="'health.example_1' | translate"></p>
-      <div class="flex items-center justify-center">
+      <div class="flex items-center justify-center rounded-xl overflow-clip shadow">
         <img class="w-full" src="assets/img/img_diag_insuffisant.webp" alt="Infographie diagnostic insuffisant de la tuberculose" title="Infographie diagnostic insuffisant de la tuberculose">
       </div>
     </div>
@@ -27,7 +20,7 @@
     <div class="grid lg:grid-cols-2">
       <div class="mb-5 lg:-translate-x-20 lg:mb-0">
         <div class="shadow image-container">
-          <img src="https://picsum.photos/seed/health-2/800/600" alt="Illustration santé humaine" title="Illustration santé humaine">
+          <img src="assets/img/banner/banner_health.webp" alt="Illustration santé humaine" title="Illustration santé humaine">
         </div>
       </div>
       <div class="self-center">
@@ -37,21 +30,8 @@
     </div>
   </div>
 
-  <div class="mx-auto lg:w-8/12 bg-white shadow-sm rounded-xl mb-20 p-5 lg:p-10 reveal">
-    <h2 class="text-5xl mb-5 lg:text-7xl text-center lg:-translate-y-8 lg:mb-0" [innerHTML]="'health.title_3' | translate"></h2>
-    <div class="grid lg:grid-cols-2">
-      <p class="mb-5 lg:mb-0 self-center" [innerHTML]="'health.description_3' | translate"></p>
-      <div class="lg:translate-x-20">
-        <div class="image-container image-container--scaled">
-          <img src="https://picsum.photos/seed/health-3/800/600" alt="Illustration santé humaine" title="Illustration santé humaine">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="mt-10 lg:mt-20 mb-20 xl:w-2/3 mx-auto rounded-2xl bg-gradient-to-b from-cyan-950 to-slate-900 text-white p-6 lg:p-10 relative reveal">
-    <div class="text-3xl lg:text-5xl font-bold text-center mb-5" [innerHTML]="'products.text_1.title' | translate"></div>
-    <p class="mb-5 text-base lg:text-lg" [innerHTML]="'health.description_2' | translate"></p>
-    <ul class="list-dark flex flex-col gap-3 lg:gap-5" [innerHTML]="'health.list_2' | translate"></ul>
+  <div class="mx-auto lg:w-10/12 mb-20 p-5 lg:p-10 reveal">
+    <h2 class="text-4xl mb-5 lg:text-6xl text-center lg:-translate-y-8 lg:mb-0" [innerHTML]="'health.title_3' | translate"></h2>
+    <p class="mb-5 lg:mb-0 self-center" [innerHTML]="'health.description_3' | translate"></p>
   </div>
 </div>
