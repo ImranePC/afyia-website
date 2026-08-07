@@ -223,6 +223,12 @@ strong {
       scale: 0.95;
       opacity: 0.66;
     }
+
+    &-dark {
+      background-color: rgba(black, 0.2);
+      border: 1px solid #ffffff1c;
+      color: white;
+    }
   }
 }
 

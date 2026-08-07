@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <div class="mx-auto lg:w-8/12 bg-white shadow-sm rounded-xl p-5 lg:p-10 reveal">
+  <div class="mx-auto lg:w-8/12 bg-white shadow-sm rounded-xl p-5 lg:p-10 reveal mb-10">
     <h2 class="text-4xl lg:text-6xl mb-5" [innerHTML]="'software.access_disoft' | translate"></h2>
     <p class="mb-5">
       {{ 'software.access.description' | translate }}
@@ -64,5 +64,7 @@
     </div>
   </div>
 
-  <app-carousel></app-carousel>
+  <app-carousel
+    [items]="links"
+  ></app-carousel>
 </div>

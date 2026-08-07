@@ -11,7 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BannerComponent } from '../../../components/banner/banner.component';
-import { CarouselComponent } from '../../../components/carousel/carousel.component';
+import { CarouselComponent, CarouselElement } from '../../../components/carousel/carousel.component';
 
 @Component({
   selector: 'app-software',
@@ -36,6 +36,29 @@ export class SoftwareComponent {
     { name: 'header.technology', link: '/technology' },
     { name: 'software.title', link: '/software' },
   ]
+
+  links: CarouselElement[] = [
+    {
+      title: 'header.biotechnology',
+      image: 'assets/img/team/img_margot.jpg',
+      route: 'biotechnology',
+    },
+    {
+      title: 'header.process',
+      image: 'assets/img/img_process_2.jpg',
+      route: 'industrial-process',
+    },
+    {
+      title: 'header.health',
+      image: 'assets/img/img_human_health.jpg',
+      route: 'human-health',
+    },
+    {
+      title: 'header.news',
+      image: 'assets/img/img_human_health.jpg',
+      route: 'news',
+    }
+  ];
 
   constructor(
     private appService: AppService,
