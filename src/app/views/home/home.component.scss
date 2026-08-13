@@ -37,6 +37,40 @@
   filter: brightness(120%);
 }
 
+.about-container {
+  position: relative;
+  --timeline1: clamp(0, calc((var(--progress, 0) - 0) / 0.25), 1);
+  --timeline2: clamp(0, calc((var(--progress, 0) - 0.1) / 0.5), 1);
+
+  .about-reveal-card {
+    animation-name: animation-about;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+    animation-delay: calc(var(--timeline2, 0) * -1s);
+  }
+
+  .photo-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    animation-name: animation-width;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+    animation-delay: calc(var(--timeline1, 0) * -1s);
+
+    .card-photo {
+      position: absolute;
+      transition: none;
+      opacity: var(--timeline1);
+      scale: clamp(0.8, calc(0.8 + var(--progress, 0) * 0.1), 1);
+    }
+  }
+}
+
 .cascade-reveal {
   [data-scroll] {
     transition: 1s ease;
@@ -46,5 +80,25 @@
     [data-scroll]:nth-child(#{$i}) {
       transition-delay: #{($i - 1) * 0.15}s;
     }
+  }
+}
+
+@keyframes animation-about {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animation-width {
+  0% {
+    width: 95%;
+  }
+  100% {
+    width: 100%;
   }
 }

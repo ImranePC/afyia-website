@@ -136,11 +136,11 @@
   </div>
 </div>
 
-<div data-scroll>
-  <div class="container mt-60">
+<div data-scroll data-scroll-css-progress>
+  <div class="container about-container mt-60">
     <div class="relative">
       <div class="
-        relative z-10 bg-white/80 rounded-xl shadow-sm px-5 pt-5 pb-10 w-full mx-auto backdrop-blur-sm
+        about-reveal-card relative z-10 bg-white/80 rounded-xl shadow-sm px-5 pt-5 pb-10 w-full mx-auto backdrop-blur-sm
         lg:px-10 lg:pt-0
         xl:w-8/12
       ">
@@ -157,19 +157,21 @@
           <button class="btn btn-lg bg-primary-dark" [routerLink]="['/', currentLang, '/about']">{{ 'sections.about.view_more' | translate }}</button>
         </div>
       </div>
-      @for (photo of aboutFloatingImages; track photo.src; let i = $index) {
-        <div
-          data-scroll
-          data-scroll-repeat
-          [attr.data-scroll-speed]="photo.speed"
-          class="absolute z-0 pointer-events-none aspect-[3/2] {{ photo.wrapperClass }}"
-          [style.transition-delay.s]="i * 0.15"
-        >
-          <div class="image-container shadow-lg h-full {{ photo.cardClass }}">
-            <img class="w-full h-full object-cover" [src]="photo.src" alt="Photo AFYIA">
+      <div class="photo-container">
+        @for (photo of aboutFloatingImages; track photo.src; let i = $index) {
+          <div
+            data-scroll
+            data-scroll-repeat
+            [attr.data-scroll-speed]="photo.speed"
+            class="card-photo z-0 pointer-events-none aspect-[3/2] {{ photo.wrapperClass }}"
+            [style.transition-delay.s]="i * 0.15"
+          >
+            <div class="image-container shadow-lg h-full {{ photo.cardClass }}">
+              <img class="w-full h-full object-cover" [src]="photo.src" alt="Photo AFYIA">
+            </div>
           </div>
-        </div>
-      }
+        }
+      </div>
     </div>
   </div>
 </div>
