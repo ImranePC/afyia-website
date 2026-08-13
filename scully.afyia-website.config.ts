@@ -6,6 +6,15 @@ export const config: ScullyConfig = {
   distFolder: 'dist/afyia-website/browser',
   outDir: './dist/static',
   defaultPostRenderers: [],
-  routes: {},
-  extraRoutes: ['/contact', '/about', '/news', '/software', '/legal-mentions', '/news/:id', '/private-login', '/manage-news', '/manage-news/:id', '/products', 'products/:id', '/product/:id']
+  routes: {
+    '/:lang': {
+      type: 'default',
+      lang: { values: ['fr', 'en'] }
+    },
+    '/:lang/contact': {
+      type: 'default',
+      lang: { values: ['fr', 'en'] }
+    }
+  },
+  // extraRoutes: ['/contact', '/about', '/news', '/software', '/legal-mentions', '/news/:id', '/private-login', '/manage-news', '/manage-news/:id', '/products', 'products/:id', '/product/:id']
 };

@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/locomotive-scroll/dist/locomotive-scroll.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -124,6 +125,9 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "cache": {
+      "enabled": false
+    }
   }
 }
