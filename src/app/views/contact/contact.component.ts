@@ -68,7 +68,7 @@ export class ContactComponent implements OnInit {
 
   faNewspaper = faNewspaper
 
-  selectedSubject: Subject = undefined;
+  selectedSubject: Subject = null;
 
   messageForm: FormGroup;
 
@@ -96,8 +96,6 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.appService.initScrollReveal();
-
     this.route.queryParams.subscribe((parameters) => {
       if (this.isValidSubject(parameters['subject'])) {
         this.setSelectedSubject(parameters['subject']);
