@@ -14,12 +14,14 @@
 
 html {
   scroll-padding-top: 2em;
+  overflow-x: hidden;
 }
 
 body {
   background: $background-color;
   font-family: 'Archivo', sans-serif;
   color: $dark-text;
+  overflow-x: hidden;
 
   &::before {
     z-index: -1;
