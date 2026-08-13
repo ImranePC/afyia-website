@@ -16,12 +16,12 @@ export class ParallaxDirective {
   constructor(private el: ElementRef) { }
 
   ngOnInit() {
-    this.initialOffsetTop = this.el.nativeElement.offsetTop + this.offsetY;
-    this.onWindowScroll();
+    // this.initialOffsetTop = this.el.nativeElement.offsetTop + this.offsetY;
+    // this.onWindowScroll();
   }
 
-  @HostListener('window:scroll')
-  onWindowScroll() {
-    this.el.nativeElement.style.backgroundPositionY = `${(this.initialOffsetTop - window.scrollY * this.parallaxRatio)}px`;
-  }
+  // @HostListener('window:scroll')
+  // onWindowScroll() {
+  //   this.el.nativeElement.style.backgroundPositionY = `${(this.initialOffsetTop - window.scrollY * this.parallaxRatio)}px`;
+  // }
 }

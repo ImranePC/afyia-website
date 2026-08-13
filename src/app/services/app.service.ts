@@ -1,6 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import ScrollReveal from 'scrollreveal';
+import LocomotiveScroll from 'locomotive-scroll';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,18 @@ export class AppService {
 
   isDark = signal(true);
 
-  scroll: any;
+  scroll?: LocomotiveScroll;
 
   constructor() { }
+
+  initLocomotiveScroll(): void {
+    this.scroll = new LocomotiveScroll();
+  }
+
+  destroyLocomotiveScroll(): void {
+    this.scroll?.destroy();
+    this.scroll = undefined;
+  }
 
   initScrollReveal(): void {
     const config = {

@@ -24,23 +24,23 @@ export class ParallaxImgDirective {
   constructor(private el: ElementRef, private ngZone: NgZone) { }
 
   ngOnInit() {
-    this.initialOffsetTop = this.el.nativeElement.offsetTop + this.offsetY;
-    this.initialScrollY = window.scrollY;
-    this.onWindowScroll();
+    // this.initialOffsetTop = this.el.nativeElement.offsetTop + this.offsetY;
+    // this.initialScrollY = window.scrollY;
+    // this.onWindowScroll();
   }
 
   @HostListener('window:scroll')
   onWindowScroll() {
-    if (!this.ticking) {
-      this.ticking = true;
+    // if (!this.ticking) {
+    //   this.ticking = true;
 
-      this.ngZone.runOutsideAngular(() => {
-        requestAnimationFrame(() => {
-          this.applyTransform();
-          this.ticking = false;
-        })
-      })
-    }
+    //   this.ngZone.runOutsideAngular(() => {
+    //     requestAnimationFrame(() => {
+    //       this.applyTransform();
+    //       this.ticking = false;
+    //     })
+    //   })
+    // }
   }
 
   private applyTransform() {
