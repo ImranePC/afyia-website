@@ -8,7 +8,7 @@ import {
   signal,
 } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -24,7 +24,7 @@ export interface CarouselElement {
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [TranslateModule, RouterModule, FontAwesomeModule],
+  imports: [TranslateModule, FontAwesomeModule],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss'
 })
@@ -54,7 +54,7 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
 
   faChevronRight = faChevronRight;
 
-  constructor(public translate: TranslateService) {}
+  constructor(public translate: TranslateService, private router: Router) {}
 
   ngAfterViewInit() {
     this.updateMaxScroll();
@@ -111,7 +111,19 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
       event.preventDefault();
       event.stopPropagation();
       this.lastDragMoved = false;
+      return;
     }
+
+    // setPointerCapture on the viewport (used for drag tracking) retargets the
+    // resulting click event to the viewport itself instead of the element the
+    // pointer is actually over, so routerLink on descendants never receives it.
+    const target = (event.target === event.currentTarget
+      ? document.elementFromPoint(event.clientX, event.clientY)
+      : event.target) as HTMLElement | null;
+
+    const routable = target?.closest<HTMLElement>('[data-route]');
+    const route = routable?.dataset['route'];
+    if (route) this.router.navigate(['/', this.translate.currentLang, route]);
   }
 
   private updateMaxScroll() {

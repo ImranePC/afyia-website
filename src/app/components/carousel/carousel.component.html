@@ -1,13 +1,23 @@
-<div class="bg-white rounded-xl p-5 overflow-clip">
-  <div class="flex justify-between">
-    <h2 class="text-3xl font-bold mb-6">{{ 'sections.carousel.see_also' | translate }}</h2>
-    <div>
-      <button (click)="previous()" [disabled]="translateX() >= 0" class="btn btn-dark disabled:opacity-30 disabled:cursor-not-allowed me-3">
-        <fa-icon [icon]="faChevronLeft"></fa-icon>
-      </button>
-      <button (click)="next()" [disabled]="translateX() <= -maxScroll()" class="btn btn-dark disabled:opacity-30 disabled:cursor-not-allowed">
-        <fa-icon [icon]="faChevronRight"></fa-icon>
-      </button>
+<div class="overflow-clip">
+  <div class="container mx-auto">
+    <div class="flex justify-between lg:w-8/12 items-center mx-auto">
+      <h2 class="title title-start mb-6">{{ 'sections.carousel.see_also' | translate }}</h2>
+      <div>
+        <button
+          class="btn btn-dark w-10 h-10 p-0 rounded-full inline-flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed me-2"
+          [disabled]="translateX() >= 0"
+          (click)="previous()"
+        >
+          <fa-icon [icon]="faChevronLeft"></fa-icon>
+        </button>
+        <button
+          class="btn btn-dark w-10 h-10 p-0 rounded-full inline-flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed"
+          [disabled]="translateX() <= -maxScroll()"
+          (click)="next()"
+        >
+          <fa-icon [icon]="faChevronRight"></fa-icon>
+        </button>
+      </div>
     </div>
   </div>
   <div
@@ -22,11 +32,7 @@
     (click)="onTrackClick($event)"
   >
     <div
-      class="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent transition-opacity duration-300"
-      [class.opacity-0]="translateX() >= 0"
-    ></div>
-    <div
-      class="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent transition-opacity duration-300"
+      class="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 lg:w-64 bg-gradient-to-l from-[#F2FCFF] to-transparent transition-opacity duration-300"
       [class.opacity-0]="translateX() <= -maxScroll()"
     ></div>
     <div
@@ -36,15 +42,21 @@
       [class.duration-300]="!isDragging()"
       [style.transform]="'translateX(' + translateX() + 'px)'"
     >
+      <!-- Placeholder card -->
+      <div class="lg:min-w-[150px] aspect-[3/2]"></div>
       @for (item of items; track item) {
         <div
-          class="group relative w-[500px] shrink-0 aspect-[3/2] rounded-2xl overflow-clip bg-cover bg-center cursor-pointer"
+          data-scroll
+          class="carousel-card group relative w-[500px] shrink-0 aspect-[3/2] rounded-2xl overflow-clip bg-cover bg-center cursor-pointer"
           [style.background-image]="'url(' + item.image + ')'"
+          [attr.data-route]="item.route"
         >
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
           <div class="absolute inset-x-0 bottom-0 p-4">
             <h3 class="text-white text-2xl font-extrabold mb-1">{{ item.title | translate }}</h3>
-            <button class="btn btn-dark" [routerLink]="['/', translate.currentLang, item.route]">{{ 'sections.product.view_more' | translate }}</button>
+            <button class="btn btn-dark">
+              {{ 'sections.product.view_more' | translate }}
+            </button>
           </div>
         </div>
       }
