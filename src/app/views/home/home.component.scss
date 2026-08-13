@@ -10,17 +10,6 @@
   box-shadow: 0 3px 40px 18px rgba($primary-light, 0.1);
 }
 
-.hover-hightlight {
-  transition: $transition-2;
-  border-radius: $radius;
-
-  &:hover {
-    z-index: 1;
-    transform: translateY(-0.5rem);
-    box-shadow: 0 8px 32px 0 rgba(125, 27, 109, 0.6);
-  }
-}
-
 .partner-grid {
   img {
     transition: $transition-2;
@@ -46,4 +35,16 @@
   background-size: cover;
   background-image: url('../../../assets/img/banner/banner_home.webp');
   filter: brightness(120%);
+}
+
+.cascade-reveal {
+  [data-scroll] {
+    transition: 1s ease;
+  }
+
+  @for $i from 1 through 12 {
+    [data-scroll]:nth-child(#{$i}) {
+      transition-delay: #{($i - 1) * 0.15}s;
+    }
+  }
 }

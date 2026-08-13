@@ -42,12 +42,11 @@ export class HomeComponent implements OnInit {
 
   products: Product[];
 
-  images: string[] = [
-    'assets/img/team/img_mic.jpg',
-    'assets/img/team/img_margot.jpg',
-    'assets/img/team/img_ben_2.jpg',
-    'assets/img/img_onehealth_sm.jpg',
-    'assets/img/buildings_background_sm.jpg',
+  aboutFloatingImages = [
+    { src: 'assets/img/team/img_margot.jpg', wrapperClass: 'hidden lg:block -top-10 -left-8 lg:-left-16 w-40 lg:w-80', cardClass: '-rotate-6', speed: 0.04 },
+    { src: 'assets/img/team/img_team.jpg', wrapperClass: 'hidden lg:block -top-16 right-8 lg:-right-10 w-40 lg:w-96', cardClass: 'rotate-6', speed: -0.04 },
+    { src: 'assets/img/team/img_ben_2.jpg', wrapperClass: 'hidden lg:block -bottom-12 left-12 lg:left-20 w-32 lg:w-72', cardClass: 'rotate-3', speed: -0.02 },
+    { src: 'assets/img/buildings_background_sm.jpg', wrapperClass: 'hidden lg:block -bottom-8 -right-6 lg:-right-16 w-32 lg:w-64', cardClass: '-rotate-6', speed: 0.02 },
   ];
 
   isMobileLayout = toSignal(
@@ -68,35 +67,10 @@ export class HomeComponent implements OnInit {
       this.products = data;
     });
 
-    const mark1 = document.getElementById('mark_1');
-    const approachTitle = document.getElementById('approach_title');
-    const approachSection = document.getElementById('section_approach');
     const banner = document.getElementById('banner');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if (entry.target.id === 'mark_1') {
-            approachSection.style.transform = 'scale(1)';
-            approachSection.style.opacity = '1';
-            approachSection.style.filter = 'grayscale(0%)';
-
-            approachTitle.style.opacity = '1';
-            approachTitle.classList.remove('scale-95');
-            approachTitle.classList.add('scale-100');
-          }
-        } else {
-          if (entry.target.id === 'mark_1') {
-            approachSection.style.transform = 'scale(0.9)';
-            approachSection.style.opacity = '0.5';
-            approachSection.style.filter = 'grayscale(50%)';
-
-            approachTitle.style.opacity = '0.3';
-            approachTitle.classList.remove('scale-100');
-            approachTitle.classList.add('scale-95');
-          }
-        }
-
         if (entry.target.id === 'banner') {
           this.appService.setDark(entry.isIntersecting)
         }
@@ -107,8 +81,6 @@ export class HomeComponent implements OnInit {
       rootMargin: '-100px 0px 0px 0px' // top | right | bottom | left
     });
 
-    observer.observe(mark1);
-    observer.observe(approachTitle);
     observer.observe(banner);
   }
 
