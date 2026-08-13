@@ -66,6 +66,6 @@ export class SoftwareComponent {
   ) { }
 
   ngOnInit(): void {
-    this.appService.initScrollReveal();
+    // this.appService.initScrollReveal();
   }
 }
