@@ -9,21 +9,21 @@
       <h2 class="z-10 title title-start">{{ 'news.last_news' | translate }}</h2>
       <p class="mt-10">{{ 'news.news_description' | translate }}</p>
     </div>
-    <div class="flex flex-col reveal">
+    <div class="flex flex-col">
       @for (news of newsList; track news; let last = $last) {
-      <div class="grid grid-rows-1 grid-cols-1 lg:grid-rows-1 lg:grid-cols-3 px-5 lg:px-0">
-        <div [routerLink]="['/news', news.id]" class="image-container image-container--top max-h-[180px] col-span-1 rounded-2xl bg-cyan-100 lg:-translate-x-20 shadow">
-          <img class="w-full" src="{{ news.fullImageUrl }}" alt="News image" [title]="news.title['en']">
-        </div>
-        <div class="col-span-2 flex flex-col justify-between lg:-ms-10 me-10">
-          <div>
-            <h3 [routerLink]="['/news', news.id]" class="font-bold text-4xl mb-3 mt-5 lg:mt-0">{{ news.title[currentLang] }}</h3>
-            <h4 [innerHTML]="news.content[currentLang]"></h4>
+        <div data-scroll class="grid grid-rows-1 grid-cols-1 lg:grid-rows-1 lg:grid-cols-3 px-5 lg:px-0">
+          <div [routerLink]="['news', news.id] | localizedLink" class="image-container image-container--top max-h-[180px] col-span-1 rounded-2xl bg-cyan-100 lg:-translate-x-20 shadow">
+            <img class="w-full" src="{{ news.fullImageUrl }}" alt="News image" [title]="news.title['en']">
           </div>
-          <button [routerLink]="['/news', news.id]" class="btn bg-cyan-100 self-start mt-3">{{ 'news.view_more' | translate }}</button>
+          <div class="col-span-2 flex flex-col justify-between lg:-ms-10 me-10">
+            <div>
+              <h3 [routerLink]="['news', news.id] | localizedLink" class="font-bold text-4xl mb-3 mt-5 lg:mt-0">{{ news.title[currentLang] }}</h3>
+              <h4 [innerHTML]="news.content[currentLang]"></h4>
+            </div>
+            <button [routerLink]="['news', news.id] | localizedLink" class="btn bg-cyan-100 self-start mt-3">{{ 'news.view_more' | translate }}</button>
+          </div>
         </div>
-      </div>
-      @if (!last) { <div class="border-b my-10 mx-10"></div> }
+        @if (!last) { <div class="border-b my-10 mx-10"></div> }
       }
     </div>
   </div>

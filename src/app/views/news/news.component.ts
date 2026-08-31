@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { News, NewsService } from '../../services/news.service';
 import { ArianeComponent, Path } from '../../components/ariane/ariane.component';
 import { BannerComponent } from '../../components/banner/banner.component';
+import { LocalizedLinkPipe } from '../../pipes/localized-link.pipe';
 
 @Component({
   selector: 'app-news',
@@ -16,6 +17,7 @@ import { BannerComponent } from '../../components/banner/banner.component';
     RouterModule,
     ArianeComponent,
     BannerComponent,
+    LocalizedLinkPipe,
   ],
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss'
@@ -34,7 +36,6 @@ export class NewsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.appService.initScrollReveal()
     this.loadNews();
 
     this.translate.onLangChange.subscribe(() => {
@@ -45,6 +46,11 @@ export class NewsComponent implements OnInit {
   loadNews(): void {
     this.newsService.getNews().subscribe((data: News[]) => {
       this.newsList = data;
+
+      setTimeout(() => {
+        this.appService.destroyLocomotiveScroll();
+        this.appService.initLocomotiveScroll();
+      });
     });
   }
 
