@@ -1,5 +1,5 @@
 <div class="flex gap-2 overflow-hidden">
-  <div class="hover:opacity-50 transition" role="button" routerLink="/">
+  <div class="hover:opacity-50 transition" role="button" [routerLink]="'' | localizedLink">
     {{ 'header.home' | translate }}
   </div>
   @for (item of path; track item; let last = $last) {
@@ -8,7 +8,7 @@
       class="hover:opacity-50 transition text-nowrap"
       role="button"
       [ngClass]="{'font-bold pointer-events-none truncate': last }"
-      [routerLink]="item.link"
+      [routerLink]="item.link | localizedLink"
       [innerHTML]="item.name | translate"
     ></div>
   }

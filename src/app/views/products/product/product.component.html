@@ -46,7 +46,7 @@
     <div class="product-content" [innerHTML]="product?.content"></div>
     <div class="mb-10 border-bottom pb-10"></div>
     <div class="flex gap-5">
-      <button class="btn btn-lg bg-primary text-white" [routerLink]="['/contact']"> <!-- (click)="contactModal.open()"> -->
+      <button class="btn btn-lg bg-primary text-white" [routerLink]="'contact' | localizedLink"> <!-- (click)="contactModal.open()"> -->
         {{ 'products.contact_us' | translate }}
       </button>
       @if (product?.card) {

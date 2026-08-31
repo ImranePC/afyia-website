@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { LocalizedLinkPipe } from '../../pipes/localized-link.pipe';
 
 export interface Path {
   name: string,
@@ -12,7 +13,7 @@ export interface Path {
 @Component({
   selector: 'app-ariane',
   standalone: true,
-  imports: [RouterModule, TranslateModule, CommonModule],
+  imports: [RouterModule, TranslateModule, CommonModule, LocalizedLinkPipe],
   templateUrl: './ariane.component.html',
   styleUrl: './ariane.component.scss'
 })

@@ -8,7 +8,7 @@
   <div class="my-10">
     <app-ariane [path]="navigationPath"></app-ariane>
   </div>
-  <button class="btn btn-white mb-5" [routerLink]="['/', currentLang, 'products']">{{ 'products.back' | translate }}</button>
+  <button class="btn btn-white mb-5" [routerLink]="'products' | localizedLink">{{ 'products.back' | translate }}</button>
   <div *ngIf="!isLoading" class="illness-banner mb-10 animation-pop" style="background-image: url('{{ category.imageUrl }}')">
     <div>
       <h1>{{ category.name }}</h1>

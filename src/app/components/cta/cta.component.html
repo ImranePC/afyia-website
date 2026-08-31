@@ -14,7 +14,7 @@
     @if (newsletter) {
       <app-newsletter-button></app-newsletter-button>
     } @else {
-      <div class="btn btn-lg bg-primary-dark" routerLink="/contact" role="button">{{ 'sections.cta.button' | translate }}</div>
+      <div class="btn btn-lg bg-primary-dark" [routerLink]="'contact' | localizedLink" role="button">{{ 'sections.cta.button' | translate }}</div>
     }
   </div>
 </div>

@@ -309,7 +309,11 @@
     "disoft_description_3": " Grâce à son interface conviviale, DISoft permet aux utilisateurs d'explorer et visualiser les résultats des diagnostics de façon intuitive.",
     "disoft_description_4": "La technologie de DISoft est issu d’un brevet co-détenu par l’IRD et l’Université de Montpellier, exploité sous licence exclusive par AFYIA.",
     "subtitle_2": "<b>Précis</b> et <strong>fiable</strong>",
-    "subtitle_3": "Une interface <strong>intuitive</strong>"
+    "subtitle_3": "Une interface <strong>intuitive</strong>",
+    "link_card": {
+      "title": "Découvrir le logiciel DISoft",
+      "button": "Découvrir"
+    }
   },
   "login": {
     "title": "Connexion",

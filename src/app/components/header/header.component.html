@@ -1,11 +1,11 @@
 <div #navBar class="header container animation-slide-in" [class.header--dark]="isDark">
-  <div routerLink="/" role="button" class="hover:opacity-75">
+  <div [routerLink]="'' | localizedLink" role="button" class="hover:opacity-75">
     <img src="assets/img/afyia_logo.png" alt="Logo afyia">
   </div>
   <div>
     <nav class="hidden lg:block">
       <ul>
-        <li><a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">{{ 'header.home' | translate }}</a></li>
+        <li><a [routerLink]="'' | localizedLink" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">{{ 'header.home' | translate }}</a></li>
         <li class="relative">
           <a class="btn-approach">
             <span>{{ 'header.approach' | translate }}</span>
@@ -14,26 +14,26 @@
             </svg>
             <div class="dropdown-content">
               <ul>
-                <li role="button" [routerLink]="['/', currentLang, 'software']" routerLinkActive="active">
+                <li role="button" [routerLink]="'software' | localizedLink" routerLinkActive="active">
                   {{ 'header.technology' | translate }}
                 </li>
-                <li role="button" [routerLink]="['/', currentLang, 'biotechnology']" routerLinkActive="active">
+                <li role="button" [routerLink]="'biotechnology' | localizedLink" routerLinkActive="active">
                   {{ 'header.biotechnology' | translate }}
                 </li>
-                <li role="button" [routerLink]="['/', currentLang, 'industrial-process']" routerLinkActive="active">
+                <li role="button" [routerLink]="'industrial-process' | localizedLink" routerLinkActive="active">
                   {{ 'header.process' | translate }}
                 </li>
-                <li role="button" [routerLink]="['/', currentLang, 'human-health']" routerLinkActive="active">
+                <li role="button" [routerLink]="'human-health' | localizedLink" routerLinkActive="active">
                   {{ 'header.health' | translate }}
                 </li>
               </ul>
             </div>
           </a>
         </li>
-        <li><a [routerLink]="['/', currentLang, 'products']" routerLinkActive="active">{{ 'header.product' | translate }}</a></li>
-        <li><a [routerLink]="['/', currentLang, 'news']" routerLinkActive="active">{{ 'header.news' | translate }}</a></li>
-        <li><a [routerLink]="['/', currentLang, 'about']" routerLinkActive="active">{{ 'header.about' | translate }}</a></li>
-        <li><a [routerLink]="['/', currentLang, 'contact']" routerLinkActive="active">{{ 'header.contact' | translate }}</a></li>
+        <li><a [routerLink]="'products' | localizedLink" routerLinkActive="active">{{ 'header.product' | translate }}</a></li>
+        <li><a [routerLink]="'news' | localizedLink" routerLinkActive="active">{{ 'header.news' | translate }}</a></li>
+        <li><a [routerLink]="'about' | localizedLink" routerLinkActive="active">{{ 'header.about' | translate }}</a></li>
+        <li><a [routerLink]="'contact' | localizedLink" routerLinkActive="active">{{ 'header.contact' | translate }}</a></li>
         <li class="border-s ps-2 relative">
           <a class="btn-lang">
             <span>{{ currentLang | uppercase }}</span>
@@ -76,22 +76,22 @@
         </div>
         <div class="flex flex-col text-xl px-5 pb-3 text-center text-dark">
           <div class="p-2">
-            <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.home' | translate }}</a>
+            <a [routerLink]="'' | localizedLink" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.home' | translate }}</a>
           </div>
           <div class="p-2">
-            <a [routerLink]="['/', currentLang, 'software']" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.technology' | translate }}</a>
+            <a [routerLink]="'software' | localizedLink" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.technology' | translate }}</a>
           </div>
           <div class="p-2">
-            <a [routerLink]="['/', currentLang, 'products']" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.product' | translate }}</a>
+            <a [routerLink]="'products' | localizedLink" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.product' | translate }}</a>
           </div>
           <div class="p-2">
-            <a [routerLink]="['/', currentLang, 'news']" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.news' | translate }}</a>
+            <a [routerLink]="'news' | localizedLink" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.news' | translate }}</a>
           </div>
           <div class="p-2">
-            <a [routerLink]="['/', currentLang, 'about']" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.about' | translate }}</a>
+            <a [routerLink]="'about' | localizedLink" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.about' | translate }}</a>
           </div>
           <div class="p-2">
-            <a routerLink="/contact" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.contact' | translate }}</a>
+            <a [routerLink]="'contact' | localizedLink" routerLinkActive="active" (click)="closeDropdown(mobileSubmenu, $event)">{{ 'header.contact' | translate }}</a>
           </div>
           <div class="border-b my-2"></div>
           <div class="p-2">

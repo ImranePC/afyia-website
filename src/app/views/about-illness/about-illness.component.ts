@@ -8,6 +8,7 @@ import { AppService } from '../../services/app.service';
 import { CommonModule } from '@angular/common';
 import { BannerComponent } from '../../components/banner/banner.component';
 import { firstValueFrom } from 'rxjs';
+import { LocalizedLinkPipe } from '../../pipes/localized-link.pipe';
 
 @Component({
   selector: 'app-about-illness',
@@ -19,6 +20,7 @@ import { firstValueFrom } from 'rxjs';
     ProductCardComponent,
     CommonModule,
     BannerComponent,
+    LocalizedLinkPipe,
   ],
   templateUrl: './about-illness.component.html',
   styleUrl: './about-illness.component.scss',

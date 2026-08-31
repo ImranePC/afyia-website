@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { CommonModule } from '@angular/common';
 import { SoftwareLinkCardComponent } from '../../../components/software-link-card/software-link-card.component';
 import { BannerComponent } from '../../../components/banner/banner.component';
+import { LocalizedLinkPipe } from '../../../pipes/localized-link.pipe';
 
 @Component({
   selector: 'app-product',
@@ -25,6 +26,7 @@ import { BannerComponent } from '../../../components/banner/banner.component';
     ReactiveFormsModule,
     SoftwareLinkCardComponent,
     BannerComponent,
+    LocalizedLinkPipe,
   ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss'

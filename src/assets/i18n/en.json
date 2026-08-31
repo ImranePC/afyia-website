@@ -312,7 +312,11 @@
     "disoft_description_3": "With its user-friendly interface, DISoft allows users to explore and visualize diagnostic results with ease.",
     "disoft_description_4": "The technology behind DISoft is based on a patent co-owned by IRD and the University of Montpellier, and exclusively licensed to AFYIA.",
     "subtitle_2": "<b>Precise</b> and <strong>reliable</strong>",
-    "subtitle_3": "<b>User</b>-<strong>friendly</strong>"
+    "subtitle_3": "<b>User</b>-<strong>friendly</strong>",
+    "link_card": {
+      "title": "Discover the DISoft software",
+      "button": "Discover"
+    }
   },
   "login": {
     "title": "Log in",

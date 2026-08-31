@@ -7,6 +7,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ClickOutsideDirective } from '../../directives/click-outside.directive';
 import { CookieService } from 'ngx-cookie-service';
 import { AppService } from '../../services/app.service';
+import { LocalizedLinkPipe } from '../../pipes/localized-link.pipe';
 
 @Component({
   selector: 'app-header',
@@ -18,6 +19,7 @@ import { AppService } from '../../services/app.service';
     FontAwesomeModule,
     ClickOutsideDirective,
     TranslateModule,
+    LocalizedLinkPipe,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
