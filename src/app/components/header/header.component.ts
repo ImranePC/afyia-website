@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBars, faCaretDown, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ClickOutsideDirective } from '../../directives/click-outside.directive';
 import { CookieService } from 'ngx-cookie-service';
@@ -25,15 +25,13 @@ import { LocalizedLinkPipe } from '../../pipes/localized-link.pipe';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  @ViewChild('navBar')
-  navBar: ElementRef<HTMLElement>;
-
-  @ViewChild('langDropDown')
-  dropDown: ElementRef<HTMLElement>;
-
   previousScrollValue = 0;
 
-  faCaretDown = faCaretDown;
+  navHidden = false;
+
+  menuOpen = false;
+
+  langOpen = false;
 
   faBars = faBars;
 
@@ -49,15 +47,10 @@ export class HeaderComponent {
 
   @HostListener('window:scroll')
   onWindowScroll() {
-    if (this.previousScrollValue > window.scrollY){
-      this.navBar.nativeElement.style.top = "0"
-      this.navBar.nativeElement.style.opacity = "1"
-      this.navBar.nativeElement.style.pointerEvents = 'all';
-    } else {
-      this.navBar.nativeElement.style.animationPlayState = ""
-      this.navBar.nativeElement.style.top = "-20px"
-      this.navBar.nativeElement.style.opacity = "0"
-      this.navBar.nativeElement.style.pointerEvents = 'none';
+    this.navHidden = window.scrollY > this.previousScrollValue && window.scrollY > 0;
+
+    if (this.navHidden) {
+      this.closeMenu();
     }
 
     this.previousScrollValue = window.scrollY;
@@ -70,27 +63,25 @@ export class HeaderComponent {
   selectLanguage(language: string): void {
     this.cookie.set('language', language);
 
-    const currentUrl = this.router.url;
-    const newUrl = currentUrl.replace(/^\/(fr|en)/, `${language}`);
+    const newUrl = this.router.url.replace(/^\/(fr|en)/, `/${language}`);
     window.location.href = newUrl;
   }
 
-  toggleDropDown(dropdown: HTMLElement): void {
-    if (dropdown.style.display === 'none') {
-      dropdown.style.display = 'block';
-    } else {
-      dropdown.style.display = 'none'
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+    if (!this.menuOpen) {
+      this.langOpen = false;
     }
   }
 
-  closeDropdown(dropdown: HTMLElement, event: any): void {
-    event.stopPropagation();
-    dropdown.style.display = 'none';
+  closeMenu(): void {
+    this.menuOpen = false;
+    this.langOpen = false;
   }
 
-  openDropdown(dropdown: HTMLElement, event: any): void {
+  toggleLang(event: MouseEvent): void {
     event.stopPropagation();
-    dropdown.style.display = 'block';
+    this.langOpen = !this.langOpen;
   }
 
   get currentLang(): string {

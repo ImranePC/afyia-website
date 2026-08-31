@@ -55,10 +55,14 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   initLanguage(): void {
-    if (!this.cookie.get('language')) {
-      this.cookie.set('language', DEFAULT_LANGUAGE);
-    }
+    const supported = ['fr', 'en'];
+    const urlLang = window.location.pathname.split('/').filter(Boolean)[0];
+    const lang = supported.includes(urlLang)
+      ? urlLang
+      : this.cookie.get('language') || DEFAULT_LANGUAGE;
 
-    this.translate.use(this.cookie.get('language'));
+    this.cookie.set('language', lang);
+    this.translate.setDefaultLang(DEFAULT_LANGUAGE);
+    this.translate.use(lang);
   }
 }
