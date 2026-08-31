@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   faEnvelope,
   faComment,
@@ -12,7 +12,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TranslateModule } from '@ngx-translate/core';
-import { AppService } from '../../services/app.service';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
@@ -74,10 +73,7 @@ export class ContactComponent implements OnInit {
 
   newsletterForm: FormGroup;
 
-  dataConsent = false;
-
   constructor(
-    private appService: AppService,
     private fb: FormBuilder,
     private api: ApiService,
     private route: ActivatedRoute,
@@ -109,7 +105,7 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.messageForm.valid && this.dataConsent) {
+    if (this.messageForm.valid) {
       this.api.sendMessage(this.messageForm.value).subscribe({
         next: () => {
           this.messageForm.reset({

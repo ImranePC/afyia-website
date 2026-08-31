@@ -177,7 +177,7 @@
         <div>
           {{ 'contact.sections.form.consent' | translate }}
         </div>
-        <button class="self-start btn btn-lg bg-cyan-700 text-white" [class.disabled]="!messageForm.valid || !dataConsent">
+        <button class="self-start btn btn-lg bg-cyan-700 text-white" [class.disabled]="!messageForm.valid">
           <fa-icon class="me-1" [icon]="faPaperPlane"></fa-icon>
           {{ 'contact.sections.form.inputs.button' | translate }}
         </button>
