@@ -1,43 +1,47 @@
 @if (description.length <= 0) {
 <div
   class="min-h-[175px] xl:min-h-[350px] h-full rounded-2xl text-center flex flex-col-reverse relative background-image"
+  role="button"
   style="background-image: url('../../../assets/img/{{ imagePath }}')"
 >
   <h3 class="z-10 w-full px-5 text-white absolute top-[50%] -translate-y-1/2 text-center text-shadow">
     <span class="font-extrabold text-4xl">{{ title }}</span> <br><span class="font-bold text-3xl"> {{ subTitle }}</span>
   </h3>
+  <div class="z-10 mb-5">
+    <button class="btn btn-dark">{{ 'sections.product.view_more' | translate }}</button>
+  </div>
 </div>
 } @else {
 <div
   class="min-h-[250px] h-full p-5 rounded-2xl text-left flex flex-col justify-between relative background-image background-image-darken"
-  [class.disabled]="comingSoon"
+  role="button"
   style="background-image: url('{{ imagePath }}')"
 >
-  <h3 class="z-10 text-white text-shadow">
-    <span class="font-extrabold text-4xl">{{ title }}</span> <br>
-    <span class="block mb-2 text-2xl"> {{ subTitle }}</span>
-    @if (!comingSoon) {
+  <div class="z-10 text-white">
+    <div>
+      <h3 class="inline-block text-shadow font-extrabold text-4xl">{{ title }}</h3>
+      @if (comingSoon) {
+        <span class="inline-block align-super ms-3 px-2 rounded-xl bg-black/20 border">
+          {{ 'sections.product.coming_soon' | translate }}
+        </span>
+      }
+      <span class="block mb-2 text-2xl"> {{ subTitle }}</span>
       <span>{{ description }}</span>
-    }
-  </h3>
+    </div>
+  </div>
   <div class="flex justify-between items-center mt-5">
-    <div class="z-10">
-    @if (ce) {
-      <img src="assets/img/ce.svg" width="30px" alt="CE Logo SVG">
-    }
-    @if (ruo) {
-      <b class="block border px-1 border-white text-white">RUO</b>
-    }
+    <div class="z-10 flex gap-3 align-middle">
+      @if (ce) {
+        <img src="assets/img/ce.svg" width="30px" alt="CE Logo SVG">
+      }
+      @if (ruo) {
+        <b class="block border px-2 border-white text-white">RUO</b>
+      }
     </div>
-    @if (!comingSoon) {
-    <div class="btn btn-white z-10">
-      {{ 'sections.product.view_more' | translate }} @if (link) { <fa-icon class="ms-1" [icon]="faUpRightFromSquare" size="sm"></fa-icon> }
-    </div>
-    } @else {
-      <div class="btn bg-black bg-opacity-75 text-white z-10">
-        {{ 'sections.product.coming_soon' | translate }}
-      </div>
-    }
+    <button class="btn btn-white z-10">
+      {{ 'sections.product.view_more' | translate }}
+      @if (link) { <fa-icon class="ms-1" [icon]="faUpRightFromSquare" size="sm"></fa-icon> }
+    </button>
   </div>
 </div>
 }

@@ -153,12 +153,12 @@
         "hepa": {
           "title": "Hepatitis B virus",
           "subtitle": "Viral load quantification by real-time PCR",
-          "text": "Coming soon"
+          "text": "Available soon"
         }
       },
       "title": "Our <strong>products</strong>",
       "view_more": "View more",
-      "coming_soon": "Coming soon"
+      "coming_soon": "Available soon"
     },
     "about": {
       "title": "About <strong>us</strong>",
@@ -219,7 +219,8 @@
       "content": "Our ambition is to make high-performance diagnostics accessible to everyone, in order to better prevent, treat, and control infectious diseases on a global scale."
     },
     "learn_more": "Learn more",
-    "features": "Features"
+    "features": "Features",
+    "coming_soon_notice": "This product is not available yet. Contact us to be notified of its release."
   },
   "about_illness": {
     "respiratory": {

@@ -1,4 +1,4 @@
-import { Component, computed, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ArianeComponent } from '../../components/ariane/ariane.component';
 import { faBoxOpen, faCaretDown } from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 import { Category, ProductService } from '../../services/product.service';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { Router, RouterModule } from '@angular/router';
-import { AppService } from '../../services/app.service';
 import { CommonModule } from '@angular/common';
 import { ClickOutsideDirective } from '../../directives/click-outside.directive';
 import { BannerComponent } from '../../components/banner/banner.component';
@@ -67,13 +66,10 @@ export class ProductsComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private translate: TranslateService,
-    private appService: AppService,
     private router: Router,
   ) { }
 
   ngOnInit(): void {
-    this.appService.initScrollReveal();
-
     this.translate.onLangChange.subscribe(() => {
       this.loadProducts();
       this.loadData();

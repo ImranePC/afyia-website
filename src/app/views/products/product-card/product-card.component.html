@@ -1,4 +1,4 @@
-<div class="flex flex-col lg:flex-row gap-3 lg:pb-0 lg:gap-5" [class.disabled]="product?.disabled">
+<div class="flex flex-col lg:flex-row gap-3 lg:pb-0 lg:gap-5">
   <div
     class="image-card-container relative h-[200px] w-full lg:h-[150px] lg:min-w-[240px] lg:max-w-[240px] bg-slate-100 rounded-xl overflow-clip hover:text-blue"
     role="button"
@@ -16,9 +16,18 @@
   </div>
   <div>
     <div class="text-link" (click)="goToProduct()">
-      <h2 id="colored" class="text-2xl font-bold">{{ product.name }}</h2>
+      <h2 id="colored" class="inline-block text-2xl font-bold">
+        {{ product.name }}
+      </h2>
+      @if (product.isComingSoon) {
+        <span class="inline-block ms-3 px-2 rounded-xl bg-cyan-100 border border-cyan-200 text-cyan-900">
+          {{ 'sections.product.coming_soon' | translate }}
+        </span>
+      }
       <h3 class="text-xl mb-2">{{ product.subname }}</h3>
     </div>
-    <p class="text-sm">{{ product.description }}</p>
+    <p class="text-sm">
+      {{ product.description }}
+    </p>
   </div>
 </div>

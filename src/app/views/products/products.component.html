@@ -8,8 +8,8 @@
     <h2 class="title title-start">{{ 'products.about.categories' | translate }}</h2>
   </div>
 
-  <div class="
-    illness-grid grid grid-cols-1 gap-5 reveal
+  <div data-scroll class="
+    illness-grid grid grid-cols-1 gap-5
     md:grid-cols-2
     xl:grid-cols-4
   ">
@@ -19,99 +19,96 @@
       </div>
     }
   </div>
-
-  <div *ngIf="isCategoriesLoading" class="skeleton-wrapper flex h-[200px] justify-start gap-5">
-    <div class="skeleton-area"></div>
-    <div class="skeleton-area"></div>
-    <div class="skeleton-area"></div>
-    <div class="skeleton-area"></div>
-  </div>
 </div>
 
-<div class="container">
-  <div id="all_products" class="text-start">
-    <div class="title title-start mb-10">{{ 'products.all_product' | translate }}</div>
-  </div>
-  <div class="bg-white shadow-sm rounded-xl p-5 lg:p-10">
-    <div class="flex flex-wrap gap-5 mb-10">
-      <div class="w-full lg:w-[250px] text-nowrap">
-        {{ 'products.filters.pathogens' | translate }}
-        <div class="bg-cyan-50 rounded-lg">
-          <div class="flex justify-between px-3 py-1" role="button" (click)="closeDropdown(technologyDropdown, $event); openDropdown(pathogenDropdown, $event)">
-            <div>
-              {{ selectedFilter.pathogen?.name ?? 'products.filters.select' | translate }}
-            </div>
-            <fa-icon [icon]="faCaretDown" size="sm"></fa-icon>
-          </div>
-          <div
-            #pathogenDropdown
-            class="z-10 absolute bg-white rounded-xl shadow animation-pop"
-            style="display: none"
-            (clickOutside)="closeDropdown(pathogenDropdown, $event)"
-          >
-            <ul class="text-sm flex flex-col text-left m-2 gap-2">
-              @for (pathogen of pathogens; track pathogen) {
-              <li>
-                <button
-                  class="inline-block text-start w-full py-1 px-2 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
-                  [ngClass]="{'bg-gray-100 pointer-events-none' : selectedFilter.pathogen?.id === pathogen.id}"
-                  (click)="selectPathogen(pathogen); closeDropdown(pathogenDropdown, $event)"
-                >
-                  <span>{{ pathogen.name }}</span>
-                </button>
-              </li>
-              }
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="w-full lg:w-[250px] text-nowrap">
-        {{ 'products.filters.technology' | translate }}
-        <div class="bg-cyan-50 rounded-lg">
-          <div class="flex justify-between px-3 py-1" role="button" (click)="closeDropdown(pathogenDropdown, $event); openDropdown(technologyDropdown, $event)">
-            <div>
-              {{ selectedFilter.technology?.name ?? 'products.filters.select' | translate }}
-            </div>
-            <fa-icon [icon]="faCaretDown" size="sm"></fa-icon>
-          </div>
-          <div
-            #technologyDropdown
-            class="z-10 absolute bg-white rounded-xl shadow animation-pop"
-            style="display: none"
-            (clickOutside)="closeDropdown(technologyDropdown, $event)"
-          >
-            <ul class="text-sm flex flex-col text-left m-2 gap-2">
-              @for (technology of technologies; track technology) {
-              <li>
-                <button
-                  class="inline-block text-start w-full py-1 px-2 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
-                  [ngClass]="{'bg-gray-100 pointer-events-none' : selectedFilter.technology?.id === technology.id}"
-                  (click)="selectTechnology(technology); closeDropdown(technologyDropdown, $event)"
-                >
-                  <span>{{ technology.name }}</span>
-                </button>
-              </li>
-              }
-            </ul>
-          </div>
-        </div>
-      </div>
-      <button
-        class="btn w-full lg:w-auto bg-primary text-white self-end px-4 py-1"
-        [class.disabled]="!hasFilter"
-        (click)="resetFilter()"
-      >
-        {{ 'products.filters.reset' | translate }}
-      </button>
+@if (!isCategoriesLoading) {
+  <div class="container">
+    <div id="all_products" class="text-start">
+      <div class="title title-start mb-10">{{ 'products.all_product' | translate }}</div>
     </div>
-    <div class="flex flex-col gap-10 lg:gap-5">
-      @if (products?.length > 0) {
-        @for (item of products; track item; let last = $last) {
-        <app-product-card [ngClass]="{'pb-5 border-b lg:pb-0 lg:border-0' : !last}" [product]="item"></app-product-card>
+    <div class="bg-white shadow-sm rounded-xl p-5 lg:p-10">
+      <div class="flex flex-wrap gap-5 mb-5">
+        <div class="w-full lg:w-[250px] text-nowrap">
+          {{ 'products.filters.pathogens' | translate }}
+          <div class="bg-cyan-50 rounded-lg">
+            <div class="flex justify-between px-3 py-1" role="button" (click)="closeDropdown(technologyDropdown, $event); openDropdown(pathogenDropdown, $event)">
+              <div>
+                {{ selectedFilter.pathogen?.name ?? 'products.filters.select' | translate }}
+              </div>
+              <fa-icon [icon]="faCaretDown" size="sm"></fa-icon>
+            </div>
+            <div
+              #pathogenDropdown
+              class="z-10 absolute bg-white rounded-xl shadow animation-pop"
+              style="display: none"
+              (clickOutside)="closeDropdown(pathogenDropdown, $event)"
+            >
+              <ul class="text-sm flex flex-col text-left m-2 gap-2">
+                @for (pathogen of pathogens; track pathogen) {
+                <li>
+                  <button
+                    class="inline-block text-start w-full py-1 px-2 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
+                    [ngClass]="{'bg-gray-100 pointer-events-none' : selectedFilter.pathogen?.id === pathogen.id}"
+                    (click)="selectPathogen(pathogen); closeDropdown(pathogenDropdown, $event)"
+                  >
+                    <span>{{ pathogen.name }}</span>
+                  </button>
+                </li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-[250px] text-nowrap">
+          {{ 'products.filters.technology' | translate }}
+          <div class="bg-cyan-50 rounded-lg">
+            <div class="flex justify-between px-3 py-1" role="button" (click)="closeDropdown(pathogenDropdown, $event); openDropdown(technologyDropdown, $event)">
+              <div>
+                {{ selectedFilter.technology?.name ?? 'products.filters.select' | translate }}
+              </div>
+              <fa-icon [icon]="faCaretDown" size="sm"></fa-icon>
+            </div>
+            <div
+              #technologyDropdown
+              class="z-10 absolute bg-white rounded-xl shadow animation-pop"
+              style="display: none"
+              (clickOutside)="closeDropdown(technologyDropdown, $event)"
+            >
+              <ul class="text-sm flex flex-col text-left m-2 gap-2">
+                @for (technology of technologies; track technology) {
+                <li>
+                  <button
+                    class="inline-block text-start w-full py-1 px-2 rounded-lg hover:bg-gray-100 transition whitespace-nowrap"
+                    [ngClass]="{'bg-gray-100 pointer-events-none' : selectedFilter.technology?.id === technology.id}"
+                    (click)="selectTechnology(technology); closeDropdown(technologyDropdown, $event)"
+                  >
+                    <span>{{ technology.name }}</span>
+                  </button>
+                </li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button
+          class="btn w-full lg:w-auto bg-primary text-white self-end px-4 py-1"
+          [class.disabled]="!hasFilter"
+          (click)="resetFilter()"
+        >
+          {{ 'products.filters.reset' | translate }}
+        </button>
+      </div>
+      <div class="flex flex-col gap-10 lg:gap-5">
+        <hr>
+        @if (products?.length > 0) {
+          @for (item of products; track item; let last = $last) {
+            <app-product-card [ngClass]="{'pb-5 border-b lg:pb-0 lg:border-0' : !last}" [product]="item"></app-product-card>
+            <hr [class.hidden]="last">
+          }
+        } @else {
+          <div class="rounded-xl bg-slate-50 p-8 text-center">{{ 'products.no_result' | translate }}</div>
         }
-      } @else {
-        <div class="rounded-xl bg-slate-50 p-8 text-center">{{ 'products.no_result' | translate }}</div>
-      }
+      </div>
     </div>
   </div>
-</div>
+}

@@ -27,17 +27,23 @@
     transition: 0.28s;
   }
 
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      to top,
+      rgba(48, 8, 51, 0.2),
+      rgb(112 26 117 / 0.05) 45%,
+      transparent
+    );
+  }
+
   &.background-image-darken {
     &::after {
       filter: brightness(0.75);
-    }
-  }
-
-  &.disabled {
-    pointer-events: none;
-
-    &::after {
-      filter: grayscale(100%) brightness(0.66);
     }
   }
 }
