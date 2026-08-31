@@ -24,6 +24,7 @@
 
   &--small {
     min-height: 150px;
+    max-height: 150px;
 
     h1 {
       display: none;
@@ -31,6 +32,16 @@
   }
 
   img {
+    position: absolute;
+    width: 120%;
+    height: 140%;
     object-fit: cover;
+
+    // Opt out of the global [data-scroll] opacity reveal: this image is
+    // above the fold and should show immediately, without a fade.
+    &[data-scroll] {
+      opacity: 1;
+      transition: none;
+    }
   }
 }

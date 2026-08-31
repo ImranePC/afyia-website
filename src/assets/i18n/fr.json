@@ -114,6 +114,10 @@
       "text": "Pour collaborer ou nous rejoindre",
       "vision": "Vous partagez notre vision ?"
     },
+    "hero": {
+      "cta": "Découvrir nos produits",
+      "scroll": "Faire défiler"
+    },
     "mission": {
       "goal_3": "S'inscrit dans l'objectif 3 de développement durable de l'agenda 2030 des Nations Unies.",
       "list": {

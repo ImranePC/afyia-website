@@ -4,6 +4,6 @@
   [class.banner--small]="isSmall()"
   [class.banner--dark]="dark"
 >
-  <img appParallaxImg [ratio]="-0.3" [src]="imageUrl">
+  <img data-scroll [attr.data-scroll-speed]="isSmall() ? 0 : -0.25" [src]="imageUrl">
   <h1 [class.text-3xl]="titleSmall" class="animation-pop">{{ title }}</h1>
 </div>

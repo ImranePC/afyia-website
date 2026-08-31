@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BannerComponent } from '../../../components/banner/banner.component';
 import { CarouselComponent, CarouselElement } from '../../../components/carousel/carousel.component';
+import { LocalizedLinkPipe } from '../../../pipes/localized-link.pipe';
 
 @Component({
   selector: 'app-software',
@@ -23,6 +24,7 @@ import { CarouselComponent, CarouselElement } from '../../../components/carousel
     CommonModule,
     RouterModule,
     BannerComponent,
+    LocalizedLinkPipe,
   ],
   templateUrl: './software.component.html',
   styleUrl: './software.component.scss'
@@ -55,7 +57,7 @@ export class SoftwareComponent {
     },
     {
       title: 'header.news',
-      image: 'assets/img/img_human_health.jpg',
+      image: 'assets/img/banner/banner_news_alt.webp',
       route: 'news',
     }
   ];

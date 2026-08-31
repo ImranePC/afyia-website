@@ -28,9 +28,13 @@
   <div class="mx-auto lg:w-8/12 bg-white shadow-sm rounded-xl p-5 lg:p-16 reveal">
     <h2 class="text-4xl lg:text-5xl mb-5" [innerHTML]="'process.title_3' | translate"></h2>
     <p class="text-justify text-lg lg:text-xl mb-8" [innerHTML]="'process.description_3' | translate"></p>
-    <button class="btn btn-lg" [routerLink]="['/', translate.currentLang, 'products']">
+    <button class="btn btn-lg" [routerLink]="'products' | localizedLink">
       {{ 'process.see_products' | translate }}
       <fa-icon class="ms-2" [icon]="faArrowRight"></fa-icon>
     </button>
   </div>
+</div>
+
+<div class="mt-40">
+  <app-carousel [items]="links"></app-carousel>
 </div>

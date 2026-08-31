@@ -54,7 +54,7 @@
     <div class="text-center">
       <button
         class="align-middle btn btn-lg"
-        [routerLink]="['/',  translate.currentLang, 'contact']"
+        [routerLink]="'contact' | localizedLink"
         [queryParams]="{ subject: 'software'}"
         fragment="form"
       >

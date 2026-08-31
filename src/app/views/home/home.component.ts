@@ -1,10 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CardLinkComponent } from './card-link/card-link.component';
 import { RouterLink } from '@angular/router';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { AppService } from '../../services/app.service';
 import { CtaComponent } from '../../components/cta/cta.component';
-import { ParallaxDirective } from '../../directives/parallax.directive';
+import { LocalizedLinkPipe } from '../../pipes/localized-link.pipe';
 import { Product, ProductService } from '../../services/product.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { fromEvent, map, startWith } from 'rxjs';
@@ -17,7 +17,7 @@ import { fromEvent, map, startWith } from 'rxjs';
     RouterLink,
     TranslateModule,
     CtaComponent,
-    ParallaxDirective,
+    LocalizedLinkPipe,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
     { initialValue: window.innerWidth < 1280 }
   );
 
-  constructor(private appService: AppService, private productService: ProductService, private translate: TranslateService) { }
+  constructor(private appService: AppService, private productService: ProductService) { }
 
   ngOnInit(): void {
     this.appService.initScrollReveal();
@@ -88,9 +88,5 @@ export class HomeComponent implements OnInit {
     document.documentElement.style.scrollBehavior = 'smooth';
     document.getElementById(id).scrollIntoView();
     document.documentElement.style.scrollBehavior = 'auto';
-  }
-
-  get currentLang(): string {
-    return this.translate.currentLang;
   }
 }
