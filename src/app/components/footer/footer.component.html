@@ -8,7 +8,7 @@
   <div class="hidden lg:block my-3 w-[1px] border-s border-slate-400"></div>
   <div class="text-white">
     <div class="font-bold text-lg">{{ 'footer.contact.title' | translate }}</div>
-    <a routerLink="/contact">Contact</a>
+    <a [routerLink]="'contact' | localizedLink">Contact</a>
     <a href="https://linkedin.com/company/afyia-diagnostics" target="_blank">
       Linkedin <fa-icon class="ms-1" [icon]="faUpRightFromSquare" size="xs"></fa-icon>
     </a>
@@ -16,11 +16,10 @@
   </div>
   <div>
     <div class="font-bold text-lg">{{ 'footer.legal.title' | translate }}</div>
-    <a routerLink="/legal-mentions">{{ 'footer.legal.notice' | translate }}</a>
+    <a [routerLink]="'legal-mentions' | localizedLink">{{ 'footer.legal.notice' | translate }}</a>
   </div>
   <div>
     <div class="font-bold text-lg">{{ 'footer.company.title' | translate }}</div>
-    <a routerLink="/about">{{ 'footer.company.about' | translate }}</a>
-    <a routerLink="/private-login">{{ 'footer.company.private' | translate }}</a>
+    <a [routerLink]="'about' | localizedLink">{{ 'footer.company.about' | translate }}</a>
   </div>
 </div>

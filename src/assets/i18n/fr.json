@@ -67,8 +67,7 @@
   "footer": {
     "company": {
       "about": "À propos",
-      "title": "L'entreprise",
-      "private": "Accès privé"
+      "title": "L'entreprise"
     },
     "contact": {
       "message": "Laisser un mot",

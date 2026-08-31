@@ -32,7 +32,6 @@ export const routes: Routes = [
     resolve: { lang: langResolver },
     children: [
       { path: '', component: HomeComponent },
-      { path: 'private-login', component: PrivateLoginComponent },
       { path: 'account-request', component: RequestAccountComponent },
       { path: 'about', component: AboutComponent },
       { path: 'products/:id', component: AboutIllnessComponent },
