@@ -3,7 +3,7 @@ FROM node:18
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 COPY ./api /app/api
 RUN chmod +X /app/api/entrypoint.sh
 

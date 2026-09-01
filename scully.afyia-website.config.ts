@@ -16,5 +16,5 @@ export const config: ScullyConfig = {
       lang: { values: ['fr', 'en'] }
     }
   },
-  // extraRoutes: ['/contact', '/about', '/news', '/software', '/legal-mentions', '/news/:id', '/private-login', '/manage-news', '/manage-news/:id', '/products', 'products/:id', '/product/:id']
+  extraRoutes: ['/contact', '/about', '/news', '/software', '/biotechnology', '/industrial-process', '/human-health', '/legal-mentions', '/news/:id', '/products', 'products/:id', '/product/:id']
 };
