@@ -18,15 +18,14 @@ import { langResolver } from './resolvers/lang.resolver';
 import { BiotechnologyComponent } from './views/approach/biotechnology/biotechnology.component';
 import { ProcessComponent } from './views/approach/process/process.component';
 import { HealthComponent } from './views/approach/health/health.component';
-
-export const adminRoutes: Routes = [
-  { path: 'admin/manage-news/create', component: ManageNewsPageComponent, canActivate: [authGuard]},
-  { path: 'admin/manage-news/:id', component: ManageNewsPageComponent, canActivate: [authGuard]},
-  { path: 'admin/manage-news', component: ManageNewsComponent, canActivate: [authGuard]},
-]
+import { langRedirectGuard } from './guards/lang-redirect.guard';
 
 export const routes: Routes = [
-  ...adminRoutes,
+  {
+    path: '',
+    canActivate: [langRedirectGuard],
+    children: [],
+  },
   {
     path: ':lang',
     resolve: { lang: langResolver },
@@ -47,6 +46,5 @@ export const routes: Routes = [
       { path: 'human-health', component: HealthComponent },
     ]
   },
-  { path: '', redirectTo: '/fr', pathMatch: 'full' },
   { path: '**', redirectTo: '/fr' },
 ];
