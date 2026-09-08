@@ -1,7 +1,6 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import ScrollReveal from 'scrollreveal';
-import LocomotiveScroll from 'locomotive-scroll';
 
 @Injectable({
   providedIn: 'root'
@@ -9,14 +8,20 @@ import LocomotiveScroll from 'locomotive-scroll';
 export class AppService {
   private route = inject(ActivatedRoute);
 
+  private platformId = inject(PLATFORM_ID);
+
   isDark = signal(true);
 
-  scroll?: LocomotiveScroll;
+  scroll?: { destroy: () => void };
 
   constructor() { }
 
   initLocomotiveScroll(): void {
-    this.scroll = new LocomotiveScroll();
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    import('locomotive-scroll').then(({ default: LocomotiveScroll }) => {
+      this.scroll = new LocomotiveScroll();
+    });
   }
 
   destroyLocomotiveScroll(): void {
@@ -25,6 +30,8 @@ export class AppService {
   }
 
   initScrollReveal(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     const config = {
       duration: 750,
       distance: '30px',
@@ -32,11 +39,14 @@ export class AppService {
       interval: 100,
     }
 
-    ScrollReveal().reveal('.reveal', config);
+    import('scrollreveal').then(({ default: ScrollReveal }) => {
+      ScrollReveal().reveal('.reveal', config);
+    });
   }
 
   getRouteUrl(route: string[]) {
-    return window.location.origin + route.join('/')
+    const origin = isPlatformBrowser(this.platformId) ? window.location.origin : '';
+    return origin + route.join('/')
   }
 
   path(...segments: string[]): string[] {

@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { afterNextRender, Component, HostListener } from '@angular/core';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -21,7 +21,7 @@ import { BannerComponent } from '../../components/banner/banner.component';
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
   timelineBar: HTMLElement;
 
   timelineElements: HTMLElement[];
@@ -30,27 +30,29 @@ export class AboutComponent implements OnInit {
 
   faQuoteRight = faQuoteRight;
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService) {
+    afterNextRender(() => {
+      this.appService.initScrollReveal();
 
-  ngOnInit(): void {
-    this.appService.initScrollReveal();
+      this.timelineElements = [
+        document.getElementById('timeline_element_1'),
+        document.getElementById('timeline_element_2'),
+        document.getElementById('timeline_element_3'),
+        document.getElementById('timeline_element_4'),
+        document.getElementById('timeline_element_5'),
+        document.getElementById('timeline_element_6'),
+        document.getElementById('timeline_element_7'),
+        document.getElementById('timeline_element_8'),
+      ];
 
-    this.timelineElements = [
-      document.getElementById('timeline_element_1'),
-      document.getElementById('timeline_element_2'),
-      document.getElementById('timeline_element_3'),
-      document.getElementById('timeline_element_4'),
-      document.getElementById('timeline_element_5'),
-      document.getElementById('timeline_element_6'),
-      document.getElementById('timeline_element_7'),
-      document.getElementById('timeline_element_8'),
-    ];
-
-    this.timelineBar = document.getElementById('timeline_progress');
+      this.timelineBar = document.getElementById('timeline_progress');
+    });
   }
 
   @HostListener('window:scroll')
   onScroll() {
+    if (!this.timelineBar) return;
+
     const cursorRect = this.timelineBar.getBoundingClientRect();
 
     this.timelineElements.forEach((item: any) => {

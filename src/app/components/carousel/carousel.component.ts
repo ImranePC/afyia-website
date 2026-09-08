@@ -1,5 +1,5 @@
 import {
-  AfterViewInit,
+  afterNextRender,
   Component,
   ElementRef,
   Input,
@@ -28,7 +28,7 @@ export interface CarouselElement {
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss'
 })
-export class CarouselComponent implements AfterViewInit, OnDestroy {
+export class CarouselComponent implements OnDestroy {
   @ViewChild('viewport')
   private viewportRef!: ElementRef<HTMLDivElement>;
 
@@ -54,14 +54,14 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
 
   faChevronRight = faChevronRight;
 
-  constructor(public translate: TranslateService, private router: Router) {}
+  constructor(public translate: TranslateService, private router: Router) {
+    afterNextRender(() => {
+      this.updateMaxScroll();
 
-  ngAfterViewInit() {
-    this.updateMaxScroll();
-
-    this.resizeObserver = new ResizeObserver(() => this.updateMaxScroll());
-    this.resizeObserver.observe(this.viewportRef.nativeElement);
-    this.resizeObserver.observe(this.trackRef.nativeElement);
+      this.resizeObserver = new ResizeObserver(() => this.updateMaxScroll());
+      this.resizeObserver.observe(this.viewportRef.nativeElement);
+      this.resizeObserver.observe(this.trackRef.nativeElement);
+    });
   }
 
   ngOnDestroy() {

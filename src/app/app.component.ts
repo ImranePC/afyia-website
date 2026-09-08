@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, inject, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CookieService } from 'ngx-cookie-service';
 import { FooterComponent } from './components/footer/footer.component';
 import localeFr from '@angular/common/locales/fr';
-import { registerLocaleData } from '@angular/common';
+import { isPlatformBrowser, registerLocaleData } from '@angular/common';
 import { filter, Subscription } from 'rxjs';
 import { AppService } from './services/app.service';
 
@@ -26,6 +26,8 @@ registerLocaleData(localeFr, 'fr');
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
   title = 'afyia-website';
+
+  private platformId = inject(PLATFORM_ID);
 
   private routerEventsSubscription?: Subscription;
 
@@ -56,12 +58,17 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
   initLanguage(): void {
     const supported = ['fr', 'en'];
-    const urlLang = window.location.pathname.split('/').filter(Boolean)[0];
-    const lang = supported.includes(urlLang)
-      ? urlLang
-      : this.cookie.get('language') || DEFAULT_LANGUAGE;
+    let lang = DEFAULT_LANGUAGE;
 
-    this.cookie.set('language', lang);
+    if (isPlatformBrowser(this.platformId)) {
+      const urlLang = window.location.pathname.split('/').filter(Boolean)[0];
+      lang = supported.includes(urlLang)
+        ? urlLang
+        : this.cookie.get('language') || DEFAULT_LANGUAGE;
+
+      this.cookie.set('language', lang);
+    }
+
     this.translate.setDefaultLang(DEFAULT_LANGUAGE);
     this.translate.use(lang);
   }

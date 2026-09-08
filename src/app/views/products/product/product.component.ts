@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Product, ProductService } from '../../../services/product.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -48,6 +49,8 @@ export class ProductComponent implements OnInit {
 
   contactForm: FormGroup;
 
+  private platformId = inject(PLATFORM_ID);
+
   isClient = false;
 
   isLoading = true;
@@ -74,7 +77,9 @@ export class ProductComponent implements OnInit {
 
     this.loadProduct();
 
-    this.previousPath = history.state?.previousPath;
+    if (isPlatformBrowser(this.platformId)) {
+      this.previousPath = history.state?.previousPath;
+    }
 
     this.translate.onLangChange.subscribe(() => {
       this.loadProduct();

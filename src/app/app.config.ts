@@ -1,9 +1,10 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { provideClientHydration, withHttpTransferCacheOptions } from '@angular/platform-browser';
 import { provideRouter, InMemoryScrollingOptions, withInMemoryScrolling } from '@angular/router';
 
 import { routes } from './app.routes';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 const scrollConfig: InMemoryScrollingOptions = {
@@ -21,7 +22,7 @@ export const appConfig: ApplicationConfig = {
       routes,
       withInMemoryScrolling(scrollConfig),
     ),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     importProvidersFrom(TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

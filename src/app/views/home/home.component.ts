@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { afterNextRender, Component, ElementRef, inject, OnInit, PLATFORM_ID, signal, ViewChild } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { CardLinkComponent } from './card-link/card-link.component';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -38,9 +39,11 @@ export class HomeComponent implements OnInit {
 
   updatedScrollbar = false;
 
-  isWindowSm: boolean;
+  isWindowSm = false;
 
   products: Product[];
+
+  private platformId = inject(PLATFORM_ID);
 
   aboutFloatingImages = [
     { src: 'assets/img/team/img_margot.jpg', wrapperClass: 'hidden lg:block -top-10 -left-8 lg:-left-16 w-40 lg:w-80', cardClass: '-rotate-6', speed: 0.04 },
@@ -49,39 +52,44 @@ export class HomeComponent implements OnInit {
     { src: 'assets/img/buildings_background_sm.jpg', wrapperClass: 'hidden lg:block -bottom-8 -right-6 lg:-right-16 w-32 lg:w-64', cardClass: '-rotate-6', speed: 0.02 },
   ];
 
-  isMobileLayout = toSignal(
-    fromEvent(window, 'resize').pipe(
-      startWith(null),
-      map(() => window.innerWidth < 1280)
-    ),
-    { initialValue: window.innerWidth < 1280 }
-  );
+  isMobileLayout = isPlatformBrowser(this.platformId)
+    ? toSignal(
+        fromEvent(window, 'resize').pipe(
+          startWith(null),
+          map(() => window.innerWidth < 1280)
+        ),
+        { initialValue: window.innerWidth < 1280 }
+      )
+    : signal(false).asReadonly();
 
-  constructor(private appService: AppService, private productService: ProductService) { }
+  constructor(private appService: AppService, private productService: ProductService) {
+    afterNextRender(() => {
+      this.appService.initScrollReveal();
+      this.isWindowSm = window.screen.width <= 1200;
+
+      const banner = document.getElementById('banner');
+      if (!banner) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.target.id === 'banner') {
+            this.appService.setDark(entry.isIntersecting)
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0,
+        rootMargin: '-100px 0px 0px 0px' // top | right | bottom | left
+      });
+
+      observer.observe(banner);
+    });
+  }
 
   ngOnInit(): void {
-    this.appService.initScrollReveal();
-    this.isWindowSm = window.screen.width <= 1200;
-
     this.productService.getFeaturedProducts().subscribe((data) => {
       this.products = data;
     });
-
-    const banner = document.getElementById('banner');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.target.id === 'banner') {
-          this.appService.setDark(entry.isIntersecting)
-        }
-      });
-    }, {
-      root: null,
-      threshold: 0,
-      rootMargin: '-100px 0px 0px 0px' // top | right | bottom | left
-    });
-
-    observer.observe(banner);
   }
 
   scrollTo(id: string): void {

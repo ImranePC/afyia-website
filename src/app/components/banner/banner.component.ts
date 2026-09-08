@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, computed, Input, OnDestroy } from '@angular/core';
+import { afterNextRender, Component, computed, Input, OnDestroy } from '@angular/core';
 import { AppService } from '../../services/app.service';
 import { SafeHtml } from '@angular/platform-browser';
 
@@ -8,7 +8,7 @@ import { SafeHtml } from '@angular/platform-browser';
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
 })
-export class BannerComponent implements AfterViewInit, OnDestroy {
+export class BannerComponent implements OnDestroy {
   @Input()
   imageUrl: string;
 
@@ -28,15 +28,17 @@ export class BannerComponent implements AfterViewInit, OnDestroy {
 
   private observer: IntersectionObserver;
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService) {
+    afterNextRender(() => {
+      const banner = document.getElementById('banner');
+      if (!banner) return;
 
-  ngAfterViewInit(): void {
-    const banner = document.getElementById('banner');
-    this.observer = new IntersectionObserver((entries) => {
-      this.appService.setDark(entries[0].isIntersecting);
-    })
+      this.observer = new IntersectionObserver((entries) => {
+        this.appService.setDark(entries[0].isIntersecting);
+      })
 
-    this.observer.observe(banner);
+      this.observer.observe(banner);
+    });
   }
 
   ngOnDestroy(): void {

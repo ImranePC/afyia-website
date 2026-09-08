@@ -6,6 +6,9 @@
 /out-tsc
 /bazel-out
 
+# Generated at build time by scripts/gen-prerender-routes.mjs
+/prerender-routes.txt
+
 # Node
 /node_modules
 npm-debug.log
@@ -19,8 +22,6 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
-.scully
-scully.log
 
 # Visual Studio Code
 .vscode/*
