@@ -350,5 +350,51 @@
     "title_3": "Une production <b>automatisée</b>, <strong>accessible partout</strong>",
     "description_3": "Tous les composants de nos kits sont fabriqués sur place, afin de garantir la qualité et la disponibilité des réactifs. Ces tests répondent aux plus hauts critères de stabilité et de standardisation. Grace à l’investissement dans l’automatisation de notre chaine de production, nous pouvons produire à haut débit des kits entièrement lyophilisés et donc transportable à température ambiante.",
     "see_products": "Voir nos produits"
+  },
+  "seo": {
+    "home": {
+      "title": "AFYIA Diagnostics — le diagnostic des maladies infectieuses accessible à tous",
+      "description": "AFYIA Diagnostics conçoit des kits de diagnostic PCR des maladies infectieuses (mpox, herpès, varicelle…), simples d’usage et à prix accessible."
+    },
+    "about": {
+      "title": "À propos — AFYIA Diagnostics",
+      "description": "Notre mission, notre équipe et nos partenaires : rendre le diagnostic des maladies infectieuses accessible à tous."
+    },
+    "software": {
+      "title": "DISoft — logiciel d’interprétation des résultats | AFYIA Diagnostics",
+      "description": "DISoft, le logiciel d’aide à l’interprétation des résultats de PCR-HRM basé sur l’intelligence artificielle."
+    },
+    "account_request": {
+      "title": "Demande de compte DISoft | AFYIA Diagnostics",
+      "description": "Demandez un accès au logiciel DISoft pour l’interprétation automatisée de vos résultats de diagnostic."
+    },
+    "news": {
+      "title": "Actualités | AFYIA Diagnostics",
+      "description": "Les dernières actualités d’AFYIA Diagnostics : produits, publications, partenariats et événements."
+    },
+    "products": {
+      "title": "Nos kits de diagnostic PCR | AFYIA Diagnostics",
+      "description": "Les kits de diagnostic PCR d’AFYIA Diagnostics : mpox, éruptions cutanées fébriles, SARS-CoV-2, hépatite B…"
+    },
+    "legal": {
+      "title": "Mentions légales | AFYIA Diagnostics",
+      "description": "Mentions légales et informations sur l’éditeur du site AFYIA Diagnostics."
+    },
+    "contact": {
+      "title": "Nous contacter | AFYIA Diagnostics",
+      "description": "Contactez AFYIA Diagnostics pour une commande, une demande d’information ou une collaboration."
+    },
+    "biotechnology": {
+      "title": "Biotechnologie | AFYIA Diagnostics",
+      "description": "L’approche biotechnologique d’AFYIA Diagnostics pour le développement de tests de diagnostic moléculaire."
+    },
+    "industrial_process": {
+      "title": "Procédé industriel | AFYIA Diagnostics",
+      "description": "Le procédé industriel d’AFYIA Diagnostics, de la conception à la production des kits de diagnostic PCR."
+    },
+    "human_health": {
+      "title": "Santé humaine | AFYIA Diagnostics",
+      "description": "L’engagement d’AFYIA Diagnostics pour la santé humaine et l’accès au diagnostic des maladies infectieuses."
+    }
   }
 }

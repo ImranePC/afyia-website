@@ -1,8 +1,9 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { ArianeComponent, Path } from '../../components/ariane/ariane.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Category, Product, ProductService } from '../../services/product.service';
+import { SeoService } from '../../services/seo.service';
 import { ProductCardComponent } from '../products/product-card/product-card.component';
 import { AppService } from '../../services/app.service';
 import { CommonModule } from '@angular/common';
@@ -53,6 +54,8 @@ export class AboutIllnessComponent implements OnInit {
     private productService: ProductService,
     private appService: AppService,
     private route: ActivatedRoute,
+    private router: Router,
+    private seo: SeoService,
   ) {}
 
   ngOnInit(): void {
@@ -71,6 +74,13 @@ export class AboutIllnessComponent implements OnInit {
         this.path = { name: this.category.name, link: `/products/${this.category.id}`};
         this.navigationPath.push({ name: this.category.name, link: `/products/${this.category.id}`});
       }
+
+      this.seo.update({
+        title: `${this.category.name} — AFYIA Diagnostics`,
+        description: this.category.description || this.category.name,
+        path: this.router.url,
+        image: this.category.imageUrl,
+      });
     });
   }
 

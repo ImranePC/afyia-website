@@ -1,6 +1,7 @@
 import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Product, ProductService } from '../../../services/product.service';
+import { SeoService } from '../../../services/seo.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ArianeComponent, Path } from '../../../components/ariane/ariane.component';
@@ -61,6 +62,7 @@ export class ProductComponent implements OnInit {
     private router: Router,
     private translate: TranslateService,
     private appService: AppService,
+    private seo: SeoService,
     private fb: FormBuilder,
   ) {
     this.contactForm = this.fb.group({
@@ -94,6 +96,14 @@ export class ProductComponent implements OnInit {
 
       this.isLoading = false;
       this.setNavigationPath();
+
+      this.seo.update({
+        title: `${product.name} — AFYIA Diagnostics`,
+        description: product.description || product.subname || product.name,
+        path: this.router.url,
+        image: product.mainImageUrl,
+        type: 'product',
+      });
     });
   }
 

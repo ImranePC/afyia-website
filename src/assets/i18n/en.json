@@ -350,5 +350,51 @@
     "title_3": "<b>Automated</b> production, <strong>accessible everywhere</strong>",
     "description_3": "All the components of our kits are manufactured on-site to guarantee the quality and availability of our reagents. These tests meet the highest standards of stability and standardization. Thanks to investment in the automation of our production line, we can produce freeze-dried kits at high throughput, making them transportable at room temperature.",
     "see_products": "See our products"
+  },
+  "seo": {
+    "home": {
+      "title": "AFYIA Diagnostics — infectious disease diagnostics accessible to all",
+      "description": "AFYIA Diagnostics builds PCR diagnostic kits for infectious diseases (mpox, herpes, chickenpox…) that are simple to use and affordable."
+    },
+    "about": {
+      "title": "About — AFYIA Diagnostics",
+      "description": "Our mission, our team and our partners: making infectious disease diagnostics accessible to everyone."
+    },
+    "software": {
+      "title": "DISoft — result interpretation software | AFYIA Diagnostics",
+      "description": "DISoft, the AI-based software that helps interpret PCR-HRM diagnostic results."
+    },
+    "account_request": {
+      "title": "Request a DISoft account | AFYIA Diagnostics",
+      "description": "Request access to the DISoft software for automated interpretation of your diagnostic results."
+    },
+    "news": {
+      "title": "News | AFYIA Diagnostics",
+      "description": "The latest from AFYIA Diagnostics: products, publications, partnerships and events."
+    },
+    "products": {
+      "title": "Our PCR diagnostic kits | AFYIA Diagnostics",
+      "description": "AFYIA Diagnostics PCR diagnostic kits: mpox, febrile rash, SARS-CoV-2, hepatitis B and more."
+    },
+    "legal": {
+      "title": "Legal notice | AFYIA Diagnostics",
+      "description": "Legal notice and publisher information for the AFYIA Diagnostics website."
+    },
+    "contact": {
+      "title": "Contact us | AFYIA Diagnostics",
+      "description": "Contact AFYIA Diagnostics for an order, an information request or a collaboration."
+    },
+    "biotechnology": {
+      "title": "Biotechnology | AFYIA Diagnostics",
+      "description": "AFYIA Diagnostics’ biotechnology approach to developing molecular diagnostic tests."
+    },
+    "industrial_process": {
+      "title": "Industrial process | AFYIA Diagnostics",
+      "description": "AFYIA Diagnostics’ industrial process, from design to production of PCR diagnostic kits."
+    },
+    "human_health": {
+      "title": "Human health | AFYIA Diagnostics",
+      "description": "AFYIA Diagnostics’ commitment to human health and access to infectious disease diagnostics."
+    }
   }
 }
