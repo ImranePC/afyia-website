@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   nginx:
-    profiles: ["prod"]
+    profiles: ["preprod"]
     build:
       context: .
       dockerfile: docker/nginx/Dockerfile
@@ -43,6 +41,7 @@ services:
       - NODE_ENV=development
 
   directus:
+    profiles: ["dev", "preprod"]
     image: directus/directus:11.5.1
     container_name: afyia-directus
     ports:
