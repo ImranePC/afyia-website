@@ -1,25 +1,25 @@
 <app-banner [title]="'header.health' | translate" imageUrl="assets/img/banner/banner_health.webp"></app-banner>
 
 <div class="container mt-10 lg:mt-20 mb-20 lg:mb-32">
-  <div class="max-w-4xl mx-auto text-center mb-10 lg:mb-16 reveal">
+  <div data-scroll class="max-w-4xl mx-auto text-center mb-10 lg:mb-16">
     <h2 class="text-4xl lg:text-6xl mb-6" [innerHTML]="'health.title_1' | translate"></h2>
     <p class="text-justify text-xl lg:text-2xl p-light" [innerHTML]="'health.description_1' | translate"></p>
   </div>
 
-  <div class="w-full rounded-2xl bg-cyan-500 bg-opacity-10 mb-20 p-5 lg:p-14 reveal">
+  <div data-scroll class="w-full rounded-2xl bg-cyan-500 bg-opacity-10 mb-32 p-5 lg:p-14">
     <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
       <p class="text-xl lg:text-2xl font-medium text-center lg:text-start" [innerHTML]="'health.example_1' | translate"></p>
-      <div class="flex items-center justify-center rounded-xl overflow-clip shadow">
+      <div data-scroll class="flex items-center justify-center rounded-xl overflow-clip shadow">
         <img class="w-full" src="assets/img/img_diag_insuffisant.webp" alt="Infographie diagnostic insuffisant de la tuberculose" title="Infographie diagnostic insuffisant de la tuberculose">
       </div>
     </div>
   </div>
 
-  <div class="mx-auto lg:w-8/12 bg-white shadow-sm rounded-xl mb-20 p-5 lg:p-10 lg:pt-0 reveal">
-    <h2 class="text-4xl text-center mb-5 lg:text-6xl lg:-translate-y-8 lg:mb-0" [innerHTML]="'health.title_2' | translate"></h2>
+  <div data-scroll class="mb-20 p-5 lg:p-10 lg:pt-0">
+    <h2 class="text-4xl text-center mb-10 lg:text-6xl" [innerHTML]="'health.title_2' | translate"></h2>
     <div class="grid lg:grid-cols-2">
       <div class="mb-5 lg:-translate-x-20 lg:mb-0">
-        <div class="shadow image-container">
+        <div data-scroll class="shadow image-container">
           <img src="assets/img/banner/banner_health.webp" alt="Illustration santé humaine" title="Illustration santé humaine">
         </div>
       </div>
@@ -30,9 +30,13 @@
     </div>
   </div>
 
-  <div class="mx-auto lg:w-10/12 mb-20 p-5 lg:p-10 reveal">
-    <h2 class="text-4xl mb-5 lg:text-6xl text-center lg:-translate-y-8 lg:mb-0" [innerHTML]="'health.title_3' | translate"></h2>
-    <p class="mb-5 lg:mb-0 self-center" [innerHTML]="'health.description_3' | translate"></p>
+  <div data-scroll class="mx-auto bg-white rounded-xl lg:w-10/12 mb-20 p-5 lg:p-10">
+    <h2 class="text-4xl lg:text-5xl mb-5 text-center" [innerHTML]="'health.title_3' | translate"></h2>
+    <p class="text-justify text-xl lg:text-2xl p-light mb-8" [innerHTML]="'health.description_3' | translate"></p>
+    <button class="btn btn-lg" [routerLink]="'products' | localizedLink">
+      {{ 'process.see_products' | translate }}
+      <fa-icon class="ms-2" [icon]="faArrowRight"></fa-icon>
+    </button>
   </div>
 </div>
 
