@@ -89,7 +89,7 @@
     "product": "Products",
     "technology": "Software",
     "biotechnology": "Biotechnology",
-    "process": "Industrial process",
+    "process": "Industrial processes",
     "health": "Human health"
   },
   "sections": {
@@ -100,9 +100,9 @@
       "biology_title": "Molecular",
       "health_subtitle": "health",
       "health_title": "Human",
-      "process_subtitle": "process",
+      "process_subtitle": "processes",
       "process_title": "Industrial",
-      "text": "AFYIA's approach combines <b>artificial intelligence</b>, <b>molecular biology</b> and a rigorous <b>industrial process</b>, resulting in easy-to-use products for <b>human health</b> with a high degree of reliability.",
+      "text": "AFYIA's approach combines <b>artificial intelligence</b>, <b>molecular biology</b> and a rigorous <b>industrial processes</b>, resulting in easy-to-use products for <b>human health</b> with a high degree of reliability.",
       "title": "Our <strong>approach</strong>"
     },
     "carousel": {
@@ -330,7 +330,12 @@
     "error": "Wrong login or password."
   },
   "biotechnology": {
-    "title_1": "Innovation at the service of diagnostics"
+    "description_1": "At Afyia Diagnostics, we put our expertise in molecular biology to work developing innovative, robust and accessible diagnostic solutions. We design simple, high-performance and cost-effective PCR tests, optimized for storage and transport at room temperature, while meeting the highest quality standards through rigorous built-in controls.",
+    "description_2": "Beyond conventional PCR tests, Afyia Diagnostics has built expertise in multiplex PCR using melting-curve techniques based on technologies patented by Afyia Diagnostics, combined with the use of DISOFT (link). These innovations enable the simultaneous detection of dozens of targets within a single test, on so-called “open” thermocyclers, offering considerable gains in speed, efficiency and cost, while guaranteeing a high level of sensitivity and specificity.",
+    "description_3": "AFYIA Diagnostics, through its sister company Innovative Diagnostics, also has expertise in the development, evaluation and production of membrane immunochromatography tests (Lateral Flow Assay, LFA), as well as in capturing microorganisms in complex samples such as stool or sputum.",
+    "title_1": "A <b>solid</b> expertise in molecular <strong>biology</strong>",
+    "title_2": "<b>Innovation</b> at the service of <strong>diagnostics</strong>",
+    "title_3": "Integrated <b>skills</b> in <strong>immunology</strong>"
   },
   "health": {
     "title_1": "Access to <strong>diagnosis</strong><br> a <b>global</b> challenge",
@@ -389,8 +394,8 @@
       "description": "AFYIA Diagnostics’ biotechnology approach to developing molecular diagnostic tests."
     },
     "industrial_process": {
-      "title": "Industrial process | AFYIA Diagnostics",
-      "description": "AFYIA Diagnostics’ industrial process, from design to production of PCR diagnostic kits."
+      "title": "Industrial processes | AFYIA Diagnostics",
+      "description": "AFYIA Diagnostics’ industrial processes, from design to production of PCR diagnostic kits."
     },
     "human_health": {
       "title": "Human health | AFYIA Diagnostics",

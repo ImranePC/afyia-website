@@ -89,7 +89,7 @@
     "product": "Produits",
     "technology": "Logiciel",
     "biotechnology": "Biotechnologie",
-    "process": "Procédé industriel",
+    "process": "Procédés industriels",
     "health": "Santé humaine"
   },
   "sections": {
@@ -330,7 +330,9 @@
     "description_1": "Chez Afyia Diagnostics, nous mettons notre expertise en biologie moléculaire au service du développement de solutions diagnostiques innovantes, robustes et accessibles. Nous concevons des tests PCR simples, performants et économiques, optimisés pour une conservation et un transport à température ambiante, tout en répondant aux plus hauts standards de qualité grâce à des contrôles rigoureux intégrés.",
     "description_2": "Au-delà des tests PCR conventionnels, Afyia Diagnostics s’est développée autour d’un savoir-faire en PCR multiplexée avec des techniques de fusion reposant sur des technologies brevetées par Afyia Diagnostics associée à l’utilisation de DISOFT (lien). Ces innovations permettent la détection simultanée de plusieurs dizaines de cibles au sein d'un seul test, sur des thermocycleurs dit « ouverts », offrant un gain considérable en rapidité, en efficacité et en coût, tout en garantissant un haut niveau de sensibilité et de spécificité.",
     "description_3": "AFYIA Diagnostics, par l’intermédiaire de la société soeur Innovative Diagnostics, dispose également d'expertises dans le développement, l’évaluation et la production de tests d'immunochromatographie sur membrane (Lateral Flow Assay, LFA) ainsi que dans la capture de microorganisme dans des prélèvements complexe type selles ou expectorations.",
-    "title_1": "<b>L’innovation</b> au service du <strong>diagnostic</strong>"
+    "title_1": "Une expertise <b>solide</b> en biologie <strong>moléculaire</strong>",
+    "title_2": "<b>L'innovative</b> au service du <strong>diagnostic</strong>",
+    "title_3": "Des <b>compétences</b> intégrées en <strong>immunologie</strong>"
   },
   "health": {
     "title_1": "L'accès au <strong>diagnostic</strong><br> un enjeu <b>mondial</b>",
@@ -389,8 +391,8 @@
       "description": "L’approche biotechnologique d’AFYIA Diagnostics pour le développement de tests de diagnostic moléculaire."
     },
     "industrial_process": {
-      "title": "Procédé industriel | AFYIA Diagnostics",
-      "description": "Le procédé industriel d’AFYIA Diagnostics, de la conception à la production des kits de diagnostic PCR."
+      "title": "Procédés industriels | AFYIA Diagnostics",
+      "description": "Les procédés industriels d’AFYIA Diagnostics, de la conception à la production des kits de diagnostic PCR."
     },
     "human_health": {
       "title": "Santé humaine | AFYIA Diagnostics",
