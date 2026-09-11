@@ -22,6 +22,9 @@ services:
     - /app/node_modules
     ports:
     - "4200:4200"
+    environment:
+    - SSR_API_URL=http://api:3001
+    - SSR_IMAGE_URL=http://api:3001/uploads
 
   api:
     build:

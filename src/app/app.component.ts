@@ -68,6 +68,8 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
+    const noindex = snapshot?.data?.['noindex'] === true;
+
     this.translate
       .get([`seo.${key}.title`, `seo.${key}.description`])
       .subscribe((t) => {
@@ -75,6 +77,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
           title: t[`seo.${key}.title`],
           description: t[`seo.${key}.description`],
           path: this.router.url,
+          robots: noindex ? 'noindex,follow' : undefined,
         });
       });
   }

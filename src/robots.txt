@@ -1,8 +1,7 @@
 User-agent: *
 Disallow: /admin
-Disallow: /private
+Disallow: /private-login
 Disallow: /api/
-
 Allow: /
 
 Sitemap: https://www.afyia-diagnostics.com/sitemap.xml

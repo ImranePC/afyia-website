@@ -1,19 +1,22 @@
 /**
- * Generates prerender-routes.txt consumed by the Angular build (`prerender.routesFile`).
+ * Generates two build inputs from a single list of pages:
  *
- * Always emits the static routes for every language. Additionally tries to reach
- * the production API to enumerate product / category detail pages; if the API is
- * unreachable the detail pages simply fall back to client-side rendering.
+ *  - prerender-routes.txt : consumed by the Angular build (`prerender.routesFile`)
+ *  - src/sitemap.xml      : shipped as an asset, served at /sitemap.xml
  *
- * News detail pages (`/:lang/news/:id`) are intentionally NOT prerendered — they
- * change too often and are handled by CSR.
+ * Static routes are hard-coded (mirror of app.routes.ts). Product / category
+ * detail pages are pulled from the production API; if it is unreachable they are
+ * simply left out (prerender falls back to CSR, sitemap omits them).
+ *
+ * News detail pages (`/:lang/news/:id`) are intentionally excluded — CSR only.
  */
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const LANGS = ['fr', 'en'];
+const SITE_URL = 'https://www.afyia-diagnostics.com';
 
-// Routes without params (mirror of app.routes.ts children).
+// Language-neutral page paths (mirror of app.routes.ts children).
 const STATIC_PATHS = [
   '',
   'about',
@@ -27,6 +30,10 @@ const STATIC_PATHS = [
   'industrial-process',
   'human-health',
 ];
+
+// Prerendered but kept out of the sitemap (noindex pages the web server can use
+// as its 404 document, e.g. Apache `ErrorDocument 404 /fr/404/index.html`).
+const EXTRA_PRERENDER_PATHS = ['/404'];
 
 const API_URL = process.env['PRERENDER_API_URL'] || 'https://afyia-diagnostics.com:3001';
 const API_TIMEOUT_MS = 8000;
@@ -42,46 +49,71 @@ async function tryFetchJson(path) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();
   } catch (err) {
-    console.warn(`[prerender-routes] skipping ${path}: ${err.message}`);
+    console.warn(`[gen-routes] skipping ${path}: ${err.message}`);
     return null;
   } finally {
     clearTimeout(timer);
   }
 }
 
-async function main() {
-  const routes = new Set();
-
-  for (const lang of LANGS) {
-    for (const p of STATIC_PATHS) {
-      routes.add(`/${lang}${p ? `/${p}` : ''}`);
-    }
-  }
+/** Collect the language-neutral page paths (with leading slash). */
+async function collectPaths() {
+  const paths = new Set(STATIC_PATHS.map((p) => (p ? `/${p}` : '/')));
 
   const products = await tryFetchJson('/products');
   if (Array.isArray(products)) {
     for (const prod of products) {
       const id = prod.product_id ?? prod.id;
-      if (!id) continue;
-      for (const lang of LANGS) routes.add(`/${lang}/product/${id}`);
+      if (id) paths.add(`/product/${id}`);
     }
-    console.log(`[prerender-routes] +${products.length} product pages`);
+    console.log(`[gen-routes] +${products.length} product pages`);
   }
 
   const categories = await tryFetchJson('/categories');
   if (Array.isArray(categories)) {
     for (const cat of categories) {
       const id = cat.id ?? cat.category_id;
-      if (!id) continue;
-      for (const lang of LANGS) routes.add(`/${lang}/products/${id}`);
+      if (id) paths.add(`/products/${id}`);
     }
-    console.log(`[prerender-routes] +${categories.length} category pages`);
+    console.log(`[gen-routes] +${categories.length} category pages`);
   }
 
-  const list = [...routes].sort();
-  const out = join(process.cwd(), 'prerender-routes.txt');
-  writeFileSync(out, list.join('\n') + '\n', 'utf-8');
-  console.log(`[prerender-routes] wrote ${list.length} routes to ${out}`);
+  return [...paths].sort();
 }
 
-main();
+function writePrerenderRoutes(paths) {
+  const routes = [...paths, ...EXTRA_PRERENDER_PATHS].flatMap((p) =>
+    LANGS.map((l) => `/${l}${p === '/' ? '' : p}`),
+  );
+  const out = join(process.cwd(), 'prerender-routes.txt');
+  writeFileSync(out, routes.join('\n') + '\n', 'utf-8');
+  console.log(`[gen-routes] wrote ${routes.length} routes to ${out}`);
+}
+
+function writeSitemap(paths) {
+  const url = (lang, p) => `${SITE_URL}/${lang}${p === '/' ? '' : p}`;
+  const entries = paths.flatMap((p) =>
+    LANGS.map((lang) => {
+      const alternates = [
+        ...LANGS.map((l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${url(l, p)}"/>`),
+        `    <xhtml:link rel="alternate" hreflang="x-default" href="${url('fr', p)}"/>`,
+      ].join('\n');
+      return `  <url>\n    <loc>${url(lang, p)}</loc>\n${alternates}\n  </url>`;
+    }),
+  );
+
+  const xml =
+    '<?xml version="1.0" encoding="UTF-8"?>\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n' +
+    '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
+    entries.join('\n') +
+    '\n</urlset>\n';
+
+  const out = join(process.cwd(), 'src', 'sitemap.xml');
+  writeFileSync(out, xml, 'utf-8');
+  console.log(`[gen-routes] wrote ${entries.length} urls to ${out}`);
+}
+
+const paths = await collectPaths();
+writePrerenderRoutes(paths);
+writeSitemap(paths);

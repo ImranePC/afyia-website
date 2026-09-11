@@ -18,7 +18,9 @@ import { langResolver } from './resolvers/lang.resolver';
 import { BiotechnologyComponent } from './views/approach/biotechnology/biotechnology.component';
 import { ProcessComponent } from './views/approach/process/process.component';
 import { HealthComponent } from './views/approach/health/health.component';
+import { NotFoundComponent } from './views/not-found/not-found.component';
 import { langRedirectGuard } from './guards/lang-redirect.guard';
+import { langMatchGuard } from './guards/lang-match.guard';
 
 export const routes: Routes = [
   {
@@ -28,6 +30,7 @@ export const routes: Routes = [
   },
   {
     path: ':lang',
+    canMatch: [langMatchGuard],
     resolve: { lang: langResolver },
     children: [
       { path: '', component: HomeComponent, data: { seo: 'home' } },
@@ -44,7 +47,8 @@ export const routes: Routes = [
       { path: 'biotechnology', component: BiotechnologyComponent, data: { seo: 'biotechnology' } },
       { path: 'industrial-process', component: ProcessComponent, data: { seo: 'industrial_process' } },
       { path: 'human-health', component: HealthComponent, data: { seo: 'human_health' } },
+      { path: '404', component: NotFoundComponent, data: { seo: 'not_found', noindex: true } },
     ]
   },
-  { path: '**', redirectTo: '/fr' },
+  { path: '**', component: NotFoundComponent, data: { seo: 'not_found', noindex: true } },
 ];

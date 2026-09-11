@@ -16,6 +16,8 @@ export interface SeoData {
   path: string;
   image?: string;
   type?: 'website' | 'article' | 'product';
+  /** `<meta name="robots">` value. Defaults to `index,follow`. */
+  robots?: string;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -24,7 +26,7 @@ export class SeoService {
 
   constructor(private title: Title, private meta: Meta) {}
 
-  update({ title, description, path, image, type = 'website' }: SeoData): void {
+  update({ title, description, path, image, type = 'website', robots = 'index,follow' }: SeoData): void {
     const cleanPath = path.split(/[?#]/)[0].replace(/\/$/, '') || '/';
     const lang = SUPPORTED_LANGS.includes(cleanPath.split('/')[1]) ? cleanPath.split('/')[1] : 'fr';
     const url = SITE_URL + cleanPath;
@@ -34,6 +36,7 @@ export class SeoService {
     this.doc.documentElement.lang = lang;
 
     this.meta.updateTag({ name: 'description', content: description });
+    this.meta.updateTag({ name: 'robots', content: robots });
 
     this.meta.updateTag({ property: 'og:title', content: title });
     this.meta.updateTag({ property: 'og:description', content: description });

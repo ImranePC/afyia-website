@@ -395,6 +395,15 @@
     "human_health": {
       "title": "Santé humaine | AFYIA Diagnostics",
       "description": "L’engagement d’AFYIA Diagnostics pour la santé humaine et l’accès au diagnostic des maladies infectieuses."
+    },
+    "not_found": {
+      "title": "Page introuvable — AFYIA Diagnostics",
+      "description": "La page demandée n’existe pas ou a été déplacée."
     }
+  },
+  "not_found": {
+    "title": "Page introuvable",
+    "text": "La page que vous cherchez n’existe pas ou a été déplacée.",
+    "back": "Retour à l’accueil"
   }
 }

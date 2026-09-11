@@ -395,6 +395,15 @@
     "human_health": {
       "title": "Human health | AFYIA Diagnostics",
       "description": "AFYIA Diagnostics’ commitment to human health and access to infectious disease diagnostics."
+    },
+    "not_found": {
+      "title": "Page not found — AFYIA Diagnostics",
+      "description": "The requested page does not exist or has been moved."
     }
+  },
+  "not_found": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or has been moved.",
+    "back": "Back to home"
   }
 }

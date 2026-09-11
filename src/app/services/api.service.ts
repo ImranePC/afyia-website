@@ -5,9 +5,11 @@ import { environment } from '../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from './auth.service';
 
-export const API_URL = environment.apiUrl;
+const isServer = typeof window === 'undefined';
 
-export const IMAGE_URL = environment.imageUrl;
+export const API_URL = (isServer && process.env['SSR_API_URL']) || environment.apiUrl;
+
+export const IMAGE_URL = (isServer && process.env['SSR_IMAGE_URL']) || environment.imageUrl;
 
 export const DISOFT_URL = 'https://disoft-ruo.di4diag.com/api/v1';
 
