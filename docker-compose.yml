@@ -29,7 +29,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: ./api/Dockerfile
+      dockerfile: docker/api/Dockerfile
     container_name: afyia-api
     ports:
       - "3001:3001"
