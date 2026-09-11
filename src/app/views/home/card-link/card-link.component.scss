@@ -46,6 +46,10 @@
       filter: brightness(0.75);
     }
   }
+
+  &.coming-soon {
+    filter: grayscale(0.66);
+  }
 }
 
 .text-shadow {

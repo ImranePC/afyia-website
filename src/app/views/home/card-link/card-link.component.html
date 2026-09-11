@@ -14,6 +14,7 @@
 } @else {
 <div
   class="min-h-[250px] h-full p-5 rounded-2xl text-left flex flex-col justify-between relative background-image background-image-darken"
+  [class.coming-soon]="comingSoon"
   role="button"
   style="background-image: url('{{ imagePath }}')"
 >

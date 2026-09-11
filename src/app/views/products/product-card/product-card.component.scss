@@ -1,5 +1,11 @@
 @import '../../../../assets/scss/variables.scss';
 
+.coming-soon {
+  img {
+    filter: grayscale(0.66);
+  }
+}
+
 .text-link {
   cursor: pointer;
 
